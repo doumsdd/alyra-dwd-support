@@ -267,3 +267,11 @@ Regardons ensemble, le code dans le pen suivant. Pourquoi le texte n'est pas éc
 
 - [MDN - Référence des éléments HTML](https://developer.mozilla.org/fr/docs/Web/HTML/Element)
 - [HTML Reference](https://htmlreference.io/)
+
+---
+
+## Exercices
+
+- [Sac de voyage](https://codepen.io/alyra/pen/yLYxEpJ) | [solution](https://codepen.io/alyra/pen/50e0ae1bd5d18d37e3f239c6d673c1d1)
+- [Trottinette](https://codepen.io/alyra/pen/vYNzrav) | [solution](https://codepen.io/alyra/pen/03cdc8f33f5523d04ba8ac8c9c5a615b)
+- [Personnages Starwars](https://codepen.io/alyra/pen/QWjPjMz) | [solution](https://codepen.io/alyra/pen/aab636e7598ee96a853e589048316ed0)

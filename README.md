@@ -1,1 +1,1 @@
-[ResponsiveImages](./html/responsive-images)
+[Responsive Images](./html/responsive-images)

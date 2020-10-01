@@ -1,1 +1,4 @@
-[Responsive Images](./html/responsive-images)
+## HTML
+
+- [HTML intro](./html/HTML)
+- [Responsive Images](./html/responsive-images)

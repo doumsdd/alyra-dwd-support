@@ -249,7 +249,14 @@ Chaque élément HTML est membre d'un certain nombre de catégories de contenu (
 
 Regardons ensemble, le code dans le pen suivant. Pourquoi le texte n'est pas écrit en rouge tomate ??? 🤔
 
-[[[pen slug-hash='QWjJzRB' height='300' theme-id='1' default-tab="html,result" ]]]
+<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="alyra" data-slug-hash="QWjJzRB" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Qu'est qui va pas ici ? ">
+  <span>See the Pen <a href="https://codepen.io/alyra/pen/QWjJzRB">
+  Qu'est qui va pas ici ? </a> by Alyra (<a href="https://codepen.io/alyra">@alyra</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<!---
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+-->
 
 **Comment savoir ?**
 

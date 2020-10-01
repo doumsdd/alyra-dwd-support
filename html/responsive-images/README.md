@@ -23,7 +23,7 @@ Première étape est de préparer une autre image, de la taille `600px x 800px` 
 <img
   src="img-300x400.jpg"
   srcset="img-300x400.jpg 1x, img-600x800.jpg 2x"
-  alt="texte alternarif"
+  alt="texte alternatif"
 />
 ```
 
@@ -39,7 +39,7 @@ Pareil, on prépare une autre image, de la taille `600px x 800px` (on double la 
   src="img-300x400.jpg"
   srcset="img-300x400.jpg 300w, img-600x800.jpg 600w"
   sizes="300px"
-  alt="texte alternarif"
+  alt="texte alternatif"
 />
 ```
 

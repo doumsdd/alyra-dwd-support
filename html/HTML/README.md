@@ -270,8 +270,12 @@ Regardons ensemble, le code dans le pen suivant. Pourquoi le texte n'est pas éc
 
 ---
 
-## Exercices
+## Exercices (2 jours)
 
 - [Sac de voyage](https://codepen.io/alyra/pen/yLYxEpJ) | [solution](https://codepen.io/alyra/pen/50e0ae1bd5d18d37e3f239c6d673c1d1)
 - [Trottinette](https://codepen.io/alyra/pen/vYNzrav) | [solution](https://codepen.io/alyra/pen/03cdc8f33f5523d04ba8ac8c9c5a615b)
 - [Personnages Starwars](https://codepen.io/alyra/pen/QWjPjMz) | [solution](https://codepen.io/alyra/pen/aab636e7598ee96a853e589048316ed0)
+- [Portfolio de Sonia](https://codepen.io/alyra/pen/PoPXqVy) | [solution](https://codepen.io/alyra/pen/c0ef3d8ffd9ed715e85f8a3665694057)
+- [Jamais sans passer par Markup Validation W3c](https://codepen.io/alyra/pen/JjYaZZL) | [solution](https://codepen.io/alyra/pen/0c8fdb50e2715f0dc4bd3e7ae555f220)
+- [Divitis](https://codepen.io/alyra/pen/yLYxEvJ) | [solution](https://codepen.io/alyra/pen/09a63aef27a9616d22ea61ddaf214010)
+- [Personal Landing Page](https://codepen.io/alyra/pen/WNQgyBw) | [solution](https://codepen.io/alyra/pen/b950fa9db46fd30932aadb41562dd400)

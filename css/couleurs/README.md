@@ -114,3 +114,7 @@ C'est déjà pas mal, et pourtant - des nouvelles couleurs arrivent - pour l'ins
 
 [Playground - size/repeat/position](https://codepen.io/alyra/debug/ExPxpyw)
 [Playground - linear-gradient](https://codepen.io/alyra/debug/bGEdmMM)
+
+## Exercices
+
+- [hsl colors](https://codepen.io/alyra/pen/JjGdBwM) | [solution](https://codepen.io/alyra/pen/24600deab70bf2bd797c1e39fbedec24)

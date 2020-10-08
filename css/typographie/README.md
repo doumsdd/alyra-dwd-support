@@ -59,3 +59,5 @@ header p {
 `text-decoration`  
 `text-align` - alignement au sein d'un élément block  
 `line-height`
+
+- [Wanted Dead or Alive - Google Fonts](https://codesandbox.io/s/police-rxtme?file=/index.html) | [solution](https://codepen.io/alyra/pen/6eba070d53ff9fa1f9b0952d6ace935f)

@@ -3,7 +3,7 @@
 - [HTML intro](./html/HTML)
 - [Responsive Images](./html/responsive-images)
 - [Tables](./html/tables)
-- [Tables](./html/forms)
+- [Forms](./html/forms)
 
 ## CSS
 
@@ -18,8 +18,8 @@
 
 # Sass
 
-- [Refactoring avec Sass](https://github.com/pehaa/cssoffsass)
-- [Exercices](./sass/exercices)
+- [Refactoring avec Sass dans VSCode](https://github.com/pehaa/cssoffsass)
+- [Exercices CodePen](./sass/exercices)
 
 ## Bootstrap
 

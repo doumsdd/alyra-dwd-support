@@ -1,5 +1,9 @@
 # Sass Exercices
 
+CodePen vient avec un compilateur Sass intégré. Ceci nous permet d'écrire nos déclarations de style avec Sass.
+
+Pour activer Sass dans un Pen il faut
+
 - [SASS header + section](https://codepen.io/alyra/pen/bGEqQPE) | [solution](https://codepen.io/alyra/pen/298a4414768901cd75a164605736cbf1)
 - [SASS nesting](https://codepen.io/alyra/pen/xxZqmLM) | [solution](https://codepen.io/alyra/pen/7c103eba03c079c5736c8fee15f28670)
 - [SASS refactor Marie la Photographe](https://codepen.io/alyra/pen/jOWwLaV) | [solution](https://codepen.io/alyra/pen/f9c226199f0301284222f97fc9d4e76a)

@@ -45,4 +45,11 @@
 - [repo github flow](https://github.com/pehaa/js-flow)
 - [variables Alyra lottery](https://codepen.io/alyra/pen/MWKQPzj) | [solution](https://codepen.io/alyra/pen/d2ae034b58871bfa51b4c70e23abcf54)
 
+- [Functions - support + exercices](./javascript/functions)
+- Arrays
+  - [Introduction](./javascript/arrays/introduction)
+  - [Bases](./javascript/arrays/bases)
+  - [Methods](./javascript/arrays/methods)
+
 ## React
+

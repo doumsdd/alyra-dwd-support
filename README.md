@@ -32,7 +32,7 @@
 
 ## JavaScript
 
-- [Data Types & JavaScript Expressions](./javascript/data-expressions)
+- [Data Types & JavaScript Expressions](./javascript/types-expressions)
 - [Variables](./javascript/variables)
 - [Strings](./javascript/strings)
 - [Numbers](./javascript/numbers)

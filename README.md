@@ -55,6 +55,9 @@
   - [DOM - Document Object Model](./javascript/objects/DOM)
   - [Project Objects + DOM - Alyra veilles](https://github.com/pehaa/alyra-veilles-challenge)
   - [Methods + this](./javascript/objects/methods/)
+  - [Desctructuring assignment](./javascript/objects/destructuring/)
+  - [Constructors & Prototypes](./javascript/objects/constructors-prototypes)
+- Classes
 
 ## React
 

@@ -5,9 +5,9 @@
 `table`  
 `thead` `tbody` `tfoot` - imbrique ensemble de lignes selon leurs fonction  
 `tr` - ligne de cellules dans un tableau  
-`th` `td` - cellules (en-tête et donnée)
+`th` `td` - cellules (cellucle d'en-tête et cellule de donnée)
 
-`caption` - optionnel
+`caption` - optionnel, la "description" du contenu
 
 ```html
 <table>
@@ -58,11 +58,10 @@
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 -->
 
-
 ---
 
 ## Exercices
 
- - [Table de multiplication](https://codepen.io/alyra/pen/VwvVoRa) | [solution](https://codepen.io/alyra/pen/0c64510eac62c096c3cb3140d448deb2)
- - [Table (Candidat -> Certification)](https://codepen.io/alyra/pen/yLYQrjq) | [solution](https://codepen.io/alyra/pen/73226cb6ba6d469a91a721036a04faea)
- - [Tables - ALYRA (Challenge)](https://codepen.io/alyra/pen/LYpMPOx) | [solution](https://codepen.io/alyra/pen/cacca459f15f134825dcc8e51d87f674)
+- [Table de multiplication](https://codepen.io/alyra/pen/VwvVoRa) | [solution](https://codepen.io/alyra/pen/0c64510eac62c096c3cb3140d448deb2)
+- [Table (Candidat -> Certification)](https://codepen.io/alyra/pen/yLYQrjq) | [solution](https://codepen.io/alyra/pen/73226cb6ba6d469a91a721036a04faea)
+- [Tables - ALYRA (Challenge)](https://codepen.io/alyra/pen/LYpMPOx) | [solution](https://codepen.io/alyra/pen/cacca459f15f134825dcc8e51d87f674)

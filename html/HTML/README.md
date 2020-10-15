@@ -1,3 +1,5 @@
+# HTML - introduction
+
 **HTML** _HyperText Markup Language_ est un langage de balises permettant :
 
 - de structurer le contenu

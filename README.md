@@ -40,9 +40,9 @@
 - Exercices sur la partie ci-dessus :
   - [repo github variables](https://github.com/pehaa/js-start/)
   - [js-quizzes data types](https://javascript-quizzes.netlify.app/types)
-  - [numbers](https://javascript-quizzes.netlify.app/numbers)
-  - [variables](https://javascript-quizzes.netlify.app/variables)
-  - [strings](https://javascript-quizzes.netlify.app/strings)
+  - [js-quizzes numbers](https://javascript-quizzes.netlify.app/numbers)
+  - [js-quizzes variables](https://javascript-quizzes.netlify.app/variables)
+  - [js-quizzes strings](https://javascript-quizzes.netlify.app/strings)
   - [repo github flow](https://github.com/pehaa/js-flow)
   - [variables Alyra lottery](https://codepen.io/alyra/pen/MWKQPzj) | [solution](https://codepen.io/alyra/pen/d2ae034b58871bfa51b4c70e23abcf54)
 - [Functions - support + exercices](./javascript/functions)
@@ -50,6 +50,11 @@
   - [Introduction](./javascript/arrays/introduction)
   - [Bases](./javascript/arrays/bases)
   - [Methods](./javascript/arrays/methods)
+- Objects
+  - [Introduction](./javascript/objects/introduction)
+  - [DOM - Document Object Model](./javascript/objects/DOM)
+  - [Project Objects + DOM - Alyra veilles](https://github.com/pehaa/alyra-veilles-challenge)
+  - [Methods + this](./javascript/objects/methods/)
 
 ## React
 

@@ -57,7 +57,7 @@
   - [Methods + this](./javascript/objects/methods/)
   - [Desctructuring assignment](./javascript/objects/destructuring/)
   - [Constructors & Prototypes](./javascript/objects/constructors-prototypes)
-- Classes
+- [Classes](./javascript/classes)
 
 ## React
 

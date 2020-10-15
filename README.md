@@ -36,7 +36,7 @@
 - [Variables](./javascript/variables)
 - [Strings](./javascript/strings)
 - [Numbers](./javascript/numbers)
-- [Flow](./flow)
+- [Flow](./javascript/flow)
 - Exercices sur la partie ci-dessus :
   - [repo github variables](https://github.com/pehaa/js-start/)
   - [js-quizzes data types](https://javascript-quizzes.netlify.app/types)

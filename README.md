@@ -56,9 +56,13 @@
   - [JSX - 1](./react/jsx/jsx-1)
   - [JSX - 2](./react/jsx/jsx-2)
 - [Components](./react/components)
+- [HTML from string](./react/html-from-string)
 - State
-  - [Handling Events & State](./state/events-state)
-  - [Shopping List](./state/shopping-list-example)
-- [Project Gradients (brief)](./project-gradients)
-
-
+  - [Handling Events & State](./react/state/events-state)
+  - [Shopping List](./react/state/shopping-list-example)
+- [Project Gradients (brief)](./react/project-gradients)
+- [useContext](https://github.com/pehaa/alyra-gradients-context)
+- [useContext - refactor shopping list exercice starter](https://github.com/pehaa/alyra-shopping-refactor-context)
+- [useEffect](./react/useEffect)
+- [Promises, fetch & useEffect](./react/promises-fetch-useEffect)
+- [Project Google Fonts (brief)](./react/project-google-fonts)

@@ -35,16 +35,14 @@
 - [Strings](./javascript/strings)
 - [Numbers](./javascript/numbers)
 - [Flow](./flow)
-
 - Exercices sur la partie ci-dessus :
-- [repo github variables](https://github.com/pehaa/js-start/)
-- [js-quizzes data types]
-- [numbers]
-- [variables]
-- [strings]
-- [repo github flow](https://github.com/pehaa/js-flow)
-- [variables Alyra lottery](https://codepen.io/alyra/pen/MWKQPzj) | [solution](https://codepen.io/alyra/pen/d2ae034b58871bfa51b4c70e23abcf54)
-
+  - [repo github variables](https://github.com/pehaa/js-start/)
+  - [js-quizzes data types]
+  - [numbers]
+  - [variables]
+  - [strings]
+  - [repo github flow](https://github.com/pehaa/js-flow)
+  - [variables Alyra lottery](https://codepen.io/alyra/pen/MWKQPzj) | [solution](https://codepen.io/alyra/pen/d2ae034b58871bfa51b4c70e23abcf54)
 - [Functions - support + exercices](./javascript/functions)
 - Arrays
   - [Introduction](./javascript/arrays/introduction)
@@ -52,4 +50,15 @@
   - [Methods](./javascript/arrays/methods)
 
 ## React
+
+- [React et ReactDOM - welcome](./react/react-reactdom-welcome)
+- JSX
+  - [JSX - 1](./react/jsx/jsx-1)
+  - [JSX - 2](./react/jsx/jsx-2)
+- [Components](./react/components)
+- State
+  - [Handling Events & State](./state/events-state)
+  - [Shopping List](./state/shopping-list-example)
+- [Project Gradients (brief)](./project-gradients)
+
 

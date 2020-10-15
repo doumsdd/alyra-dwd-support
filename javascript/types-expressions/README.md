@@ -566,4 +566,4 @@ syntaxe `condition ? exprSiVrai : exprSiFaux`
 // pain au chocolat
 ```
 
-[JS - Tours - 1](https://javascript-quizzes.vercel.app/types)
+[JS - Tours - 1](https://javascript-quizzes.netlify.app/types)

@@ -136,4 +136,4 @@ message.endsWith("!!")
 
 ## Exercices
 
-[JavaScript Quizzez - Strings](https://javascript-quizzes.vercel.app/strings)
+[JavaScript Quizzez - Strings](https://javascript-quizzes.netlify.app/strings)

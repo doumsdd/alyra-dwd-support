@@ -1,6 +1,6 @@
 # Arrays - méthodes avec "callback" functions
 
-## Méthode `map` 
+## Méthode `map`
 
 ![](https://assets.codepen.io/4515922/map.png)
 
@@ -11,10 +11,9 @@ const newArray = myArray.map(mapCallback)
 
 Chaque élément de myArray est passé par `mapCallback`, la nouvelle array contient les résultats d'évaluation de `mapCallback`
 
-
 ```javascript
 const myArray = [1, 2, 3]
-const arrayOfSquares = myArray.map(el => el * el)
+const arrayOfSquares = myArray.map((el) => el * el)
 // [1, 4, 9]
 /* 1 -> 1*1 -> 1
    2 -> 2*2 -> 4
@@ -32,9 +31,9 @@ const newArray = myArray.map((el, index) => el * index)
 */
 ```
 
-Méthode `map` ne modifie pas l'array à laquelle elle est appliquée. Une nouvelle *array* est créée.
+Méthode `map` ne modifie pas l'array à laquelle elle est appliquée. Une nouvelle _array_ est créée.
 
-## Méthode `filter` 
+## Méthode `filter`
 
 ![](https://assets.codepen.io/4515922/filter.png)
 
@@ -43,7 +42,7 @@ const filterCallback = (el, index, array) =>  ...
 const newArray = myArray.filter(filterCallback)
 ```
 
-Chaque élément de myArray est passé par `filterCallback`, si le résultat est *truthy* l'élement reste, sinon l'élément est enlevé
+Chaque élément de myArray est passé par `filterCallback`, si le résultat est _truthy_ l'élement reste, sinon l'élément est enlevé
 
 ```javascript
 const myArray = [-1, 3, -3, 4, 6]
@@ -57,7 +56,7 @@ const newArray = myArray.filter((el) => el > 2)
 */
 ```
 
-Méthode `filter` ne modifie pas l'array à laquelle elle est appliquée. Une nouvelle *array* est créée.
+Méthode `filter` ne modifie pas l'array à laquelle elle est appliquée. Une nouvelle _array_ est créée.
 
 ## Méthode `find`
 
@@ -124,7 +123,7 @@ const myArray = [-1, 3, -3, 4, 6]
 const allBiggerThan2 = myArray.every((el) => el > 2)
 // false
 /* -1 -> -1 > 2 -> false -> je m'arrête et je retourne false
-*/
+ */
 ```
 
 ```javascript
@@ -144,26 +143,25 @@ const allPositive = myArray.every((el) => el >= 0)
 ![](https://assets.codepen.io/4515922/sort.png)
 
 ```javascript
-const months = ['March', 'Jan', 'Feb', 'Dec'];
-months.sort();
-console.log(months);
+const months = ["March", "Jan", "Feb", "Dec"]
+months.sort()
+console.log(months)
 // ["Dec", "Feb", "Jan", "March"]
 ```
 
 Par défault en sortant les éléments sont transformés en string à la volée, ceci donne des résultats inattendus /o\
 
 ```javascript
-const numbers = [1, 30, 4, 21, 100000];
-numbers.sort();
-console.log(numbers);
+const numbers = [1, 30, 4, 21, 100000]
+numbers.sort()
+console.log(numbers)
 // [1, 100000, 21, 30, 4]
 ```
 
 Pour y remedier, on utilise une fonction callback, qui "customize" le processus de trie
 
-
 ```javascript
-const numbers = [1, 30, 4, 21, 100000];
+const numbers = [1, 30, 4, 21, 100000]
 numbers.sort((right, left) => {
   if (right > left) {
     return 1 // valeur positive -> pas de changement
@@ -175,8 +173,8 @@ numbers.sort((right, left) => {
   /* sinon
   return right - left
   */
-});
-console.log(numbers);
+})
+console.log(numbers)
 // [1, 4, 21, 30, 100000]
 ```
 
@@ -197,7 +195,6 @@ La méthode `sort` modifie l'array.
 
 # Exercices
 
-
- - [ja quizzes - arrays 2](https://javascript-quizzes.vercel.app/arrays-methods)
- - [JavaScript - methodes array](https://codepen.io/alyra/pen/dyGwaRK) | [solution](https://codepen.io/alyra/pen/48b9d965e9b54d5bbf035e118677186a)
- - [Arrays - sort](https://codepen.io/alyra/pen/NWxovVe) | [solution](https://codepen.io/alyra/pen/5221b2d16783781f591ff80e8f1679f5)
+- [ja quizzes - arrays 2](https://javascript-quizzes.netlify.app/arrays-methods)
+- [JavaScript - methodes array](https://codepen.io/alyra/pen/dyGwaRK) | [solution](https://codepen.io/alyra/pen/48b9d965e9b54d5bbf035e118677186a)
+- [Arrays - sort](https://codepen.io/alyra/pen/NWxovVe) | [solution](https://codepen.io/alyra/pen/5221b2d16783781f591ff80e8f1679f5)

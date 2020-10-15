@@ -7,8 +7,8 @@ Arrays (tableaux) permettent de stocker des collections (listes) de données.
 ```javascript
 const myList1 = [] // []
 const myList2 = new Array() // []
-const myListMisc = new Array("hello", 13, 8 === '8' ) // ['hello', 13, false]
-const shopping = ['tshirt', 'shorts', 'pareo']
+const myListMisc = new Array("hello", 13, 8 === "8") // ['hello', 13, false]
+const shopping = ["tshirt", "shorts", "pareo"]
 ```
 
 ## Voici comment on peut les obtenir le nombre d'éléments
@@ -16,7 +16,7 @@ const shopping = ['tshirt', 'shorts', 'pareo']
 ```javascript
 const myList1 = []
 myList1.length // 0
-const shopping = ['tshirt', 'shorts', 'pareo']
+const shopping = ["tshirt", "shorts", "pareo"]
 shopping.length // 3
 ```
 
@@ -26,7 +26,7 @@ Les éléments de la liste sont indéxer à partir de zéro: 0, 1, &hellip; Le d
 
 ```javascript
 const myList1 = [2, 5, 8, 90]
-myList[0] // premier élément de la liste, ici 2 
+myList[0] // premier élément de la liste, ici 2
 myList[1] // 2e, ici 5
 myList[3] // 90
 myList[myList.length - 1] // myList[3] -> 90
@@ -40,7 +40,6 @@ const myList1 = [2, 5, 8, 90]
 myList1[2] = -1
 // [2, 5, -1, 90]
 ```
-
 
 ## Voici comment on peut ajouter et enlever les éléments
 
@@ -70,9 +69,10 @@ console.log(removed) // 90
 
 <div class="post-note">Les méthodes `pop` et `push` sont beacoup plus rapide qut `shift` et `unshift`.</div>
 
-Pour d'autre cas que début et fin de l'array, nous avons la méthode `splice` 
+Pour d'autre cas que début et fin de l'array, nous avons la méthode `splice`
 
-syntaxe: ```arr.splice(index[, deleteCount, elem1, ..., elemN])```  
+syntaxe: `arr.splice(index[, deleteCount, elem1, ..., elemN])`
+
 - positionne-toi au numéro indiqué par index, enlève `deleteCount` éléments et insère `elem1, ..., elemN`
 
 Cette méthode modifie `arr` et retourne l'array des élément enlevé.
@@ -80,33 +80,33 @@ Cette méthode modifie `arr` et retourne l'array des élément enlevé.
 Voici les exemples (source [splice sur mdn](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/splice))
 
 ```javascript
-const mesPoissons  = ["scalaire", "clown", "mandarin", "chirurgien"];
+const mesPoissons = ["scalaire", "clown", "mandarin", "chirurgien"]
 
 // supprime 0 élément à partir de l'index 2, et insère "tambour"
-let enleves = mesPoissons.splice(2, 0, "tambour");
+let enleves = mesPoissons.splice(2, 0, "tambour")
 // mesPoissons est ["scalaire", "clown", "tambour", "mandarin", "chirurgien"]
 // enleves est [], aucun élément supprimé
 
 // supprime 1 élément à partir de l'index 3
-enleves = mesPoissons.splice(3, 1);
+enleves = mesPoissons.splice(3, 1)
 // mesPoissons est ["scalaire", "clown", "tambour", "chirurgien"]
 // enleves est ["mandarin"]
 
 // supprime 1 élément à partir de l'index 2, et insère "trompette"
-enleves = mesPoissons.splice(2, 1, "trompette");
+enleves = mesPoissons.splice(2, 1, "trompette")
 // mesPoissons est ["scalaire", "clown", "trompette", "chirurgien"]
 // enleves est ["tambour"]
 
 // supprime 2 éléments à partir de l'index 0, et insère "perroquet", "anémone" et"bleu"
-enleves = mesPoissons.splice(0, 2, "perroquet", "anémone", "bleu");
+enleves = mesPoissons.splice(0, 2, "perroquet", "anémone", "bleu")
 // mesPoissons est ["perroquet", "anémone", "bleu", "trompette", "chirurgien"]
 // enleves est ["scalaire", "clown"]
 ```
 
 ```javascript
-const mesPoissons = ["perroquet", "anémone", "bleu", "trompette", "chirurgien"];
+const mesPoissons = ["perroquet", "anémone", "bleu", "trompette", "chirurgien"]
 // on retire trois éléments à partir de l'indice 2
-let enleves = mesPoissons.splice(2);
+let enleves = mesPoissons.splice(2)
 // mesPoissons vaut ["perroquet", "anémone"]
 // enleves vaut ["bleu", "trompette", "chirurgien"]
 ```
@@ -116,26 +116,25 @@ let enleves = mesPoissons.splice(2);
 Il existe aussi la méthode slice (plus simple et "moins puissante") qui fonctionne comme slice pour les strings, `slice` ne modifie pas l'array, mais crée une copie.
 
 ```javascript
-const mesPoissons  = ["scalaire", "clown", "mandarin", "chirurgien", "bleu"]
+const mesPoissons = ["scalaire", "clown", "mandarin", "chirurgien", "bleu"]
 let poissonsChoisis = mesPoissons.slice(2)
 // poissonsChoisis ["mandarin", "chirurgien", "bleu"]
 // mesPoissons - ["scalaire", "clown", "mandarin", "chirurgien", "bleu"]
 
-poissonsChoisis = mesPoissons.slice(2,3)
+poissonsChoisis = mesPoissons.slice(2, 3)
 // poissonsChoisis ["mandarin"]
 // mesPoissons - ["scalaire", "clown", "mandarin", "chirurgien", "bleu"]
 
-poissonsChoisis = mesPoissons.slice(0, 3);
+poissonsChoisis = mesPoissons.slice(0, 3)
 // poissonsChoisis [ 'scalaire', 'clown', 'mandarin' ]
 // mesPoissons - ["scalaire", "clown", "mandarin", "chirurgien", "bleu"]
 ```
 
-
 ## Renverser l'ordre des élément
 
 ```javascript
-const myArray = ["un", "deux", "trois"];
-myArray.reverse();
+const myArray = ["un", "deux", "trois"]
+myArray.reverse()
 
 console.log(myArray) // ["trois", "deux", "un"]
 ```
@@ -144,15 +143,14 @@ Méthode `reverse` modifie le tableau.
 
 Il existe aussi méthode `sort` qui permet de changer l'ordre des éléments selon un critère défini, nous la verrons dans le support suivant.
 
-## Parcourir la liste 
-
+## Parcourir la liste
 
 méthode classique
 
 ```javascript
-const shoppingList = ['2 tshirts', 'un short', 'un pareo']
+const shoppingList = ["2 tshirts", "un short", "un pareo"]
 
-for (let i = 0; i <= shoppingList.length - 1; i++ ) {
+for (let i = 0; i <= shoppingList.length - 1; i++) {
   alert(`J'ai besoin d'acheter ${shoppingList[i]}`)
 }
 
@@ -166,9 +164,9 @@ J'ai besoin d'acheter un pareo
 méthode moderne 😍
 
 ```javascript
-const shoppingList = ['2 tshirts', 'un short', 'un pareo']
+const shoppingList = ["2 tshirts", "un short", "un pareo"]
 
-for (let item of shoppingList ) {
+for (let item of shoppingList) {
   alert(`J'ai besoin d'acheter ${item}`)
 }
 
@@ -182,7 +180,7 @@ J'ai besoin d'acheter un pareo
 méthode `forEach`
 
 ```javascript
-const shoppingList = ['2 tshirts', 'un short', 'un pareo']
+const shoppingList = ["2 tshirts", "un short", "un pareo"]
 
 const iterationFunction = (el, index, array) => {
   alert(`(${index + 1}/${array.length}) J'ai besoin d'acheter ${el}`)
@@ -200,7 +198,7 @@ shoppingList.forEach(iterationFunction)
 Plus souvent on verra la fonction repsonsable pour l'itération intégrée directement dans `forEach` comme ceci :
 
 ```javascript
-const shoppingList = ['2 tshirts', 'un short', 'un pareo']
+const shoppingList = ["2 tshirts", "un short", "un pareo"]
 
 shoppingList.forEach((el) => `J'ai besoin d'acheter ${el}`)
 
@@ -216,11 +214,11 @@ J'ai besoin d'acheter un pareo
 La méthode `concat` fusionne un ou plusieurs tableaux en les concaténant. Cette méthode ne modifie pas les tableaux existants, elle renvoie un nouveau tableau qui est le résultat de l'opération.
 
 ```javascript
-const array1 = ['a', 'b', 'c'];
-const array2 = ['d', 'e', 'f'];
-const array3 = array1.concat(array2);
+const array1 = ["a", "b", "c"]
+const array2 = ["d", "e", "f"]
+const array3 = array1.concat(array2)
 
-console.log(array3);
+console.log(array3)
 // ["a", "b", "c", "d", "e", "f"]
 ```
 
@@ -229,23 +227,23 @@ console.log(array3);
 `split` & `join`
 
 ```javascript
-const arrayFromString = 'hello'.split('')
+const arrayFromString = "hello".split("")
 // ['h','e','l','l','o']
-arrayFromString.reverse().join('')
+arrayFromString.reverse().join("")
 // 'olleh'
-arrayFromString.join('-')
+arrayFromString.join("-")
 // 'o-l-l-e-h'
-arrayFromString.join(' ')
+arrayFromString.join(" ")
 // 'o l l e h'
-"Nous aimons JavaScript".split(' ')
+"Nous aimons JavaScript".split(" ")
 // [ 'Nous', 'aimons', 'JavaScript' ]
 
 "Nous  aimons    JavaScript".split(/\s+/)
 // [ 'Nous', 'aimons', 'JavaScript' ]
 ```
 
-##  Exercices
+## Exercices
 
- - [Arrays (1)](https://codepen.io/alyra/pen/RwrqEbg) | [solution]( https://codepen.io/alyra/pen/49924ef5f70f5aa180939fa4577423b0)
- - [Arrays Magic Ball](https://codepen.io/alyra/pen/QWyJzbJ) | [solution](https://codepen.io/alyra/pen/150130653967a99107d42d5bf2ad3837)
- - [js quizzes - arrays](https://javascript-quizzes.vercel.app/arrays)
+- [Arrays (1)](https://codepen.io/alyra/pen/RwrqEbg) | [solution](https://codepen.io/alyra/pen/49924ef5f70f5aa180939fa4577423b0)
+- [Arrays Magic Ball](https://codepen.io/alyra/pen/QWyJzbJ) | [solution](https://codepen.io/alyra/pen/150130653967a99107d42d5bf2ad3837)
+- [js quizzes - arrays](https://javascript-quizzes.netlify.app/arrays)

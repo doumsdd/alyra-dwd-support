@@ -28,6 +28,8 @@
 
 ## Bootstrap + Sass
 
+- [Alyramag custom b5 build (github repo)](https://github.com/pehaa/alyramag-custom-b5-build)
+
 ## JavaScript
 
 - [Data Types & JavaScript Expressions](./javascript/data-expressions)
@@ -37,10 +39,10 @@
 - [Flow](./flow)
 - Exercices sur la partie ci-dessus :
   - [repo github variables](https://github.com/pehaa/js-start/)
-  - [js-quizzes data types]
-  - [numbers]
-  - [variables]
-  - [strings]
+  - [js-quizzes data types](https://javascript-quizzes.netlify.app/types)
+  - [numbers](https://javascript-quizzes.netlify.app/numbers)
+  - [variables](https://javascript-quizzes.netlify.app/variables)
+  - [strings](https://javascript-quizzes.netlify.app/strings)
   - [repo github flow](https://github.com/pehaa/js-flow)
   - [variables Alyra lottery](https://codepen.io/alyra/pen/MWKQPzj) | [solution](https://codepen.io/alyra/pen/d2ae034b58871bfa51b4c70e23abcf54)
 - [Functions - support + exercices](./javascript/functions)

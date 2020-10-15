@@ -111,4 +111,4 @@ le paramètre `base` prend des valeur de `2` au `36`, sa valeur par défault et 
 
 ## Exercices
 
-[JavaScript Quizzez - Numbers](https://javascript-quizzes.vercel.app/numbers)
+[JavaScript Quizzez - Numbers](https://javascript-quizzes.netlify.app/numbers)

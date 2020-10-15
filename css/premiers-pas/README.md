@@ -23,7 +23,7 @@ p {
 
 ## Comment lier CSS à un doc HTML
 
-Pour que les styles soient bien appliqués aux éléments dans le document HTML, leurs déclaration doivent être visible dans ce document.
+Pour que les styles soient bien appliqués aux éléments dans le document HTML, leurs déclarations doivent être visible dans ce document.
 
 Ceci peut être effectué à plusieurs façons :
 

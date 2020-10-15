@@ -8,7 +8,7 @@
 ## CSS
 
 - [Premiers Pas](./css/premiers-pas)
-- [Box Model](./css/premiers-pas)
+- [Box Model](./css/box-model)
 - [Couleurs](./css/couleurs)
 - [Typographie](./css/typographie)
 - [Selecteurs CSS](./css/css-selecteurs)

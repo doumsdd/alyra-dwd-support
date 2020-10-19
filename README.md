@@ -59,6 +59,8 @@
   - [Constructors & Prototypes](./javascript/objects/constructors-prototypes)
 - [Classes](./javascript/classes)
 
+### Tous les quizzes Javascript - [ici](https://javascript-quizzes.netlify.app/)
+
 ## React
 
 - [React et ReactDOM - welcome](./react/react-reactdom-welcome)

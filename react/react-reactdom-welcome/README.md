@@ -7,7 +7,7 @@ Le rôle de React est de faciliter la création des interfaces utilisateur (UI).
 
 Depuis quelques années, React est le choix numéro un des dévéloppeurs web. Ceci est confirmé par les sondages menés par [Stack Overflow](https://insights.stackoverflow.com/survey/2019/#technology-_-most-loved-dreaded-and-wanted-web-frameworks), [State of Frontend 2020](https://tsh.io/state-of-frontend/#frameworks) ou encore [State of JS](https://2019.stateofjs.com/front-end-frameworks/).
 
-De nombreuses grandes entreprises utilisent React en production, parmi elles bien evidememment Facebook (et Instagram), mais aussi Netflix, Airbnb, Cloudflare ou Dropbox. Le fait de voir les grandes références utiliser cette librairie, est encourageant lorsqu'on décide d'utiliser ou pas React dans un nouveau projet. Aussi, si vous êtes à l'aise avec React, vous pouvez utiliser ces connaissances pour apprendre à créer des applications mobiles avec React Native.
+De nombreuses grandes entreprises utilisent React en production, parmi elles bien evidememment Facebook (et Instagram), mais aussi Netflix, Airbnb, Cloudflare ou Dropbox. Le fait de voir les grandes références utiliser cette librairie, est très encourageant lorsqu'on décide d'utiliser React dans un nouveau projet. Aussi, si vous êtes à l'aise avec React, vous pouvez utiliser ces connaissances pour apprendre à créer des applications mobiles avec React Native.
 
 
 ## React et DOM
@@ -189,22 +189,22 @@ ReactDOM.render(element, document.getElementById("root"))
 ```javascript
 const element = React.createElement(
   "article",
-  {
-    className: "card"
-  },
+  null,
   React.createElement("h2", null, "Secrets des pandas roux"),
   React.createElement("img", {src: "panda-roux.png", alt: "Panda roux dort sur une branche."}),
-  React.createElement("p", null, "Le petit panda est un carnivore, qui ne mange jamais de la viande.")
+  React.createElement("p", null, "Le saviez-vous ? Le petit panda est un carnivore, qui ne mange jamais de la viande.")
 )
 ReactDOM.render(element, document.getElementById("root"))
 /*
 <article class="card">
   <h2>Secrets des pandas roux</h2>
-  <img src="panda-roux.png" alt="Panda roux dort sur une branche.">
-  <p>Le petit panda est un carnivore, qui ne mange jamais de la viande.</p>
+  <img src="panda-roux.png" alt="Panda roux sur une branche.">
+  <p>Le saviez-vous ? Le petit panda est un carnivore, qui ne mange jamais de la viande.</p>
 </article>
 */
 ```
+
+
 
 ## Réconciliation
 

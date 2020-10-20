@@ -191,7 +191,7 @@ const element = React.createElement(
   "article",
   null,
   React.createElement("h2", null, "Secrets des pandas roux"),
-  React.createElement("img", {src: "panda-roux.png", alt: "Panda roux dort sur une branche."}),
+  React.createElement("img", {src: "panda-roux.png", alt: "Panda roux sur une branche."}),
   React.createElement("p", null, "Le saviez-vous ? Le petit panda est un carnivore, qui ne mange jamais de la viande.")
 )
 ReactDOM.render(element, document.getElementById("root"))
@@ -204,6 +204,7 @@ ReactDOM.render(element, document.getElementById("root"))
 */
 ```
 
+https://codepen.io/alyra/pen/xxVLwgY
 
 
 ## Réconciliation
@@ -217,7 +218,7 @@ https://codepen.io/alyra/pen/PoNZvgd
 
 À ce stade, il n'est pas nécessaire de comprendre comment l’algorithme de comparaison fonctionne en détail, mais si cela vous intéresse, vous pouvez en lire davantage [dans la documentation.](https://fr.reactjs.org/docs/reconciliation.html)
 
-# React.Fragment
+## React.Fragment
 
 Dans tous les exemples ci-dessus, nous avons **un seul** élément parent qui a un ou plusieurs noeuds enfants . Afin d'avoir des "siblings" (👭) nous devons utiliser `React.Fragment`, un conteneur sans type ni attribut. Un conteneur phantôme 👻
 

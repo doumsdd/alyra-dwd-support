@@ -2,7 +2,7 @@
 
 Si vous vous posex des questions :
   
-> mais en quoi, `React.createElement` nous facilite la vie ? ... on dirait le contraire... ? 
+> Mais en quoi, `React.createElement` nous facilite la vie ? ... on dirait le contraire... ? 
   
 Je pense que c'est un reflèxe tout à fait légitime. Créer les structures plus complèxes demande beaucoup de code, qui n'est pas forcement très lisible.
 
@@ -41,7 +41,7 @@ const article = React.createElement(
 ReactDOM.render(article, rootElement);
 ```
 
-Voici, comment le même code peut être re-écrit avec JSX :
+Voici, le même code re-écrit avec JSX :
 
 ```javascript
 const rootElement = document.getElementById("root");
@@ -50,10 +50,11 @@ const imgSrc =
 
 const article = (
   <article className="mt-5 p-3 text-center shadow">
-  <h2>Secrets des pandas roux</h2>
-  <img src={imgSrc} alt="Panda roux sur une branche." className="img-fluid mb-3">
-  <p>Le saviez-vous ? Le petit panda est un carnivore, qui ne mange jamais de la viande.</p>
-</article>)
+    <h2>Secrets des pandas roux</h2>
+    <img src={imgSrc} alt="Panda roux sur une branche." className="img-fluid mb-3">
+    <p>Le saviez-vous ? Le petit panda est un carnivore, qui ne mange jamais de la viande.</p>
+  </article>
+)
 
 ReactDOM.render(article, rootElement);
 ```

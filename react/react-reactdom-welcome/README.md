@@ -215,11 +215,11 @@ Vous pouvez observer ce fonctionnement dans le pen suivant
 
 https://codepen.io/alyra/pen/PoNZvgd
 
-À ce stade, il n'est pas nécessaire de comprendre comment l’algorithme de comparaison fonctionne en détail, mais si cela vous intéresse, vous pouvez trouver plus de détails [dans la documentattion](https://fr.reactjs.org/docs/reconciliation.html)
+À ce stade, il n'est pas nécessaire de comprendre comment l’algorithme de comparaison fonctionne en détail, mais si cela vous intéresse, vous pouvez en lire davantage [dans la documentation.](https://fr.reactjs.org/docs/reconciliation.html)
 
 # React.Fragment
 
-Dans tous les exemples ci-dessus, nous avons **un seul** élément parent qui a un ou plusieurs noeuds enfants. Afin d'avoir des "siblings" (👭) nous devons utiliser `React.Fragment`, un conteneur sans type ni attribut. Un conteneur phantôme 👻
+Dans tous les exemples ci-dessus, nous avons **un seul** élément parent qui a un ou plusieurs noeuds enfants . Afin d'avoir des "siblings" (👭) nous devons utiliser `React.Fragment`, un conteneur sans type ni attribut. Un conteneur phantôme 👻
 
 ```javascript
 const element = React.createElement(
@@ -254,6 +254,7 @@ const element = React.createElement(
   p
 )
 /*
+// ou comme ceci :
 const element = React.createElement(
   React.Fragment,
   {
@@ -261,6 +262,7 @@ const element = React.createElement(
   }
 )
 */
+
 /*
 <h1 lang="en">Hello World!</h1>
 <p class="subtitle">Les premiers mots d'un logiciel</p>

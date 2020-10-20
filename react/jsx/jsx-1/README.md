@@ -1,54 +1,117 @@
-# JSX - 1
+# JSX  (1)
 
-Posez-vous des questions, mais en quoi, `React.createElement` nous facilite la vie,... on dirait le contraire... ? Je pense que c'est un reflèxe tout à fait légitime. Créer les structures plus complèxe demande beaucoup de code, et le tout n'est pas forcement très lisible. 
+Si vous vous posex des questions :
+  mais en quoi, `React.createElement` nous facilite la vie ? ... on dirait le contraire... ? 
+  
+Je pense que c'est un reflèxe tout à fait légitime. Créer les structures plus complèxes demande beaucoup de code, qui n'est pas forcement très lisible.
 
 Heureusement, **JSX** nous vient à la rescousse !
 
-JSX est une extension syntaxique de JavaScript, créée par des dévelopeurs de React et recommandé par React. 
+JSX - l'abbreviation venant de JavaScript XML, est une extension syntaxique de JavaScript, créée par des dévelopeurs de React et recommandée par React. Comme indiqué dans la documentation : *fondamentalement, JSX fournit juste du sucre syntaxique pour la fonction `React.createElement`*. Pourtant c'est un vrai *game changer* pour nous, des dévéloppeurs.
 
-C'est un peu comme si on écrivait du HTML directement dans JavaScript.
+Regardons le code qui nous génére la petite mémo sur les pandas roux.
+
+```javascript
+const rootElement = document.getElementById("root");
+const imgSrc =
+  "https://images.unsplash.com/photo-1500812013460-8ab63ad969a7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ";
+
+const h2El = React.createElement("h2", null, "Secrets des pandas roux");
+const imgEl = React.createElement("img", {
+  src: imgSrc,
+  alt: "Panda roux sur une branche.",
+  className: "img-fluid mb-3"
+});
+const pEl = React.createElement(
+  "p",
+  null,
+  "Le saviez-vous ? Le petit panda est un carnivore, qui ne mange jamais de la viande."
+);
+const article = React.createElement(
+  "article",
+  {
+    className: "mt-5 p-3 text-center shadow"
+  },
+  h2El,
+  imgEl,
+  pEl
+);
+
+ReactDOM.render(article, rootElement);
+```
+
+Voici, comment le même code peut être re-écrit avec JSX :
+
+```javascript
+const rootElement = document.getElementById("root");
+const imgSrc =
+  "https://images.unsplash.com/photo-1500812013460-8ab63ad969a7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ";
+
+const article = (
+  <article className="mt-5 p-3 text-center shadow">
+  <h2>Secrets des pandas roux</h2>
+  <img src={imgSrc} alt="Panda roux sur une branche." className="img-fluid mb-3">
+  <p>Le saviez-vous ? Le petit panda est un carnivore, qui ne mange jamais de la viande.</p>
+</article>)
+
+ReactDOM.render(article, rootElement);
+```
+
+C'est un peu comme si on écrivait du HTML directement dans JavaScript. Voici quelques exemples supplémentaires.
 
 Avec JSX nous passons de (avant) :
 
+
 ```javascript
+const element = <p></p>
+/*
+// avant :
+const element = React.createElement("p")
+*/
+```
+
+---
+
+```javascript
+const element = <p>Bonjour</p>
+/*
+// avant :
+const element = React.createElement(
+  "p",
+  null,
+  "Bonjour !"
+)
+*/
+```
+
+---
+
+```javascript
+const element = <h1 lang="en">Hello World!</h1>
+/*
+// avant
 const element = React.createElement(
   "h1",
   {lang: "en"},
   "Hello World!"
 )
+*/
 ```
 
-vers :
-
 ```javascript
-const element = <h1 lang="en">Hello World!</h1>
-```
-
-ou :
-
-```javascript
+const element = <p>Bonjour</p>
+/*
+// avant :
 const element = React.createElement(
-  "article",
-  {
-    className: "card"
-  }
-  React.createElement("h2", null, "Secrets des pandas roux") 
-  React.createElement("img", {src: "panda-roux.png", alt: "Panda roux dort sur une branche."})
-  React.createElement("p", null, "Le petit panda est un carnivore, qui ne mange jamais de la viande...")
+  "p",
+  null,
+  "Bonjour !"
 )
+*/
 ```
 
-vers (après) :
+---
 
-```javascript
-const element = (
-  <article className="card">
-    <h2>Secrets des pandas roux</h2>
-    <img src="panda-roux.png" alt="Panda roux dort sur une branche." />
-    <p>Le petit panda est un carnivore, qui ne mange jamais de la viande...</p>
-  </article>
-)
-```
 
 ## babel
 

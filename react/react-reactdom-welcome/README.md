@@ -1,26 +1,25 @@
-# React et ReactDOM - welcome !!
+# React et ReactDOM premiers pas
 
-React est une librarie JavaScript créé et maintenu par Facebook. Le rôle de React est de faciliter la création des interfaces utilisateur (UI). Les developpeurs de React cherchent à rendre la création des interfaces plus modulaire, avec des composents reutilisables et interactifs.
+React est une librarie JavaScript, open-source, créé et maintenu par Facebook, distribuée sous la licence MIT. 
 
-En ce moment, React est le choix numéro un des dévéloppeurs web. Ceci est confirmé par les sondages menés par [Stack Overflow](https://insights.stackoverflow.com/survey/2019/#technology-_-most-loved-dreaded-and-wanted-web-frameworks), [State of Frontend 2020](https://tsh.io/state-of-frontend/#frameworks) ou encore [State of JS](https://2019.stateofjs.com/front-end-frameworks/).
-
-De nombreuses grandes entreprises utilisent React en production, parmi elles bien evidememment Facebook et Instagram, mais aussi Netflix, Airbnb, Cloudflare ou Dropbox. Les grandes références utilisant cette librairie est un fort point encourageant lorsqu'on décide d'utiliser React pour un nouveau projet. 
-
-Si vous êtes à l'aise avec React, vous pouvez utiliser ces connaissances pour apprendre à créer des applications mobiles avec React Native.
+Le rôle de React est de faciliter la création des interfaces utilisateur (UI). Les developpeurs de React cherchent à rendre la création des interfaces plus modulaire, avec des composants reutilisables et interactifs.
 
 
-## Premiers pas avec React
+Depuis quelques années, React est le choix numéro un des dévéloppeurs web. Ceci est confirmé par les sondages menés par [Stack Overflow](https://insights.stackoverflow.com/survey/2019/#technology-_-most-loved-dreaded-and-wanted-web-frameworks), [State of Frontend 2020](https://tsh.io/state-of-frontend/#frameworks) ou encore [State of JS](https://2019.stateofjs.com/front-end-frameworks/).
 
-Afin de commencer de travailler avec React nous avons besoin de 2 fichiers source :
+De nombreuses grandes entreprises utilisent React en production, parmi elles bien evidememment Facebook (et Instagram), mais aussi Netflix, Airbnb, Cloudflare ou Dropbox. Le fait de voir les grandes références utiliser cette librairie, est encourageant lorsqu'on décide d'utiliser ou pas React dans un nouveau projet. Aussi, si vous êtes à l'aise avec React, vous pouvez utiliser ces connaissances pour apprendre à créer des applications mobiles avec React Native.
+
+
+## React et DOM
+
+Nous allons faire nos premiers pas avec React dans CodePen. Afin de commencer de travailler, nous avons besoin de 2 fichiers source :
 
 - **React** [https://unpkg.com/react/umd/react.development.js](https://unpkg.com/react/umd/react.development.js)
 - **ReactDOM** [https://unpkg.com/react-dom/umd/react-dom.development.js](https://unpkg.com/react-dom/umd/react-dom.development.js)
 
-Avec ces 2 ressources chargés dans la page, nous obtenons deux objets `React` et `ReactDom`.
+Avec ces 2 ressources chargées dans la page, nous obtenons deux objets `React` et `ReactDOM`.
 
-Pendant que <b>React</b> crée une représentation virtuelle de l'interface utilisateur (appelé DOM virtuel), <b>ReactDOM</b> met à jour efficacement le DOM en fonction de ce DOM virtuel. 
-Autrement dit, ReactDOM permet de lier React et le DOM.
-
+Pendant que <b>React</b> crée une représentation virtuelle de l'interface utilisateur (appelé DOM virtuel), <b>ReactDOM</b> met à jour efficacement le DOM en fonction de ce DOM virtuel. Autrement dit, ReactDOM permet de lier React et le DOM.
 
 ## React.createElement + ReactDOM.render
 
@@ -43,7 +42,7 @@ Pour mieux comprendre le fonctionnement de React, et en particulier ces méthode
   // ajouter des classes
   paragraphEl.classList.add("bg-danger", "text-white")
   rootElementDom.append(paragraphEl)
-<script>
+</script>
 ```
 
 

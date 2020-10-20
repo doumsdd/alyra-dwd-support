@@ -52,15 +52,15 @@ Pour mieux comprendre le fonctionnement de React, et en particulier ces méthode
 <script src="https://unpkg.com/react/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
 <script>
-const rootElement = document.getElementById("root");
-const paragraphEl = React.createElement(
-  "p", // type d'élément
-  {
-    className: "bg-danger text-white" // ajouter des classes
-  },
-  "Hello World" // contenu textuel
-);
-ReactDOM.render(paragraphEl, rootElement);
+  const rootElement = document.getElementById("root");
+  const paragraphEl = React.createElement(
+    "p", // type d'élément
+    {
+      className: "bg-danger text-white" // ajouter des classes
+    },
+    "Hello World" // contenu textuel
+  );
+  ReactDOM.render(paragraphEl, rootElement);
 </script>
 ```
 
@@ -71,13 +71,13 @@ Pour résumer voici comment créer et l'insérer un élément React :
 ```javascript
 // créer un élément
 const element = React.createElement(
-  type,
-  [props],
-  [...children]
+  type, // "p" | "div" | "img" | etc.
+  [props], // null | {} | {id: "top"} | {id: "top", className: "text-center bg-danger"}
+  [...children] // "Hello !" | "Hello", " Ravis de vour revoir!"
 )
 // l'insérer/mettre à jour dans domCointainer
 ReactDOM.render(
-  element, //reactElement
+  element, // reactElement
   domContainer // DOM Element
 )
 ```
@@ -90,6 +90,15 @@ ReactDOM.render(element, document.getElementById("root"))
 // <p></p>
 ```
 
+---
+
+```javascript
+const element = React.createElement("input")
+ReactDOM.render(element, document.getElementById("root"))
+// <input/>
+```
+
+---
 
 ```javascript
 const element = React.createElement(

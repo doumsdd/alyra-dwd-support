@@ -59,10 +59,7 @@ const article = (
 ReactDOM.render(article, rootElement);
 ```
 
-C'est un peu comme si on écrivait du HTML directement dans JavaScript. Voici quelques exemples supplémentaires.
-
-Avec JSX nous passons de (avant) :
-
+C'est un peu comme si on écrivait du HTML directement dans JavaScript. Voici quelques exemples supplémentaires :
 
 ```javascript
 const element = <p></p>

@@ -1,15 +1,73 @@
 # React et ReactDOM - welcome !!
 
-React est une librarie JavaScript créé et maintenu par Facebook.
+React est une librarie JavaScript créé et maintenu par Facebook. Le rôle de React est de faciliter la création des interfaces utilisateur (UI). Les developpeurs de React cherchent à rendre la création des interfaces plus modulaire, avec des composents reutilisables et interactifs.
 
-Le rôle de React est de faciliter la création des interfaces utilisateur (UI).
+En ce moment, React est le choix numéro un des dévéloppeurs web. Ceci est confirmé par les sondages menés par [Stack Overflow](https://insights.stackoverflow.com/survey/2019/#technology-_-most-loved-dreaded-and-wanted-web-frameworks), [State of Frontend 2020](https://tsh.io/state-of-frontend/#frameworks) ou encore [State of JS](https://2019.stateofjs.com/front-end-frameworks/).
 
-Afin de travailler avec React nous avons besoin de 2 fichiers source :
+De nombreuses grandes entreprises utilisent React en production, parmi elles bien evidememment Facebook et Instagram, mais aussi Netflix, Airbnb, Cloudflare ou Dropbox. Les grandes références utilisant cette librairie est un fort point encourageant lorsqu'on décide d'utiliser React pour un nouveau projet. 
+
+Si vous êtes à l'aise avec React, vous pouvez utiliser ces connaissances pour apprendre à créer des applications mobiles avec React Native.
+
+
+## Premiers pas avec React
+
+Afin de commencer de travailler avec React nous avons besoin de 2 fichiers source :
 
 - **React** [https://unpkg.com/react/umd/react.development.js](https://unpkg.com/react/umd/react.development.js)
 - **ReactDOM** [https://unpkg.com/react-dom/umd/react-dom.development.js](https://unpkg.com/react-dom/umd/react-dom.development.js)
 
-# React.createElement + ReactDOM.render
+Avec ces 2 ressources chargés dans la page, nous obtenons deux objets `React` et `ReactDom`.
+
+Pendant que <b>React</b> crée une représentation virtuelle de l'interface utilisateur (appelé DOM virtuel), <b>ReactDOM</b> met à jour efficacement le DOM en fonction de ce DOM virtuel. 
+Autrement dit, ReactDOM permet de lier React et le DOM.
+
+
+## React.createElement + ReactDOM.render
+
+Avec les objets `React` et `ReactDom` disponibles dans la page, nous allons commencer par les méthodes `React.createElement` et `ReactDOM.render`.
+
+Pour mieux comprendre le fonctionnement de React, et en particulier ces méthodes, nous allons procéder par la comparaison de deux approches :
+
+ - création d'interface utilisateur avec DOM
+ - création d'interface utilisateur avec React et ReactDOM
+
+```html
+<!-- Approche Vanilla -->
+<div class="container" id="root-dom"></div>
+<script>
+  const rootElement = document.getElementById("root-dom")
+  // type d'élément
+  const paragraphEl = document.createElement("p")
+  // contenu textuel
+  paragraphEl.textContent = "Hello World"
+  // ajouter des classes
+  paragraphEl.classList.add("bg-danger", "text-white")
+  rootElementDom.append(paragraphEl)
+<script>
+```
+
+
+```html
+<!-- Approche React -->
+<div class="container" id="root"></div>
+<script src="https://unpkg.com/react/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+<script>
+const rootElement = document.getElementById("root");
+const paragraphEl = React.createElement(
+  "p", // type d'élément
+  {
+    className: "bg-danger text-white" // ajouter des classes
+  },
+  "Hello World" // contenu textuel
+);
+ReactDOM.render(paragraphEl, rootElement);
+</script>
+```
+
+https://codepen.io/alyra/pen/PoNGGJM
+
+Pour résumer voici comment créer et l'insérer un élément React :
 
 ```javascript
 // créer un élément
@@ -24,15 +82,8 @@ ReactDOM.render(
   domContainer // DOM Element
 )
 ```
-
-Commençons notre aventure avec React par la comparaison de deux approches :
-
- - création d'interface utilisateur avec DOM
- - création d'interface utilisateur avec React et ReactDOM
  
-[[[pen slug-hash='PoNGGJM' height='300' theme-id='1']]]
- 
-# Exemples
+## Exemples
 
 ```javascript
 const element = React.createElement("p")
@@ -40,15 +91,31 @@ ReactDOM.render(element, document.getElementById("root"))
 // <p></p>
 ```
 
+
 ```javascript
 const element = React.createElement(
   "h1",
-  null, // ou {}
+  null, // on met null ou {} si nous n'avons pas de props à passer
   "Je suis le titre"
 )
 ReactDOM.render(element, document.getElementById("root"))
 // <h1>Je suis le titre</h1>
 ```
+
+L'exemple précédent peut être reécrit comme ceci :
+
+```javascript
+const element = React.createElement(
+  "h1",
+  {
+    children: "Je suis le titre"
+  }
+)
+ReactDOM.render(element, document.getElementById("root"))
+// <h1>Je suis le titre</h1>
+```
+
+---
 
 ```javascript
 const element = React.createElement(
@@ -64,6 +131,8 @@ ReactDOM.render(element, document.getElementById("root"))
 // <h1 class="display-1" lang="en" id="top">Hello World!</h1>
 ```
 
+ou :
+
 ```javascript
 const element = React.createElement(
   "h1",
@@ -78,6 +147,8 @@ ReactDOM.render(element, document.getElementById("root"))
 // <h1 class="display-1" lang="en" id="top">Hello World!</h1>
 ```
 
+---
+
 ```javascript
 const element = React.createElement(
   "p",
@@ -91,6 +162,8 @@ ReactDOM.render(element, document.getElementById("root"))
 // <p class="lead">Bonjour le Monde ! Notre aventure avec React commence.</p>
 ```
 
+ou
+
 ```javascript
 const element = React.createElement(
   "p",
@@ -102,6 +175,8 @@ const element = React.createElement(
 ReactDOM.render(element, document.getElementById("root"))
 // <p class="lead">Bonjour le Monde ! Notre aventure avec React commence.</p>
 ```
+
+---
 
 ```javascript
 const element = React.createElement(
@@ -123,15 +198,20 @@ ReactDOM.render(element, document.getElementById("root"))
 */
 ```
 
-# ReactDOM.render
+## Réconciliation
 
-[[[pen slug-hash='PoNZvgd' height='300' theme-id='1']]]
+Que se passe quand on appelle la méthode `ReactDOM.render` lorsque l'élément React est déjà inséré dans le container ?
+Au lieu de remplacer le contenu du container, `ReactDOM.render` procédé à une "mise à jour". Au lieu de recréer tous les noeuds, `ReactDOM.render` utilise un algorithme de comparaison (*diffing algorithm*). Par conséquent, le DOM est modifié uniqument là où c’est strictement nécessaire. Si l'élément React n'a pas changé, le DOM ne sera pas modifié.
 
-Si l’élément React était déjà affiché dans container, `ReactDOM.render` utilise un algorithme de différence DOM de React (diffing algorithm) afin de modifier le DOM uniqument où c’est strictement nécessaire pour refléter la mise à jour de l’élément React.
+Vous pouvez observer ce fonctionnement dans le pen suivant
+
+https://codepen.io/alyra/pen/PoNZvgd
+
+À ce stade, il n'est pas nécessaire de comprendre comment l’algorithme de comparaison fonctionne en détail, mais si cela vous intéresse, vous pouvez trouver plus de détails [dans la documentattion](https://fr.reactjs.org/docs/reconciliation.html)
 
 # React.Fragment
 
-Dans tous les exemples ci-dessus, nous avant **un** élément parent qui a un ou plusieurs noeuds enfants. Afin d'avoir des "siblings" (👭) nous devons utiliser `React.Fragment`, un conteneur sans type ni attribut. Un conteneur phantôme 👻
+Dans tous les exemples ci-dessus, nous avons **un seul** élément parent qui a un ou plusieurs noeuds enfants. Afin d'avoir des "siblings" (👭) nous devons utiliser `React.Fragment`, un conteneur sans type ni attribut. Un conteneur phantôme 👻
 
 ```javascript
 const element = React.createElement(
@@ -146,7 +226,7 @@ const element = React.createElement(
 */
 ```
 
-on peut bien sûr affecter des éléments React aux variables
+Ceci peut être re-écrit comme ci-dessous, en affectant des éléments React aux variables :
 
 ```javascript
 const h1 = React.createElement(
@@ -166,6 +246,14 @@ const element = React.createElement(
   p
 )
 /*
+const element = React.createElement(
+  React.Fragment,
+  {
+    children: [h1, p]
+  }
+)
+*/
+/*
 <h1 lang="en">Hello World!</h1>
 <p class="subtitle">Les premiers mots d'un logiciel</p>
 */
@@ -175,17 +263,20 @@ const element = React.createElement(
 **Petite digression :** En fait, [*fragment* existe aussi dans le DOM.](https://developer.mozilla.org/fr/docs/Web/API/DocumentFragment) Voici un exemple de son utilité :
 
 ```javascript
-const ul = document.getElementById("my-shopping-list")
+// cryptoCurrencies - un array de 5000 éléments
+const ul = document.getElementById("my-crypto-currencies")
 const fragment = document.createDocumentFragment()
-for (let item of ['miel', 'sel', 'cumin', 'curry']) {
+for (let crypto of cryptoCurrencies) {
   const li = document.createElement('li')
-  li.textContent = item
-  // ul.append(li) <- pas comme ceci puisque layout est "recalculé" à chaque passage de la boucle 
-  fragment.append(li) // n'affecte pas le layout
+  li.textContent = crypto
+  // ul.append(li) <- provoque reflow 
+  fragment.append(li) // pas de reflow
 }
 
-ul.append(fragment) // yes ! tous les nouveaux noeuds sont ajoutés une seule fois
+ul.append(fragment) // reflow, tous les nouveaux noeuds sont ajoutés une seule fois (👍)
 ```
+
+Dans l'exemple ci-dessus, grâce au *fragment*, on a économisé l'utilisation de la méthode `append` qui provoque l'opération de *reflow* dans le navigateur. À chaque *reflow*, le navigateur recalcule et redessine la page. Avec *fragment*, nous allons provoqué un seul *reflow*, au lieu de 5000 de *reflows* potentiels.
 
 ## Les attributs
 
@@ -204,8 +295,7 @@ const element = React.createElement(
 ```
 
 
-
-- on ne l'utilise pas l'attribut HTML `for` (`label`) mais 'htmlFor`
+- on ne l'utilise pas l'attribut HTML `for` (`label`) mais `htmlFor`
 
 ```javascript
 React.createElement(
@@ -232,10 +322,7 @@ const element = React.createElement(
 );
 ```
 
-**Attention** 
-
-- aux nom des propriétés en camelCase et les valeurs avec des guillemets
-- `!important` ne marche pas avec le style inline dans React
+Faites attention aux nom des propriétés en camelCase et les valeurs avec des guillemets (!) Sachez aussi que la directive `!important` ne marche pas avec le style inline dans React.
 
 ---
 

@@ -137,7 +137,7 @@ const element = <span>{null}</span>
 // <span></span>
 ```
 
-### &&
+### Symbole &&
 
 Les expressions boléennes peuvent être utilisées afin d'afficher un rendu selon une condition. En particulier `&&` est souvent utilisé dans JSX.
 
@@ -176,7 +176,7 @@ const element = (
 */
 ```
 
-## conditions ternaires
+### Conditions ternaires
 
 ```javascript
 const lang = "en"

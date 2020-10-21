@@ -34,7 +34,7 @@ const element = <h1>Hello {capitalize(name)}</h1>
 
 **Attention:** On peut de cette façon intégrer uniquement des **expressions** JavaScript. On ne peut pas écrire n'importe quel code js entre les accolades.
 
-Exemples **valides** :
+Exemples **valides** ✅ :
 
 ```javascript
 <div id={myVariable}>
@@ -44,7 +44,7 @@ Exemples **valides** :
 </div>
 ```
 
-Exemples **pas valides** :
+Exemples **pas valides** 🚫 :
 
 ```javascript
 <div id={const myVariable = 'top'}>
@@ -52,7 +52,7 @@ Exemples **pas valides** :
 </div>
 ```
 
-**Attention** aux apostrophes, si on aujoute des apoststrophes autour des accolades, l'ensemble est traité en tant que `string`. Voici un exemple de l'utiliation erronée :
+**Attention** aux apostrophes, si on aujoute des aposttrophes autour des accolades, l'ensemble est traité en tant que `string`. Voici un exemple de l'utiliation erronée :
 
 ```javascript
 const lang = "en"
@@ -72,41 +72,50 @@ const element = <h1 lang={lang}>Hello World!</h1>` // ✅
 
 JSX est aussi une expression JavaScript.
 
-# Espaces vides
-
 ```javascript
-const element = (
-  <p>
-    Les composants vous permettent de découper l’interface utilisateur en
-    éléments indépendants et réutilisables,{" "}
-    <strong>
-      vous permettant ainsi de considérer chaque élément de manière isolée
-    </strong>
-  </p>
-)
+const bold = true
+const element = <h1>{bold ? <b>texte important</b> : <span>texte</span>}</h1>` // ✅
+
+// <h1 lang="en">Hello World!</h1>
 ```
 
-Cette espace vides `{" "}` vient d'être ajoutée par Prettier quand j'ai sauvegardé le code
-
-```javascript
-const element = (
-  <p>
-    Les composants vous permettent de découper l’interface utilisateur en
-    éléments indépendants et réutilisables,{" "}
-    <strong>
-      vous permettant ainsi de considérer chaque élément de manière isolée
-    </strong>
-  </p>
-)
-```
-
-On peu voir le rendu [sans `{" "}` ici.](https://codepen.io/alyra/pen/OJNxRJV)
-
-![](https://assets.codepen.io/4515922/spaces.png)
+## Espaces vides
 
 JSX supprime les espaces en début et en fin de ligne. Il supprime également les lignes vides. Les sauts de lignes adjacents aux balises sont retirés.
 
-# Boolean expressions et conditional rendering
+```javascript
+const element = (
+  <p>
+    Les composants vous permettent de découper l’interface utilisateur en
+    éléments indépendants et réutilisables,{" "}
+    <strong>
+      vous permettant ainsi de considérer chaque élément de manière isolée.
+    </strong>
+  </p>
+)
+```
+
+Cette espace vides `{" "}` vient d'être ajoutée par Prettier (l'extension de l'éditeur qui formate le code) quand j'ai sauvegardé le code suivant :
+
+```javascript
+const element = (
+  <p>
+    Les composants vous permettent de découper l’interface utilisateur en
+    éléments indépendants et réutilisables,
+    <strong>
+      vous permettant ainsi de considérer chaque élément de manière isolée.
+    </strong>
+  </p>
+)
+```
+
+Dans ce cas Prettier "force" l'utilisation d'une espace entre "réutilisables," et "<strong>".
+
+Vous pouvez voir le rendu [sans `{" "}` ici.](https://codepen.io/alyra/pen/OJNxRJV)
+
+![](https://assets.codepen.io/4515922/spaces.png)
+
+## Expressions boléennes et conditional rendering
 
 Les expressions boléennes, ainsi que `undefined` et `null` ne génére pas de rendu :
 
@@ -116,19 +125,36 @@ const element = <span>{age >= 10}</span>
 // <span></span>
 ```
 
-## &&
+```javascript
+const age = 10
+const element = <span>{undefined}</span>
+// <span></span>
+```
 
-Les expressions boléennes peuvent être utilisées afin d'afficher un rendu selon une condition :
+```javascript
+const age = 10
+const element = <span>{null}</span>
+// <span></span>
+```
+
+### &&
+
+Les expressions boléennes peuvent être utilisées afin d'afficher un rendu selon une condition. En particulier `&&` est souvent utilisé dans JSX.
 
 ```javascript
 const name = "Alyra"
 const element = (
   <header>
     <h1>Bienvenue</h1>
-    {name.length > 0 && <p>Notre école s'appelle {name}</p>}
-    {/* !!name && <p>Notre école s'appelle {name}</p> */}
+    {!!name && <p>Notre école s'appelle {name}</p>}
   </header>
 )
+/*
+<header>
+  <h1>Bienvenue</h1>
+  <p>Notre école s'appelle Allyra</p>
+</header>
+*/
 ```
 
 ```javascript

@@ -6,7 +6,7 @@ JSX permet de faire un mixte de la structure HTML et des expressions JavaScript.
 
 ---
 
-Pour rappel : **une expression JavScript** est un un code qui donne une valeur en tant que le résultat. Autrement dit , expression js est un bout de code qui pourrait se trouver à droite d'un symbole `=`.
+Pour rappel : **une expression JavScript** est un un code qui donne une valeur en tant que le résultat. Autrement dit, l'expression js est un bout de code qui pourrait se trouver à droite d'un symbole `=`.
 
 ---
 
@@ -52,7 +52,7 @@ Exemples **pas valides** 🚫 :
 </div>
 ```
 
-**Attention** aux apostrophes, si on aujoute des aposttrophes autour des accolades, l'ensemble est traité en tant que `string`. Voici un exemple de l'utiliation erronée :
+**Attention** aux apostrophes, si on aujoute des apostrophes autour des accolades, l'ensemble est traité en tant que `string`. Voici un exemple de l'utiliation erronée :
 
 ```javascript
 const lang = "en"
@@ -61,7 +61,7 @@ const element = <h1 lang="{lang}">Hello World!</h1>` // 🚫
 // <h1 lang="{lang}">Hello World!</h1>
 ```
 
-versus l'utilisation correct :
+versus l'utilisation correcte :
 
 ```javascript
 const lang = "en"
@@ -95,7 +95,7 @@ const element = (
 )
 ```
 
-Cette espace vides `{" "}` vient d'être ajoutée par Prettier (l'extension de l'éditeur qui formate le code) quand j'ai sauvegardé le code suivant :
+Cette espace vide `{" "}` que vous voyez dans le code ci-dessus, vient d'être ajoutée par _Prettier_ (l'extension de l'éditeur qui formate le code) quand j'ai sauvegardé le code suivant :
 
 ```javascript
 const element = (

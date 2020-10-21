@@ -7,20 +7,19 @@
 Imaginons que nous souhaitons mettre en place un catalogue des écoles. Nous commencons à reunisser des données
 
 ```javascript
-const mySchools = [
-  {
-    name: "Alyra",
-    link: "https://alyra.fr",
-    description:
-      "Une école au coeur de la blockchain. Fondée par des passionés et ouverte à toutes et tous.",
-  },
-  {
-    name: "Simplon",
-    link: "https://simplon.co",
-    description:
-      "Un réseau de Fabriques solidaires et inclusives qui proposent des formations gratuites aux métiers techniques du numérique.",
-  },
-]
+const Alyra = {
+  name: "Alyra",
+  link: "https://alyra.fr",
+  description:
+    "Une école au coeur de la blockchain. Fondée par des passionés et ouverte à toutes et tous.",
+}
+
+const Simplon = {
+  name: "Simplon",
+  link: "https://simplon.co",
+  description:
+    "Un réseau de Fabriques solidaires et inclusives qui proposent des formations gratuites aux métiers techniques du numérique.",
+}
 ```
 
 Voici comment nous souhaitons afficher l'information sur Alyra :
@@ -94,8 +93,8 @@ const school = (props) => {
 const element = (
   <section className="container">
     <h1 className="my-3 text-center">Ma liste des écoles à recommander</h1>
-    {school(mySchools[0])}
-    {school(mySchools[1])}
+    {school(Alyra)}
+    {school(Simplon)}
   </section>
 )
 
@@ -106,18 +105,20 @@ On y est presque. Avec React nous pouvons aller plus loin. Nous pouvons créer n
 
 Voici ce que nous voudrons pouvoir écrire :
 
-```
+```javascript
 const element = (
   <section className="container">
     <h1 className="my-3 text-center">Ma liste des écoles à recommander</h1>
     <School name="Alyra" link="https://alyra.fr">
-      Une école au coeur de la blockchain. Fondée par des passionés et ouverte à toutes et tous.
+      Une école au coeur de la blockchain. Fondée par des passionés et ouverte à
+      toutes et tous.
     </School>
     <School name="Simplon" link="https://simplon.co">
-      Un réseau de Fabriques solidaires et inclusives qui proposent des formations gratuites aux métiers techniques du numérique.
+      Un réseau de Fabriques solidaires et inclusives qui proposent des
+      formations gratuites aux métiers techniques du numérique.
     </School>
   </section>
-);
+)
 ```
 
 ### Comment alors créer un component ?
@@ -290,7 +291,7 @@ const SchoolLink = ({ name, link }) => {
 }
 ```
 
-# return
+## return
 
 Component doit retourner quelque chose, par exemple élément React, un number, un string, un boolean ou `null`, un array ou un React.Fragment.
 

@@ -1,8 +1,6 @@
 # JSX (1)
 
-:
-
-> Mais en quoi, `React.createElement` nous facilite la vie ? ... on dirait le contraire... ?
+> Mais en quoi, `React.createElement` nous facilite la vie ? ... on dirait le contraire... ?ga
 
 Si vous vous posez cette question, je pense que c'est un reflèxe tout à fait légitime. Créer les structures plus complèxes demande beaucoup de code, qui n'est pas forcement très lisible.
 

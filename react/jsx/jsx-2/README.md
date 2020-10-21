@@ -1,44 +1,50 @@
-# JSX - 2
+# JSX (2) - Syntaxe avancée
 
-# Expressions JavaScript
+## Expressions JavaScript
 
-JSX permet de faire un mixte de la structure HTML et des expressions JavaScript. Expressions JavaScript sont intégrées entre des accolades (ceci ressemble un peu aux *template literals*)
+JSX permet de faire un mixte de la structure HTML et des expressions JavaScript. Expressions JavaScript sont intégrées entre des accolades (ceci ressemble un peu aux _template literals_).
 
-JSX est aussi une expression JavaScript.
+---
+
+Pour rappel : une expression est un un code qui donne une valeur en tant que le résultat. Autrement dit , expression js est un bout de code qui pourrait se trouver à droite d'un symbole `=`.
+
+---
 
 ```javascript
 const element = <p>Vous avez {10 + 1} notifications.</p>
-// HTML <p>Vous avez 11 notifications.</p>
+// <p>Vous avez 11 notifications.</p>
 ```
 
 ```javascript
 const lang = "en"
-const element = <h1 lang={lang}>{lang === "en" ? 'Hello World!' : 'Bonjour le Monde !'}</h1>
-// HTML <h1 lang="en">Hello World!</h1>
+const element = (
+  <h1 lang={lang}>{lang === "en" ? "Hello World!" : "Bonjour le Monde !"}</h1>
+)
+// <h1 lang="en">Hello World!</h1>
 ```
 
 ```javascript
 function capitalize(string) {
-  return string[0].toUpperCase() + string.slice(1).toLowerCase();
+  return string[0].toUpperCase() + string.slice(1).toLowerCase()
 }
 const name = "paulIna"
 const element = <h1>Hello {capitalize(name)}</h1>
 // <h1>Hello Paulina</h1>
 ```
 
-On peut alors intégrer une expression JavaScript, mais attention - ceci ne veut pas dire qu'on peut écrire n'importe quel code js entre les accolades. Ceci doit être une expression - un code qui donne une valeur en tant que le résultat.
+** Attention: ** On peut de cette façon intégrer uniquement des **expressions** JavaScript. On ne peut pas écrire n'importe quel code js entre les accolades.
 
-Exemples valides :  
+Exemples **valides** :
 
 ```javascript
 <div id={myVariable}>
-  <h2>{array.length ? 'Les résultats :' : 'Pas de résultats'}</h2>
-  <p>{2**16}</p>
-  <p>{myFunction()}</p>  
+  <h2>{array.length ? "Les résultats :" : "Pas de résultats"}</h2>
+  <p>{2 ** 16}</p>
+  <p>{myFunction()}</p>
 </div>
 ```
 
-Exemples **pas valides** :  
+Exemples **pas valides** :
 
 ```javascript
 <div id={const myVariable = 'top'}>
@@ -46,15 +52,25 @@ Exemples **pas valides** :
 </div>
 ```
 
-Autrement dit, une expression est un bout de code qui pourrait se trouver à droite d'un symbole `=`.
-
-**Attention** aux apostrophes, si on les aujoute autour des accolades, celles-ci sont interpretées en tant que `string` : 
+**Attention** aux apostrophes, si on aujoute des apoststrophes autour des accolades, l'ensemble est traité en tant que `string`. Voici un exemple de l'utiliation erronée :
 
 ```javascript
-const element = <h1 lang="{lang}">Hello World!</h1>`
+const lang = "en"
+const element = <h1 lang="{lang}">Hello World!</h1>` // 🚫
 
 // HTML -> <h1 lang="{lang}">Hello World!</h1>
 ```
+
+versus l'utilisation correct :
+
+```javascript
+const lang = "en"
+const element = <h1 lang={lang}>Hello World!</h1>` // ✅
+
+// HTML -> <h1 lang="en">Hello World!</h1>
+```
+
+JSX est aussi une expression JavaScript.
 
 # Espaces vides
 
@@ -67,23 +83,24 @@ const element = (
       vous permettant ainsi de considérer chaque élément de manière isolée
     </strong>
   </p>
-);
+)
 ```
 
-Cette espace vides `{" "}` vient d'être ajoutée par Prettier quand j'ai sauvegardé le code 
+Cette espace vides `{" "}` vient d'être ajoutée par Prettier quand j'ai sauvegardé le code
 
 ```javascript
 const element = (
   <p>
     Les composants vous permettent de découper l’interface utilisateur en
-    éléments indépendants et réutilisables, <strong>
+    éléments indépendants et réutilisables,{" "}
+    <strong>
       vous permettant ainsi de considérer chaque élément de manière isolée
     </strong>
   </p>
-);
+)
 ```
 
-On peu voir le rendu [sans `{" "}` ici.](https://codepen.io/alyra/pen/OJNxRJV) 
+On peu voir le rendu [sans `{" "}` ici.](https://codepen.io/alyra/pen/OJNxRJV)
 
 ![](https://assets.codepen.io/4515922/spaces.png)
 
@@ -109,16 +126,15 @@ const element = (
   <header>
     <h1>Bienvenue</h1>
     {name.length > 0 && <p>Notre école s'appelle {name}</p>}
-    { /* !!name && <p>Notre école s'appelle {name}</p> */ }
+    {/* !!name && <p>Notre école s'appelle {name}</p> */}
   </header>
 )
 ```
 
-
 ```javascript
-const alien =  {
+const alien = {
   age: 100,
-  name: "Deej"
+  name: "Deej",
 }
 const element = (
   <section>
@@ -138,7 +154,7 @@ const element = (
 
 ```javascript
 const lang = "en"
-const element = <h1 lang={lang}>{lang === "fr" ? 'Bienvenue' : 'Welcome'}</h1>
+const element = <h1 lang={lang}>{lang === "fr" ? "Bienvenue" : "Welcome"}</h1>
 ```
 
 ```javascript
@@ -147,10 +163,11 @@ const length = shoppingList.length
 const element = (
   <section>
     <h2>Shopping List</h2>
-    {length 
-      ? <p>Vous avez {length} articles à acheter</p>
-      : <p>Avez-vous besoin de quelque-chose ?</p>
-    }
+    {length ? (
+      <p>Vous avez {length} articles à acheter</p>
+    ) : (
+      <p>Avez-vous besoin de quelque-chose ?</p>
+    )}
   </section>
 )
 ```
@@ -174,7 +191,7 @@ const props = {
 }
 const element = <h1 className="display-4" {...props} lang="fr">Bonjour le Monde</h1>
 
-/* 
+/*
 React.createElement(
   "h1",
   Object.assign({className: "display-4"}, props, { lang: "fr" }},
@@ -197,7 +214,7 @@ React.createElement(
 # Arrays
 
 ```javascript
-const shoppingList = ["miel", "sucre", "cumin", "curry"];
+const shoppingList = ["miel", "sucre", "cumin", "curry"]
 
 /* const element = (
   <ul>
@@ -216,15 +233,15 @@ const element = (
       <li key={el}>{el}</li>
     ))}
   </ul>
-);
+)
 ```
 
 ```javascript
 const definitions = [
-  {term: 'React', description: 'une librarie JavaScript'},
-  {term: 'JSX', description: 'une extension syntaxique de JavaScript'},
-  {term: 'Gatsby', description: 'un framework basé sur React'} 
-];
+  { term: "React", description: "une librarie JavaScript" },
+  { term: "JSX", description: "une extension syntaxique de JavaScript" },
+  { term: "Gatsby", description: "un framework basé sur React" },
+]
 
 const element = (
   <dl>
@@ -234,10 +251,10 @@ const element = (
           <dt>{el.term}</dt>
           <dd>{el.description}</dd>
         </React.Fragment>
-      );
+      )
     })}
   </dl>
-);
+)
 ```
 
 [[[pen slug-hash='MWyvGRZ' height='300' theme-id='1']]]
@@ -246,21 +263,12 @@ const element = (
 
 ## Exercices
 
-  - [JSX expression - hello](https://codepen.io/alyra/pen/qBZXEje) | [solution](https://codepen.io/alyra/pen/3e7e235fbb4c229a14585e3b8ef867df)
- - [JSX - espressions - logged-in](https://codepen.io/alyra/pen/RwaZNaW) | [solution](https://codepen.io/alyra/pen/43004448ad3a73d223d7f1c1eb6598e7)
- - [JSX - espressions - notifications](https://codepen.io/alyra/pen/poyrvEa) | [solution](https://codepen.io/alyra/pen/bc89eb35101c603941bdae0a9b881dfb)
- - [JSX - espressions - notifications 1](https://codepen.io/alyra/pen/JjXyxjo) | [solution](https://codepen.io/alyra/pen/bdf636434aa83dde7e1e159b4e78dccc)
- - [JSX - notifications list](https://codepen.io/alyra/pen/YzqxMEP) | [solution](https://codepen.io/alyra/pen/f7801accec0de64a8473089fd051f25d)
- - [JSX - notifications title + list](https://codepen.io/alyra/pen/bGprJaW) | [solution](https://codepen.io/alyra/pen/10413263fabe4668bf815a7d2ad05ec8)
- - [JSX button](https://codepen.io/alyra/pen/YzqxoQO) | [solution](https://codepen.io/alyra/pen/d90868a92c92e2736befa9685f38a1e4)
- - [JSX title](https://codepen.io/alyra/pen/VwaMbMP) | [solution](https://codepen.io/alyra/pen/d90868a92c92e2736befa9685f38a1e4)
- - [JSX smoothie](https://codepen.io/alyra/pen/xxVXdWZ) | [solution](https://codepen.io/alyra/pen/40a70e8ed7e387d45c8a2581e15efc4d)
-
-
-
-
-
-
-
-
-
+- [JSX expression - hello](https://codepen.io/alyra/pen/qBZXEje) | [solution](https://codepen.io/alyra/pen/3e7e235fbb4c229a14585e3b8ef867df)
+- [JSX - espressions - logged-in](https://codepen.io/alyra/pen/RwaZNaW) | [solution](https://codepen.io/alyra/pen/43004448ad3a73d223d7f1c1eb6598e7)
+- [JSX - espressions - notifications](https://codepen.io/alyra/pen/poyrvEa) | [solution](https://codepen.io/alyra/pen/bc89eb35101c603941bdae0a9b881dfb)
+- [JSX - espressions - notifications 1](https://codepen.io/alyra/pen/JjXyxjo) | [solution](https://codepen.io/alyra/pen/bdf636434aa83dde7e1e159b4e78dccc)
+- [JSX - notifications list](https://codepen.io/alyra/pen/YzqxMEP) | [solution](https://codepen.io/alyra/pen/f7801accec0de64a8473089fd051f25d)
+- [JSX - notifications title + list](https://codepen.io/alyra/pen/bGprJaW) | [solution](https://codepen.io/alyra/pen/10413263fabe4668bf815a7d2ad05ec8)
+- [JSX button](https://codepen.io/alyra/pen/YzqxoQO) | [solution](https://codepen.io/alyra/pen/d90868a92c92e2736befa9685f38a1e4)
+- [JSX title](https://codepen.io/alyra/pen/VwaMbMP) | [solution](https://codepen.io/alyra/pen/d90868a92c92e2736befa9685f38a1e4)
+- [JSX smoothie](https://codepen.io/alyra/pen/xxVXdWZ) | [solution](https://codepen.io/alyra/pen/40a70e8ed7e387d45c8a2581e15efc4d)

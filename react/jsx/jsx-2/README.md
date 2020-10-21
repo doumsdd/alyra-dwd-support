@@ -6,7 +6,7 @@ JSX permet de faire un mixte de la structure HTML et des expressions JavaScript.
 
 ---
 
-Pour rappel : une expression est un un code qui donne une valeur en tant que le résultat. Autrement dit , expression js est un bout de code qui pourrait se trouver à droite d'un symbole `=`.
+Pour rappel : **une expression JavScript** est un un code qui donne une valeur en tant que le résultat. Autrement dit , expression js est un bout de code qui pourrait se trouver à droite d'un symbole `=`.
 
 ---
 
@@ -32,7 +32,7 @@ const element = <h1>Hello {capitalize(name)}</h1>
 // <h1>Hello Paulina</h1>
 ```
 
-** Attention: ** On peut de cette façon intégrer uniquement des **expressions** JavaScript. On ne peut pas écrire n'importe quel code js entre les accolades.
+**Attention:** On peut de cette façon intégrer uniquement des **expressions** JavaScript. On ne peut pas écrire n'importe quel code js entre les accolades.
 
 Exemples **valides** :
 
@@ -58,7 +58,7 @@ Exemples **pas valides** :
 const lang = "en"
 const element = <h1 lang="{lang}">Hello World!</h1>` // 🚫
 
-// HTML -> <h1 lang="{lang}">Hello World!</h1>
+// <h1 lang="{lang}">Hello World!</h1>
 ```
 
 versus l'utilisation correct :
@@ -67,7 +67,7 @@ versus l'utilisation correct :
 const lang = "en"
 const element = <h1 lang={lang}>Hello World!</h1>` // ✅
 
-// HTML -> <h1 lang="en">Hello World!</h1>
+// <h1 lang="en">Hello World!</h1>
 ```
 
 JSX est aussi une expression JavaScript.

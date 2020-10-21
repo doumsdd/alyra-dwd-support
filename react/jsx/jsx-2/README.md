@@ -178,6 +178,8 @@ const element = (
 
 ### Conditions ternaires
 
+Conditions ternaires sont également souvent utilisées avec JSX, voici quelques exemples :
+
 ```javascript
 const lang = "en"
 const element = <h1 lang={lang}>{lang === "fr" ? "Bienvenue" : "Welcome"}</h1>
@@ -198,16 +200,38 @@ const element = (
 )
 ```
 
-# Props spread
+## La syntaxe de décompositions aka props spread
 
-```
+Imaginons que nous avons plusieurs propriétés à passer à un élément. Ces propriétés sont regroupées dans un objet `props` comme ceci :
+
+```javascript
 const props = {
   lang: "en",
   id: "top",
-  className: "display-1"
+  className: "display-1",
 }
-const element = <h1 {...props}>Hello World</h1>
 ```
+
+Au lieu de passer propriété par propriété :
+
+```javascript
+const element = (
+  <h1 lang={props.lang} id={props.id} className={props.className}>
+    Hello World
+  </h1>
+)
+```
+
+nous pouvons utiliser la syntaxe de décomposition (_spread syntax_) `...`
+
+```javascript
+const element = <h1 {...props}>Hello World</h1>
+/*
+<h1 lang="en" id="top" class="display-1">Hello World</h1>
+*/
+```
+
+L'utilisation de _spread_ n'exclue pas l'ajout d'autres propriétés. Regardons l'exemple suivant :
 
 ```
 const props = {
@@ -216,42 +240,56 @@ const props = {
   className: "display-1"
 }
 const element = <h1 className="display-4" {...props} lang="fr">Bonjour le Monde</h1>
-
-/*
-React.createElement(
-  "h1",
-  Object.assign({className: "display-4"}, props, { lang: "fr" }},
-  Bonjour le Monde
-)
-React.createElement(
-  "h1",
-  Object.assign({className: "display-4"}, {lang: "en", id: "top", className: "display-1"}, { lang: "fr" }),
-  Bonjour le Monde
-)
-React.createElement(
-  "h1",
-  {className: "display-1", lang: "fr", id: "top"},
-  Bonjour le Monde
-)
-*/
-// HTML <h1 class="display-1" lang="fr" id="top">Bonjour le Monde</h1>
 ```
 
-# Arrays
+Est-ce correct ? Tout à fait ! Quels sera son rendu ?
+
+Afin de répondre à cette question, regardons sous le capot de babel, ou plutôt en quoi ce code est compilé.
+
+```javascript
+React.createElement(
+"h1",
+Object.assign({className: "display-4"}, props, { lang: "fr" }),
+Bonjour le Monde
+)
+```
+
+Nous devons alors répondre à la question suivante : Quel est le resultat de `Object.assign({className: "display-4"}, props, { lang: "fr" })`
+
+```javascript
+Object.assign({className: "display-4"}, props, { lang: "fr" })
+//
+Object.assign({className: "display-4"}, {lang: "en", id: "top", className: "display-1"}, { lang: "fr" })
+// -> valeurs à droite l'emportent sur celles a gauches
+{className: "display-1", lang: "fr", id: "top"}
+```
+
+Le rendu HTML sera alors
+
+```html
+<h1 class="display-1" lang="fr" id="top">Bonjour le Monde</h1>
+```
+
+## Arrays
+
+Souvent le contenu que nous devons rendre sur la page nous parvient structure dans un _array_.
+JSX permet de rendre un _array_
 
 ```javascript
 const shoppingList = ["miel", "sucre", "cumin", "curry"]
 
-/* const element = (
+const element = (
   <ul>
-    {[
-      <li>miel</li>,
-      <li>sucre</li>,
-      <li>cumin</li>,
-      <li>curry</li>
-     ]}
+    {shoppingList}
   </ul>
-);*/
+)
+*/
+```
+
+Le code ci-dessus fonctionnera mais, le rendu ne sera pas correcte. Nous devons convertir chaque élément de notre `shoppingList` en un élément `li`. Pour ceci, nous allons utiliser la méthode `map`
+
+```javascript
+const shoppingList
 
 const element = (
   <ul>
@@ -261,6 +299,49 @@ const element = (
   </ul>
 )
 ```
+
+### Attribut spécial `key`
+
+Chaque élément d'un array devrait avoir un attribut `key` avec des valeurs uniques, une omission de cette attribut provoquera un warning dans la console. Ceci permet au React d'effectuer correctement et efficacement son algorithme de comparaison (_diffing algorithm_).
+
+https://codepen.io/alyra/pen/MWyvGRZ
+
+Ici nous pouvons comparer 2 listes, une avec des attributs `key` (👍), l'autre sans (👎). Ouvrez DevTools et observez comment chaque de ces 2 listes est re-rendue. Dans le cas 👍, les quatres éléments `<li>...</li>` ne sont pas re-rendus. Dans le ca 👎, à chaque `ReactDOM.render` tous les éléments `<li>...</li>` sont "rafaits" à nouveau.
+
+https://wptemplates.pehaa.com/assets/alyra/shopping-list.mp4
+
+### Exemples avec `.map` et `key`
+
+- article, titre et contenu
+
+```
+const mySchools = [
+  {
+    name: "Alyra",
+    description: "Une école au coeur de la blockchain. Fondée par des passionés et ouverte à toutes et tous."
+  },
+  {
+    name: "Simplon",
+    description: "Un réseau de Fabriques solidaires et inclusives qui proposent des formations gratuites aux métiers techniques du numérique."
+  }
+]
+
+const element = (
+  <section>
+    <h1>Mes écoles à recommander</h1>
+    {mySchools.map(school => {
+      return (
+        <article key={school.name}>
+          <h2>{school.name}</h2>
+          <p>{school.description}</p>
+        </article>
+      )
+    })}
+  </section>
+)
+```
+
+- avec `React.Fragment`
 
 ```javascript
 const definitions = [
@@ -283,7 +364,7 @@ const element = (
 )
 ```
 
-[[[pen slug-hash='MWyvGRZ' height='300' theme-id='1']]]
+Dans le cas comme ceci, on est obligé d'utiliser `<React.Fragment>` plutôt que `<>`. Il est impossible d'attribuer `key` à `<>`.
 
 ---
 

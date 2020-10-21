@@ -8,7 +8,7 @@ Je pense que c'est un reflèxe tout à fait légitime. Créer les structures plu
 
 Heureusement, **JSX** nous vient à la rescousse !
 
-JSX - l'abbreviation venant de JavaScript XML, est une extension syntaxique de JavaScript, créée par des dévelopeurs de React et recommandée par React. Comme indiqué dans la documentation : *fondamentalement, JSX fournit juste du sucre syntaxique pour la fonction `React.createElement`*. Pourtant c'est un vrai *game changer* pour nous, des dévéloppeurs.
+**JSX** est une extension syntaxique de JavaScript, créée par des dévelopeurs de React et recommandée par React. Comme indiqué dans la documentation : *fondamentalement, JSX fournit juste du sucre syntaxique pour la fonction `React.createElement`*. Pourtant c'est un vrai *game changer* pour nous, des dévéloppeurs.
 
 Regardons le code qui nous génére la petite mémo sur les pandas roux.
 
@@ -112,13 +112,17 @@ const element = React.createElement(
 ---
 
 
-## babel
+## BABEL
 
-Vous vous rappelez de sass ? nous avons dit que sass est une extension de css. Le navigateur ne comprend pas sass et le code sass doit passer par le compilateur et être transformé en css. C'est pareil pour JSX, les navigateurs ne comprennent pas cette syntaxe. Comme pour sass, nous devons utiliser un compilateur, et nous allons utiliser [**babel**](https://babeljs.io).
+Vous vous rappelez de Sass ?  
+Nous avons dit que Sass est une extension de CSS. Le navigateur ne comprend pas Sass. Le code Sass doit passer par le compilateur et être transformé en css. C'est pareil pour JSX, les navigateurs ne comprennent pas cette syntaxe. Comme pour Sass, nous devons utiliser un compilateur, et nous allons utiliser [**babel**](https://babeljs.io).
 
-- [babel on-line demo](https://babeljs.io/en/repl#?browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=MYewdgzgLgBApgGzgWzmWBeGAeAFgRgD4AJRBEGAdRACcEATbAegMKA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=react&prettier=false&targets=&version=7.7.4&externalPlugins=)
+### Comment utiliser Babel ?
 
-- utiliser *standalone* babel et `<script type="text/babel">`
+
+1. Vous pouvez essayer le fonctionnement de babel directement en ligne avec cette [**demo**](https://babeljs.io/en/repl#?browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=MYewdgzgLgBApgGzgWzmWBeGAeAFgRgD4AJRBEGAdRACcEATbAegMKA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=react&prettier=false&targets=&version=7.7.4&externalPlugins=) qui fait partie du site web officiel
+
+2. Afin d'ajouter babel dans un de vos projets, vous pouvez opter pour la solution babel *standalone* babel. Vous devez alors inclure le fichier source de babel, disponible par exemple ici `https://unpkg.com/@babel/standalone/babel.js`.  Ensuite dans le script dans lequel vous souhaitez activer babel, ajoutez l'attribut `type="text/babel"`. Voici un exemple :
 
 ```html
 <div id="root"></div>
@@ -126,21 +130,27 @@ Vous vous rappelez de sass ? nous avons dit que sass est une extension de css. L
 <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
 <script type="text/babel">
-// javascript avec jsx vient ici
+// vous pouvez profiger de jsx ici !!!
 </script>
 ```
 
-- babel est directement disponible dans CodePen > JS > JavaScript Preprocessors > Babel. Nous allons souvent l'utiliser avec la feuille de style de bootstrap 5 - [voici une template](https://codepen.io/pen/?template=bGpwWNB)
+3. On aurait pu opter pour la solution précédente pour mettre en place babel dans nos pens sur CodePen. Mais ceci n'est pas nécessaire. En fait, babel est directement disponible dans CodePen. Pour l'activer, clickez sur les réglages de JavaScript et choisissez Babel dans JavaScript Preprocessors. 
 
-- configuration inclue dans les starters (on vera ça bientôt)
+https://wptemplates.pehaa.com/assets/alyra/babel.mp4
 
-## toutes les balises sont obligatoirement fermées (xml-style)
+4. À un moment donné, nous allons commencer à utiliser [CRA](https://fr.reactjs.org/docs/create-a-new-react-app.html) - un *starter* pour des applications web monopage recommandé par React - babel et toute la configuration seront inclus 💫.
+
+## Syntaxe JSX (1)
+
+### Toutes les balises sont obligatoirement fermées (xml-style)
 
 Dans HTML on peut se permettre de ne pas fermer des balises auto-fermantes (self-closing tags), tel que `<input>` ou `<img src="img1.jpg" alt="">`.  
 
-Ceci n'est pas correcte dans JSX, alors ce sera `<input />` et `<img src="img1.jpg" alt="" />`
+Ceci n'est pas correcte dans JSX, et provoquera une erreur.
 
-## React.Fragment
+La syntaxe correcte est `<input />` et `<img src="img1.jpg" alt="" />`
+
+### React.Fragment
 
 ```javascript
 element = (
@@ -151,7 +161,7 @@ element = (
 )
 ```
 
-ou 😍😍😍 :
+ou plus simplement :
 
 ```javascript
 element = (
@@ -162,13 +172,17 @@ element = (
 )
 ```
 
-## Commentaires
+### Commentaires
 
 ```javascript
-{ /* je suis un commentaire  */ }
+const element = (
+  <p>
+    { /* je suis un commentaire  */ }
+  </p>
+)
 ```
 
-## ReactDOM
+## ReactDOM.render et JSX
 
 On peut utiliser JSX directement avec `ReactDOM` :
 
@@ -178,7 +192,7 @@ ReactDOM.render(<h1>Hello World</h1>, root)
 
 ## React sans JSX
 
-[en lire plus](https://fr.reactjs.org/docs/react-without-jsx.html)
+JSX est juste une extension syntaxique, il n'est pas donc indispensable pour un projet React. Dans certain cas, on peut préférer pouvoir se passer d'un compilateur. Vous pouvez [en lire davantage dans cette article](https://fr.reactjs.org/docs/react-without-jsx.html)
 
 --- 
 

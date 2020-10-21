@@ -109,7 +109,7 @@ const element = (
 )
 ```
 
-Dans ce cas Prettier "force" l'utilisation d'une espace entre "réutilisables," et "<strong>".
+Dans ce cas Prettier "force" l'utilisation d'une espace entre "réutilisables," et "`<strong>`".
 
 Vous pouvez voir le rendu [sans `{" "}` ici.](https://codepen.io/alyra/pen/OJNxRJV)
 

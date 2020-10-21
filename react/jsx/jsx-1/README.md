@@ -192,7 +192,7 @@ ReactDOM.render(<h1>Hello World</h1>, root)
 
 ## React sans JSX
 
-JSX est juste une extension syntaxique, il n'est pas donc indispensable pour un projet React. Dans certain cas, on peut préférer pouvoir se passer d'un compilateur. Vous pouvez [en lire davantage dans cette article](https://fr.reactjs.org/docs/react-without-jsx.html)
+JSX est juste une extension syntaxique, il n'est pas donc indispensable pour un projet React. Dans certain cas, on peut préférer pouvoir se passer d'un compilateur. Vous pouvez [en lire davantage dans cette article.](https://fr.reactjs.org/docs/react-without-jsx.html)
 
 --- 
 

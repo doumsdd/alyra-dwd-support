@@ -1,11 +1,18 @@
 # Rendering _HTML from string_ dans React
 
+Souvent le contenu que nous affichons avec React provient d'une source tiers (api, base de données). Nous les récupperons en tant qu'un objet, par exemple :
+
 ```javascript
 const alyra = {
   name: "Alyra",
+  link: "https://alyra.fr",
   description: `<p>Une école <strong>au coeur de la blockchain.</strong> Fondée par des passionés et ouverte à toutes et tous.</p>`,
 }
+```
 
+Dans ce cas là, `name`, `link`, `description` sont en format `string`. Le clés `description` contiennent les balises HTML. Insérer des balises HTML d'une source tiers est une opération à risque, exposant notre application aux attaques XSS. Pour nous protéger contre ceci, React échappe toutes les balises HTML. Regardons ce que ça veut dire en pratique.
+
+```javascript
 const School = (props) => {
   const { name, children } = props
   return (
@@ -25,7 +32,7 @@ ReactDOM.render(<App />, document.getElementById("root"))
 
 ![](https://assets.codepen.io/4515922/alyrahtmlstring.png)
 
-**Problème** : Description est recupérée depuis le string dans `alyra.description`. Pour des raisons de sécurité toutes les balises sont converties en string.
+Voici notre **problème** : Description est recupérée depuis le string dans `alyra.description`. Pour des raisons de sécurité toutes les balises sont converties en string.
 
 ```javascript
 const htmlString = `<h1>Je suis un string <b>avec HTML !</b></h1>`
@@ -34,10 +41,10 @@ const App = () => <div>{htmlString}</div>
 
 ![](https://assets.codepen.io/4515922/htmlstring.png)
 
-## dangerouslySetInnerHTML
+## Solution (1) - dangerouslySetInnerHTML
 
-Afin de rendre le string en format HTML, nous pouvons utiliser `dangerouslySetInnerHTML`.  
-`dangerouslySetInnerHTML` est l’équivalent React de `innerHTML` dans le DOM.
+Afin de rendre le string en format HTML, nous pouvons utiliser l'attribut `dangerouslySetInnerHTML`.  
+Nous pouvons comparer `dangerouslySetInnerHTML` à `innerHTML` dans le DOM.
 
 ```javascript
 const htmlString = `<h1>Je suis un string <b>avec HTML !</b></h1>`
@@ -71,11 +78,13 @@ const App = () => {
 ReactDOM.render(<App />, document.getElementById("root"))
 ```
 
-[[[pen slug-hash='WNwXNmv' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/WNwXNmv
+
+## Solution (1a) - dangerouslySetInnerHTML + DOMPurify
 
 Sanitized avec [DOMPurify](https://github.com/cure53/DOMPurify)
 
-[[[pen slug-hash='ZEWjbQy' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/ZEWjbQy
 
 ## html-react-parser
 
@@ -83,14 +92,8 @@ Il est aussi possible d'utiliser une bibliothèque externe, par exemple [`html-r
 
 ```html
 <div id="root"></div>
-<script
-  crossorigin
-  src="https://unpkg.com/react@16/umd/react.development.js"
-></script>
-<script
-  crossorigin
-  src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
-></script>
+<script src="https://unpkg.com/react/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/html-react-parser@latest/dist/html-react-parser.min.js"></script>
 ```
 

@@ -314,22 +314,24 @@ https://wptemplates.pehaa.com/assets/alyra/shopping-list.mp4
 
 - article, titre et contenu
 
-```
+```javascript
 const mySchools = [
   {
     name: "Alyra",
-    description: "Une école au coeur de la blockchain. Fondée par des passionés et ouverte à toutes et tous."
+    description:
+      "Une école au coeur de la blockchain. Fondée par des passionés et ouverte à toutes et tous.",
   },
   {
     name: "Simplon",
-    description: "Un réseau de Fabriques solidaires et inclusives qui proposent des formations gratuites aux métiers techniques du numérique."
-  }
+    description:
+      "Un réseau de Fabriques solidaires et inclusives qui proposent des formations gratuites aux métiers techniques du numérique.",
+  },
 ]
 
 const element = (
   <section>
     <h1>Mes écoles à recommander</h1>
-    {mySchools.map(school => {
+    {mySchools.map((school) => {
       return (
         <article key={school.name}>
           <h2>{school.name}</h2>

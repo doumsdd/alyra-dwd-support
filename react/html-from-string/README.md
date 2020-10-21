@@ -82,7 +82,7 @@ https://codepen.io/alyra/pen/WNwXNmv
 
 ## Solution (1a) - dangerouslySetInnerHTML + DOMPurify
 
-Sanitized avec [DOMPurify](https://github.com/cure53/DOMPurify)
+[DOMPurify](https://github.com/cure53/DOMPurify) est une bibliothèque JavaScript, open-source
 
 https://codepen.io/alyra/pen/ZEWjbQy
 

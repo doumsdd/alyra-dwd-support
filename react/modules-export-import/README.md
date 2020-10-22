@@ -69,9 +69,9 @@ Si modules ont leur propre scope, comment utiliser les variables et fonctions d�
 
 <strong>Modules échangent des fonctionnalités avec des directives `export` et `import`.</strong>
 
-### named exports
+### *named exports*
 
-Voici comment nous exposant des variables mises en place dans le fichier `gradients.js`:
+Voici comment nous exposons des variables mises en place dans le fichier `gradients.js`:
 
 ```javascript
 /* gradients.js */

@@ -82,7 +82,7 @@ Le markup pour chaque produit est prévu comme ceci
 ```html
 <li class="mb-2">
   <div class="d-flex align-items-center justify-content-between">
-    lait d'avoine
+    lait 
     <button type="button" class="btn btn-sm btn-warning">done!</button>
   </div>
 </li>
@@ -104,7 +104,7 @@ const ShoppingApp = () => {
             nous allons utilisé le markup de <li>
             - changer class pour className
             - ajouter key
-            - remplacer lait d'avoine par {product}
+            - remplacer lait  par {product}
           */
           <li key={product} className="mb-2">
             <div className="d-flex align-items-center justify-content-between">
@@ -162,7 +162,7 @@ const AddProductForm = (props) => {
 }
 ```
 
-## Buttons done!
+## Buttons "done!"
 
 Nous allons ajouter `onClick` aux boutons 'done!'. Avec *click* le produit en question devrait être rétiré de l'array `shopping`. Nous allons passer `product` en tant que paramètre dans `handleDoneClick`.
 
@@ -185,7 +185,7 @@ const ShoppingApp = () => {
             nous allons utilisé le markup de <li>
             - changer class pour className
             - ajouter key
-            - remplacer lait d'avoine par {product}
+            - remplacer lait  par {product}
           */
           <li key={product} className="mb-2">
             <div className="d-flex align-items-center justify-content-between">

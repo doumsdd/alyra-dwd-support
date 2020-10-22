@@ -1,8 +1,218 @@
 # Shopping List - live coding
 
-[start](https://codepen.io/alyra/pen/PoNQWGJ)
+## Introduction et prérequis
 
-[end](https://codepen.io/alyra/pen/jOqYggy)
+Dans ce cours, nous allons mettre en pratique, ce que nous avons appris, en particulier `useState`. Nous allons créer une shopping liste - une liste des courses intéractives. Nous allons démarer avec [ce pen là](https://codepen.io/alyra/pen/PoNQWGJ)
+
+```html
+<div id="root"></div>
+<script crossorigin src="https://unpkg.com/react/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+```
+
+```javascript
+const ShoppingApp = () => {
+  return (
+    <section>
+      <h2>My shopping List</h2>
+      <ol></ol>
+      <AddProductForm />
+    </section>
+  )
+}
+
+const AddProductForm = (props) => {
+  return (
+    <form>
+      <div className="input-group mb-2">
+        <label className="input-group-text" htmlFor="product">
+          Ajouter sur la liste
+        </label>
+        <input className="form-control" id="product" required="" />
+      </div>
+      <button type="submit" className="btn btn-primary">
+        J'ajoute !
+      </button>
+    </form>
+  )
+}
+
+const App = () => {
+  return (
+    <div className="container my-3">
+      <ShoppingApp />
+    </div>
+  )
+}
+
+ReactDOM.render(<App />, document.getElementById("root"))
+```
+
+Et, comme d'habitude nous utilisons le fichier style de boostrap version 5.
+
+https://codepen.io/alyra/pen/PoNQWGJ
+
+
+## Variable de state
+
+Le but de cette application est d'afficher la liste des courses. Cette liste est alimentée à chaque fois où un nouveau produit est ajouté via le formulaire. On peut aussi retirer chaque produits de la liste en cliquant sur son bouton "done!"
+
+Notre variable de state (appellons-la `shopping`) sera un array des strings. Mettons-la en place :
+
+```javascript
+const ShoppingApp = () => {
+  const [shopping, setShopping] = useState(["cumin", "curry", "poivre"])
+  return (
+    <section>
+      <h2>My shopping List</h2>
+      <ol></ol>
+      <AddProductForm />
+    </section>
+  )
+}
+```
+
+La valeur initiale peut être un array vide `[]`, ici je l'ai pre-remplie de quelques produits afin qu'on puisse plus rapidement travailler avec le rendu.
+
+## Rendu des produits de la liste `shoping`
+
+Les produits dans `shopping` seront listés au sein de la liste numérotée `ol`. 
+Le markup pour chaque produit est prévu comme ceci 
+
+```html
+<li class="mb-2">
+  <div class="d-flex align-items-center justify-content-between">
+    lait d'avoine
+    <button type="button" class="btn btn-sm btn-warning">done!</button>
+  </div>
+</li>
+```
+
+Nous allons parcourir `shopping` avec la méthode `.map` :
+
+```javascript
+const ShoppingApp = () => {
+  const [shopping, setShopping] = useState(["cumin", "curry", "poivre"])
+  return (
+    <section>
+      <h2>My shopping List</h2>
+      <ol>
+      {
+        shopping.map(product => {
+          /* 
+            jsx pour chaque élément de la liste
+            nous allons utilisé le markup de <li>
+            - changer class pour className
+            - ajouter key
+            - remplacer lait d'avoine par {product}
+          */
+          <li key={product} className="mb-2">
+            <div className="d-flex align-items-center justify-content-between">
+              {product}
+              <button type="button" className="btn btn-sm btn-warning">done!</button>
+            </div>
+          </li>
+        })
+      }
+      </ol>
+      <AddProductForm />
+    </section>
+  )
+}
+```
+
+Dans notre application nous allons prendre soin d'avoir les produits uniques dans la liste, pour cela nous pouvons utiliser `{product}` pour l'attribut `key`.
+
+## Formulaire et onSubmit
+
+Nous allons maintanant alimenter notre liste via le formulaire. Pour ceci nous devons ajouter `onSubmit={handleFormSubmit}` à notre élément `form`. En même temps nous allons définir la fonction `handleFormSubmit`
+
+```javascript
+
+const AddProductForm = (props) => {
+  const { shopping, setShopping } = props
+  const handleFormSubmit = (event) => {
+    // empecher action de formulaire, js prend ça en main
+    event.preventDefault()
+    // recuperer la valeur depuis le champs input#product
+    const newProduct = event.target.elements.product.value
+    //shopping : ['..', '..', '..'] -> ['..', '..', '..', newProduct]
+    // on a pas le droit d'utiliser push sur shopping !!!! puisque push modifie shopping
+    if (shopping.includes(newProduct)) {
+      alert(`${newProduct} est déjà sur la liste`)
+    } else {
+      setShopping([...shopping, newProduct])
+    }
+    // vider l'input
+    event.target.reset()
+  }
+  return (
+    <form onSubmit={handleFormSubmit}>
+      <div className="input-group mb-2">
+        <label className="input-group-text" htmlFor="product">
+          Ajouter sur la liste
+        </label>
+        <input className="form-control" id="product" required />
+      </div>
+      <button type="submit" className="btn btn-primary">
+        J'ajoute !
+      </button>
+    </form>
+  )
+}
+```
+
+## Buttons done!
+
+Nous allons ajouter `onClick` aux boutons 'done!'. Avec *click* le produit en question devrait être rétiré de l'array `shopping`. Nous allons passer `product` en tant que paramètre dans `handleDoneClick`.
+
+
+```javascript
+<button onClick={() => handleDoneClick(product)} type="button" className="btn btn-sm btn-warning">done!</button>
+```
+
+```javascript
+const ShoppingApp = () => {
+  const [shopping, setShopping] = useState(["cumin", "curry", "poivre"])
+  return (
+    <section>
+      <h2>My shopping List</h2>
+      <ol>
+      {
+        shopping.map(product => {
+          /* 
+            jsx pour chaque élément de la liste
+            nous allons utilisé le markup de <li>
+            - changer class pour className
+            - ajouter key
+            - remplacer lait d'avoine par {product}
+          */
+          <li key={product} className="mb-2">
+            <div className="d-flex align-items-center justify-content-between">
+              {product}
+              <button type="button" className="btn btn-sm btn-warning">done!</button>
+            </div>
+          </li>
+        })
+      }
+      </ol>
+      <AddProductForm />
+    </section>
+  )
+}
+```
+
+La dernière chose est de définir `handleDoneClick`. Nous pouvons utiliser la méhode `filter`,`shopping.filter((el) => el !== product)` retourn la liste où nous gardons tous les éléments différent que `product`.
+
+```javascript
+const handlDoneClick = (product) => {
+  setShopping(shopping.filter((el) => el !== product));
+}
+```
+
+Vous pouvez trouvez le code final ici
+
+https://codepen.io/alyra/pen/jOqYggy
 
 ---
 

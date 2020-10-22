@@ -84,12 +84,34 @@ onClick={(event) => handleButtonClick(id, event)}
 
 ## Component interactif (approche "from scratch")
 
-Dans React, _state_ variable est une variable qui est responsable pour éventuel re-render d'un component. Si une des variables de _state_ change, le component React se met à jour.
+Dans React, _state_ variable est une variable qui est responsable pour éventuel re-render d'un component. Si une des variables de _state_ change, le component React se met à jour. Bien évidemment pas tous les components sont intéractifs. Les components dont le markup ne changent pas sont appelés *stateless* (sans _state_).
 
-Le code ci-dessous illustre comment ceci fonctionne sous le capot :
+Voici un exemple de component *stateless* `<Article>` :
 
 ```javascript
-// notre component App a 2 state variables
+const Article = ({ children, title }) => {
+  return (
+    <article class="shadow mb-4 p-3">
+      <h2>{title}</h2>
+      <p>{children}</p>
+    </article>
+  );
+};
+```
+
+https://codepen.io/alyra/pen/WNxoXWw
+
+Et voici sa "version" intéractif :
+
+https://wptemplates.pehaa.com/assets/alyra/state-article.mp4
+
+
+## Faking "useState"
+
+Le exemple ci-dessous a pour but illustrer comment l'intéractivité fonctionne sous le capot :
+
+```javascript
+// notre component App a 2 state variables like et name
 const state = {
   like: false,
   name: "Unconnu",
@@ -134,19 +156,40 @@ const App = () => {
 function renderFunction() {
   ReactDOM.render(<App />, document.getElementById("root"))
 }
-// render initiale
+// render initial
 renderFunction()
 ```
 
-[[[pen slug-hash='VwamzdG' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/VwamzdG
 
 Pour la première fois, nous avons un component interactif.
-Nous allons maintenant utiliser la fonction React useState, qui prendra en charge la géstion du re-render.
+Nous allons maintenant utiliser la fonction React `useState`, qui prendra en charge la géstion du re-render.
 
 ## React.useState hook
 
+Afin de mettre en place un component intéractif nous devons nous poser une question
+
+> Quelle est la variable qui potentiellement change la valeur et ce changement devrait déclancher re-render ?
+
+Dans notre cas c'est `name` et `like`.
+
+Nous allons déclarer `name` et `like` en tant que variable de *state*. React nous donne en disposition un méchanisme qui permer de lier la mise à jour de la valeur d'une variable et la mise de l'affichage du component sur la page (re-render)
+
+Au lieu de déclarer la variable `like` de la façon normale `const like = false`
+nous allons faire :
+
+```javascript
+const [like, setLike] = React.useState(false)
+```
+
+et pareil pour `name`
+
+```javascript
+const [name, setName] = React.useState("Unconnu")
+```
+
 On appelle `React.useState` avec la valeur initiale de la variable state.
-`React.useState` **retourne un array,** son première élément est une clé de state variable, le 2e la fonction pour modifier la valeur de notre state variable.
+`React.useState` **retourne un array,** son première élément est une clé de state variable, le seconde est la fonction pour modifier la valeur de notre state variable (setter).
 
 ```javascript
 const App = () => {
@@ -175,15 +218,15 @@ const App = () => {
 ReactDOM.render(<App />, document.getElementById("root"))
 ```
 
-[[[pen slug-hash='xxVRPYw' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/xxVRPYw
 
 ### Simple Counter
 
-[[[pen slug-hash='NWNXBdL' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/NWNXBdL
 
 ### Alyra Gradients - header interactif
 
-[[[pen slug-hash='rNepaOy' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/rNepaOy
 
 ## Class Components
 
@@ -207,22 +250,24 @@ class App extends React.Component {
     this.setState({ name: event.target.value })
   }
   render() {
-    ;<div>
-      <input onChange={() => this.handleNameChange()} />
-      <input
-        type="checkbox"
-        onChange={(event) => this.handleLikeChange(event)}
-      />
-      <p>
-        {this.state.name} dit : "
-        {this.state.like ? `j'aime React` : `je n'aime pas React`}".
-      </p>
-    </div>
+    return (
+      <div>
+        <input onChange={() => this.handleNameChange()} />
+        <input
+          type="checkbox"
+          onChange={(event) => this.handleLikeChange(event)}
+        />
+        <p>
+          {this.state.name} dit : "
+          {this.state.like ? `j'aime React` : `je n'aime pas React`}".
+        </p>
+      </div>
+    )
   }
 }
 ```
 
-[[[pen slug-hash='ZEWBvEG' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/ZEWBvEG
 
 ---
 

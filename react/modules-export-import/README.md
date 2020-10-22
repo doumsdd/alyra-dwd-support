@@ -67,7 +67,7 @@ https://codepen.io/alyra/pen/vYGxebw
 
 Si modules ont leur propre scope, comment utiliser les variables et fonctions définies dans un autre modules ? 
 
-Modules échangent des fonctionnalités avec des directives `export` et `import`
+<strong>Modules échangent des fonctionnalités avec des directives `export` et `import`.</strong>
 
 ### named exports
 

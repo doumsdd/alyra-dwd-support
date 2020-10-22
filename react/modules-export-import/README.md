@@ -106,7 +106,7 @@ Il est aussi possible de renommer la variable importée :
 import {gradients as myGradients} from './path/to/gradients.js'
 ```
 
-### default exports
+### *default* exports
 
 À côté des *named exports*, nous avons aussi *default* exports.
 Chaque module peut avoir au maximum un export *default*

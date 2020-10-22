@@ -119,7 +119,7 @@ const GradientsList = (props) => {...}
 export default GradientsList
 ```
 
-et comment la récuperer (un détails clé, ici nous n'avons pas des accolades).
+et comment la récuperer (un détails clé, ici nous n'avons pas des accolades) :
 
 ```javascript
 /* App.js */

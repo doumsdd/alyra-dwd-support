@@ -73,6 +73,9 @@
   - [Handling Events & State](./react/state/events-state)
   - [Shopping List](./react/state/shopping-list-example)
 - [Modules, export, import](./react/modules-export-import)
+- CRA
+  - [CRA - premiers pas](./react/cra/cra-premiers-pas)
+  - [CRA - todo](./react/cra/cra-todo)
 - [Project Gradients (brief)](./react/project-gradients)
 - [useContext](https://github.com/pehaa/alyra-gradients-context)
 - [useContext - refactor shopping list exercice starter](https://github.com/pehaa/alyra-shopping-refactor-context)

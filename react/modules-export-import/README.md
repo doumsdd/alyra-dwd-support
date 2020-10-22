@@ -103,13 +103,13 @@ Il est aussi possible de renommer la variable importée :
 
 ```javascript
 /* GradientsList.js */
-import {gradients as myGradients} from './path/to/gradients.js'
+import {gradients as myGradients, uniqueTags} from './path/to/gradients.js'
 ```
 
 ### *default* exports
 
-À côté des *named exports*, nous avons aussi *default* exports.
-Chaque module peut avoir au maximum un export *default*
+À côté des *named exports*, nous avons aussi *default exports.*
+Chaque module peut avoir au maximum un *export default.*
 
 Voici comment exposer la variable :
  

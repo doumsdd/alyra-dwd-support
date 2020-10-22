@@ -2,7 +2,7 @@
 
 ## Introduction et prérequis
 
-Dans ce cours, nous allons mettre en pratique, ce que nous avons appris, en particulier `useState`. Nous allons créer une shopping liste - une liste des courses intéractives. Nous allons démarer avec [ce pen là](https://codepen.io/alyra/pen/PoNQWGJ)
+Dans ce cours, nous allons mettre en pratique, ce que nous avons appris, en particulier `useState`. Nous allons créer une *shopping list* - une liste des courses intéractive. Nous allons démarrer avec [ce pen là](https://codepen.io/alyra/pen/PoNQWGJ)
 
 ```html
 <div id="root"></div>
@@ -210,7 +210,7 @@ const handlDoneClick = (product) => {
 }
 ```
 
-Vous pouvez trouvez le code final ici
+Vous trouverez le code final ici
 
 https://codepen.io/alyra/pen/jOqYggy
 

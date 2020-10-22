@@ -72,6 +72,7 @@
 - State
   - [Handling Events & State](./react/state/events-state)
   - [Shopping List](./react/state/shopping-list-example)
+- [Modules, export, import](./react/modules-export-import)
 - [Project Gradients (brief)](./react/project-gradients)
 - [useContext](https://github.com/pehaa/alyra-gradients-context)
 - [useContext - refactor shopping list exercice starter](https://github.com/pehaa/alyra-shopping-refactor-context)

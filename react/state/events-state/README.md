@@ -1,42 +1,78 @@
-
-# Handling Events &  💫 State 💫
+# Handling Events & 💫 State 💫
 
 ## Handling Events
 
-Comment intégrer la gestion des événements (click, change, input, etc.) avec JSX.
+Dans cette partie nous allons apprendre comment gérér des _events_ (tels que _click_, _change_ ou _submit_) avec React et JSX. Nous allons intégrer la gestion des événements pour rendre nos éléments intéractifs.
+
+Voici notre premier exemple, un component `Button` qui affiche un `button` avec le texte "Click me". Suite à un click, le navigateur envoie une fenêtre alert avec le texte "Hello".
 
 ```javascript
 const Button = () => {
-  return (<button onClick={() => alert('Hello')}>Click me</button>
-}
-```
-
-```javascript
-const Input = () => {
-  const handleNameChange = (event) => {
-    alert(`Hello ${event.target.value}`)
-  }
   return (
-    <input onChange={handleNameChange} placeholder="Votre nom"/>
+    <button type="button" onClick={() => alert("Hello")}>
+      Click me
+    </button>
   )
 }
 ```
 
-**À retenir :**
+---
+
+Comme vous pouvez l'observer et ce qui sera **à retenir** :
 
 - Les événements de React sont nommés en camelCase : onClick, onChange, onSubmit, onKeyUp,...
-- En JSX on passe une fonction event handler (géstionnaire d’événements)  
+- En JSX on passe une fonction dans _event handler_(géstionnaire d’événements)
+
+![](https://wptemplates.pehaa.com/assets/alyra/events-react.png)
+
+---
+
+Dans l'exemple suivante nous allons un pas plus loin. La fonction passée dans _event handler_ a par défaut accès à l'objet `event`.
 
 ```javascript
-onClick={(event) => {...}}
+<Button onClick={(event) => {...}} />
+```
+
+ou
+
+```javascript
+const handleButtonClick = (event) => {
+  ...
+}
+<Button onClick={handleButtonClick} />
+```
+
+En particulier, nous pouvons profiter de `event.target` pour avoir l'accès à l'élément qui a déclanché _event_. Nous pouvons lire la valeur du champs `input` avec `event.target.input`.
+
+```javascript
+const Input = () => {
+  const handleNameChange = (event) => {
+    console.log(`Hello ${event.target.value}`)
+  }
+  return <input onChange={handleNameChange} placeholder="Votre nom" />
+}
+```
+
+Je vous propose de suivre une convention pour de noms de fonction dans _event handler._ Nous allons les composer comme ceci :
+
+`handle` + nom d'élément + nom d'_event_
+
+Par exemple :
+
+```javascript
+onClick = { handleButtonClick }
 ```
 
 ```javascript
-onClick={handleButtonClick}
+onClick = { handleResetClick }
 ```
 
 ```javascript
-onSubmit={handleLoginSubmit}
+onChange = { handleEmailChange }
+```
+
+```javascript
+onSubmit = { handleLoginSubmit }
 ```
 
 ```javascript
@@ -44,36 +80,32 @@ onSubmit={handleLoginSubmit}
 onClick={(event) => handleButtonClick(id, event)}
 ```
 
-- La fonction event handler a accès à l'objet `event`
-- `event.target` correspond à l'élément auquel event handler est acroché. En particulier, on utilise souvent `event.target.value`
-
 [[[pen slug-hash='ZEWvjQN' height='300' theme-id='1']]]
-
 
 ## Component interactif (approche "from scratch")
 
-Dans React, *state* variable est une variable qui est responsable pour éventuel re-render d'un component. Si une des variables de *state* change, le component React se met à jour.
+Dans React, _state_ variable est une variable qui est responsable pour éventuel re-render d'un component. Si une des variables de _state_ change, le component React se met à jour.
 
 Le code ci-dessous illustre comment ceci fonctionne sous le capot :
 
 ```javascript
 // notre component App a 2 state variables
-const state = { 
-  like: false, 
+const state = {
+  like: false,
   name: "Unconnu",
 }
 
 const setLike = (value) => {
   if (state.like !== value) {
-    state.like = value;
-    renderFunction();
+    state.like = value
+    renderFunction()
   }
 }
 
 const setName = (value) => {
   if (state.name !== value) {
-    state.name = value;
-    renderFunction();
+    state.name = value
+    renderFunction()
   }
 }
 
@@ -83,11 +115,11 @@ const App = () => {
   const handleLikeChange = () => {
     setLike(event.target.checked)
   }
-  
+
   const handleNameChange = (event) => {
     setName(event.target.value)
   }
-  
+
   return (
     <div>
       <input onChange={handleNameChange} />
@@ -96,8 +128,8 @@ const App = () => {
         {name} dit : "{like ? `j'aime React` : `je n'aime pas React`}".
       </p>
     </div>
-  );
-};
+  )
+}
 // nous définissons une fonction pour effectuer render
 function renderFunction() {
   ReactDOM.render(<App />, document.getElementById("root"))
@@ -114,21 +146,21 @@ Nous allons maintenant utiliser la fonction React useState, qui prendra en charg
 ## React.useState hook
 
 On appelle `React.useState` avec la valeur initiale de la variable state.
-`React.useState` **retourne un array,** son première élément est une clé de state variable, le 2e la fonction pour modifier la valeur de notre state variable. 
+`React.useState` **retourne un array,** son première élément est une clé de state variable, le 2e la fonction pour modifier la valeur de notre state variable.
 
 ```javascript
 const App = () => {
   const [like, setLike] = React.useState(false)
-  const [name, setName] = React.useState('Unconnu')
+  const [name, setName] = React.useState("Unconnu")
 
   const handleLikeChange = (event) => {
     setLike(event.target.checked)
   }
-  
+
   const handleNameChange = (event) => {
     setName(event.target.value)
   }
-  
+
   return (
     <div>
       <input onChange={handleNameChange} />
@@ -137,8 +169,8 @@ const App = () => {
         {name} dit : "{like ? `j'aime React` : `je n'aime pas React`}".
       </p>
     </div>
-  );
-};
+  )
+}
 // nous nous précoccupons uniquement de render initial
 ReactDOM.render(<App />, document.getElementById("root"))
 ```
@@ -146,9 +178,11 @@ ReactDOM.render(<App />, document.getElementById("root"))
 [[[pen slug-hash='xxVRPYw' height='300' theme-id='1']]]
 
 ### Simple Counter
+
 [[[pen slug-hash='NWNXBdL' height='300' theme-id='1']]]
 
 ### Alyra Gradients - header interactif
+
 [[[pen slug-hash='rNepaOy' height='300' theme-id='1']]]
 
 ## Class Components
@@ -163,24 +197,25 @@ class App extends React.Component {
     super(props)
     this.state = {
       like: true,
-      name: 'Unconnu'
+      name: "Unconnu",
     }
   }
   handleLikeChange(event) {
-    this.setState({ like: event.target.checked });
+    this.setState({ like: event.target.checked })
   }
   handleNameChange(event) {
-    this.setState({ name: event.target.value });
+    this.setState({ name: event.target.value })
   }
   render() {
-    <div>
+    ;<div>
       <input onChange={() => this.handleNameChange()} />
       <input
-        type="checkbox" 
+        type="checkbox"
         onChange={(event) => this.handleLikeChange(event)}
       />
       <p>
-        {this.state.name} dit : "{this.state.like ? `j'aime React` : `je n'aime pas React`}".
+        {this.state.name} dit : "
+        {this.state.like ? `j'aime React` : `je n'aime pas React`}".
       </p>
     </div>
   }
@@ -193,10 +228,10 @@ class App extends React.Component {
 
 ## Exercices :
 
- - [Events - select change](https://codepen.io/alyra/pen/zYqzxgv) | [solution](https://codepen.io/alyra/pen/5a51da89910b5b8aa9e33e55e64450c2)
- - [Events - select change](https://codepen.io/alyra/pen/oNxwXWG) | [solution](https://codepen.io/alyra/pen/683f280874ff466121c5115dd0d20943)
- - [State - Fix me - click count](https://codepen.io/alyra/pen/jOqYOQN) | [solution](https://codepen.io/alyra/pen/5f1330ce589c02ee762400ee9579e427)
- - [Clicks countdown](https://codepen.io/alyra/pen/GRZyWxb) | [solution](https://codepen.io/alyra/pen/19bc3ca167473f4a385088681fcd4011)
- - [Clicks compteurs](https://codepen.io/alyra/pen/NWNXper) | [solution](https://codepen.io/alyra/pen/4039761b2dceb4365b22730e69e9de04)
- - [Dark Mode](https://codepen.io/alyra/pen/OJNzPgL) | [solution](https://codepen.io/alyra/pen/4cab28e7eab6f5a480df16bb73f12e95)
- - [State - en lire plus](https://codepen.io/alyra/pen/KKzNoNx) | [solution](https://codepen.io/alyra/pen/ac7586841147fe68381f340d7dc2d46b)
+- [Events - select change](https://codepen.io/alyra/pen/zYqzxgv) | [solution](https://codepen.io/alyra/pen/5a51da89910b5b8aa9e33e55e64450c2)
+- [Events - select change](https://codepen.io/alyra/pen/oNxwXWG) | [solution](https://codepen.io/alyra/pen/683f280874ff466121c5115dd0d20943)
+- [State - Fix me - click count](https://codepen.io/alyra/pen/jOqYOQN) | [solution](https://codepen.io/alyra/pen/5f1330ce589c02ee762400ee9579e427)
+- [Clicks countdown](https://codepen.io/alyra/pen/GRZyWxb) | [solution](https://codepen.io/alyra/pen/19bc3ca167473f4a385088681fcd4011)
+- [Clicks compteurs](https://codepen.io/alyra/pen/NWNXper) | [solution](https://codepen.io/alyra/pen/4039761b2dceb4365b22730e69e9de04)
+- [Dark Mode](https://codepen.io/alyra/pen/OJNzPgL) | [solution](https://codepen.io/alyra/pen/4cab28e7eab6f5a480df16bb73f12e95)
+- [State - en lire plus](https://codepen.io/alyra/pen/KKzNoNx) | [solution](https://codepen.io/alyra/pen/ac7586841147fe68381f340d7dc2d46b)

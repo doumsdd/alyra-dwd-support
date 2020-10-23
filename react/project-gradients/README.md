@@ -38,6 +38,8 @@ src
 │   ├── Gradient
 │   │   ├── GradientCode.js
 │   │   ├── GradientPill.js
+│   │   ├── GradientTagButton.js
+│   │   ├── GradientTags.js
 │   │   ├── GradientTitle.js
 │   │   ├── gradient.css
 │   │   └── index.js # (*)

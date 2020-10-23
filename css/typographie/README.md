@@ -22,7 +22,7 @@ body {
 - fantasy
 - monospace
 
-[[[pen slug-hash='eYJOaOO' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/eYJOaOO
 
 [Web-safe Fonts](https://www.cssfontstack.com/)
 
@@ -52,7 +52,7 @@ header p {
 
 `px`, `em`, `rem`
 
-[[[pen slug-hash='VweZJzR' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/VweZJzR
 
 #### autres propriétés :
 

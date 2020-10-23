@@ -4,7 +4,7 @@ Pouc commencer, ce matin, on vous offre un petit déjeuner, [commandez tout ce q
 
 Nous pouvons tester les nouveaux type de sélecteurs [ici](https://codepen.io/alyra/pen/OJMyLoz)
 
-[[[pen slug-hash='OJMyLoz' height='600' theme-id='1']]]
+https://codepen.io/alyra/pen/OJMyLoz
 
 <ul class="columns fragment fade visible current-fragment" data-fragment-index="0">
   <li class="done"><code>* { }</code></li>
@@ -61,7 +61,7 @@ Nous pouvons tester les nouveaux type de sélecteurs [ici](https://codepen.io/al
   <li style="color:orange">...et ce toujours pas tout...</li>
 </ul>
 
-[[[pen slug-hash='RwrrpBO' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/RwrrpBO
 
 [Quiz](https://cdpn.io/alyra/debug/6f79149941afdce6945473428e1395ac)
 
@@ -114,11 +114,11 @@ ul > li {
 
 ### Ex. 1
 
-[[[pen slug-hash='MWKaXjG' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/MWKaXjG
 
 ### Ex. 2
 
-[[[pen slug-hash='NWxGzbv' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/NWxGzbv
 
 [Quizzzzz](https://cdpn.io/alyra/debug/d341e5aba9eb51c6b9b0f517b45cf812)
 

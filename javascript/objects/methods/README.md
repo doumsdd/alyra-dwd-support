@@ -90,7 +90,7 @@ const useOutside = function () {
 useOutside() // Uncaught TypeError: Cannot read property 'name' of undefined
 ```
 
-[[[pen slug-hash='bGEXNeb' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/bGEXNeb
 
 `this` est un mot-clé spécial (keyword). Sa valeur change selon le contexte où il est utilisé. Voici quelques exemples :
 
@@ -203,7 +203,7 @@ document.body.addEventListener('click', function(){
 */
 ```
 
-[[[pen slug-hash='ExKYKVR' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/ExKYKVR
 
 ### fonction callback, syntaxe arrow, dans addEventListener
 
@@ -280,7 +280,7 @@ user.sayHi() // marche !
 setTimeout(user.sayHi, 1000) // Salut, je suis undefined
 ```
 
-[[[pen slug-hash='jOWgdqm' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/jOWgdqm
 
 ```javascript
 // fix :
@@ -395,7 +395,7 @@ const website = {
 website.fullLink = "https://codepen.io"
 ```
 
-[[[pen slug-hash='dyMyNXP' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/dyMyNXP
 
 On peut aussi utiliser uniquement getter, au lieu de mettre en place la méthode id comme ceci:
 

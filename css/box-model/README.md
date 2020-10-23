@@ -11,7 +11,7 @@ Propriétés qui définissent combien de place prend un élément :
 
 Le comportement d'un élément peut être modifier avec la propriété `display`
 
-[[[pen slug-hash='YzwKodK' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/YzwKodK
 
 ### margin & padding syntax
 
@@ -63,7 +63,7 @@ div {
 }
 ```
 
-[[[pen slug-hash='XWXWRXJ' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/XWXWRXJ
 
 ### Collapsing margins (marges fusionnées)
 
@@ -76,7 +76,7 @@ Ceci concerne les situations suivantes:
 - aucun contenu séparant le parent et ses descendants
 - bloc vides
 
-[[[pen slug-hash='QWyWprr' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/QWyWprr
 
 ### box-sizing
 

@@ -177,7 +177,7 @@ btn1?.addEventListener("click", alien1.sayName) // Mon nom est .
 btn2?.addEventListener("click", alien1.sayAge) // J'ai 100 ans.
 ```
 
-[[[pen slug-hash='oNxXqrN' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/oNxXqrN
 
 ```javascript
 btn1?.addEventListener("click", alien1.sayName)
@@ -339,7 +339,7 @@ const alien2 = Alien.create("Flax", 100)
 
 Quand nous appelons `Alien.create('Flax', 100)`, `this` dans la ligne (\*\*) correspond à `Alien`
 
-[[[pen slug-hash='vYGNLRg' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/vYGNLRg
 
 # instanceof
 

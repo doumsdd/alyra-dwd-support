@@ -15,11 +15,7 @@ Parfois, nous avons besoin pour faire quelque chose d'autre, par exemple :
 - ajouter un eventListener à l'objet `window`
   ...
 
-Ce sont tous des exemples de _side effects_
-
-Autrement dit, _side effects_ concernent ce qui est en dehors du _scope_ de notre component.
-
-Pour mettre en place les _side effects_, React nous met en disposition un hook `useEffect`.
+Ce sont tous des exemples de _side effects_. Autrement dit, _side effects_ concernent ce qui est en dehors du _scope_ de notre component. Pour mettre en place les _side effects_, React nous met en disposition un hook `useEffect`.
 
 ## anatomie
 
@@ -33,7 +29,7 @@ useEffect(() => {
 })
 ```
 
-[[[pen slug-hash='gOrzKyO' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/gOrzKyO
 
 ### au montage (_mount_, initial render)
 
@@ -45,11 +41,11 @@ useEffect(() => {
 
 Ex. 1
 
-[[[pen slug-hash='PoNeaMq' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/PoNeaMq
 
 Ex. 2
 
-[[[pen slug-hash='jOqxKjB' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/jOqxKjB
 
 ### quand state ou props change
 
@@ -79,7 +75,7 @@ React.useEffect(() => {
 })
 ```
 
-[[[pen slug-hash='BaKxxpx' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/BaKxxpx
 
 ---
 

@@ -171,7 +171,7 @@ document.body.append(cookieInfo)
 
 ![](https://assets.codepen.io/4515922/beforeprepend.png)
 
-[[[pen slug-hash='GRoLXBj' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/GRoLXBj
 
 ## insertAdjacentHTML
 
@@ -182,7 +182,7 @@ document.body.insertAdjacentHTML('afterend', cookieInfo)
 
 ![](https://assets.codepen.io/4515922/insert.png)
 
-[[[pen slug-hash='ZEQZMqq' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/ZEQZMqq
 
 ## element.addEventListener
 
@@ -200,7 +200,7 @@ myButton.addEventListener("click", (event) => {
 
 On peut profiter de l'intéractivité des éléments de formulaires. On peut les utiliser en dehors d'élément `form`. Le type d'event qu'on utilise souvent avec `input` et `select` et `change`
 
-[[[pen slug-hash='LYGoobE' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/LYGoobE
 
 ```html
 <label for="mode">Mode sombre</label>
@@ -230,7 +230,7 @@ modeInput.addEventListener("change", () => {
 })
 ```
 
-[[[pen slug-hash='vYLwyJx' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/vYLwyJx
 
 [Bonus - exemple avec localStorage](https://codepen.io/alyra/pen/wvMZVqo)
 

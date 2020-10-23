@@ -46,7 +46,7 @@ fetch(url)
 ```
 
 **CSS-Tricks Blog**
-[[[pen slug-hash='QWNBbRj' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/QWNBbRj
 
 **StarWars API**
-[[[pen slug-hash='VwaBvqZ' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/VwaBvqZ

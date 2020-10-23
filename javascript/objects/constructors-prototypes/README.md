@@ -66,7 +66,7 @@ Au lieu de répéter le code ci-dessus pour chaque alien, il est possible de cr�
 - Les noms des functions constructor commencent par une lettre en majuscules (c'est une convention)
 - Les fonctions contructor doivent être appelées avec `new` (attention, oublie de `new` provoque une erreur `Uncaught TypeError: Cannot set property ... of undefined`)
 
-[[[pen slug-hash='oNbKENV' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/oNbKENV
 
 # Prototype
 
@@ -87,7 +87,7 @@ Alien.prototype.sayHi = function () {
 }
 ```
 
-[[[pen slug-hash='abdeYWv' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/abdeYWv
 
 On a plus de contrôle en utilisant [`Object.defineProperty`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/defineProperty)
 

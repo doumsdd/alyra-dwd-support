@@ -184,7 +184,7 @@ Object {
 
 Cette méthode modifie `object1`
 
-[[[pen slug-hash='abNyKYZ' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/abNyKYZ
 
 On peut aussi merger des objets sans modifier l'objet d'entrée
 
@@ -192,7 +192,7 @@ On peut aussi merger des objets sans modifier l'objet d'entrée
 const newObject1 = { ...myInfo, ...professionalInfo }
 ```
 
-[[[pen slug-hash='abNyKKm' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/abNyKKm
 
 ---
 

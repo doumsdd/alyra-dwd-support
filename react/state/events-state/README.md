@@ -80,7 +80,7 @@ onSubmit = { handleLoginSubmit }
 onClick={(event) => handleButtonClick(id, event)}
 ```
 
-[[[pen slug-hash='ZEWvjQN' height='300' theme-id='1']]]
+https://codepen.io/alyra/pen/ZEWvjQN
 
 ## Component interactif (approche "from scratch")
 

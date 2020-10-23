@@ -2,7 +2,7 @@
 
 ![](https://assets.codepen.io/4515922/pangramme_1.jpg)
 
-Référence - [alyra-google-fonts-widget](https://alyra-google-fonts-widget.netlify.app/)
+Vous trouverez ici le modèle à reproduire [alyra-google-fonts-widget.](https://alyra-google-fonts-widget.netlify.app/)
 
 Votre applications utilise [**Developer API de Google Fonts**](https://developers.google.com/fonts/docs/developer_api) afin d'afficher :
 
@@ -45,7 +45,7 @@ La mise en page peut être modifiée, elle n'est pas imposée. Tâchez à avoir 
 
 ## Validation :
 
-- rendu sur Github et déploiement sur Netlify
+- rendu sur GitHub et déploiement sur Netlify
 - title, lang, meta, favicons, manifest sont modifiées
 - utilisation d'API Google Fonts
 - police est affichée correctement (tous les éléments démandé)

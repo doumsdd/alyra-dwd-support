@@ -17,7 +17,7 @@ Parfois, nous avons besoin pour faire quelque chose d'autre, par exemple :
 
 Ce sont tous des exemples de _side effects_. Autrement dit, _side effects_ concernent ce qui est en dehors du _scope_ de notre component. Pour mettre en place les _side effects_, React nous met en disposition un hook `useEffect`.
 
-## anatomie
+## Anatomie du hook `useEffect`
 
 ![](https://assets.codepen.io/4515922/useEffectAnatomy.png)
 

@@ -1,18 +1,20 @@
 # Projet Gradients
 
-# Step 1 - create-react-app et configuration initiale
+Le temps du projet est arrivé ! Dans ce challenge vous avez pour le but contruire une application web monopage [comme ceci](https://alyra-gradients-bonus.netlify.app/)
+
+Vous devez utiliser CRA en tant que starter. Ci-dessous vous trouverez quelques astuces et indications qui vous aideront de structurer votre  projet.
+
+##  CRA - configuration initiale
 
 ```bash
 npx create-react-app react-alyra-gradients
 ```
-
 
 ### Installer Bootstrap5 et mettre en place Bootstrap5
 
 ```bash
 yarn add bootstrap@next
 ```
-
 
 ### Head
 
@@ -23,7 +25,7 @@ Configurez la partie head :
 
 remplacer les icônes et configurer `manifest.json`
 
-### Structure du projet
+## Structure du projet
 
 Mettez en place un dossier `src/components` avec la structure comme ceci (structure recommendée, mais peut varier un peu ;))
 
@@ -55,10 +57,7 @@ src
 
 ### src/gradients.js
 
-Ce fichier devrait exporter les variables `gradients` et `uniqueTags`
-
-Vous pouvez utiliser [le contenu de ce fichier](https://codepen.io/alyra/pen/73e755888ff0a8fa07d0561d108537ac.js)
-
+Ce fichier devrait exporter les variables `gradients` et `uniqueTags`. Vous pouvez vous [le contenu de ce fichier](https://codepen.io/alyra/pen/73e755888ff0a8fa07d0561d108537ac.js)
 
 ### src/components/GradientPill/gradient.css
 
@@ -80,21 +79,25 @@ ce fichier devrait être importé dans `src/components/GradientPill.js`
 
 Mettez en place `GradiensHeader`, `Gradients` et `Footer` dans `src/App.js`
 
-# Step 2 Migration depuis CodePen
+## Migration depuis CodePen
 
 Utilisez le code des exercices CodePen et migrez le tout dans votre app.
 
-# Step 3 Working App
+## Filter par tags
 
 Mettez en place un component `GradientsSelect` avec le filtre par tag.
 
+## Tag Boutons
+
+Listez des tags pour chaque bouton. Faites les tags intéractifs, rendez-les en tant que bouton et filtrez par tag suite au "click"
+
+![](https://wptemplates.pehaa.com/assets/alyra/gradients-tags.png)
+
+---
+
 **Vous pouvez voir le site de référence [ici](https://alyra-gradients-bonus.netlify.app/)**
 
-**DEADLINE : projet à rendre lundi 9h27**
-
-# Bonus 
-
-[ajouter des tags en tant que boutons](https://alyra-gradients-bonus.netlify.app/)
+---
 
 ## Validation :
 
@@ -105,7 +108,7 @@ Mettez en place un component `GradientsSelect` avec le filtre par tag.
 - le header avec le bouton est fonctionnel
 - les dégradés sont affichés dans la page
 - le select foncionne et permet de filter des dégradés par tag
-- il n'y a pas de warning depuis la console dans VSCode
+- il n'y a pas de warning depuis la console dans VSCode, ni dans la console du navigateur
 - [le html est valide (validator w3c)](https://validator.w3.org/nu/)
-- remettre vos liens [ici](https://docs.google.com/spreadsheets/d/1aFirDN3S0Pgz0FFzXBNViLAo6YdbNFqhm-rLe-iN5aw/edit#gid=464596968)
+
 

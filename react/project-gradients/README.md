@@ -18,16 +18,16 @@ yarn add bootstrap@next
 
 ### Head
 
-Configurez la partie head :
+Configurez la partie head, ne particulier :
   - title
   - lang
   - meta
 
-remplacer les icônes et configurer `manifest.json`
+Vous devez aussi remplacez les icônes et configurez `manifest.json`.
 
 ## Structure du projet
 
-Mettez en place un dossier `src/components` avec la structure comme ceci (structure recommendée, mais peut varier un peu ;))
+Mettez en place un dossier `src/components` avec la structure comme ceci (structure recommendée, mais peut varier un peu 😉)
 
 ```bash
 src
@@ -52,8 +52,8 @@ src
 └── setupTests.js
 ```
 
-(`*`) - contient le component Gradient  
-(`**`) - component parent, contient GradientsList et GradientsSelect
+(`*`) - contient le component `Gradient`  
+(`**`) - component parent, contient `GradientsList` et `GradientsSelect`
 
 ### src/gradients.js
 

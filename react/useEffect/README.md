@@ -13,7 +13,7 @@ Parfois, nous avons besoin pour faire quelque chose d'autre, par exemple :
 - modifier le `document`, en dehors de notre component ou même toute notre application (en dehors de notre `div#root`), par exemple `document.title`
 - mettre en place `setTimeout` ou `setInterval`
 - ajouter un eventListener à l'objet `window`
-  ...
+- ...
 
 Ce sont tous des exemples de _side effects_. Autrement dit, _side effects_ concernent ce qui est en dehors du _scope_ de notre component. Pour mettre en place les _side effects_, React nous met en disposition un hook `useEffect`.
 
@@ -51,9 +51,40 @@ https://codepen.io/alyra/pen/jOqxKjB
 
 ```javascript
 useEffect(() => {
-  console.log('myVar1 vient d'être modifiée', myVar1)
+  console.log(`myVar1 vient d'être modifiée`, myVar1)
 }, [myVar1])
 ```
+
+Comparons ces 2 exemples :
+
+**Incorrect :** ❌
+
+```javascript
+React.useEffect(() => {
+  document.title = like ? "👍" : "👎";
+});
+```
+
+![](https://wptemplates.pehaa.com/assets/alyra/title-ue.gif)
+
+Ici, `title` est re-rendu à chaque re-render de notre component.
+
+---
+
+**Correct :** ✅
+
+```javascript
+React.useEffect(() => {
+  document.title = like ? "👍" : "👎";
+}, [like]);
+```
+
+![](https://wptemplates.pehaa.com/assets/alyra/title-ue.gif)
+
+Ici, `title` est re-rendu uniquement si la valeur de la variable `like` change.
+
+https://codepen.io/alyra/pen/VwjPvgG
+
 
 ### avec nettoyage
 

@@ -31,7 +31,7 @@ L'utilisateur peut également modifier la taille d'affichage (entre 8px et 48px)
 <hr />
 
 **Le lien vers la page de police sur fonts.google.fonts** - attention aux polices dont le nom est composé des plusieurs mots,
-par exemple le lien pour Kumbh Sans est https://fonts.google.com/specimen/Kumbh+Sans (symboles plus entre chaque mot)
+par exemple le lien pour Kumbh Sans est https://fonts.google.com/specimen/Kumbh+Sans (il contient le symbole `+` entre chaque mot)
 
 <hr />
 

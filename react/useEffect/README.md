@@ -2,9 +2,9 @@
 
 ## Side effects (effets bord)
 
-La mission d'un component React et de créer un rendu dans la page. La fonction qui définit le component est reévaluée à chaque fois où soit une valeur de props ou la valeur de state change.
+La mission d'un component React et de créer un rendu dans la page. La fonction qui définit le component est reévaluée à chaque fois où une valeur de props ou la valeur de state change.
 
-Le nouvel rendu est généré, il est comparé détail par détails avec le rendu existant. Les éléments qui changent, sont mis à jour.
+Le nouvel rendu est généré, il est comparé détail par détail avec le rendu existant. Les éléments qui changent, sont mis à jour.
 
 Parfois, nous avons besoin pour faire quelque chose d'autre, par exemple :
 
@@ -19,7 +19,7 @@ Ce sont tous des exemples de _side effects_
 
 Autrement dit, _side effects_ concernent ce qui est en dehors du _scope_ de notre component.
 
-Pour les mettre en place, React nous met en disposition un hook `useEffect`
+Pour mettre en place les _side effects_, React nous met en disposition un hook `useEffect`.
 
 ## anatomie
 

@@ -38,7 +38,7 @@ Le fichier HTML qui contient l'élément `<div id="root"></div>` de notre applic
 
 C'est dans le fichier `public/index.html` où nous devons modifier l'attribut `lang`, `title` et des attributs `meta`.
 
-# Step 2a - icônes et manifest.json
+## Step 2a - icônes et manifest.json
 
 Le fichier `manifest.json` permet d'installer un bouton vers votre app sur l'appareil mobile, vous pouvez [en lire davantage, par exemple, ici](https://web.dev/add-manifest-react/)
 
@@ -234,7 +234,7 @@ const Todos = () => {
 export default Todos
 ```
 
-## Working App
+### Working App
 
 Completez `Todo` et `AddTodoForm`
 

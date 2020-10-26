@@ -14,7 +14,7 @@
   - [CRA - premiers pas](./cra/cra-premiers-pas)
   - [CRA - todo](./cra/cra-todo)
 - [Project Gradients (brief)](./project-gradients)
-- [useContext - refactor shopping list exercice starter](https://github.com/pehaa/alyra-shopping-refactor-context)
+- [useContext](https://github.com/pehaa/alyra-gradients-context)
 - [useEffect](./useEffect)
 - [Promises, fetch & useEffect](./promises-fetch-useEffect)
 - [fetch en pratique avec l'api OpenWeather](https://github.com/pehaa/alyra-react-weather-app)

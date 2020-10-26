@@ -9,7 +9,7 @@ npx create-react-app todos-app
 cd todos-app
 ```
 
-# Step 1 - src/index.js
+## Step 1 - src/index.js
 
 `index.js` et le fichier de départ de votre application.
 
@@ -32,7 +32,7 @@ import App from "./App"
 // ... rien ne change ensuite
 ```
 
-# Step 2 public/index.html
+## Step 2 public/index.html
 
 Le fichier HTML qui contient l'élément `<div id="root"></div>` de notre application se trouve dans le répértoire `public`.
 
@@ -53,7 +53,7 @@ Copiez ensuite des icônes dans le dossier `public` et remplacer `"short_name"`,
 }
 ```
 
-# Step 3 - App.js et App.css
+## Step 3 - App.js et App.css
 
 Probablement vous n'avez pas besoin d'un fichier .css global d'autre que `bootstrap/dist/css/bootstrap.css`.  
 Supprimer le fichier `App.css` et nous ne l'importez pas.
@@ -74,7 +74,7 @@ function App() {
 export default App
 ```
 
-# Step 4 components folder
+## Step 4 components folder
 
 - Placez tous les components dans un nouveau dossier `components`.
 
@@ -98,7 +98,7 @@ src
 └── setupTests.js
 ```
 
-# Step 5 Components et leurs dépendences
+## Step 5 Components et leurs dépendences
 
 `Todos` utilise :
 
@@ -146,7 +146,7 @@ const AddTodoForm = () => {
 export default AddTodoForm
 ```
 
-et votre `App.js`
+### App.js
 
 ```javascript
 // src/App.js
@@ -234,10 +234,10 @@ const Todos = () => {
 export default Todos
 ```
 
-### Working App
+## Working App
 
 Completez `Todo` et `AddTodoForm`
 
-# Step 6 Deployement sur netlify
+## Step 6 Deployement sur netlify
 
 Pushez votre app sur votre repo github et deployer avec netlify 🚀.

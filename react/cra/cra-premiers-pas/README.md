@@ -9,8 +9,8 @@
   - babel (compilateur)
   - prettier (pour formater votre code)
   - linter (pour détecter des erreurs)
-- CRA lance un serveur de développement en mode *hot reload* (pas besoin de rafraîchir le navigateur)
-- CRA permet de générer la version optimisée pour la *production*
+- CRA lance un serveur de développement en mode _hot reload_ (pas besoin de rafraîchir le navigateur)
+- CRA permet de générer la version optimisée pour la _production_
 
 ## cra + bootstrap5 step by step
 
@@ -24,40 +24,32 @@ cd nom-de-mon-app
 code .
 ```
 
-Dans les lignes ci-dessus on :
+Nous venons de :
 
- - installe une nouvelle application React, dans un répertoire `nom-de-mon-app`
- - on se déplace dans ce répertoire
- - on lance VSCode
- 
+- installer une nouvelle application React, dans un répertoire `nom-de-mon-app`
+- nous déplacer dans ce répertoire
+- lancer VSCode
+
 ### Step 1 - VSCode
- 
- Ouvrir le Terminal dans VSCode et lancer app en mode dévéloppement
- 
+
+Ouvrir le Terminal dans VSCode et lancer app en _mode dévéloppement_
+
 ```bash
 yarn start
 ```
 
-ou avec `npm`
-
-```bash
-npm start
-``` 
-
-L'appli est lancée, elle "hot-reload" sous l'addresse http://localhost:3000 (le numéro du port peut varier)
-
-Pour arrêter le serveur `Ctrl+C` et pour relancer `yarn start`.
+L'appli est lancée, elle "hot-reload" sous l'addresse http://localhost:3000 (le numéro du port peut varier). Nous pouvons à chaque moment arrêter le serveur avec `Ctrl+C` (et ensuite le relancer avec `yarn start`).
 
 ### Step 2 - bootstrap (si besoin)
 
-Nous allons intaller bootstrap5 dans le projet 
+Nous allons installer bootstrap5 dans le projet
 
 ```bash
 yarn add bootstrap@next
-``` 
+```
 
-Suite à l'installation `bootstrap` sera ajouter dans le dossier `node_modules`
-Un peu plus tard, nous allons profiter du fichier complet de bootstrap qui se trouve dans `node_modules/bootstrap/dist/css/bootstrap.css`
+Suite à son installation, `bootstrap` sera ajouté dans le dossier `node_modules`.
+Un peu plus tard, nous allons importer le fichier complet de bootstrap `node_modules/bootstrap/dist/css/bootstrap.css`.
 
 ### Architecture initiale du projet
 
@@ -92,7 +84,7 @@ A l'occasion on met à jour le ficher `public/manifest.json`
 
 ### src/index.js
 
-Ici, on peut mettre en place le fichier CSS principale 
+Ici, on peut mettre en place le fichier CSS principale
 
 ```javascript
 import React from "react"
@@ -142,7 +134,7 @@ Voici un petit starter qui vous permettera de démarrer avec n'importe quel comp
 
 ```javascript
 // src/components/MonComponent1.js
-import React from 'react'
+import React from "react"
 
 const MonComponent1 = () => {
   return null

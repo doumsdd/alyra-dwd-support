@@ -216,7 +216,7 @@ https://codepen.io/alyra/pen/PoNZvgd
 
 ## React.Fragment
 
-Dans tous les exemples ci-dessus, nous avons **un seul** élément parent qui a un ou plusieurs noeuds enfants . Afin d'avoir des "siblings" (👭) nous devons utiliser `React.Fragment`, un conteneur sans type ni attribut. Un conteneur phantôme 👻
+Dans tous les exemples ci-dessus, nous avons **un seul** élément parent qui a un ou plusieurs noeuds enfants . Afin d'avoir des "siblings" (👭) nous devons utiliser `React.Fragment`, un conteneur sans type ni attribut, un conteneur phantôme 👻.
 
 ```javascript
 const element = React.createElement(

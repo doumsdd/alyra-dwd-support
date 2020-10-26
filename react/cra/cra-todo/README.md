@@ -34,7 +34,7 @@ import App from "./App"
 
 ## Step 2 public/index.html
 
-Le fichier HTML qui contient l'élément `<div id="root"></div>` de notre application se trouve dans le répértoire `public`.
+Le fichier HTML qui contient l'élément `<div id="root"></div>` de notre application se trouve dans le répertoire `public`.
 
 C'est dans le fichier `public/index.html` où nous devons modifier l'attribut `lang`, `title` et des attributs `meta`.
 
@@ -98,7 +98,7 @@ src
 └── setupTests.js
 ```
 
-## Step 5 Components et leurs dépendences
+## Step 5 Components et leurs dépendances
 
 `Todos` utilise :
 
@@ -168,9 +168,9 @@ export default App
 ### Todos.js
 
 - Avec `import React, { useState } from "react"` importez `useState` directement. Vous allez pouvoir utiliser `useState` au lieu de `React.useState`.
-- `v4` est un _named export_ depuis `uuid`, et nous allons le renommmer en `uuidv4`
-
-Voici comment mettre on place `Todos.js`
+- `v4` est un _named export_ depuis `uuid`, et nous allons le renommer en `uuidv4`
+  renommer
+  Voici comment mettre on place `Todos.js`
 
 ```javascript
 import { v4 as uuidv4 } from "uuid"
@@ -236,8 +236,8 @@ export default Todos
 
 ### Working App
 
-Completez `Todo` et `AddTodoForm`
+Complétez `Todo` et `AddTodoForm`
 
-## Step 6 Deployement sur netlify
+## Step 6 Déploiement sur netlify
 
-Pushez votre app sur votre repo github et deployer avec netlify 🚀.
+Pushez votre app sur votre repo GitHub et déployer avec netlify 🚀.

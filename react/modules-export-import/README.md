@@ -1,11 +1,11 @@
-# modules, export,  import
+# modules, export, import
 
 Jusqu'ici nous avons utilisé les fichiers `js` comme ceci :
 
 ```html
-<!DOCTYPE="html">
+<!DOCTYPE ="html">
 <html>
-<!-- ... -->
+  <!-- ... -->
   <body>
     <!-- ... -->
     <script src="script1.js"></script>
@@ -18,25 +18,28 @@ Par exemple:
 
 ```javascript
 /* script1.js */
-'use strict'
-const gradients = [{start: red, end: magenta}]
+"use strict"
+const gradients = [{ start: red, end: magenta }]
 ```
 
-`script2.js` est inclu après `script1.js` alors
+`script2.js` est inclu après `script1.js` alors la variable `gradients` est disponible dans `script2.js`
 
 ```javascript
-/* script1.js */
-'use strict'
+/* script2.js */
+"use strict"
+// Nous pouvons nous servir de la variable gradients, déclarée dans script1.js
 console.log(gradients.length)
 // 1
 ```
 
-Il est aussi possible d'utiliser des fichiers JavaScript en tant que des *modules*.
+---
+
+Il est aussi possible d'utiliser des fichiers JavaScript en tant que des _modules_.
 
 ```html
-<!DOCTYPE="html">
+<!DOCTYPE ="html">
 <html>
-<!-- ... -->
+  <!-- ... -->
   <body>
     <!-- ... -->
     <script type="module" src="script1.js"></script>
@@ -47,7 +50,7 @@ Il est aussi possible d'utiliser des fichiers JavaScript en tant que des *module
 
 ```javascript
 /* script1.js */
-const gradients = [{start: red, end: magenta}]
+const gradients = [{ start: red, end: magenta }]
 ```
 
 `script2.js` est inclu après `script1.js` alors
@@ -58,18 +61,18 @@ console.log(gradients.length)
 // Uncaught ReferenceError: gradients is not defined
 ```
 
- - modules sont toujours en mode `strict`, on a plus besoin de spécifier : `use strict`
- - modules ont leur propre scope
- 
+- modules sont toujours en mode `strict`, on a plus besoin de spécifier : `use strict`
+- modules ont leur propre scope
+
 https://codepen.io/alyra/pen/vYGxebw
 
-## export & import 
+## export & import
 
-Si modules ont leur propre scope, comment utiliser les variables et fonctions définies dans un autre modules ? 
+Si modules ont leur propre scope, comment utiliser les variables et fonctions définies dans un autre modules ?
 
 <strong>Modules échangent des fonctionnalités avec des directives `export` et `import`.</strong>
 
-### *named exports*
+### _named exports_
 
 Voici comment nous exposons des variables mises en place dans le fichier `gradients.js`:
 
@@ -80,14 +83,14 @@ export const gradients = [
     name: "Grade Grey",
     start: "rgb(189, 195, 199)",
     end: "rgb(44, 62, 80)",
-    tags: ["gris"]
+    tags: ["gris"],
   },
   {
     name: "Harvey",
     start: "rgb(31, 64, 55)",
     end: "rgb(153, 242, 200)",
-    tags: ["vert"]
-  }
+    tags: ["vert"],
+  },
 ]
 export const uniqueTags = ["gris", "vert"]
 ```
@@ -96,23 +99,23 @@ et voici comment nous les recupérons dans `GradientsList.js`:
 
 ```javascript
 /* GradientsList.js */
-import {gradients, uniqueTags} from './path/to/gradients.js'
+import { gradients, uniqueTags } from "./path/to/gradients.js"
 ```
 
 Il est aussi possible de renommer la variable importée :
 
 ```javascript
 /* GradientsList.js */
-import {gradients as myGradients, uniqueTags} from './path/to/gradients.js'
+import { gradients as myGradients, uniqueTags } from "./path/to/gradients.js"
 ```
 
-### *default* exports
+### _default_ exports
 
-À côté des *named exports*, nous avons aussi *default exports.*
-Chaque module peut avoir au maximum un *export default.*
+À côté des _named exports_, nous avons aussi _default exports._
+Chaque module peut avoir au maximum un _export default._
 
 Voici comment exposer la variable :
- 
+
 ```javascript
 /* GradientsList.js */ */
 const GradientsList = (props) => {...}
@@ -131,6 +134,71 @@ Dans ce cas là, nous pouvons nommer librement notre variable importée, le suiv
 ```javascript
 /* App.js */
 import Gradients from "./path/to/GradientsList.js"
+```
+
+## Exemple
+
+Nous allons créer un nouveau projet
+
+```bash
+mkdir modules-first-steps
+```
+
+avec la structure suivante
+
+```bash
+├── app.js
+├── gradients.js
+└── index.html
+```
+
+### gradients.js
+
+```javascript
+/* gradients.js */
+export const gradients = [
+  {
+    name: "Grade Grey",
+    start: "rgb(189, 195, 199)",
+    end: "rgb(44, 62, 80)",
+    tags: ["gris"],
+  },
+  {
+    name: "Harvey",
+    start: "rgb(31, 64, 55)",
+    end: "rgb(153, 242, 200)",
+    tags: ["vert"],
+  },
+]
+export const uniqueTags = ["gris", "vert"]
+```
+
+### app.js
+
+```javascript
+/* app.js */
+import { gradients, uniqueTags as tags } from "./gradients.js"
+console.log("Gradients :", gradients)
+console.log("Unique tags :", tags)
+```
+
+### index.html
+
+Remarquez que nous n'inclueons pas de fichier `gradients.js`, uniquement `app.js` est inclu.  
+L'attribut `type="module"` est undispensable. Son omission provoque une : `Uncaught SyntaxError: Cannot use import statement outside a module`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
 ```
 
 ## Vous pouvez en lire davantage :

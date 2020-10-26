@@ -2,14 +2,14 @@
 
 ## Side effects (effets bord)
 
-La mission d'un component React et de créer un rendu dans la page. La fonction qui définit le component est reévaluée à chaque fois où une valeur de props ou la valeur de state change.
+La mission d'un component React et de créer un rendu dans la page. La fonction qui définit le component est réévaluée à chaque fois où une valeur de props ou la valeur de state change.
 
 Le nouvel rendu est généré, il est comparé détail par détail avec le rendu existant. Les éléments qui changent, sont mis à jour.
 
 Parfois, nous avons besoin pour faire quelque chose d'autre, par exemple :
 
 - enregistrer une variable de state dans l'objet `localStorage`,
-- effectuer une rêquete HTTP,
+- effectuer une requête HTTP,
 - modifier le `document` en dehors de notre component ou même toute notre application (en dehors de notre `div#root`), par exemple `document.title`
 - mettre en place `setTimeout` ou `setInterval`
 - ajouter un `eventListener` à l'objet `window`
@@ -110,7 +110,7 @@ https://codepen.io/alyra/pen/BaKxxpx
 ## useEffect, localStorage et _lazy initial state_
 
 Nous avons enfin les outils pour mettre en place `localStorage` dans nos applications _Shopping List_ et _ToDo List._
-Nous allons démarrer avec [ce repo](https://github.com/pehaa/alyra-shopping-list-useeffect) et utiliser `useEffect` pour rendre élément `title` dynamique, mais surtout pour enregister la liste des courses et le thème choisi par l'utilisateur dans le navigateur.
+Nous allons démarrer avec [ce repo](https://github.com/pehaa/alyra-shopping-list-useeffect) et utiliser `useEffect` pour rendre élément `title` dynamique, mais surtout pour enregistrer la liste des courses et le thème choisi par l'utilisateur dans le navigateur.
 
 ### document.title
 
@@ -147,12 +147,12 @@ Maintenant à chaque fois que `ShoppingApp` _render_ le titre du document est mo
 
 ### localStorage
 
-Nous avons utiliser `localStorage` afin d'enregistrer dans la mémoire du navigateur notre liste des courses et la récuperer à la prochaine visite (après rechargement de la page).
+Nous avons utiliser `localStorage` afin d'enregistrer dans la mémoire du navigateur notre liste des courses et la récupérer à la prochaine visite (après rechargement de la page).
 
 Un petit rappel sur l'utilisation de `localStorage` :
 
 - `localStorage.setItem("colorMode", mode)` - enregistre la valeur de mode dans l'objet `localStorage`
-- `localStorage.getItem("colorMode")` - permet de recupérer la valeur enregistrée sous la clé `"colorMode"`
+- `localStorage.getItem("colorMode")` - permet de récupérer la valeur enregistrée sous la clé `"colorMode"`
 - localStorage enregistre tout en format de `string`
 - afin d'enregistrer un objet nous utilisons le format JSON :
   - `JSON.stringify(myObjet)` transforme objet `myObjet` en string format JSON
@@ -160,7 +160,7 @@ Un petit rappel sur l'utilisation de `localStorage` :
 
 ![](https://wptemplates.pehaa.com/assets/alyra/localStorage.png)
 
-Dans notre application, nous avons besoin d'enregister la valeur de `shopping` dans `localStorage` à chaque fois que `shopping` change :
+Dans notre application, nous avons besoin d'enregistrer la valeur de `shopping` dans `localStorage` à chaque fois que `shopping` change :
 
 ```javascript
 useEffect(() => {
@@ -180,7 +180,7 @@ Alors :
 const [shopping, setShopping] = useState( JSON.parse(localStorage.getItem('myShoppingList')) || [] )`
 ```
 
-La valeur initiale de shopping est utilisée uniquement une fois, au moment ou le component monte. Néanmoins, l'expression `JSON.parse(localStorage.getItem('myShoppingList')) || []` sera évaluée à chaque render. Pour y rémédier et améliorer la performance (l'échange avec `localStorage` peuvent être coûteuse au niveau de la performance), nous allons passer une fonction dans `useState` :
+La valeur initiale de shopping est utilisée uniquement une fois, au moment ou le component monte. Néanmoins, l'expression `JSON.parse(localStorage.getItem('myShoppingList')) || []` sera évaluée à chaque render. Pour y remédier et améliorer la performance (l'échange avec `localStorage` peuvent être coûteuse au niveau de la performance), nous allons passer une fonction dans `useState` :
 
 ```javascript
 const [shopping, setShopping] = useState(

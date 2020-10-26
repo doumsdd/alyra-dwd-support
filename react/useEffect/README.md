@@ -79,7 +79,7 @@ React.useEffect(() => {
 }, [like])
 ```
 
-![](https://wptemplates.pehaa.com/assets/alyra/title-ue-ok.gif)
+![](https://wptemplates.pehaa.com/assets/alyra/title-ue-ok2.gif)
 
 Ici, `title` est re-rendu uniquement si la valeur de la variable `like` change.
 

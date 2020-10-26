@@ -1,6 +1,6 @@
 # Components
 
-**Components** (ou composants en français) sont une base de React. Ils permettent de découper l’interface utilisateur en éléments indépendants et réutilisables. Nous crééons nos propres bricks avec lesquelles nous assemblons notre application web. Ceci nous permet de travailler plus vite, ne pas nous répéter et mieux organiser notre code. Il est plus facile de modifier une partie spécifique de markup, réutliser la même interface pour différent contenus est aussi quasi-automatique.
+**Components** (ou composants en français) sont une base de React. Ils permettent de découper l’interface utilisateur en éléments indépendants et réutilisables. Nous crééons nos propres "bricks" avec lesquelles nous assemblons notre application web. Ceci nous permet de travailler plus vite, ne pas nous répéter et mieux organiser notre code. Il est plus facile de modifier une partie spécifique de markup, réutliser la même interface pour différent contenus est aussi quasi-automatique.
 
 ## Component step by step
 
@@ -39,7 +39,7 @@ const schoolAlyra = (
 )
 ```
 
-ce serait exactement pareil pour Simplon :
+ce serait pareil pour Simplon :
 
 ```javascript
 const schoolSimplon = (
@@ -56,7 +56,7 @@ const schoolSimplon = (
 )
 ```
 
-et pour chaque nouvelle école que nous ajouterons sur la liste.
+ainsi que pour chaque nouvelle école que nous ajouterons sur la liste.
 
 Afin d'afficher les écoles dans un document HTML nous crééons un `element` comme ceci :
 
@@ -74,10 +74,18 @@ ReactDOM.render(element, document.getElementById("root"))
 
 `schoolAlyra` et `schoolSimplon` (ainsi que d'autres écoles que j'ajouterai dans l'avenir) partagent le même markup avec des différence dans le nom, description et le lien vers l'école.
 
-Pour ne pas me répéter (DRY = don't repeat yourself), nous pouvons créer une fonction qui retourne notre article. Voici à quoi aurait pu ressembler une telle fonction et son application :
+Pour ne pas me répéter (le principe _DRY = don't repeat yourself_), nous pouvons créer une fonction qui retourne notre article. Voici à quoi aurait pu ressembler une telle fonction et son application :
 
 ```javascript
 const school = (props) => {
+  /* 
+  props = {
+    name: "Alyra",
+    link: "https://alyra.fr",
+    description:
+    "Une école au coeur de la blockchain. Fondée par des passionés et ouverte à toutes et tous.",
+  } 
+  */
   const { name, link, description } = props
   return (
     <article className="p-3 mb-3 border shadow">

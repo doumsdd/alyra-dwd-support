@@ -40,9 +40,9 @@ C'est dans le fichier `public/index.html` où nous devons modifier l'attribut `l
 
 ## Step 2a - icônes et manifest.json
 
-Le fichier `manifest.json` permet d'installer un bouton vers votre app sur l'appareil mobile, vous pouvez [en lire davantage, par exemple, ici](https://web.dev/add-manifest-react/)
+Le fichier `manifest.json` permet d'installer un bouton vers votre app sur l'appareil mobile, vous pouvez [en lire davantage, par exemple, ici.](https://web.dev/add-manifest-react/)
 
-Vous pouvez créer votre pack d'icônes avec un des générateurs disponibles en ligne, par exemple [favicon-generator.org](https://www.favicon-generator.org/)
+Vous pouvez créer votre pack d'icônes avec un des générateurs disponibles en ligne, tel que [favicon-generator.org](https://www.favicon-generator.org/).
 Copiez ensuite des icônes dans le dossier `public` et remplacer `"short_name"`, `"name"` et toute l'array `"icons"` dans `manifest.json` :
 
 ```javascript
@@ -55,9 +55,9 @@ Copiez ensuite des icônes dans le dossier `public` et remplacer `"short_name"`,
 
 ## Step 3 - App.js et App.css
 
-Probablement vous n'avez pas besoin d'un fichier .css global d'autre que `bootstrap/dist/css/bootstrap.css`.  
-Supprimer le fichier `App.css` et nous ne l'importez pas.
-À la fin de cette étape votre application devrait afficher le titre ToDos App :
+Probablement vous n'avez pas besoin d'un fichier .css global, autre que `bootstrap/dist/css/bootstrap.css`.  
+Supprimez le fichier `App.css` et ne l'importez pas.
+À la fin de cette étape votre application devrait afficher le titre _ToDos App_ :
 
 ```javascript
 /* src/App.js */

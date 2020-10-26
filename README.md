@@ -77,7 +77,6 @@
   - [CRA - premiers pas](./react/cra/cra-premiers-pas)
   - [Brief exercice CRA - todo](./react/cra/cra-todo)
 - [Project Gradients (brief)](./react/project-gradients)
-- [useContext](https://github.com/pehaa/alyra-gradients-context)
 - [useContext - refactor shopping list exercice starter](https://github.com/pehaa/alyra-shopping-refactor-context)
 - [useEffect](./react/useEffect)
 - [Promises, fetch & useEffect](./react/promises-fetch-useEffect)

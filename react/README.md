@@ -14,7 +14,6 @@
   - [CRA - premiers pas](./cra/cra-premiers-pas)
   - [CRA - todo](./cra/cra-todo)
 - [Project Gradients (brief)](./project-gradients)
-- [useContext](https://github.com/pehaa/alyra-gradients-context)
 - [useContext - refactor shopping list exercice starter](https://github.com/pehaa/alyra-shopping-refactor-context)
 - [useEffect](./useEffect)
 - [Promises, fetch & useEffect](./promises-fetch-useEffect)

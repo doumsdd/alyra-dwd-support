@@ -1,4 +1,4 @@
-# JSX (2) - Syntaxe avancée
+# Syntaxe JSX en détails (2) - Notions avancées
 
 ## Expressions JavaScript
 
@@ -6,7 +6,7 @@ JSX permet de faire un mixte de la structure HTML et des expressions JavaScript.
 
 ---
 
-Pour rappel : **une expression JavScript** est un un code qui donne une valeur en tant que le résultat. Autrement dit, l'expression js est un bout de code qui pourrait se trouver à droite d'un symbole `=`.
+Pour rappel : **une expression JavaScript** est un un code qui donne une valeur en tant que le résultat. Autrement dit, l'expression js est un bout de code qui pourrait se trouver à droite d'un symbole `=`.
 
 ---
 
@@ -21,6 +21,14 @@ const element = (
   <h1 lang={lang}>{lang === "en" ? "Hello World!" : "Bonjour le Monde !"}</h1>
 )
 // <h1 lang="en">Hello World!</h1>
+```
+
+```javascript
+const lang = "fr"
+const element = (
+  <h1 lang={lang}>{lang === "en" ? "Hello World!" : "Bonjour le Monde !"}</h1>
+)
+// <h1 lang="fr">Bonjour le Monde !</h1>
 ```
 
 ```javascript
@@ -115,9 +123,9 @@ Vous pouvez voir le rendu [sans `{" "}` ici.](https://codepen.io/alyra/pen/OJNxR
 
 ![](https://assets.codepen.io/4515922/spaces.png)
 
-## Expressions boléennes et conditional rendering
+## Expressions booléennes et conditional rendering
 
-Les expressions boléennes, ainsi que `undefined` et `null` ne génére pas de rendu :
+Les expressions booléennes, ainsi que `undefined` et `null` ne génére pas de rendu :
 
 ```javascript
 const age = 10
@@ -139,7 +147,7 @@ const element = <span>{null}</span>
 
 ### Symbole &&
 
-Les expressions boléennes peuvent être utilisées afin d'afficher un rendu selon une condition. En particulier `&&` est souvent utilisé dans JSX.
+Les expressions booléennes peuvent être utilisées afin d'afficher un rendu selon une condition. En particulier `&&` est souvent utilisé dans JSX.
 
 ```javascript
 const name = "Alyra"
@@ -192,7 +200,7 @@ const element = (
   <section>
     <h2>Shopping List</h2>
     {length ? (
-      <p>Vous avez {length} articles à acheter</p>
+      <p>Vous avez {length} articles à acheter.</p>
     ) : (
       <p>Avez-vous besoin de quelque-chose ?</p>
     )}

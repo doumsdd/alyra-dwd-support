@@ -164,4 +164,8 @@ function App() {
 export default App
 ```
 
+---
+
+## Exemple
+
 Vous pouvez voir comment passer le code [depuis ce pen](https://codepen.io/alyra/pen/a4bb96fcc8c2c5dcba3eb2b1720db479) vers une CRA dans [ce répo GitHub](https://github.com/pehaa/alyra-react-shopping-list)

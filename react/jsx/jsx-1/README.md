@@ -6,9 +6,9 @@ Si vous vous posez cette question, je pense que c'est un réflexe tout à fait l
 
 Heureusement, **JSX** nous vient à la rescousse !
 
-**JSX** est une extension syntaxique de JavaScript, créée par des dévelopeurs de React et recommandée par React. Comme indiqué dans la documentation : _fondamentalement, JSX fournit juste du sucre syntaxique pour la fonction `React.createElement`_. Pourtant c'est un vrai _game changer_ pour nous, génère
+**JSX** est une extension syntaxique de JavaScript, créée par des dévelopeurs de React et recommandée par React. Comme indiqué dans la documentation : _fondamentalement, JSX fournit juste du sucre syntaxique pour la fonction `React.createElement`_. Pourtant c'est un vrai _game changer_ pour nous, les développeurs.
 
-Regardons le code qui nous génère la petite mémo sur les pandas roux.
+Regardons le code qui nous génère le petite mémo sur les pandas roux.
 
 ```javascript
 const rootElement = document.getElementById("root")

@@ -78,9 +78,7 @@ Un peu plus tard, nous allons importer le fichier complet de bootstrap `node_mod
 
 ### public/index.html
 
-Passage obligatoire pour mettre à jour la partie `head` de l'appli (lang, title, meta, favicons, apple-touch-icon)
-
-A l'occasion on met à jour le ficher `public/manifest.json`
+C'est un passage obligatoire pour mettre à jour la partie `head` de l'appli (lang, title, meta, favicons, apple-touch-icon, etc.). À l'occasion on met à jour le ficher `public/manifest.json`
 
 ### src/index.js
 
@@ -89,7 +87,7 @@ Ici, on peut mettre en place le fichier CSS principale
 ```javascript
 import React from "react"
 import ReactDOM from "react-dom"
-import "bootstrap/dist/css/bootstrap.css" // <- importer bootstap, depuis node_modules
+import "bootstrap/dist/css/bootstrap.css" // <- importer bootsrtap, depuis node_modules
 import "./index.css" // <- supprimer le contenu par défaut de ce fichier
 import App from "./App"
 import * as serviceWorker from "./serviceWorker"
@@ -99,8 +97,8 @@ import * as serviceWorker from "./serviceWorker"
 
 ### Components
 
-Pour mieux organiser notre projet, nous allons créer un dossier components dans le repertoire `src`.
-Tous nos components seront créer dans repertoire.
+Pour mieux organiser notre projet, nous allons créer un dossier _components_ dans le repertoire `src`.
+Tous nos components seront placés dans ce repertoire.
 
 ```bash
 mkdir src/components

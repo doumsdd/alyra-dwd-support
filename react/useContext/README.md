@@ -34,7 +34,7 @@ src
 
 Regardons l'image ci-dessus. Nous utilisons `filter` et `setFilter` dans `GradientsSelect` et `GradientsTagButton`.
 
-Leur common parent est le component 'Gradients` et c'est là où nous trouverons le code :
+Leur common parent est le component `Gradients` et c'est là où nous trouverons le code :
 
 ```javascript
 // src/components/Gradients.js

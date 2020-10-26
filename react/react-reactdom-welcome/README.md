@@ -322,7 +322,7 @@ const element = React.createElement(
 )
 ```
 
-Faites attention aux nom des propriétés en camelCase et les valeurs avec des guillemets (!) Sachez aussi que la directive `!important` ne marche pas avec le style inline dans React.
+Faites attention aux noms des propriétés en camelCase et les valeurs avec des guillemets (!) Sachez aussi que la directive `!important` ne marche pas avec le style inline dans React.
 
 ---
 

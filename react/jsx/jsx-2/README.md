@@ -280,7 +280,7 @@ Le rendu HTML sera alors
 
 ## Arrays
 
-Souvent le contenu que nous devons rendre sur la page nous parvient structure dans un _array_.
+Souvent le contenu que nous devons rendre sur la page nous parvient structuré dans un _array_.
 JSX permet de rendre un _array_
 
 ```javascript
@@ -294,7 +294,7 @@ const element = (
 */
 ```
 
-Le code ci-dessus fonctionnera mais, le rendu ne sera pas correcte. Nous devons convertir chaque élément de notre `shoppingList` en un élément `li`. Pour ceci, nous allons utiliser la méthode `map`
+Le code ci-dessus fonctionnera mais le rendu ne sera pas correcte. Nous devons convertir chaque élément de notre `shoppingList` en un élément `li`. Pour ceci, nous allons utiliser la méthode `map` :
 
 ```javascript
 const shoppingList
@@ -310,7 +310,7 @@ const element = (
 
 ### Attribut spécial `key`
 
-Chaque élément d'un array devrait avoir un attribut `key` avec des valeurs uniques, une omission de cette attribut provoquera un warning dans la console. Ceci permet au React d'effectuer correctement et efficacement son algorithme de comparaison (_diffing algorithm_).
+Chaque élément d'un array devrait avoir un attribut `key` avec des valeurs uniques, une omission de cette attribut provoquera un warning dans la console. Une clé unique pour chaque élément de la liste permet au React d'effectuer correctement et efficacement son algorithme de comparaison (_diffing algorithm_).
 
 https://codepen.io/alyra/pen/MWyvGRZ
 

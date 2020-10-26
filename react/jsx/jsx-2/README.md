@@ -52,7 +52,7 @@ Exemples **valides** ✅ :
 </div>
 ```
 
-Exemples **pas valides** 🚫 :
+Exemples **non valides** 🚫 :
 
 ```javascript
 <div id={const myVariable = 'top'}>
@@ -125,7 +125,7 @@ Vous pouvez voir le rendu [sans `{" "}` ici.](https://codepen.io/alyra/pen/OJNxR
 
 ## Expressions booléennes et conditional rendering
 
-Les expressions booléennes, ainsi que `undefined` et `null` ne génère pas de rendu :
+Les expressions booléennes, ainsi que `undefined` et `null` ne génèrent pas de rendu :
 
 ```javascript
 const age = 10
@@ -186,7 +186,7 @@ const element = (
 
 ### Conditions ternaires
 
-Conditions ternaires sont également souvent utilisées avec JSX, voici quelques exemples :
+Les conditions ternaires sont également souvent utilisées avec JSX, en voici quelques exemples :
 
 ```javascript
 const lang = "en"
@@ -250,7 +250,7 @@ const props = {
 const element = <h1 className="display-4" {...props} lang="fr">Bonjour le Monde</h1>
 ```
 
-Est-ce correct ? Tout à fait ! Quels sera son rendu ?
+Est-ce correct ? Tout à fait ! Quel sera son rendu ?
 
 Afin de répondre à cette question, regardons sous le capot de babel, ou plutôt en quoi ce code est compilé.
 
@@ -294,7 +294,7 @@ const element = (
 */
 ```
 
-Le code ci-dessus fonctionnera mais le rendu ne sera pas correcte. Nous devons convertir chaque élément de notre `shoppingList` en un élément `li`. Pour ceci, nous allons utiliser la méthode `map` :
+Le code ci-dessus fonctionnera mais le rendu ne sera pas correct. Nous devons convertir chaque élément de notre `shoppingList` en un élément `li`. Pour ceci, nous allons utiliser la méthode `map` :
 
 ```javascript
 const shoppingList
@@ -314,7 +314,7 @@ Chaque élément d'un array devrait avoir un attribut `key` avec des valeurs uni
 
 https://codepen.io/alyra/pen/MWyvGRZ
 
-Ici nous pouvons comparer 2 listes, une avec des attributs `key` (👍), l'autre sans (👎). Ouvrez DevTools et observez comment chaque de ces 2 listes est re-rendue. Dans le cas 👍, les quatre éléments `<li>...</li>` ne sont pas re-rendus. Dans le ca 👎, à chaque `ReactDOM.render` tous les éléments `<li>...</li>` sont "refaits" à nouveau.
+Ici nous pouvons comparer 2 listes, une avec des attributs `key` (👍), l'autre sans (👎). Ouvrez DevTools et observez comment chacune de ces 2 listes est re-rendue. Dans le cas 👍, les quatre éléments `<li>...</li>` ne sont pas re-rendus. Dans le cas 👎, à chaque `ReactDOM.render` tous les éléments `<li>...</li>` sont "refaits" à nouveau.
 
 https://wptemplates.pehaa.com/assets/alyra/shopping-list.mp4
 
@@ -374,7 +374,7 @@ const element = (
 )
 ```
 
-Dans le cas comme ceci, on est obligé d'utiliser `<React.Fragment>` plutôt que `<>`. Il est impossible d'attribuer `key` à `<>`.
+Dans ce cas, on est obligé d'utiliser `<React.Fragment>` plutôt que `<>`. Il est impossible d'attribuer `key` à `<>`.
 
 ---
 

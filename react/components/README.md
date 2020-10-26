@@ -1,10 +1,10 @@
 # Components
 
-**Components** (ou composants en français) sont une base de React. Ils permettent de découper l’interface utilisateur en éléments indépendants et réutilisables. Nous créons nos propres "bricks" avec lesquelles nous assemblons notre application web. Ceci nous permet de travailler plus vite, ne pas nous répéter et mieux organiser notre code. Il est plus facile de modifier une partie spécifique de markup, réutiliser la même interface pour différent contenus est aussi quasi-automatique.
+**Components** (ou composants en français) constituent une base de React. Ils permettent de découper l’interface utilisateur en éléments indépendants et réutilisables. Nous créons nos propres briques avec lesquelles nous assemblons notre application web. Ceci nous permet de travailler plus vite, ne pas nous répéter et mieux organiser notre code. Il est plus facile de modifier une partie spécifique de markup, réutiliser la même interface pour différents contenus est aussi quasi-automatique.
 
 ## Component step by step
 
-Imaginons que nous souhaitons mettre en place un catalogue des écoles. Nous commençons à réunir des données
+Imaginons que nous souhaitions mettre en place un catalogue des écoles. Nous commençons à réunir des données :
 
 ```javascript
 const Alyra = {
@@ -72,7 +72,7 @@ const element = (
 ReactDOM.render(element, document.getElementById("root"))
 ```
 
-`schoolAlyra` et `schoolSimplon` (ainsi que d'autres écoles que j'ajouterai dans l'avenir) partagent le même markup avec des différence dans le nom, description et le lien vers l'école.
+`schoolAlyra` et `schoolSimplon` (ainsi que d'autres écoles que j'ajouterai dans l'avenir) partagent le même markup avec des différences dans le nom, la description et le lien vers l'école.
 
 Pour ne pas me répéter (le principe _DRY = don't repeat yourself_), nous pouvons créer une fonction qui retourne notre article. Voici à quoi aurait pu ressembler une telle fonction et son application :
 
@@ -109,7 +109,7 @@ const element = (
 ReactDOM.render(element, document.getElementById("root"))
 ```
 
-On y est presque. Avec React nous pouvons aller plus loin. Nous pouvons créer notre propre nouvelle "balise" `<School />`. Notre balise devrait afficher l'article sur l'école. On passera des props (`name` et `link`) en tant que ces "attributs", et la `description` en tant que son contenu.
+On y est presque. Avec React nous pouvons aller plus loin. Nous pouvons créer notre propre nouvelle "balise" `<School />`. Notre balise devrait afficher l'article sur l'école. On passera des props (`name` et `link`) en tant que ses "attributs", et la `description` en tant que son contenu.
 
 Voici ce que nous voudrons pouvoir écrire :
 
@@ -175,7 +175,7 @@ Il ne faut **jamais** modifier `props` dans le component.
 
 #### props.children
 
-Qu'est-ce qui se passe si nous appelons `<School name="Alyra" link=".." description="..">tu me vois ?</School>` avec un élément enfant (ici texte "tu me vois ?")
+Que se passe-t'il si nous appelons `<School name="Alyra" link=".." description="..">tu me vois ?</School>` avec un élément enfant (ici texte "tu me vois ?")
 
 https://codepen.io/alyra/pen/wvGzVwN
 
@@ -183,7 +183,7 @@ Le rendu ne change pas, mais regardons les `props` dans la console, props contie
 
 ![](https://assets.codepen.io/4515922/props-children.png)
 
-Dans notre component nous avons accès à ses éléments enfants. Ceci nous permet de définir notre component un peu différemment, avec plus de flexibilité.
+Dans notre component, nous avons accès à ses éléments enfants. Ceci nous permet de définir notre component un peu différemment, avec plus de flexibilité.
 
 ```javascript
 const School = (props) => {
@@ -270,7 +270,7 @@ https://codepen.io/alyra/pen/poyNoeG
 
 ## Decomposition au niveau d'argument
 
-Parfois on utilise la decomposition au niveau des arguments d'un component, comme ceci :
+Parfois, on utilise la decomposition au niveau des arguments d'un component, comme ceci :
 
 ```javascript
 const School = ({ name, link, children }) => {
@@ -319,7 +319,7 @@ const MyComponent = () => {
 
 ## Class components
 
-On peut aussi créer des components en utilisant la syntaxe des classes. Nous n'allons pas l'utiliser cette approche mais il est important de la connaître pour savoir lire le code existant.
+On peut aussi créer des components en utilisant la syntaxe des classes. Nous n'allons pas utiliser cette approche mais il est important de la connaître pour savoir lire le code existant.
 
 ```javascript
 class School extends React.Component {

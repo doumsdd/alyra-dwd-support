@@ -1,6 +1,6 @@
 # Rendering _HTML from string_ dans React
 
-Souvent le contenu que nous affichons avec React provient d'une source tiers (api, base de données). Nous les récupérons en tant qu'un objet, par exemple :
+Souvent le contenu que nous affichons avec React provient d'une source tierce (api, base de données). Nous les récupérons en tant qu'objet, par exemple :
 
 ```javascript
 const alyra = {
@@ -10,7 +10,7 @@ const alyra = {
 }
 ```
 
-Dans ce cas là, `name`, `link`, `description` sont en format `string`. Le clés `description` contiennent les balises HTML. Insérer des balises HTML d'une source tiers est une opération à risque, exposant notre application aux attaques XSS. Pour nous protéger contre ceci, React échappe toutes les balises HTML. Regardons ce que ça veut dire en pratique.
+Dans ce cas là, `name`, `link`, `description` sont en format `string`. Les clés `description` contiennent les balises HTML. Insérer des balises HTML d'une source tierce est une opération à risque, exposant notre application aux attaques XSS. Pour nous protéger contre ceci, React échappe toutes les balises HTML. Regardons ce que ça veut dire en pratique.
 
 ```javascript
 const School = (props) => {
@@ -85,7 +85,7 @@ https://codepen.io/alyra/pen/WNwXNmv
 
 ## Solution (1a) - dangerouslySetInnerHTML + DOMPurify
 
-[DOMPurify](https://github.com/cure53/DOMPurify) est une bibliothèque JavaScript, qui permet de nettoyer HTML en enlevant uniquement des parties potentiellement dangereuses.
+[DOMPurify](https://github.com/cure53/DOMPurify) est une bibliothèque JavaScript, qui permet de nettoyer le HTML en enlevant uniquement les parties potentiellement dangereuses.
 
 ```javascript
 const dirty = "<img src=x onerror=alert(1)//>"

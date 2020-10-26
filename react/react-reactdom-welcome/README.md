@@ -204,7 +204,7 @@ https://codepen.io/alyra/pen/xxVLwgY
 ## Réconciliation
 
 Que se passe quand on appelle la méthode `ReactDOM.render` lorsque l'élément React est déjà inséré dans le container ?  
-Au lieu de remplacer le contenu du container, `ReactDOM.render` procédé à une "mise à jour". Au lieu de recréer tous les noeuds, `ReactDOM.render` utilise un algorithme de comparaison (_diffing algorithm_). Par conséquent, le DOM est modifié uniquement là où c’est strictement nécessaire. Si l'élément React n'a pas changé, le DOM ne sera pas modifié.
+Au lieu de remplacer le contenu du container, `ReactDOM.render` procède à une "mise à jour". Au lieu de recréer tous les noeuds, `ReactDOM.render` utilise un algorithme de comparaison (_diffing algorithm_). Par conséquent, le DOM est modifié uniquement là où c’est strictement nécessaire. Si l'élément React n'a pas changé, le DOM ne sera pas modifié.
 
 Vous pouvez observer ce fonctionnement dans le pen suivant
 

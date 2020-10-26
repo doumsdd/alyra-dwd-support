@@ -2,7 +2,7 @@
 
 > Mais en quoi, `React.createElement` nous facilite la vie ? ... on dirait le contraire... ?
 
-Si vous vous posez cette question, je pense que c'est un réflexe tout à fait légitime. Créer les structures plus complexes demande beaucoup de code. En plus ce code n'est pas très lisible.
+Si vous vous posez cette question, je pense que c'est un réflexe tout à fait légitime. Créer les structures plus complexes demande beaucoup de code. De plus, ce code n'est pas très lisible.
 
 Heureusement, **JSX** nous vient à la rescousse !
 

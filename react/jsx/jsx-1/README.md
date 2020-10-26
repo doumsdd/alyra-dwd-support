@@ -1,6 +1,6 @@
 # JSX (1)
 
-> Mais en quoi, `React.createElement` nous facilite la vie ? ... on dirait le contraire... ?ga
+> Mais en quoi, `React.createElement` nous facilite la vie ? ... on dirait le contraire... ?
 
 Si vous vous posez cette question, je pense que c'est un reflèxe tout à fait légitime. Créer les structures plus complèxes demande beaucoup de code, qui n'est pas forcement très lisible.
 
@@ -190,7 +190,7 @@ const element = <p>{/* je suis un commentaire  */}</p>
 
 JSX est juste une extension syntaxique, il n'est pas donc indispensable pour un projet React. Dans certain cas, on peut préférer pouvoir se passer d'un compilateur. Vous pouvez [en lire davantage dans cette article.](https://fr.reactjs.org/docs/react-without-jsx.html)
 
---- 
+---
 
 ## Exercices
 

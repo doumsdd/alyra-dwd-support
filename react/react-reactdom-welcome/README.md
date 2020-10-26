@@ -6,11 +6,11 @@ Le rôle de React est de faciliter la création des interfaces utilisateur (UI).
 
 Depuis quelques années, React est le choix numéro un des développeurs web. Ceci est confirmé par les sondages menés par [Stack Overflow](https://insights.stackoverflow.com/survey/2019/#technology-_-most-loved-dreaded-and-wanted-web-frameworks), [State of Frontend 2020](https://tsh.io/state-of-frontend/#frameworks) ou encore [State of JS](https://2019.stateofjs.com/front-end-frameworks/).
 
-De nombreuses grandes entreprises utilisent React en production, parmi elles bien évidemment Facebook (et Instagram), mais aussi Netflix, Airbnb, Cloudflare ou Dropbox. Voir les grandes références opter pour cette librairie, est très encourageant lorsqu'on décide d'utiliser React dans un nouveau projet. Aussi, si vous êtes à l'aise avec React, vous pouvez utiliser ces connaissances pour apprendre à créer des applications mobiles avec React Native.
+De nombreuses grandes entreprises utilisent React en production, parmi elles bien évidemment Facebook (et Instagram), mais aussi Netflix, Airbnb, Cloudflare ou Dropbox. Voir les grandes références opter pour cette librairie est très encourageant lorsque l'on décide d'utiliser React dans un nouveau projet. Aussi, si vous êtes à l'aise avec React, vous pouvez utiliser ces connaissances pour apprendre à créer des applications mobiles avec React Native.
 
 ## React et DOM
 
-Nous allons faire nos premiers pas avec React dans CodePen. Afin de commencer à travailler, nous avons besoin de 2 fichiers source :
+Nous allons faire nos premiers pas avec React dans CodePen. Afin de commencer à travailler, nous avons besoin de 2 fichiers sources :
 
 - **React** [https://unpkg.com/react/umd/react.development.js](https://unpkg.com/react/umd/react.development.js)
 - **ReactDOM** [https://unpkg.com/react-dom/umd/react-dom.development.js](https://unpkg.com/react-dom/umd/react-dom.development.js)

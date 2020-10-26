@@ -2,11 +2,11 @@
 
 > Mais en quoi, `React.createElement` nous facilite la vie ? ... on dirait le contraire... ?
 
-Si vous vous posez cette question, je pense que c'est un reflèxe tout à fait légitime. Créer les structures plus complèxes demande beaucoup de code, qui n'est pas forcement très lisible.
+Si vous vous posez cette question, je pense que c'est un reflèxe tout à fait légitime. Créer les structures plus complèxes demande beaucoup de code. En plus ce code n'est pas très lisible.
 
 Heureusement, **JSX** nous vient à la rescousse !
 
-**JSX** est une extension syntaxique de JavaScript, créée par des dévelopeurs de React et recommandée par React. Comme indiqué dans la documentation : _fondamentalement, JSX fournit juste du sucre syntaxique pour la fonction `React.createElement`_. Pourtant c'est un vrai _game changer_ pour nous, des dévéloppeurs.
+**JSX** est une extension syntaxique de JavaScript, créée par des dévelopeurs de React et recommandée par React. Comme indiqué dans la documentation : _fondamentalement, JSX fournit juste du sucre syntaxique pour la fonction `React.createElement`_. Pourtant c'est un vrai _game changer_ pour nous, les dévéloppeurs.
 
 Regardons le code qui nous génére la petite mémo sur les pandas roux.
 
@@ -57,7 +57,7 @@ const article = (
 ReactDOM.render(article, rootElement);
 ```
 
-C'est un peu comme si on écrivait du HTML directement dans JavaScript. Voici quelques exemples supplémentaires :
+C'est un peu comme si on écrivait du HTML directement dans JavaScript ! 🤩 Voici quelques exemples supplémentaires :
 
 ```javascript
 const element = <p></p>
@@ -148,15 +148,15 @@ ReactDOM.render(<h1>Hello World</h1>, root)
 
 JSX est juste une extension syntaxique, il n'est pas donc indispensable pour un projet React. Dans certain cas, on peut préférer pouvoir se passer d'un compilateur. Vous pouvez [en lire davantage dans cette article.](https://fr.reactjs.org/docs/react-without-jsx.html)
 
-## Syntaxe JSX (1)
+## Syntaxe JSX en détails (1)
 
 ### Toutes les balises sont obligatoirement fermées (xml-style)
 
-Dans HTML on peut se permettre de ne pas fermer des balises auto-fermantes (self-closing tags), tel que `<input>` ou `<img src="img1.jpg" alt="">`.
+Dans HTML on peut se permettre de ne pas fermer des balises auto-fermantes (_self-closing tags_), tel que `<input>` ou `<img src="img1.jpg" alt="">`.
 
 Ceci n'est pas correcte dans JSX, et provoquera une erreur.
 
-La syntaxe correcte est `<input />` et `<img src="img1.jpg" alt="" />`
+La syntaxe correcte est `<input />` et `<img src="img1.jpg" alt="" />`.
 
 ### React.Fragment
 
@@ -185,10 +185,6 @@ element = (
 ```javascript
 const element = <p>{/* je suis un commentaire  */}</p>
 ```
-
-## React sans JSX
-
-JSX est juste une extension syntaxique, il n'est pas donc indispensable pour un projet React. Dans certain cas, on peut préférer pouvoir se passer d'un compilateur. Vous pouvez [en lire davantage dans cette article.](https://fr.reactjs.org/docs/react-without-jsx.html)
 
 ---
 

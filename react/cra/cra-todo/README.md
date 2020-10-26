@@ -1,6 +1,6 @@
 # Todo List - migration vers CRA
 
-Votre tâche est de migrer la _Todos List_ depuis CodePen vers la solution CRA. Suivez les étapes listés ci-dessus :
+Votre tâche est de migrer la _Todo List_ depuis CodePen vers la solution CRA. Suivez les étapes listés ci-dessus :
 
 ## Step 0
 

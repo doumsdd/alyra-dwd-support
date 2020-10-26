@@ -144,7 +144,7 @@ Nous allons créer un nouveau projet
 mkdir modules-first-steps
 ```
 
-avec la structure suivante
+avec la structure suivante :
 
 ```bash
 ├── app.js
@@ -185,7 +185,7 @@ console.log("Unique tags :", tags)
 ### index.html
 
 Remarquez que nous n'inclueons pas de fichier `gradients.js`, uniquement `app.js` est inclu.  
-L'attribut `type="module"` est undispensable. Son omission provoque une : `Uncaught SyntaxError: Cannot use import statement outside a module`
+L'attribut `type="module"` est undispensable. Son omission provoque une : `Uncaught SyntaxError: Cannot use import statement outside a module`.
 
 ```html
 <!DOCTYPE html>
@@ -200,6 +200,8 @@ L'attribut `type="module"` est undispensable. Son omission provoque une : `Uncau
   </body>
 </html>
 ```
+
+---
 
 ## Vous pouvez en lire davantage :
 

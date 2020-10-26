@@ -154,7 +154,7 @@ JSX est juste une extension syntaxique, il n'est pas donc indispensable pour un 
 
 Dans HTML on peut se permettre de ne pas fermer des balises auto-fermantes (_self-closing tags_), tel que `<input>` ou `<img src="img1.jpg" alt="">`.
 
-Ceci n'est pas correcte dans JSX, et provoquera une erreur.
+Ceci n'est pas correct dans JSX, et provoquera une erreur.
 
 La syntaxe correcte est `<input />` et `<img src="img1.jpg" alt="" />`.
 

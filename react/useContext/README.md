@@ -55,6 +55,8 @@ Nous devons aussi poursuivre tout le chemin entre `Gradients` vers `GradientTagB
 
 Existe-il une autre possibilité ? Passer les props tout le long n'est pas très gênant dans ce projet-ci, mais imaginons un projet plus complexe...
 
+Dans la programmation, le mot _context_ peut être interprété comme "l'information pertinente". On utilise _context_ dans React si une information est pertinente pour plusieurs components en même temps. Les exemples type sont : theme (_dark_ vs. _light_), language (version 'FR' ou 'EN'), le choix de devise dans une application e-commerce.
+
 Voici un extrait de la documentation officielle de React
 
 > Dans une application React typique, les données sont passées de haut en bas (du parent à l’enfant) via les props, mais cela peut devenir lourd pour certains types de props (ex. les préférences régionales, le thème de l’interface utilisateur) qui s’avèrent nécessaires pour de nombreux composants au sein d’une application. Le Contexte offre un moyen de partager des valeurs comme celles-ci entre des composants sans avoir à explicitement passer une prop à chaque niveau de l’arborescence.
@@ -155,7 +157,11 @@ export default Gradients
 
 ![](https://wptemplates.pehaa.com/assets/alyra/diagram-usecontext.png)
 
-## Consommer context avec useContext
+## Consommer context avec `useContext`
+
+`useContext` accepte un objet contexte (dans notre cas se sera `FilterContext`), et retourne la valeur actuelle du contexte. La valeur de `useContext(FilterContext)` est déterminée par la prop `value` du plus proche <FilterContext.Provider> au-dessus du composant dans l’arbre.
+
+Quand le plus proche <FilterContext.Provider> au-dessus du composant est mis à jour, `useContext` déclenche un re-render avec la value la plus récente passée au fournisseur MyContext.
 
 ### GradientsList.js
 
@@ -268,6 +274,21 @@ const GradientsSelect = () => {
 
 export default GradientsSelect
 ```
+
+---
+
+Context recap :
+
+- _contexte_ = information pertinente
+- utile lorsque plusieurs components doivent partager la même information (thème, langue, devise)
+- permettent d'éviter passer les props plusieurs niveaux plus bas
+- Étapes de création :
+  - créer le contexte `createContext`
+  - créer le component `Provider` avec la props `value` que va tenir l'information pertinente
+  - exporter le contexte et son provider
+- Pour utiliser le contexte
+  - Emballer vos components avec le provider
+  - Dans les fichiers components, importer le contexte et passer le au hook `useContext`
 
 ---
 

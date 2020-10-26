@@ -1,10 +1,10 @@
 # Projet Gradients
 
-Le temps du projet est arrivé ! Dans ce challenge vous avez pour le but contruire une application web monopage [comme celle-ci.](https://alyra-gradients-bonus.netlify.app/)
+Le temps du projet est arrivé ! Dans ce challenge vous avez pour le but construire une application web _monopage_ [comme celle-ci.](https://alyra-gradients-bonus.netlify.app/)
 
-Vous devez utiliser CRA en tant que starter. Ci-dessous vous trouverez quelques astuces et indications qui vous aideront à structurer votre  projet.
+Vous devez utiliser CRA en tant que starter. Ci-dessous vous trouverez quelques astuces et indications qui vous aideront à structurer votre projet.
 
-##  CRA - configuration initiale
+## CRA - configuration initiale
 
 ```bash
 npx create-react-app react-alyra-gradients
@@ -19,15 +19,16 @@ yarn add bootstrap@next
 ### Head
 
 Configurez la partie head, ne particulier :
-  - title
-  - lang
-  - meta
+
+- title
+- lang
+- meta
 
 Vous devez aussi remplacez les icônes et configurez `manifest.json`.
 
 ## Structure du projet
 
-Mettez en place un dossier `src/components` avec la structure comme ceci (structure recommendée, mais peut varier un peu 😉)
+Mettez en place un dossier `src/components` avec la structure comme ceci. C’est une structure recommandée, mais elle peut varier un peu 😉.
 
 ```bash
 src
@@ -91,7 +92,7 @@ Mettez en place un component `GradientsSelect` avec le filtre par tag.
 
 ## Tag Boutons
 
-Listez des tags pour chaque bouton. Faites les tags intéractifs, rendez-les en tant que bouton et filtrez par tag suite au "click"
+Listez des tags pour chaque bouton. Faites les tags interactifs, rendez-les en tant que bouton et filtrez par tag suite au "click"
 
 ![](https://wptemplates.pehaa.com/assets/alyra/gradients-tags.png)
 
@@ -109,8 +110,6 @@ Listez des tags pour chaque bouton. Faites les tags intéractifs, rendez-les en 
 - la structure est respectée
 - le header avec le bouton est fonctionnel
 - les dégradés sont affichés dans la page
-- le select foncionne et permet de filter des dégradés par tag
+- le select fonctionne et permet de filter des dégradés par tag
 - il n'y a pas de warning depuis la console dans VSCode, ni dans la console du navigateur
 - [le html est valide (validator w3c)](https://validator.w3.org/nu/)
-
-

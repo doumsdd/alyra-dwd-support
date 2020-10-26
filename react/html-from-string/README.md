@@ -1,12 +1,12 @@
 # Rendering _HTML from string_ dans React
 
-Souvent le contenu que nous affichons avec React provient d'une source tiers (api, base de données). Nous les récupperons en tant qu'un objet, par exemple :
+Souvent le contenu que nous affichons avec React provient d'une source tiers (api, base de données). Nous les récupérons en tant qu'un objet, par exemple :
 
 ```javascript
 const alyra = {
   name: "Alyra",
   link: "https://alyra.fr",
-  description: `<p>Une école <strong>au coeur de la blockchain.</strong> Fondée par des passionés et ouverte à toutes et tous.</p>`,
+  description: `<p>Une école <strong>au coeur de la blockchain.</strong> Fondée par des passionnés et ouverte à toutes et tous.</p>`,
 }
 ```
 
@@ -32,7 +32,7 @@ ReactDOM.render(<App />, document.getElementById("root"))
 
 ![](https://assets.codepen.io/4515922/alyrahtmlstring.png)
 
-Voici notre **problème** : Description est recupérée depuis le string dans `alyra.description`. Pour des raisons de sécurité toutes les balises sont converties en string.
+Voici notre **problème** : Description est récupérée depuis le string dans `alyra.description`. Pour des raisons de sécurité toutes les balises sont converties en string.
 
 ```javascript
 const htmlString = `<h1>Je suis un string <b>avec HTML !</b></h1>`
@@ -61,7 +61,7 @@ Voici comment nous utilisons `dangerouslySetInnerHTML` dans notre `<School />` c
 ```javascript
 const alyra = {
   name: "Alyra",
-  description: `<p>Une école <strong>au coeur de la blockchain.</strong> Fondée par des passionés et ouverte à toutes et tous.</p>`,
+  description: `<p>Une école <strong>au coeur de la blockchain.</strong> Fondée par des passionnés et ouverte à toutes et tous.</p>`,
 }
 
 const School = (props) => {
@@ -85,15 +85,13 @@ https://codepen.io/alyra/pen/WNwXNmv
 
 ## Solution (1a) - dangerouslySetInnerHTML + DOMPurify
 
-[DOMPurify](https://github.com/cure53/DOMPurify) est une bibliothèque JavaScript, qui permet de nettoyer HTML en enlevent uniquement des parties potentiellement dangereuses.
+[DOMPurify](https://github.com/cure53/DOMPurify) est une bibliothèque JavaScript, qui permet de nettoyer HTML en enlevant uniquement des parties potentiellement dangereuses.
 
 ```javascript
-const dirty = '<img src=x onerror=alert(1)//>'
+const dirty = "<img src=x onerror=alert(1)//>"
 const clean = DOMPurify.sanitize(dirty)
 // clean <img src="x">
 ```
-
-
 
 https://codepen.io/alyra/pen/ZEWjbQy
 
@@ -112,11 +110,10 @@ https://codepen.io/alyra/pen/ZEWjbQy
 
 Voici comment nous pouvons l'utiliser avec notre `<School />` exemple :
 
-
 ```javascript
 const alyra = {
   name: "Alyra",
-  description: `<p>Une école <strong>au coeur de la blockchain.</strong> Fondée par des passionés et ouverte à toutes et tous.</p>`,
+  description: `<p>Une école <strong>au coeur de la blockchain.</strong> Fondée par des passionnés et ouverte à toutes et tous.</p>`,
 }
 
 const School = (props) => {
@@ -147,34 +144,36 @@ https://codepen.io/alyra/pen/gOrjaMY
 <script src="https://unpkg.com/react/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/html-react-parser@latest/dist/html-react-parser.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.0.15/purify.min.js" integrity="sha512-nLBKiXCB1MA5X1IwvJ/HLy7fq5XFZlWUlwvCpDJE2f661evdFXQxt1Zk2NBQyveeESfV566CEc8t0SuFrwqxSA==" crossorigin="anonymous"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.0.15/purify.min.js"
+  integrity="sha512-nLBKiXCB1MA5X1IwvJ/HLy7fq5XFZlWUlwvCpDJE2f661evdFXQxt1Zk2NBQyveeESfV566CEc8t0SuFrwqxSA=="
+  crossorigin="anonymous"
+></script>
 ```
 
 ```javascript
 const alyra = {
   name: "Alyra",
-  description: `<p>Une école <strong>au coeur de la blockchain.</strong> Fondée par des passionés et ouverte à toutes et tous.</p>`
-};
+  description: `<p>Une école <strong>au coeur de la blockchain.</strong> Fondée par des passionnés et ouverte à toutes et tous.</p>`,
+}
 
 const School = (props) => {
-  const { name, children } = props;
+  const { name, children } = props
   return (
     <article className="p-3 mb-3 border shadow">
       <h2 className="text-center">{name}</h2>
       {children}
     </article>
-  );
-};
+  )
+}
 
 const App = () => {
   return (
     <School name={alyra.name}>
       {HTMLReactParser(DOMPurify.sanitize(alyra.description))}
     </School>
-  );
-};
+  )
+}
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"))
 ```
-
-

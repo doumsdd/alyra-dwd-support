@@ -1,17 +1,17 @@
 # Components
 
-**Components** (ou composants en français) sont une base de React. Ils permettent de découper l’interface utilisateur en éléments indépendants et réutilisables. Nous crééons nos propres "bricks" avec lesquelles nous assemblons notre application web. Ceci nous permet de travailler plus vite, ne pas nous répéter et mieux organiser notre code. Il est plus facile de modifier une partie spécifique de markup, réutliser la même interface pour différent contenus est aussi quasi-automatique.
+**Components** (ou composants en français) sont une base de React. Ils permettent de découper l’interface utilisateur en éléments indépendants et réutilisables. Nous créons nos propres "bricks" avec lesquelles nous assemblons notre application web. Ceci nous permet de travailler plus vite, ne pas nous répéter et mieux organiser notre code. Il est plus facile de modifier une partie spécifique de markup, réutiliser la même interface pour différent contenus est aussi quasi-automatique.
 
 ## Component step by step
 
-Imaginons que nous souhaitons mettre en place un catalogue des écoles. Nous commencons à reunisser des données
+Imaginons que nous souhaitons mettre en place un catalogue des écoles. Nous commençons à réunir des données
 
 ```javascript
 const Alyra = {
   name: "Alyra",
   link: "https://alyra.fr",
   description:
-    "Une école au coeur de la blockchain. Fondée par des passionés et ouverte à toutes et tous.",
+    "Une école au coeur de la blockchain. Fondée par des passionnés et ouverte à toutes et tous.",
 }
 
 const Simplon = {
@@ -29,8 +29,8 @@ const schoolAlyra = (
   <article className="p-3 mb-3 border shadow">
     <h2 className="text-center">Alyra</h2>
     <p>
-      Une école au coeur de la blockchain. Fondée par des passionés et ouverte à
-      toutes et tous.
+      Une école au coeur de la blockchain. Fondée par des passionnés et ouverte
+      à toutes et tous.
     </p>
     <a href="https://alyra.fr" className="btn btn-primary btn-sm">
       En savoir plus sur Alyra
@@ -58,7 +58,7 @@ const schoolSimplon = (
 
 ainsi que pour chaque nouvelle école que nous ajouterons sur la liste.
 
-Afin d'afficher les écoles dans un document HTML nous crééons un `element` comme ceci :
+Afin d'afficher les écoles dans un document HTML nous créons un `element` comme ceci :
 
 ```javascript
 const element = (
@@ -83,7 +83,7 @@ const school = (props) => {
     name: "Alyra",
     link: "https://alyra.fr",
     description:
-    "Une école au coeur de la blockchain. Fondée par des passionés et ouverte à toutes et tous.",
+    "Une école au coeur de la blockchain. Fondée par des passionnés et ouverte à toutes et tous.",
   } 
   */
   const { name, link, description } = props
@@ -118,8 +118,8 @@ const element = (
   <section className="container">
     <h1 className="my-3 text-center">Ma liste des écoles à recommander</h1>
     <School name="Alyra" link="https://alyra.fr">
-      Une école au coeur de la blockchain. Fondée par des passionés et ouverte à
-      toutes et tous.
+      Une école au coeur de la blockchain. Fondée par des passionnés et ouverte
+      à toutes et tous.
     </School>
     <School name="Simplon" link="https://simplon.co">
       Un réseau de Fabriques solidaires et inclusives qui proposent des
@@ -175,7 +175,7 @@ Il ne faut **jamais** modifier `props` dans le component.
 
 #### props.children
 
-Qu'est-ce qui se passe si nous appellons `<School name="Alyra" link=".." description="..">tu me vois ?</School>` avec un élément enfant (ici texte "tu me vois ?")
+Qu'est-ce qui se passe si nous appelons `<School name="Alyra" link=".." description="..">tu me vois ?</School>` avec un élément enfant (ici texte "tu me vois ?")
 
 https://codepen.io/alyra/pen/wvGzVwN
 
@@ -183,7 +183,7 @@ Le rendu ne change pas, mais regardons les `props` dans la console, props contie
 
 ![](https://assets.codepen.io/4515922/props-children.png)
 
-Dans notre component nous avons accès à ses éléments enfants. Ceci nous permet de définir notre component un peu différement, avec plus de fléxibilité.
+Dans notre component nous avons accès à ses éléments enfants. Ceci nous permet de définir notre component un peu différemment, avec plus de flexibilité.
 
 ```javascript
 const School = (props) => {
@@ -360,7 +360,7 @@ class SchoolLink extends React.Component {
 - [Components 404](https://codepen.io/alyra/pen/LYNzaEy) | [solution](https://codepen.io/alyra/pen/37312356f794026ae368fd81d2d056e4)
 - [Components - conditional - dashboard](https://codepen.io/alyra/pen/wvGrPRv) | [solution](https://codepen.io/alyra/pen/f453f82222b1bc2548d5fa9426f87182)
 - [Components - conditional -admin](https://codepen.io/alyra/pen/VwaMrPX) | [solution](https://codepen.io/alyra/pen/397a299a010c3ab389905b3ca3b24e85)
-- [Components - cond - notifications](https://codepen.io/alyra/pen/VwaMyWJ) | [solution](https://codepen.io/alyra/pen/0c661571511cf77eda61a36eea6cc666)
+- [Components - conditional - notifications](https://codepen.io/alyra/pen/VwaMyWJ) | [solution](https://codepen.io/alyra/pen/0c661571511cf77eda61a36eea6cc666)
 - [Components - button](https://codepen.io/alyra/pen/WNwZmjq) | [solution](https://codepen.io/alyra/pen/202e3fce09a39d4835e6d81b4f9e40c4)
 - [Components - Gradients](https://codepen.io/alyra/pen/qBZqjmb) | [solution](https://codepen.io/alyra/pen/fc101924ee4348e9a009d295e80b266b)
 

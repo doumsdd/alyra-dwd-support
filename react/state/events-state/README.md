@@ -2,7 +2,7 @@
 
 ## Handling Events
 
-Dans cette partie nous allons apprendre comment gérér des _events_ (tels que _click_, _change_ ou _submit_) avec React et JSX. Nous allons intégrer la gestion des événements pour rendre nos éléments intéractifs.
+Dans cette partie nous allons apprendre comment gérer des _events_ (tels que _click_, _change_ ou _submit_) avec React et JSX. Nous allons intégrer la gestion des événements pour rendre nos éléments interactifs.
 
 Voici notre premier exemple, un component `Button` qui affiche un `button` avec le texte "Click me". Suite à un click, le navigateur envoie une fenêtre alert avec le texte "Hello".
 
@@ -21,7 +21,7 @@ const Button = () => {
 Comme vous pouvez l'observer et ce qui sera **à retenir** :
 
 - Les événements de React sont nommés en camelCase : onClick, onChange, onSubmit, onKeyUp,...
-- En JSX on passe une fonction dans _event handler_(géstionnaire d’événements)
+- En JSX on passe une fonction dans _event handler_(gestionnaire d’événements)
 
 ![](https://wptemplates.pehaa.com/assets/alyra/events-react.png)
 
@@ -42,7 +42,7 @@ const handleButtonClick = (event) => {
 <Button onClick={handleButtonClick} />
 ```
 
-En particulier, nous pouvons profiter de `event.target` pour avoir l'accès à l'élément qui a déclanché _event_. Nous pouvons lire la valeur du champs `input` avec `event.target.input`.
+En particulier, nous pouvons profiter de `event.target` pour avoir l'accès à l'élément qui a déclenché _event_. Nous pouvons lire la valeur du champs `input` avec `event.target.input`.
 
 ```javascript
 const Input = () => {
@@ -84,9 +84,9 @@ https://codepen.io/alyra/pen/ZEWvjQN
 
 ## Component interactif (approche "from scratch")
 
-Dans React, _state_ variable est une variable qui est responsable pour éventuel re-render d'un component. Si une des variables de _state_ change, le component React se met à jour. Bien évidemment pas tous les components sont intéractifs. Les components dont le markup ne changent pas sont appelés *stateless* (sans _state_).
+Dans React, _state_ variable est une variable qui est responsable pour éventuel re-render d'un component. Si une des variables de _state_ change, le component React se met à jour. Bien évidemment pas tous les components sont interactifs. Les components dont le markup ne changent pas sont appelés _stateless_ (sans _state_).
 
-Voici un exemple de component *stateless* `<Article>` :
+Voici un exemple de component _stateless_ `<Article>` :
 
 ```javascript
 const Article = ({ children, title }) => {
@@ -95,26 +95,25 @@ const Article = ({ children, title }) => {
       <h2>{title}</h2>
       <p>{children}</p>
     </article>
-  );
-};
+  )
+}
 ```
 
 https://codepen.io/alyra/pen/WNxoXWw
 
-Et voici sa "version" intéractif :
+Et voici sa "version" interactive :
 
 https://wptemplates.pehaa.com/assets/alyra/state-article.mp4
 
-
 ## Faking "useState"
 
-Le exemple ci-dessous a pour but illustrer comment l'intéractivité fonctionne sous le capot :
+Le exemple ci-dessous a pour but illustrer comment l'interactivité fonctionne sous le capot :
 
 ```javascript
 // notre component App a 2 state variables like et name
 const state = {
   like: false,
-  name: "Unconnu",
+  name: "Inconnu",
 }
 
 const setLike = (value) => {
@@ -163,17 +162,17 @@ renderFunction()
 https://codepen.io/alyra/pen/VwamzdG
 
 Pour la première fois, nous avons un component interactif.
-Nous allons maintenant utiliser la fonction React `useState`, qui prendra en charge la géstion du re-render.
+Nous allons maintenant utiliser la fonction React `useState`, qui prendra en charge la gestion du re-render.
 
 ## React.useState hook
 
-Afin de mettre en place un component intéractif nous devons nous poser une question
+Afin de mettre en place un component interactif nous devons nous poser une question
 
-> Quelle est la variable qui potentiellement change la valeur et ce changement devrait déclancher re-render ?
+> Quelle est la variable qui potentiellement change la valeur et ce changement devrait déclencher re-render ?
 
 Dans notre cas c'est `name` et `like`.
 
-Nous allons déclarer `name` et `like` en tant que variable de *state*. React nous donne en disposition un méchanisme qui permer de lier la mise à jour de la valeur d'une variable et la mise de l'affichage du component sur la page (re-render)
+Nous allons déclarer `name` et `like` en tant que variable de _state_. React nous donne en disposition un mécanisme qui permet de lier la mise à jour de la valeur d'une variable et la mise de l'affichage du component sur la page (re-render)
 
 Au lieu de déclarer la variable `like` de la façon normale `const like = false`
 nous allons faire :
@@ -185,7 +184,7 @@ const [like, setLike] = React.useState(false)
 et pareil pour `name`
 
 ```javascript
-const [name, setName] = React.useState("Unconnu")
+const [name, setName] = React.useState(“Inconnu")
 ```
 
 On appelle `React.useState` avec la valeur initiale de la variable state.
@@ -194,7 +193,7 @@ On appelle `React.useState` avec la valeur initiale de la variable state.
 ```javascript
 const App = () => {
   const [like, setLike] = React.useState(false)
-  const [name, setName] = React.useState("Unconnu")
+  const [name, setName] = React.useState(“Inconnu")
 
   const handleLikeChange = (event) => {
     setLike(event.target.checked)
@@ -214,7 +213,7 @@ const App = () => {
     </div>
   )
 }
-// nous nous précoccupons uniquement de render initial
+// nous nous préoccupons uniquement de render initial
 ReactDOM.render(<App />, document.getElementById("root"))
 ```
 
@@ -240,7 +239,7 @@ class App extends React.Component {
     super(props)
     this.state = {
       like: true,
-      name: "Unconnu",
+      name: “Inconnu",
     }
   }
   handleLikeChange(event) {

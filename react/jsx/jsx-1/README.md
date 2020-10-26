@@ -2,13 +2,13 @@
 
 > Mais en quoi, `React.createElement` nous facilite la vie ? ... on dirait le contraire... ?
 
-Si vous vous posez cette question, je pense que c'est un reflèxe tout à fait légitime. Créer les structures plus complèxes demande beaucoup de code. En plus ce code n'est pas très lisible.
+Si vous vous posez cette question, je pense que c'est un réflexe tout à fait légitime. Créer les structures plus complexes demande beaucoup de code. En plus ce code n'est pas très lisible.
 
 Heureusement, **JSX** nous vient à la rescousse !
 
-**JSX** est une extension syntaxique de JavaScript, créée par des dévelopeurs de React et recommandée par React. Comme indiqué dans la documentation : _fondamentalement, JSX fournit juste du sucre syntaxique pour la fonction `React.createElement`_. Pourtant c'est un vrai _game changer_ pour nous, les dévéloppeurs.
+**JSX** est une extension syntaxique de JavaScript, créée par des dévelopeurs de React et recommandée par React. Comme indiqué dans la documentation : _fondamentalement, JSX fournit juste du sucre syntaxique pour la fonction `React.createElement`_. Pourtant c'est un vrai _game changer_ pour nous, génère
 
-Regardons le code qui nous génére la petite mémo sur les pandas roux.
+Regardons le code qui nous génère la petite mémo sur les pandas roux.
 
 ```javascript
 const rootElement = document.getElementById("root")
@@ -126,11 +126,11 @@ Nous avons dit que Sass est une extension de CSS. Le navigateur ne comprend pas 
 <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
 <script type="text/babel">
-  // vous pouvez profiger de jsx ici !!!
+  // vous pouvez profiter de jsx ici !!!
 </script>
 ```
 
-3. On aurait pu opter pour la solution précédente pour mettre en place babel dans nos pens sur CodePen. Mais ceci n'est pas nécessaire. En fait, babel est directement disponible dans CodePen. Pour l'activer, clickez sur les réglages de JavaScript et choisissez Babel dans JavaScript Preprocessor.
+3. On aurait pu opter pour la solution précédente pour mettre en place babel dans nos pens sur CodePen. Mais ceci n'est pas nécessaire. En fait, babel est directement disponible dans CodePen. Pour l'activer, cliquez sur les réglages de JavaScript et choisissez Babel dans JavaScript Preprocessor.
 
 https://wptemplates.pehaa.com/assets/alyra/babel.mp4
 

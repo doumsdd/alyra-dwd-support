@@ -1,12 +1,12 @@
 # React et ReactDOM premiers pas
 
-React est une librarie JavaScript, open-source, créé et maintenu par Facebook, distribuée sous la licence MIT.
+React est une librairie JavaScript, open-source, créé et maintenu par Facebook, distribuée sous la licence MIT.
 
-Le rôle de React est de faciliter la création des interfaces utilisateur (UI). Les developpeurs de React cherchent à rendre la création des interfaces plus modulaire, avec des composants reutilisables et interactifs.
+Le rôle de React est de faciliter la création des interfaces utilisateur (UI). Les développeurs de React cherchent à rendre la création des interfaces plus modulaire, avec des composants réutilisables et interactifs.
 
-Depuis quelques années, React est le choix numéro un des dévéloppeurs web. Ceci est confirmé par les sondages menés par [Stack Overflow](https://insights.stackoverflow.com/survey/2019/#technology-_-most-loved-dreaded-and-wanted-web-frameworks), [State of Frontend 2020](https://tsh.io/state-of-frontend/#frameworks) ou encore [State of JS](https://2019.stateofjs.com/front-end-frameworks/).
+Depuis quelques années, React est le choix numéro un des développeurs web. Ceci est confirmé par les sondages menés par [Stack Overflow](https://insights.stackoverflow.com/survey/2019/#technology-_-most-loved-dreaded-and-wanted-web-frameworks), [State of Frontend 2020](https://tsh.io/state-of-frontend/#frameworks) ou encore [State of JS](https://2019.stateofjs.com/front-end-frameworks/).
 
-De nombreuses grandes entreprises utilisent React en production, parmi elles bien evidememment Facebook (et Instagram), mais aussi Netflix, Airbnb, Cloudflare ou Dropbox. Voir les grandes références opter pour cette librairie, est très encourageant lorsqu'on décide d'utiliser React dans un nouveau projet. Aussi, si vous êtes à l'aise avec React, vous pouvez utiliser ces connaissances pour apprendre à créer des applications mobiles avec React Native.
+De nombreuses grandes entreprises utilisent React en production, parmi elles bien évidemment Facebook (et Instagram), mais aussi Netflix, Airbnb, Cloudflare ou Dropbox. Voir les grandes références opter pour cette librairie, est très encourageant lorsqu'on décide d'utiliser React dans un nouveau projet. Aussi, si vous êtes à l'aise avec React, vous pouvez utiliser ces connaissances pour apprendre à créer des applications mobiles avec React Native.
 
 ## React et DOM
 
@@ -70,7 +70,7 @@ Pour résumer, voici comment créer et l'insérer un élément React :
 const element = React.createElement(
   type, // "p" | "div" | "img" | etc.
   [props], // null | {} | {id: "top"} | {id: "top", className: "text-center bg-danger"}
-  [...children] // "Hello !" | "Hello", " Ravis de vour revoir!"
+  [...children] // "Hello !" | "Hello", " Ravis de vous revoir!"
 )
 // l'insérer/mettre à jour dans domCointainer
 ReactDOM.render(
@@ -107,7 +107,7 @@ ReactDOM.render(element, document.getElementById("root"))
 // <h1>Je suis le titre</h1>
 ```
 
-L'exemple précédent peut être reécrit comme ceci :
+L'exemple précédent peut être réécrit comme ceci :
 
 ```javascript
 const element = React.createElement("h1", {
@@ -204,7 +204,7 @@ https://codepen.io/alyra/pen/xxVLwgY
 ## Réconciliation
 
 Que se passe quand on appelle la méthode `ReactDOM.render` lorsque l'élément React est déjà inséré dans le container ?  
-Au lieu de remplacer le contenu du container, `ReactDOM.render` procédé à une "mise à jour". Au lieu de recréer tous les noeuds, `ReactDOM.render` utilise un algorithme de comparaison (_diffing algorithm_). Par conséquent, le DOM est modifié uniqument là où c’est strictement nécessaire. Si l'élément React n'a pas changé, le DOM ne sera pas modifié.
+Au lieu de remplacer le contenu du container, `ReactDOM.render` procédé à une "mise à jour". Au lieu de recréer tous les noeuds, `ReactDOM.render` utilise un algorithme de comparaison (_diffing algorithm_). Par conséquent, le DOM est modifié uniquement là où c’est strictement nécessaire. Si l'élément React n'a pas changé, le DOM ne sera pas modifié.
 
 Vous pouvez observer ce fonctionnement dans le pen suivant
 
@@ -216,7 +216,7 @@ https://codepen.io/alyra/pen/PoNZvgd
 
 ## React.Fragment
 
-Dans tous les exemples ci-dessus, nous avons **un seul** élément parent qui a un ou plusieurs noeuds enfants . Afin d'avoir des "siblings" (👭) nous devons utiliser `React.Fragment`, un conteneur sans type ni attribut, un conteneur phantôme 👻.
+Dans tous les exemples ci-dessus, nous avons **un seul** élément parent qui a un ou plusieurs noeuds enfants . Afin d'avoir des "siblings" (👭) nous devons utiliser `React.Fragment`, un conteneur sans type ni attribut, un conteneur fantôme 👻.
 
 ```javascript
 const element = React.createElement(
@@ -277,7 +277,7 @@ for (let crypto of cryptoCurrencies) {
 ul.append(fragment) // reflow, tous les nouveaux noeuds sont ajoutés une seule fois (👍)
 ```
 
-Dans l'exemple ci-dessus, grâce au _fragment_, on a économisé l'utilisation de la méthode `append` qui provoque l'opération de _reflow_ dans le navigateur. À chaque _reflow_, le navigateur recalcule et redessine la page. Avec _fragment_, nous allons provoqué un seul _reflow_, au lieu de 5000 de _reflows_ potentiels.
+Dans l'exemple ci-dessus, grâce au _fragment_, on a économisé l'utilisation de la méthode `append` qui provoque l'opération de _reflow_ dans le navigateur. À chaque _reflow_, le navigateur recalcule et re-dessine la page. Avec _fragment_, nous allons provoqué un seul _reflow_, au lieu de 5000 de _reflows_ potentiels.
 
 ## Les attributs
 

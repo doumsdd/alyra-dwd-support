@@ -60,7 +60,7 @@ Exemples **pas valides** 🚫 :
 </div>
 ```
 
-**Attention** aux apostrophes, si on aujoute des apostrophes autour des accolades, l'ensemble est traité en tant que `string`. Voici un exemple de l'utiliation erronée :
+**Attention** aux apostrophes, si on ajoute des apostrophes autour des accolades, l'ensemble est traité en tant que `string`. Voici un exemple de l'utilisation erronée :
 
 ```javascript
 const lang = "en"
@@ -125,7 +125,7 @@ Vous pouvez voir le rendu [sans `{" "}` ici.](https://codepen.io/alyra/pen/OJNxR
 
 ## Expressions booléennes et conditional rendering
 
-Les expressions booléennes, ainsi que `undefined` et `null` ne génére pas de rendu :
+Les expressions booléennes, ainsi que `undefined` et `null` ne génère pas de rendu :
 
 ```javascript
 const age = 10
@@ -160,7 +160,7 @@ const element = (
 /*
 <header>
   <h1>Bienvenue</h1>
-  <p>Notre école s'appelle Allyra</p>
+  <p>Notre école s'appelle Alyra</p>
 </header>
 */
 ```
@@ -262,7 +262,7 @@ Bonjour le Monde
 )
 ```
 
-Nous devons alors répondre à la question suivante : Quel est le resultat de `Object.assign({className: "display-4"}, props, { lang: "fr" })`
+Nous devons alors répondre à la question suivante : Quel est le résultat de `Object.assign({className: "display-4"}, props, { lang: "fr" })`
 
 ```javascript
 Object.assign({className: "display-4"}, props, { lang: "fr" })
@@ -314,7 +314,7 @@ Chaque élément d'un array devrait avoir un attribut `key` avec des valeurs uni
 
 https://codepen.io/alyra/pen/MWyvGRZ
 
-Ici nous pouvons comparer 2 listes, une avec des attributs `key` (👍), l'autre sans (👎). Ouvrez DevTools et observez comment chaque de ces 2 listes est re-rendue. Dans le cas 👍, les quatres éléments `<li>...</li>` ne sont pas re-rendus. Dans le ca 👎, à chaque `ReactDOM.render` tous les éléments `<li>...</li>` sont "rafaits" à nouveau.
+Ici nous pouvons comparer 2 listes, une avec des attributs `key` (👍), l'autre sans (👎). Ouvrez DevTools et observez comment chaque de ces 2 listes est re-rendue. Dans le cas 👍, les quatre éléments `<li>...</li>` ne sont pas re-rendus. Dans le ca 👎, à chaque `ReactDOM.render` tous les éléments `<li>...</li>` sont "refaits" à nouveau.
 
 https://wptemplates.pehaa.com/assets/alyra/shopping-list.mp4
 
@@ -327,7 +327,7 @@ const mySchools = [
   {
     name: "Alyra",
     description:
-      "Une école au coeur de la blockchain. Fondée par des passionés et ouverte à toutes et tous.",
+      "Une école au coeur de la blockchain. Fondée par des passionnés et ouverte à toutes et tous.",
   },
   {
     name: "Simplon",
@@ -381,9 +381,9 @@ Dans le cas comme ceci, on est obligé d'utiliser `<React.Fragment>` plutôt que
 ## Exercices
 
 - [JSX expression - hello](https://codepen.io/alyra/pen/qBZXEje) | [solution](https://codepen.io/alyra/pen/3e7e235fbb4c229a14585e3b8ef867df)
-- [JSX - espressions - logged-in](https://codepen.io/alyra/pen/RwaZNaW) | [solution](https://codepen.io/alyra/pen/43004448ad3a73d223d7f1c1eb6598e7)
-- [JSX - espressions - notifications](https://codepen.io/alyra/pen/poyrvEa) | [solution](https://codepen.io/alyra/pen/bc89eb35101c603941bdae0a9b881dfb)
-- [JSX - espressions - notifications 1](https://codepen.io/alyra/pen/JjXyxjo) | [solution](https://codepen.io/alyra/pen/bdf636434aa83dde7e1e159b4e78dccc)
+- [JSX - expressions - logged-in](https://codepen.io/alyra/pen/RwaZNaW) | [solution](https://codepen.io/alyra/pen/43004448ad3a73d223d7f1c1eb6598e7)
+- [JSX - expressions - notifications](https://codepen.io/alyra/pen/poyrvEa) | [solution](https://codepen.io/alyra/pen/bc89eb35101c603941bdae0a9b881dfb)
+- [JSX - expressions - notifications 1](https://codepen.io/alyra/pen/JjXyxjo) | [solution](https://codepen.io/alyra/pen/bdf636434aa83dde7e1e159b4e78dccc)
 - [JSX - notifications list](https://codepen.io/alyra/pen/YzqxMEP) | [solution](https://codepen.io/alyra/pen/f7801accec0de64a8473089fd051f25d)
 - [JSX - notifications title + list](https://codepen.io/alyra/pen/bGprJaW) | [solution](https://codepen.io/alyra/pen/10413263fabe4668bf815a7d2ad05ec8)
 - [JSX button](https://codepen.io/alyra/pen/YzqxoQO) | [solution](https://codepen.io/alyra/pen/d90868a92c92e2736befa9685f38a1e4)

@@ -6,7 +6,7 @@ La mission d'un component React et de créer un rendu dans la page. La fonction 
 
 Le nouvel rendu est généré, il est comparé détail par détail avec le rendu existant. Les éléments qui changent, sont mis à jour.
 
-Parfois, nous avons besoin pour faire quelque chose d'autre, par exemple :
+Parfois, nous avons besoin de faire quelque chose d'autre, par exemple :
 
 - enregistrer une variable de state dans l'objet `localStorage`,
 - effectuer une requête HTTP,

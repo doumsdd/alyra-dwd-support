@@ -63,7 +63,7 @@ Pour mieux comprendre le fonctionnement de React, et en particulier ces méthode
 
 https://codepen.io/alyra/pen/PoNGGJM
 
-Pour résumer voici comment créer et l'insérer un élément React :
+Pour résumer, voici comment créer et l'insérer un élément React :
 
 ```javascript
 // créer un élément
@@ -209,6 +209,8 @@ Au lieu de remplacer le contenu du container, `ReactDOM.render` procédé à une
 Vous pouvez observer ce fonctionnement dans le pen suivant
 
 https://codepen.io/alyra/pen/PoNZvgd
+
+![](https://wptemplates.pehaa.com/assets/alyra/diffing.gif)
 
 À ce stade, il n'est pas nécessaire de comprendre comment l’algorithme de comparaison fonctionne en détail, mais si cela vous intéresse, vous pouvez en lire davantage [dans la documentation.](https://fr.reactjs.org/docs/reconciliation.html)
 

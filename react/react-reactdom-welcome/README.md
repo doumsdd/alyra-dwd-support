@@ -1,6 +1,6 @@
 # React et ReactDOM premiers pas
 
-React est une librairie JavaScript, open-source, créé et maintenu par Facebook, distribuée sous la licence MIT.
+React est une librairie JavaScript, open-source, créée et maintenu par Facebook, distribuée sous la licence MIT.
 
 Le rôle de React est de faciliter la création des interfaces utilisateur (UI). Les développeurs de React cherchent à rendre la création des interfaces plus modulaire, avec des composants réutilisables et interactifs.
 

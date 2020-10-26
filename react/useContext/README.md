@@ -277,7 +277,7 @@ export default GradientsSelect
 
 ---
 
-Context recap :
+## Context recap :
 
 - _contexte_ = information pertinente
 - utile lorsque plusieurs components doivent partager la même information (thème, langue, devise)
@@ -292,7 +292,7 @@ Context recap :
 
 ---
 
-Exercices :
+## Exercices :
 
 - [useContext - alyra gradients GradientsContext (todo)](https://github.com/pehaa/alyra-gradients-context-todo)
 - [useContext - shopping + dark mode](https://github.com/pehaa/alyra-shopping-refactor-context)

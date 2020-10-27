@@ -166,7 +166,7 @@ Nous allons maintenant utiliser la fonction React `useState`, qui prendra en cha
 
 ## React.useState hook
 
-Afin de mettre en place un component interactif nous devons nous poser une question
+Afin de mettre en place un component interactif nous devons nous poser la question suivante :
 
 > Quelle est la variable qui potentiellement change la valeur et ce changement devrait déclencher re-render ?
 

@@ -1,62 +1,97 @@
 # JavaScript - premiers pas avec types et expressions
 
-Bienvenue dans le monde de JavaScript :) Nous allon commencer notre aventure avec cette language de programmation, disponible dans le navigateur. Nous allons commencer par des bases qui nous permetterons ensuite de créer des interfaces utilisateur intéractives. 
+Bienvenue dans le monde de JavaScript :) 
 
-Nous allons commencer par un aperçu des différents types des données et comment on travaille avec eux. Dans JavaScript ils existe plusieurs types de données simples (nommés primitifs) ainsi que des objets et des fonctions (que nous allons découvrir un peu plus tard).
+Nous allons commencer notre aventure par un aperçu des différents types des données. Nous allons apprendre comment on travaille avec eux. Dans JavaScript il existe plusieurs types de données simples (nommés primitifs) ainsi que des objets et des fonctions (que nous allons découvrir un peu plus tard).
 
-_Qu'est que ça veut dire type de données ? Pourquoi en parler ?_ Voici un exemple. Avec JavaScript nous pouvons executer les opérations arythmetiques, par exemple `1 + 2` sera évalué en tant que `3`. On peut aussi effectuer des opérations sur les chaines de carectères, par exemple `"Java" + "String"` sera évalué en tant que `"JavaScript"`. De la même façon `"1" + "2"` donne `"12"`. Vous voyez la différence entre `"1" + "2"` et `1 + 2` ? Quel sera le résultat de `"1" + 2` 🧐 ? Vous saurez répondre à cette question suite à ce premier cours de JavaScript !
+_Qu'est que ça veut dire type de données ? Pourquoi devons nous en parler ?_ Voici un exemple. Avec JavaScript nous pouvons executer les opérations arithmétiques, par exemple `1 + 2`. Comme vous pouvez deviner `1 + 2` sera évalué en tant que `3`. 
+
+On peut aussi effectuer des opérations sur les chaines de caractères, par exemple `"Java" + "String"` sera évalué en tant que `"JavaScript"`. De la même façon `"1" + "2"` donne `"12"`. Vous voyez la différence entre `"1" + "2"` et `1 + 2` ? Quel sera le résultat de `"1" + 2` 🧐 ? Vous saurez répondre à cette question suite à ce premier cours de JavaScript !
 
 ## Types de données :
 
-Vous pouvez ouvrir votre _terminal_ est taper `node`. Pour sortir de mode "node", tapez `.exit` Pour vérifier le "type" nous disposons de la fonction `typeof` qui retourne le type.
+Nous allons utiliser JavaScript avec Node.js que vous avez installé et qui est disponible dans votre terminal. Vous pouvez alors ouvrir votre terminal et taper `node`. Pour sortir de mode "node", tapez `.exit` Pour vérifier le "type" nous disposons de la fonction `typeof` qui retourne le type.
 
 ### (primitif) **number**,
 
-ex. `2`, `33.6`, `-10`, `1e5`, `Infinity`, `-Infinity`, `NaN`
+Voici quelques exemples de type primitif "number" :
 
 ```javascript
+2
+33.6
+-10
+1e5
+Infinity
+-Infinity
+NaN
+
 typeof(5)
 // 'number'
 ```
 
+Essayer de taper `typeof(..)` pour chaque de ces exemples donnera le résultat `"number"`.
+On effectuant des opérations arithmétiques sur les données de type "number" nous obtenons des résultat de type `"number"`, par exemple :
+
+```javascript
+typeof(2 + 4) // number
+typeof(3 * 2) // number
+typeof(0 / 0) // number
+typeof(1 / 0) // number
+typeof(-1 / 0) // number
+```
+
 ### (primitif) **string**
+
+Le chaine de caractères (`"string"`) est entourée par des guillemets, comme dans les exemples suivantes :
 
 ```javascript
 "Bonjour tout le monde !"
 "Hello world!"
 "a"
-"a"
+'a'
 `a`
-("123")
 "123"
+'123'
 `123`
-'Je m'appelle .. '
-"Je m'appelle .."
-`Je m'appelle ..`
+
+'Je m'appelle Paulina'
+"Je m'appelle Paulina"
+`Je m'appelle Paulina`
+
 ("Bonjour et \
 Bonsoir")
 
-"Je pense que 320px donnera " +
-  320 / 16 +
-  "rems"`Je pense que 320px donnera ${320 / 16}rems``Bonjour et
+"Je pense que 320px donnera " + 320 / 16 + "rems"
+
+`Je pense que 320px donnera ${320 / 16}rems`
+
+`Bonjour et
 Bonsoir`
+
+"Bonjour et \
+Bonsoir"
 ```
 
 ```javascript
-typeof "Bonjour tout le monde !"
+typeof("Bonjour tout le monde !")
 // 'string'
-typeof "123"
+typeof("123")
 // 'string'
 ```
 
 ### (primitif) **boolean**,
 
-Il y deux valeurs possibles : `true` ou `false`
+Le troisième type primitif, particulièrement important est `"boolean".` Il prend une des deux valeurs possibles : `true` (vrai)  ou `false` (faux).
+Ceci permet de conditionner le comportement de notre script. 
+
+Par exemple, si l'utilisateur est connecté l'interface affiche son tableau de bord, dans le cas contraire l'interface affiche le formulaire de connexion.
+Quels sont des exemples du type `"boolean"` ? Ce sont `true` est `false` mais aussi tous les résultat de comparaison, tels que `10 > 2` ou `-3 < -4`. 
+
 
 ```javascript
-typeof true // 'boolean'
-typeof false // 'boolean'
-typeof (10 > 2) // 'boolean'
+typeof(true) // 'boolean'
+typeof(false) // 'boolean'
+typeof(10 > 2) // 'boolean'
 10 > 2 // true
 typeof (10 == 2) // 'boolean'
 10 == 2 // false
@@ -77,7 +112,7 @@ typeof paulina
 
 ### D'autres types
 
-Dont nous ne parlons pas encore ajourd'hui
+Dont nous ne parlons pas encore aujourd'hui
 
 - (primitif) **null**
 
@@ -259,7 +294,7 @@ Boolean("")
 // false
 ```
 
-La conversion des types vers "numbers" a lieu aussi quand nous executons certaines opérations :
+La conversion des types vers "numbers" a lieu aussi quand nous exécutons certaines opérations :
 
 - comparaison (>, <, <=,>=)
 - `(- + * / % )` (sauf `+` si un des opérands est de type 'string')
@@ -360,7 +395,7 @@ typeof paulina
 
 ### D'autres types
 
-Dont nous ne parlons pas encore ajourd'hui
+Dont nous ne parlons pas encore aujourd'hui
 
 - (primitif) **null**
 
@@ -542,7 +577,7 @@ Boolean("")
 // false
 ```
 
-La conversion des types vers "numbers" a lieu aussi quand nous executons certaines opérations :
+La conversion des types vers "numbers" a lieu aussi quand nous exécutons certaines opérations :
 
 - comparaison (>, <, <=,>=)
 - `(- + * / % )` (sauf `+` si un des opérands est de type 'string')

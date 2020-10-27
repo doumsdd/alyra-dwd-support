@@ -1,8 +1,8 @@
 # React et ReactDOM premiers pas
 
-React est une librairie JavaScript, open-source, créée et maintenu par Facebook, distribuée sous la licence MIT.
+React est une librairie JavaScript, open-source, créée et maintenue par Facebook, distribuée sous la licence MIT.
 
-Le rôle de React est de faciliter la création des interfaces utilisateur (UI). Les développeurs de React cherchent à rendre la création des interfaces plus modulaire, avec des composants réutilisables et interactifs.
+Le rôle de React est de faciliter la création des interfaces utilisateurs (UI). Les développeurs de React cherchent à rendre la création des interfaces plus modulaires, avec des composants réutilisables et interactifs.
 
 Depuis quelques années, React est le choix numéro un des développeurs web. Ceci est confirmé par les sondages menés par [Stack Overflow](https://insights.stackoverflow.com/survey/2019/#technology-_-most-loved-dreaded-and-wanted-web-frameworks), [State of Frontend 2020](https://tsh.io/state-of-frontend/#frameworks) ou encore [State of JS](https://2019.stateofjs.com/front-end-frameworks/).
 
@@ -63,7 +63,7 @@ Pour mieux comprendre le fonctionnement de React, et en particulier ces méthode
 
 https://codepen.io/alyra/pen/PoNGGJM
 
-Pour résumer, voici comment créer et l'insérer un élément React :
+Pour résumer, voici comment créer et insérer un élément React :
 
 ```javascript
 // créer un élément
@@ -206,7 +206,7 @@ https://codepen.io/alyra/pen/xxVLwgY
 Que se passe quand on appelle la méthode `ReactDOM.render` lorsque l'élément React est déjà inséré dans le container ?  
 Au lieu de remplacer le contenu du container, `ReactDOM.render` procède à une "mise à jour". Au lieu de recréer tous les noeuds, `ReactDOM.render` utilise un algorithme de comparaison (_diffing algorithm_). Par conséquent, le DOM est modifié uniquement là où c’est strictement nécessaire. Si l'élément React n'a pas changé, le DOM ne sera pas modifié.
 
-Vous pouvez observer ce fonctionnement dans le pen suivant
+Vous pouvez observer ce fonctionnement dans le pen suivant :
 
 https://codepen.io/alyra/pen/PoNZvgd
 
@@ -235,7 +235,7 @@ const element = React.createElement(
 */
 ```
 
-Ceci peut être re-écrit comme ci-dessous, en affectant des éléments React aux variables :
+Ceci peut être réécrit comme ci-dessous, en affectant des éléments React aux variables :
 
 ```javascript
 const h1 = React.createElement("h1", { lang: "en" }, "Hello World!")
@@ -277,13 +277,13 @@ for (let crypto of cryptoCurrencies) {
 ul.append(fragment) // reflow, tous les nouveaux noeuds sont ajoutés une seule fois (👍)
 ```
 
-Dans l'exemple ci-dessus, grâce au _fragment_, on a économisé l'utilisation de la méthode `append` qui provoque l'opération de _reflow_ dans le navigateur. À chaque _reflow_, le navigateur recalcule et re-dessine la page. Avec _fragment_, nous allons provoqué un seul _reflow_, au lieu de 5000 de _reflows_ potentiels.
+Dans l'exemple ci-dessus, grâce au _fragment_, on a économisé l'utilisation de la méthode `append` qui provoque l'opération de _reflow_ dans le navigateur. À chaque _reflow_, le navigateur recalcule et re-dessine la page. Avec _fragment_, nous allons provoquer un seul _reflow_, au lieu de 5000 de _reflows_ potentiels.
 
 ## Les attributs
 
-Dans la majorités des cas, on utilise des attributs de la même façon que dans HTML. Il y a pourtant quelques exceptions, voici quelques exemples :
+Dans la majorité des cas, on utilise des attributs de la même façon que dans HTML. Il y a pourtant quelques exceptions, voici quelques exemples :
 
-- on ne l'utilise pas l'attribut HTML `class` mais `className`
+- on n'utilise pas l'attribut HTML `class` mais `className`
 
 ```javascript
 const element = React.createElement(
@@ -295,7 +295,7 @@ const element = React.createElement(
 )
 ```
 
-- on ne l'utilise pas l'attribut HTML `for` (`label`) mais `htmlFor`
+- on n'utilise pas l'attribut HTML `for` (`label`) mais `htmlFor`
 
 ```javascript
 React.createElement(
@@ -322,7 +322,7 @@ const element = React.createElement(
 )
 ```
 
-Faites attention aux noms des propriétés en camelCase et les valeurs avec des guillemets (!) Sachez aussi que la directive `!important` ne marche pas avec le style inline dans React.
+Faites attention aux noms des propriétés en camelCase et des valeurs avec des guillemets (!) Sachez aussi que la directive `!important` ne marche pas avec le style inline dans React.
 
 ---
 

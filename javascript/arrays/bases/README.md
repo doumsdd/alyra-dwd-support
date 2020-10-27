@@ -20,9 +20,9 @@ const shopping = ["tshirt", "shorts", "pareo"]
 shopping.length // 3
 ```
 
-## Voici comment on peut accéder à leur éléments
+## Voici comment on peut accéder à un élément en particulier
 
-Les éléments de la liste sont indéxer à partir de zéro: 0, 1, &hellip; Le dernier élément de la liste `myList` a l'index `myList.length - 1`
+Les éléments de la liste sont indéxés à partir de zéro: 0, 1, &hellip; Le dernier élément de la liste `myList` a l'index `myList.length - 1`
 
 ```javascript
 const myList1 = [2, 5, 8, 90]

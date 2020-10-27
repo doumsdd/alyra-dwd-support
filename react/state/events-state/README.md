@@ -82,7 +82,9 @@ onClick={(event) => handleButtonClick(id, event)}
 
 https://codepen.io/alyra/pen/ZEWvjQN
 
-## Component interactif (approche "from scratch")
+## State
+
+### Component interactif (approche "from scratch")
 
 Dans React, _state_ variable est une variable qui est responsable pour éventuel re-render d'un component. Si une des variables de _state_ change, le component React se met à jour. Bien évidemment pas tous les components sont interactifs. Les components dont le markup ne changent pas sont appelés _stateless_ (sans _state_).
 
@@ -105,7 +107,7 @@ Et voici sa "version" interactive :
 
 https://wptemplates.pehaa.com/assets/alyra/state-article.mp4
 
-## Faking "useState"
+### Faking "useState"
 
 Le exemple ci-dessous a pour but illustrer comment l'interactivité fonctionne sous le capot :
 
@@ -164,7 +166,7 @@ https://codepen.io/alyra/pen/VwamzdG
 Pour la première fois, nous avons un component interactif.
 Nous allons maintenant utiliser la fonction React `useState`, qui prendra en charge la gestion du re-render.
 
-## React.useState hook
+## `React.useState` hook
 
 Afin de mettre en place un component interactif nous devons nous poser la question suivante :
 

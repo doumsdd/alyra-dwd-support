@@ -4,7 +4,7 @@ Bienvenue dans le monde de JavaScript :) Nous allon commencer notre aventure ave
 
 Nous allons commencer par un aperçu des différents types des données et comment on travaille avec eux. Dans JavaScript ils existe plusieurs types de données simples (nommés primitifs) ainsi que des objets et des fonctions (que nous allons découvrir un peu plus tard).
 
-_Qu'est que ça veut dire type de données ? Pourquoi en parler ?_ Voici un exemple. Avec JavaScript nous pouvons executer les opération arythmetiques, par exemple `1 + 2` sera évalué en tant que `3`. On peut aussi effectuer des opérations sur les chaines de carectères, par exemple `"Java" + "String"` sera évalué en tant que `"JavaScript"`. De la même façon `"1" + "2"` donne `"12"`. Vous voyez la différence entre `"1" + "2"` et `1 + 2` ? Quel sera le résultat de `"1" + 2` 🧐 ? Vous saurez répondre à cette question suite à ce premier cours de JavaScript !
+_Qu'est que ça veut dire type de données ? Pourquoi en parler ?_ Voici un exemple. Avec JavaScript nous pouvons executer les opérations arythmetiques, par exemple `1 + 2` sera évalué en tant que `3`. On peut aussi effectuer des opérations sur les chaines de carectères, par exemple `"Java" + "String"` sera évalué en tant que `"JavaScript"`. De la même façon `"1" + "2"` donne `"12"`. Vous voyez la différence entre `"1" + "2"` et `1 + 2` ? Quel sera le résultat de `"1" + 2` 🧐 ? Vous saurez répondre à cette question suite à ce premier cours de JavaScript !
 
 ## Types de données :
 

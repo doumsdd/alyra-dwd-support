@@ -233,7 +233,7 @@ https://codepen.io/alyra/pen/rNepaOy
 
 `useState` est un des hooks de React. Nous appellons hooks dans les components React (ou dans les hooks personnalisés). Nous allons bientôt découvrir d'autres hooks (`useContext`, `useEffect`). Les hooks sont des fonctions JavaScript, mais des fonctions un peu spéciales. Ceci dit nous devons suivre certains règles d'utilisation.
 
-Pour assurer le foncionnement correct, hooks doivent être appelés dans le même ordre à chaque affichage du composant. Par conséquent, hooks ne peuvent pas être utilisés :
+Pour assurer leur foncionnement correct, hooks doivent être appelés dans le même ordre à chaque affichage du composant. Par conséquent, hooks ne peuvent pas être utilisés :
  - à l’intérieur de boucles
  - à l’intérieur de code conditionnel
  - à l’intérieur de fonctions imbriquées. 

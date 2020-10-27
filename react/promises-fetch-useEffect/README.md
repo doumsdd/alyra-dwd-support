@@ -6,7 +6,7 @@ JavaScript est synchronique. Le script est executé du haut en bas, une chose à
 
 Ceci n'est pas toujours suffisant. Imaginons que notre script a besoin des informations qui arrivent avec certain délai, et en plus la durée de ce délai n'est pas connue.
 
-JavaScript a l'objet `Promise` pour réaliser des traitements de façon asynchrone. Nous allons besoir d'utiliser cette approche pour recupérer des données via une requete HTTP.
+JavaScript a l'objet `Promise` pour réaliser des traitements de façon asynchrone. Nous allons utiliser cette approche pour recupérer des données via une requete HTTP.
 
 Comment ça fonctionne ? Que pouvons nous faire avec une "promise" ?
 

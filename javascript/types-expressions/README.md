@@ -333,4 +333,4 @@ syntaxe `condition ? exprSiVrai : exprSiFaux`
 // pain au chocolat
 ```
 
-[JavaScript Quizz](Bienvenue dans le monde de JavaScript :)
+[JavaScript Quizz](https://javascript-quizzes.netlify.app/types)

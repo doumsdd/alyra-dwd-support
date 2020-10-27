@@ -12,7 +12,7 @@ On peut aussi effectuer des opérations sur les chaines de caractères, par exem
 
 Nous allons utiliser JavaScript avec Node.js que vous avez installé et qui est disponible dans votre terminal. Vous pouvez alors ouvrir votre terminal et taper `node`. Pour sortir de mode "node", tapez `.exit` Pour vérifier le "type" nous disposons de la fonction `typeof` qui retourne le type.
 
-### (primitif) **number**,
+### (primitif) **number**
 
 Voici quelques exemples de type primitif "number" :
 

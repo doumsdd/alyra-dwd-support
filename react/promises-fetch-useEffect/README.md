@@ -30,9 +30,7 @@ promiseMadeToMe
 
 Imaginons maintenant que nous voulons créer une application météo, nous allons profiter des données disponibles avec l'API de OpenWeather.
 
-Afin d'obtenir une promesse nous allons utiliser la fonction JavaScript `fetch`
-
-`fetch(wheatherAPIUrl)` <- ceci est une promise, `fetch` retourne une promesse
+Afin d'obtenir une promesse nous allons utiliser la fonction JavaScript `fetch`, `fetch(wheatherAPIUrl)` retourne est une promise.
 
 ```javascript
 fetch(url)

@@ -189,7 +189,7 @@ console.log("Unique tags :", tags)
 ### index.html
 
 Remarquez que nous n'inclueons pas de fichier `gradients.js`, uniquement `app.js` est inclu.  
-L'attribut `type="module"` est undispensable. Son omission provoque une : `Uncaught SyntaxError: Cannot use import statement outside a module`.
+L'attribut `type="module"` est undispensable. Son omission provoque une erreur : `Uncaught SyntaxError: Cannot use import statement outside a module`.
 
 ```html
 <!DOCTYPE html>

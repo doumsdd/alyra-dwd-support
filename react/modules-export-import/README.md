@@ -1,4 +1,4 @@
-# modules, export, import
+# Modules, export, import
 
 Jusqu'ici nous avons utilisé les fichiers `js` comme ceci :
 
@@ -33,6 +33,8 @@ console.log(gradients.length)
 ```
 
 ---
+
+## JavaScript Modules
 
 Il est aussi possible d'utiliser des fichiers JavaScript en tant que des _modules_.
 

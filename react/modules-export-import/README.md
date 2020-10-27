@@ -53,10 +53,8 @@ Il est aussi possible d'utiliser des fichiers JavaScript en tant que des _module
 const gradients = [{ start: "red", end: "magenta" }]
 ```
 
-`script2.js` est inclu après `script1.js` alors
-
 ```javascript
-/* script1.js */
+/* script2.js */
 console.log(gradients.length)
 // Uncaught ReferenceError: gradients is not defined
 ```

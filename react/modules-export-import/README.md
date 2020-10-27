@@ -53,11 +53,15 @@ Il est aussi possible d'utiliser des fichiers JavaScript en tant que des _module
 const gradients = [{ start: "red", end: "magenta" }]
 ```
 
+Même si `script2.js` est inclu après `script1.js`, la variable `gradients` n'est pas disponible dans `script2.js`
+
 ```javascript
 /* script2.js */
 console.log(gradients.length)
 // Uncaught ReferenceError: gradients is not defined
 ```
+
+Voici les 2 choses importants **à retenir** par rapport auz _modules_
 
 - modules sont toujours en mode `strict`, on a plus besoin de spécifier : `use strict`
 - modules ont leur propre scope

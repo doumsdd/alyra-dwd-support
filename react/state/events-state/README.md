@@ -170,7 +170,7 @@ Afin de mettre en place un component interactif nous devons nous poser la questi
 
 > Quelle est la variable qui potentiellement change la valeur et ce changement devrait déclencher re-render ?
 
-Dans notre cas c'est `name` et `like`.
+Dans notre cas ce sont `name` et `like`.
 
 Nous allons déclarer `name` et `like` en tant que variable de _state_. React nous donne en disposition un mécanisme qui permet de lier la mise à jour de la valeur d'une variable et la mise de l'affichage du component sur la page (re-render)
 

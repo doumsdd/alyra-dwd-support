@@ -12,7 +12,7 @@
 - [Modules, export, import](./modules-export-import)
 - CRA
   - [CRA - premiers pas](./cra/cra-premiers-pas)
-  - [CRA - todo](./cra/cra-todo)
+  - [Brief exercice CRA - todo](./cra/cra-todo)
 - [Project Gradients (brief)](./project-gradients)
 - [useContext](https://github.com/pehaa/alyra-gradients-context)
 - [useEffect](./useEffect)

@@ -19,7 +19,7 @@ Par exemple:
 ```javascript
 /* script1.js */
 "use strict"
-const gradients = [{ start: red, end: magenta }]
+const gradients = [{ start: "red", end: "magenta" }]
 ```
 
 `script2.js` est inclu après `script1.js` alors la variable `gradients` est disponible dans `script2.js`
@@ -50,7 +50,7 @@ Il est aussi possible d'utiliser des fichiers JavaScript en tant que des _module
 
 ```javascript
 /* script1.js */
-const gradients = [{ start: red, end: magenta }]
+const gradients = [{ start: "red", end: "magenta" }]
 ```
 
 `script2.js` est inclu après `script1.js` alors

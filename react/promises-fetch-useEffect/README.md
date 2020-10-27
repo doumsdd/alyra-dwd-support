@@ -21,7 +21,7 @@ promiseMadeToMe
      */
   })
   .catch((error) => {
-    // ce code executera si jamais il y aura une erreur
+    // ce code executera si jamais il y avait une erreur
     // console.log(error.message)
   })
 ```

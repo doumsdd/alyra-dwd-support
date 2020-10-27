@@ -184,7 +184,7 @@ const [like, setLike] = React.useState(false)
 et pareil pour `name`
 
 ```javascript
-const [name, setName] = React.useState(“Inconnu")
+const [name, setName] = React.useState("Inconnu")
 ```
 
 On appelle `React.useState` avec la valeur initiale de la variable state.

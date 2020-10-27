@@ -54,9 +54,10 @@ Le chaine de caractères (`"string"`) est entourée par des guillemets, comme da
 '123'
 `123`
 
-'Je m'appelle Paulina'
+//'Je m'appelle Paulina'
 "Je m'appelle Paulina"
 `Je m'appelle Paulina`
+'Je m\'appelle Paulina'
 
 ("Bonjour et \
 Bonsoir")
@@ -145,8 +146,8 @@ Plusieurs expressions JavaScript peuvent être composées avec des opérations a
 ```javascript
 6 % 3 // 0
 6 % 2 // 0
-(3 % 2) - // 1
-(3 % 2) // -1
+3 % 2 // 1
+-3 % 2 // -1
 ```
 
 ```javascript

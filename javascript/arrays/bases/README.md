@@ -11,7 +11,7 @@ const myListMisc = new Array("hello", 13, 8 === "8") // ['hello', 13, false]
 const shopping = ["tshirt", "shorts", "pareo"]
 ```
 
-## Voici comment on peut les obtenir le nombre d'éléments
+## Voici comment on peut obtenir le nombre d'éléments
 
 ```javascript
 const myList1 = []

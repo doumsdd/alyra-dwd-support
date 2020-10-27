@@ -1,21 +1,21 @@
 # JavaScript - premiers pas avec types et expressions
 
-Bienvenue dans le monde de JavaScript :)
+Bienvenue dans le monde de JavaScript :) Nous allon commencer notre aventure avec cette language de programmation, disponible dans le navigateur. Nous allons commencer par des bases qui nous permetterons ensuite de créer des interfaces utilisateur intéractives. 
 
-Nous allons commencer par un aperçu des différents types des données et comment on travaille avec eux.
+Nous allons commencer par un aperçu des différents types des données et comment on travaille avec eux. Dans JavaScript ils existe plusieurs types de données simples (nommés primitifs) ainsi que des objets et des fonctions (que nous allons découvrir un peu plus tard).
+
+_Qu'est que ça veut dire type de données ? Pourquoi en parler ?_ Voici un exemple. Avec JavaScript nous pouvons executer les opération arythmetiques, par exemple `1 + 2` sera évalué en tant que `3`. On peut aussi effectuer des opérations sur les chaines de carectères, par exemple `"Java" + "String"` sera évalué en tant que `"JavaScript"`. De la même façon `"1" + "2"` donne `"12"`. Vous voyez la différence entre `"1" + "2"` et `1 + 2` ? Quel sera le résultat de `"1" + 2` 🧐 ? Vous saurez répondre à cette question suite à ce premier cours de JavaScript !
 
 ## Types de données :
 
-(Vous pouvez ouvrir votre _terminal_ est taper `node`. Pour sortir de mode "node", tapez `.exit`)
-
-Pour vérifier le "type" nous disposons de la fonction `typeof` qui retourne le type.
+Vous pouvez ouvrir votre _terminal_ est taper `node`. Pour sortir de mode "node", tapez `.exit` Pour vérifier le "type" nous disposons de la fonction `typeof` qui retourne le type.
 
 ### (primitif) **number**,
 
 ex. `2`, `33.6`, `-10`, `1e5`, `Infinity`, `-Infinity`, `NaN`
 
 ```javascript
-typeof 5
+typeof(5)
 // 'number'
 ```
 
@@ -25,12 +25,15 @@ typeof 5
 "Bonjour tout le monde !"
 "Hello world!"
 "a"
-"a"`a`
-;("123")
-"123"`123`
-;("Je m'appelle .. ")
-"Je m'appelle .."`Je m'appelle ..`
-;("Bonjour et \
+"a"
+`a`
+("123")
+"123"
+`123`
+'Je m'appelle .. '
+"Je m'appelle .."
+`Je m'appelle ..`
+("Bonjour et \
 Bonsoir")
 
 "Je pense que 320px donnera " +

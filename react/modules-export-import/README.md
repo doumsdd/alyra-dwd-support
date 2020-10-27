@@ -61,10 +61,10 @@ console.log(gradients.length)
 // Uncaught ReferenceError: gradients is not defined
 ```
 
-Voici les 2 choses importants **à retenir** par rapport auz _modules_
+Voici les 2 choses importants **à retenir** par rapport aux _modules_
 
-- modules sont toujours en mode `strict`, on a plus besoin de spécifier : `use strict`
-- modules ont leur propre scope
+- modules **sont toujours en mode `strict`,** on a plus besoin de spécifier : `use strict`
+- modules **ont leur propre scope**
 
 https://codepen.io/alyra/pen/vYGxebw
 

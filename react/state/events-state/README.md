@@ -21,7 +21,7 @@ const Button = () => {
 Comme vous pouvez l'observer et ce qui sera **à retenir** :
 
 - Les événements de React sont nommés en camelCase : `onClick`, `onChange`, `onSubmit`, `onKeyUp`,...
-- En JSX on passe une fonction dans _event handler_(gestionnaire d’événements)
+- En JSX on passe une fonction dans _event handler_ (gestionnaire d’événements)
 
 ![](https://wptemplates.pehaa.com/assets/alyra/events-react.png)
 

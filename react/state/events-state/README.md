@@ -193,7 +193,7 @@ On appelle `React.useState` avec la valeur initiale de la variable state.
 ```javascript
 const App = () => {
   const [like, setLike] = React.useState(false)
-  const [name, setName] = React.useState(“Inconnu")
+  const [name, setName] = React.useState("Inconnu")
 
   const handleLikeChange = (event) => {
     setLike(event.target.checked)
@@ -239,7 +239,7 @@ class App extends React.Component {
     super(props)
     this.state = {
       like: true,
-      name: “Inconnu",
+      name: "Inconnu",
     }
   }
   handleLikeChange(event) {

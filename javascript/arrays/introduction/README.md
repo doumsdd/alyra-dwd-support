@@ -48,7 +48,7 @@ Attendez 🧐, la liste vient d'être modifiée. La variable a été déclarée 
 
 Ben non, la liste était modifiée, mais son addresse en mémoire (sa référrence) est restée la même. Rappellons, que la variable `listeCoursesPeHaa` indique la référence, et non la liste.
 
-"Hmmm, j'ai du oublier plein de choses, tu veux regarder, s'il te plaît :) ?" - demande PeHaa à son mari. 
+> "Hmmm, j'ai du oublier plein de choses, tu veux regarder, s'il te plaît :) ?" - demande PeHaa à son mari. 
 
 Vains prend le relais : 
 
@@ -57,7 +57,7 @@ const listeCoursesVains = listeCoursesPeHaa
 listeCoursesVains.push('lasagnes', 'pizza', 'bières', 'clémentines')
 ```
 
-"Je regarde ce que tu as ajouté" - dit PeHaa
+> "Je regarde ce que tu as ajouté" - dit PeHaa
 
 ```javascript
 console.log(listeCoursesPeHaa)
@@ -81,10 +81,12 @@ Les méthodes, comme :
 - `reverse`
 - `splice`  
 - `sort` (trie la liste)
+
 peuvent être, avec le même effet, appliquée à la `listeCoursesPeHaa` ou à la `listeCoursesVains`. 
+
 D'ailleurs...
 
-"Tu sais, pour des clémentines, ce n'est pas tout à fait la saison... Je les enlève..."
+> "Tu sais, pour des clémentines, ce n'est pas tout à fait la saison... Je les enlève..."
 
 ```javascript
 listeCoursesPeHaa.pop()

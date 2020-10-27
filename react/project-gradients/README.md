@@ -2,7 +2,7 @@
 
 Le temps du projet est arrivé ! Dans ce challenge vous avez pour le but construire une application web _monopage_ [comme celle-ci.](https://alyra-gradients-bonus.netlify.app/)
 
-Vous devez utiliser CRA en tant que starter. Ci-dessous vous trouverez quelques astuces et indications qui vous aideront à structurer votre projet.
+Vous devez utiliser CRA en tant que starter. Ci-dessous vous trouverez quelques indications qui vous aideront à structurer votre projet.
 
 ## CRA - configuration initiale
 

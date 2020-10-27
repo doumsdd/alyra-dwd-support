@@ -2,9 +2,9 @@
 
 ## Handling Events
 
-Dans cette partie nous allons apprendre comment gérer des _events_ (tels que _click_, _change_ ou _submit_) avec React et JSX. Nous allons intégrer la gestion des événements pour rendre nos éléments interactifs.
+Dans cette partie nous allons apprendre comment gérer des _events_ (tels que _click_, _change_ ou _submit_) avec React et JSX. Nous allons ainsi rendre nos éléments interactifs.
 
-Voici notre premier exemple, un component `Button` qui affiche un `button` avec le texte "Click me". Suite à un click, le navigateur envoie une fenêtre alert avec le texte "Hello".
+Voici notre premier exemple, un component `Button` qui affiche un élément `button` avec le texte "Click me". Suite à un `click`, le navigateur envoie une fenêtre alert avec le texte "Hello".
 
 ```javascript
 const Button = () => {

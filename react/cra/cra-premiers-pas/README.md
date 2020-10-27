@@ -55,21 +55,21 @@ Un peu plus tard, nous allons importer le fichier complet de bootstrap `node_mod
 
 ```bash
 ├── README.md
-├── node_modules
+├── node_modules # bootstrap et d'autres librairies externes s'installent ici
 ├── package.json
 ├── public
 │   ├── favicon.ico
-│   ├── index.html  #<div id="root"></div> est ici !
+│   ├── index.html  # <div id="root"></div> est ici !
 │   ├── logo192.png
 │   ├── logo512.png
 │   ├── manifest.json
 │   └── robots.txt
 ├── src
 │   ├── App.css
-│   ├── App.js  #component <App /> est ici !!
+│   ├── App.js  # component <App /> est ici !!
 │   ├── App.test.js
 │   ├── index.css
-│   ├── index.js  #ReactDOM.render(<App/ >, document.getElementById("root") se passe ici
+│   ├── index.js  # ReactDOM.render(<App/ >, document.getElementById("root") se passe ici
 │   ├── logo.svg
 │   ├── serviceWorker.js
 │   └── setupTests.js

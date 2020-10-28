@@ -286,7 +286,7 @@ Voici quelques règles :
 "2" * 10 // -> 2 + 10 -> 20
  ```
  
- - Opérateur binaire `+` avec un des opérands étant de type `"string"` provoque la coercion vers le type `"string"`
+ - Opérateur binaire `+` avec une des opérandes de type `"string"` provoque la coercion vers le type `"string"`
  
  ```javascript
 1 + "2" // -> "1" + "2" -> "12"

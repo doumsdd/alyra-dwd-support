@@ -71,6 +71,7 @@ let message = "Hello World"
 message += "!"
 // message devient "Hello World!"
 message = message.toUpperCase()
+// message devient "HELLO WORLD!"
 alert(message)
 ```
 

@@ -278,7 +278,7 @@ Nous parlons de *type coercion* quand le type d'une valeur est convertie implici
 
 Voici quelques règles :
 
-- Opérateurs `-`, `*`, `/`, `**` etc. provoque la coercion vers le type `"number"`
+- Opérateurs `-`, `*`, `/`, `**` etc. provoquent la coercion vers le type `"number"`
 
 ```javascript
 1 - "2" // -> 1 - 2 -> -1
@@ -311,7 +311,7 @@ Voici quelques règles :
  !0 // ->!false -> true
  ```
  
- - L'égalité faible ("double égal")  `==` - si les valeurs ne sont pas du même type, la coercion est effectuée
+ - L'égalité faible ("double égal")  `==` - si les valeurs ne sont pas du même type, provoque la coercion
  
  ```javascript
  1 == "1" // -> 1 == 1 -> true
@@ -324,7 +324,7 @@ Voici quelques règles :
  true != 2 // => 1 != 2 -> true
  ```
 
-- Par contre dans l'égalité stricte  ("triple égal")  `===` la coercion n'est pas permise
+- Par contre, dans **l'égalité stricte**  ("triple égal")  **`===` la coercion n'est pas permise**
 
  ```javascript
  1 === "1" // false
@@ -336,10 +336,12 @@ Voici quelques règles :
  false !== 0 // true
  ```
  
+ Pour en savoir plus [JavaScript Equality Table](https://dorey.github.io/JavaScript-Equality-Table/)
+ 
  - Opérateurs `<`, `<=` 
  
-Pour comparer des strings on utilise l'ordre alphabétique `"A" < "Z" < "a" < "z"`
-Pour comparer des valeurs de type différents, la coercion vers le type `"number"` est effectuée
+Pour comparer des strings JavaScript utilise l'ordre alphabétique, par exemple `"A" < "Z" < "a" < "z"`.  
+Pour comparer des valeurs de type différents, la coercion vers le type `"number"` est effectuée.
 
  ```javascript
  "100" < "21" // true
@@ -348,15 +350,13 @@ Pour comparer des valeurs de type différents, la coercion vers le type `"number
  false < "3" // -> 0 < 3 -> true
  ```
  
-Pour en savoir plus [JavaScript Equality Table](https://dorey.github.io/JavaScript-Equality-Table/)
-
 ## Opérateurs logiques `||` et `&&`
 
-Nous avons déjà vue comment `||` et `&&` opèrent avec des valeurs de type `"boolean"`. Ils sont souvent utilisés avec des valeurs de types différents. Il est important de comprendre leurs comportements spécifiques.
+Nous avons déjà vu comment `||` et `&&` opèrent avec des valeurs de type `"boolean"`. Ces opérateurs sont souvent utilisés avec des valeurs de types différents. Il est alors important de comprendre leurs comportements, assez spécifiques.
 
 ### `||`
 
-JavaScript procède de gauche à droite. Chaque valeurs est convertie dans la mémoire en type `"boolean"` et l'évaluation s'arrête au moment où on tombe sur la valeur _truthy_. Le résultat est la valeur qui est évaluée en _truthy_. Si aucune des valeur n'est pas _truthy_, le résultat est la dernière valeur.
+JavaScript procède de gauche à droite. Chaque valeurs est convertie dans la mémoire en type `"boolean"` et l'évaluation s'arrête au moment où on tombe sur la valeur _truthy_. Le résultat est la valeur qui est évaluée comme _truthy_. Si aucune des valeur n'est _truthy_, le résultat est la dernière valeur.
 
 ```javascript
 0 || undefined || "JavaScript" || "" 
@@ -371,7 +371,7 @@ JavaScript procède de gauche à droite. Chaque valeurs est convertie dans la m�
 
 ## `&&`
 
-JavaScript procède de gauche à droite. Chaque valeurs est convertie dans la mémoire en type `"boolean"` et l'évaluation s'arrête au moment où on tombe sur la valeur _falsy_. Le résultat est la valeur qui est évaluée en _falsy_. Si aucune des valeur n'est pas _falsy_, le résultat est la dernière valeur.
+JavaScript procède de gauche à droite. Chaque valeurs est convertie dans la mémoire en type `"boolean"` et l'évaluation s'arrête au moment où on tombe sur la valeur _falsy_. Le résultat est la valeur qui est évaluée comme _falsy_. Si aucune des valeur n'est _falsy_, le résultat est la dernière valeur.
 
 ```javascript
 0 && undefined && "" 

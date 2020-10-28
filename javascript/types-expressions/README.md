@@ -2,7 +2,7 @@
 
 Bienvenue dans le monde de JavaScript :) 
 
-Nous allons commencer notre aventure par un aperçu des différents types des données. Nous allons apprendre comment on travaille avec eux. Dans JavaScript il existe plusieurs types de données simples (nommés primitifs) ainsi que des objets et des fonctions (que nous allons découvrir un peu plus tard).
+Nous allons commencer notre aventure par un aperçu des différents types des données. Nous allons apprendre comment travailler avec eux. Dans JavaScript il existe plusieurs types de données simples (nommés primitifs) ainsi que des objets et des fonctions (que nous allons découvrir un peu plus tard).
 
 _Qu'est que ça veut dire type de données ? Pourquoi devons nous en parler ?_ Voici un exemple. Avec JavaScript nous pouvons executer les opérations arithmétiques, par exemple `1 + 2`. Comme vous pouvez deviner `1 + 2` sera évalué en tant que `3`. 
 

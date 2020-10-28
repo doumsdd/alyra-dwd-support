@@ -104,6 +104,17 @@ Il est important de savoir qu'il existe aussi le mot-clé `var` qui permet de d�
 
 ---
 
+## Fin de la ligne (`;`)
+
 Les `;` à la fin de chaque ligne ne sont pas obligatoire. JavaScript considere (avec quelques rares exceptions) que la ligne finit par un `;`
 
 Le nom d'une variable (son identifiant) peut contenir des lettres majuscules ou minuscules, des chiffres (sauf en première position) et certains caractères comme le dollar `$` ou underscore `_`.
+
+## Mode strict
+
+---
+
+## Exercices
+
+[javascript quizzes - variables (1)](https://javascript-quizzes.netlify.app/variables-1)
+

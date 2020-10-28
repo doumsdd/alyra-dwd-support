@@ -335,6 +335,8 @@ Voici quelques régles :
  false === 0 // false
  false !== 0 // true
  ```
+ 
+Pour en savoir plus [JavaScript Equality Table](https://dorey.github.io/JavaScript-Equality-Table/)
 
 ## Opérateurs logiques `||` et `&&`
 
@@ -345,10 +347,14 @@ Nous avons déjà vue comment `||` et `&&` opérent avec des valeurs de type `"b
 JavaScript procède de gauche à droite. Chaque valeurs est convertie dans la mémoire en type `"boolean"` et l'évaluation s'arrête au moment où on tombe sur la valeur _truthy_. Le résultat est la valeur qui est évaluée en _truthy_. Si aucune des valeur n'est pas _truthy_, le résultat est la dernière valeur.
 
 ```javascript
-0 || undefined || "JavaScript" || "" // "JavaScript"
-0 || undefined || "" // ""
-0 || undefined || "Lunch" || "JavaScript" // "Lunch"
-"Burrito" || "Gaspacho" || "Tacos" // "Burrito"
+0 || undefined || "JavaScript" || "" 
+// "JavaScript"
+0 || undefined || "" 
+// ""
+0 || undefined || "Lunch" || "JavaScript" 
+// "Lunch"
+"Burrito" || "Gaspacho" || "Tacos" 
+// "Burrito"
 ```
 
 ## `&&`
@@ -356,9 +362,12 @@ JavaScript procède de gauche à droite. Chaque valeurs est convertie dans la m�
 JavaScript procède de gauche à droite. Chaque valeurs est convertie dans la mémoire en type `"boolean"` et l'évaluation s'arrête au moment où on tombe sur la valeur _falsy_. Le résultat est la valeur qui est évaluée en _falsy_. Si aucune des valeur n'est pas _falsy_, le résultat est la dernière valeur.
 
 ```javascript
-0 && undefined && "" // 0
-"Lunch" && 0 && undefined && "" // 0
-"Burrito" && "Gaspacho" && "Tacos" // "Tacos"
+0 && undefined && "" 
+// 0
+"Lunch" && 0 && undefined && "" 
+// 0
+"Burrito" && "Gaspacho" && "Tacos" 
+// "Tacos"
 ```
 
 ## Peut on soit-même convertir un type vers l'autre ?
@@ -383,7 +392,7 @@ La conversion des types vers "numbers" a lieu aussi quand nous exécutons certai
 "3" != 3 // false
 ```
 
-Pour en savoir plus [JavaScript Equality Table](https://dorey.github.io/JavaScript-Equality-Table/)
+
 
 ## Opérateur conditionnel (ternaire)
 

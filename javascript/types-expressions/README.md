@@ -12,7 +12,7 @@ Par contre, quel sera le résultat de `"1" + 2` 🧐 ? Vous saurez répondre à 
 
 ## Types de données :
 
-Nous allons utiliser JavaScript avec Node.js que vous avez installé et qui est disponible dans votre terminal. Vous pouvez alors ouvrir votre terminal et taper `node`. Pour sortir de mode "node", tapez `.exit` Pour vérifier le "type" nous disposons de la fonction `typeof` qui retourne le type.
+Nous allons utiliser JavaScript avec Node.js que vous avez installé et qui est disponible dans votre terminal. Vous pouvez alors ouvrir votre terminal et taper `node`. Pour sortir de mode "node", tapez `.exit` Pour vérifier le "type" nous disposons de l'opérateur `typeof` qui retourne le type.
 
 ### (primitif) **number**
 

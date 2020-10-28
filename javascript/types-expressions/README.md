@@ -4,9 +4,9 @@ Bienvenue dans le monde de JavaScript :)
 
 Nous allons commencer notre aventure par un aperçu des différents types des données. Nous allons apprendre comment travailler avec eux. Dans JavaScript il existe plusieurs types de données simples (nommés primitifs) ainsi que des objets et des fonctions (que nous allons découvrir un peu plus tard).
 
-_Qu'est que ça veut dire type de données ? Pourquoi devons nous en parler ?_ Voici un exemple. Avec JavaScript nous pouvons executer les opérations arithmétiques, par exemple `1 + 2`. Comme vous pouvez deviner `1 + 2` sera évalué en tant que `3`. 
+_Qu'est que ça veut dire type de données ? Pourquoi devons nous en parler ?_ Voici un exemple. Avec JavaScript nous pouvons executer des opérations arithmétiques, par exemple `1 + 2`. Comme vous pouvez le deviner, `1 + 2` nous donnera... `3`. 
 
-On peut aussi effectuer des opérations sur les chaines de caractères, par exemple `"Java" + "Script"` sera évalué en tant que `"JavaScript"`. De la même façon `"1" + "2"` donne `"12"`. Vous voyez la différence entre `"1" + "2"` et `1 + 2` ? 
+Nous pouvons aussi effectuer des opérations sur les chaines de caractères. Par exemple, `"Java" + "Script"` sera évalué en tant que `"JavaScript"`. De la même façon `"1" + "2"` donnera `"12"`. Vous voyez la différence entre `"1" + "2"` et `1 + 2` ? 
 
 Par contre, quel sera le résultat de `"1" + 2` 🧐 ? Vous saurez répondre à cette question suite à ce premier cours de JavaScript !
 
@@ -16,7 +16,7 @@ Nous allons utiliser JavaScript avec Node.js que vous avez installé et qui est 
 
 ### (primitif) **number**
 
-Voici quelques exemples de type primitif "number" :
+Voici quelques exemples de type primitif `"number"` :
 
 ```javascript
 2

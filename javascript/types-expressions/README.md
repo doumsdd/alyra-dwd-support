@@ -120,7 +120,7 @@ typeof paulina
 
 Dont nous ne parlons pas encore aujourd'hui
 
-- (primitif) **null**, `null` est un type primitif et pourtant `typeof(null)` donne `"object"`
+- (primitif) **null**, `null` est un type primitif et pourtant `typeof(null)` donne `"object", ceci c'est enfait une erreur du langage, `null` n'est pas un `objet`
 
 - (primitif) **BigInt**
 
@@ -205,13 +205,55 @@ false && false
 //false
 ```
 
+## Type coercion & type conversion
 
+**Type coercion** (ou en français coercition de type) est la conversion automatique ou implicite de valeurs d'un type de données à un autre (par exemple : de string à nombre) [définition - source MDN.](https://developer.mozilla.org/fr/docs/Glossaire/Type_coercion)
 
-On peut utiliser d'autre valeurs que `true` et `false` dans le context boolean. Souvent on utilise les opérateurs `!`, `||` et `&&` avec valeurs de différents types.
+Souvent un opérateur provoque la conversion du type d'une valeur. Revenons à notre exemple du début du cours où nous essayons d'effectuer l'opération `"1" + 2` (additionner un `"string"` et un `"number"`). Afin que cette opération soit possible, le type d'un de ses opérands devra être converti. La valeur numérique sera convertie en `"string"` et le résultat de cette opération sera `"12"`.
 
-Il faut savoir que certaines valeurs vont être **falsy** - évaluées _comme_ fausses quand elles se trouvent dans un contexte booléen. Les autres valeurs vont être **truthy** - évaluées _comme_ vraies, quand elles se trouvent dans un contexte booléen.
+```javascript
+// type coercion (changement du type implicite)
+"1" + 2
+// "1" + 2 -> "1" + "2" -> "12"
+```
 
-### Falsy (Valeurs de type fausses)
+On peut aussi convertir le type explicitement - dans ce cas nous parlons de **type convertion.** Voici des exemples :
+
+```javascript
+// type conversion (changement du type explicite)
+Number("1") + Number(2)
+// Number("1") + Number(2) -> 1 + 2 -> 3
+Number("Bonjour")
+// NaN
+```
+
+```javascript
+// type conversion (changement du type explicite)
+String(2)
+// String(2) -> "2"
+```
+
+```javascript
+// type conversion (changement du type explicite)
+Boolean(2)
+// Boolean(2) -> true
+Boolean(0)
+// Boolean(0) -> false
+Boolean("Bonjour")
+// Boolean("Bonjour") -> true
+```
+
+### Type conversion, *truthy* et *falsy*
+
+Pour recapituler - nous parlons de *type conversion* quand nous changeons le type d'une valeur de la manière explicite (c'est moi, le programmeur qui décide de le faire dans mon script). Pour ceci nous utilisons les fonctions :
+
+ - `Number` - afin de convertir une valeur vers `"number"`
+ - `String` - afin de convertir une valeur vers `"string"`
+ - `Boolean` - afin de convertir une valeur vers `"boolean"`
+ 
+Ils existent quelques règles concernant la conversion vers le type `"boolean"`. À cette occasion nous allons parler des notions *truthy* et *falsy*
+
+Valeurs **falsy** sont celles qui convertissent en `false`. La liste des valeurs **falsy** n'est pas longue :
 
 ```javascript
 false
@@ -219,11 +261,19 @@ null
 undefined
 0
 NaN
-;("")
-""``
+""
+''
+``
 ```
 
-Et tout ce qui n'est pas **falsy** et **truthy** !
+Valeurs **truthy** sont celles qui convertissent en `true`. Quelle est la liste des valeurs **truthy** ? Ce n'est pas possible de la monter, par contre, il suffit de savoir, qu'une valeur est *truthy* si elle n'est pas *falsy*.
+
+
+### Type coercion
+  
+Nous parlons de *type coercion* quand le type d'une valeur est convertie implicitement (c'est JavaScript qui le fait à la volée afin d'effectuer une opération). On peut utiliser d'autre valeurs que `true` et `false` dans le context boolean. Souvent on utilise les opérateurs `!`, `||` et `&&` avec valeurs de différents types.
+
+
 
 ```javascript
 null || undefined

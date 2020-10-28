@@ -274,7 +274,7 @@ Valeurs **truthy** sont celles qui convertissent en `true`. Quelle est la liste 
 
 ### Type coercion
   
-Nous parlons de *type coercion* quand le type d'une valeur est convertie implicitement (c'est JavaScript qui le fait à la volée afin d'effectuer une opération). On peut utiliser d'autre valeurs que `true` et `false` dans le context boolean. Souvent on utilise les opérateurs `!`, `||` et `&&` avec valeurs de différents types. 
+Nous parlons de *type coercion* quand le type d'une valeur est convertie implicitement (c'est JavaScript qui le fait à la volée afin d'effectuer une opération).
 
 Voici quelques régles :
 
@@ -369,30 +369,6 @@ JavaScript procède de gauche à droite. Chaque valeurs est convertie dans la m�
 "Burrito" && "Gaspacho" && "Tacos" 
 // "Tacos"
 ```
-
-## Peut on soit-même convertir un type vers l'autre ?
-
-Pour l'instant, nous avons vu que JavaScript convertit les types dans certaines situations.  
-Est-ce possible de "imposer" cette conversion ?  
-Tout à fait :
-
-La conversion des types vers "numbers" a lieu aussi quand nous exécutons certaines opérations :
-
-- comparaison (>, <, <=,>=)
-- `(- + * / % )` (sauf `+` si un des opérands est de type 'string')
-- `+` (opérateur unaire qui convertit en "number"
-- `==` et `!=` mais **il n'y a pas** de conversion pour `===` et `!==`
-
-```javascript
-"1" == 1 // true
-"1" === 1 // false
-"2" != 3 // true
-"2" !== 3 // true
-"3" !== 3 // true
-"3" != 3 // false
-```
-
-
 
 ## Opérateur conditionnel (ternaire)
 

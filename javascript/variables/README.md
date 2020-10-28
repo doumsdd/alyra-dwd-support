@@ -1,8 +1,7 @@
 # Variables
 
-Une variable est un «stockage nommé» pour les données.
-
-Nous les avons déjà vu dans sass (comme ci-dessous 👇)
+Une variable est un «stockage nommé» pour les données.  
+Nous avons déjà vu des variables dans Sass (comme ci-dessous 👇)
 
 ```scss
 $brand: tomato;

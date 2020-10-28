@@ -104,11 +104,15 @@ Il est important de savoir qu'il existe aussi le mot-clé `var` qui permet de d�
 
 ---
 
+## Noms de variables
+
+Peut-on appeler une variable librement ? Presque, il existe quelques limitations.
+Le nom d'une variable (son identifiant) peut contenir des lettres majuscules ou minuscules, des chiffres (sauf en première position) et certains caractères comme le dollar `$` ou underscore `_`.
+
 ## Fin de la ligne (`;`)
 
 Les `;` à la fin de chaque ligne ne sont pas obligatoire. JavaScript considere (avec quelques rares exceptions) que la ligne finit par un `;`
 
-Le nom d'une variable (son identifiant) peut contenir des lettres majuscules ou minuscules, des chiffres (sauf en première position) et certains caractères comme le dollar `$` ou underscore `_`.
 
 ## Mode strict
 

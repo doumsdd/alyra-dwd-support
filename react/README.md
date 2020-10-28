@@ -14,7 +14,7 @@
   - [CRA - premiers pas](./cra/cra-premiers-pas)
   - [Brief exercice CRA - todo](./cra/cra-todo)
 - [Project Gradients (brief)](./project-gradients)
-- [useContext](https://github.com/pehaa/alyra-gradients-context)
+- [useContext](.useContext)
 - [useEffect](./useEffect)
 - [Promises, fetch & useEffect](./promises-fetch-useEffect)
 - [fetch en pratique avec l'api OpenWeather](https://github.com/pehaa/alyra-react-weather-app)

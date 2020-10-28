@@ -336,6 +336,18 @@ Voici quelques régles :
  false !== 0 // true
  ```
  
+ - Opérateurs `<`, `<=` 
+ 
+Pour comparer des strings on utilise l'ordre alphabéthique `"A" < "Z" < "a" < "z"`
+Pour comparer des valeurs de type différents, la coercion vers le type `"number"` est effectuée
+
+ ```javascript
+ "100" < "21" // true
+ 100 <= "21" // -> 100 < 21 -> false
+ false < 2 // -> 0 < 2 -> true
+ false < "3" // -> 0 < 3 -> true
+ ```
+ 
 Pour en savoir plus [JavaScript Equality Table](https://dorey.github.io/JavaScript-Equality-Table/)
 
 ## Opérateurs logiques `||` et `&&`

@@ -221,16 +221,19 @@ On peut aussi convertir le type explicitement - dans ce cas nous parlons de **ty
 
 ```javascript
 // type conversion (changement du type explicite)
-Number("1") + Number(2)
-// Number("1") + Number(2) -> 1 + 2 -> 3
-Number("Bonjour")
-// NaN
+Number("1") + Number(2) // Number("1") + Number(2) -> 1 + 2 -> 3
+Number("Bonjour" // NaN
+Number(false) // 0
+Number(true) // 1
+Number(null) // 0
+Number(undefined) // NaN
+Number("   ") // 0
 ```
 
 ```javascript
 // type conversion (changement du type explicite)
-String(2)
-// String(2) -> "2"
+String(2) // -> "2"
+String(true) // -> "true"
 ```
 
 ```javascript
@@ -251,7 +254,7 @@ Pour recapituler - nous parlons de *type conversion* quand nous changeons le typ
  - `String` - afin de convertir une valeur vers `"string"`
  - `Boolean` - afin de convertir une valeur vers `"boolean"`
  
-Ils existent quelques règles concernant la conversion vers le type `"boolean"`. À cette occasion nous allons parler des notions *truthy* et *falsy*
+Ils existent quelques règles concernant la conversion vers le type `"boolean"`. À cette occasion nous allons parler des notions *truthy* et *falsy.*
 
 Valeurs **falsy** sont celles qui convertissent en `false`. La liste des valeurs **falsy** n'est pas longue :
 
@@ -271,39 +274,91 @@ Valeurs **truthy** sont celles qui convertissent en `true`. Quelle est la liste 
 
 ### Type coercion
   
-Nous parlons de *type coercion* quand le type d'une valeur est convertie implicitement (c'est JavaScript qui le fait à la volée afin d'effectuer une opération). On peut utiliser d'autre valeurs que `true` et `false` dans le context boolean. Souvent on utilise les opérateurs `!`, `||` et `&&` avec valeurs de différents types.
+Nous parlons de *type coercion* quand le type d'une valeur est convertie implicitement (c'est JavaScript qui le fait à la volée afin d'effectuer une opération). On peut utiliser d'autre valeurs que `true` et `false` dans le context boolean. Souvent on utilise les opérateurs `!`, `||` et `&&` avec valeurs de différents types. 
 
+Voici quelques régles :
 
+- Opérateurs `-`, `*`, `/`, `**` etc. provoque la coercion vers le type `"number"`
+
+```javascipt
+1 - "2" // -> 1 - 2 -> -1
+"3" - "5" // -> 3 - 5 -> -2
+"2" * 10 // -> 2 + 10 -> 20
+ ```
+ 
+ - Opérateur binaire `+` avec un des opérands étant de type `"string"` provoque la coercion vers le type `"string"`
+ 
+ ```javascipt
+1 + "2" // -> "1" + "2" -> "12"
+"3" + "5" // -> "3" + "5" -> "35"
+"2" + 10 // -> "2" + "10" -> "210"
+ ```
+ 
+ mais 
+ 
+ ```javascript
+ true + false // -> 1 + 0 -> 1
+ true + true // -> 1 + 1 -> 2
+ null + null // -> 0 + 0 -> 0
+ 3 + undefined // -> 3 + NaN -> NaN
+ ```
+ 
+ - Négation `!` provoque la coercion vers le type `"boolean"`
+ 
+ ```javascipt
+ !10 // -> !true -> false
+ !null // -> !false -> true
+ !0 // ->!false -> true
+ ```
+ 
+ - L'égalité faible ("double égal")  `==` - si les valeurs ne sont pas du même type, la coercion est effectuée
+ 
+ ```javascript
+ 1 == "1" // -> 1 == 1 -> true
+ 1 != "1" // -> 1 != 1 -> false
+ "-2" == -2 // -> -2 == 2 -> true
+ "-2"!= -2 // -> -2 != 2 -> false
+ false == 0 // -> 0 == 0 -> true
+ false != 0 // -> 0 != 0 -> false
+ true == 2 // => 1 == 2 -> false
+ true != 2 // => 1 != 2 -> true
+ ```
+
+- Par contre dans l'égalite stricte  ("triple égal")  `===` la coercion n'est pas permise
+
+ ```javascript
+ 1 === "1" // false
+ 1 !== "1" // true
+ "-2" === -2 // false
+ "-2" === -2 // false
+ "-2"!== -2 // true
+ false === 0 // false
+ false !== 0 // true
+ ```
+
+## Opérateurs logiques `||` et `&&`
+
+Nous avons déjà vue comment `||` et `&&` opérent avec des valeurs de type `"boolean"`. Ils sont souvent utilisés avec des valeurs de types différents. Il est important de comprendre leurs comportements spécifiques.
+
+### `||`
+
+JavaScript procède de gauche à droite. Chaque valeurs est convertie dans la mémoire en type `"boolean"` et l'évaluation s'arrête au moment où on tombe sur la valeur _truthy_. Le résultat est la valeur qui est évaluée en _truthy_. Si aucune des valeur n'est pas _truthy_, le résultat est la dernière valeur.
 
 ```javascript
-null || undefined
-//undefined (falsy)
-!0
-//true
-```
-
-## `||`
-
-```javascript
-0 || undefined || ""
-/* va de gauche à droite et arrête toi à la première valeur truthy, s'il y en a pas - la dernière valeur */
-// ''
-0 || undefined || "Lunch" || ""
-// "Lunch"
-"Burrito" || "Gaspacho" || "Paëlla"
-// "Burrito"
+0 || undefined || "JavaScript" || "" // "JavaScript"
+0 || undefined || "" // ""
+0 || undefined || "Lunch" || "JavaScript" // "Lunch"
+"Burrito" || "Gaspacho" || "Tacos" // "Burrito"
 ```
 
 ## `&&`
 
+JavaScript procède de gauche à droite. Chaque valeurs est convertie dans la mémoire en type `"boolean"` et l'évaluation s'arrête au moment où on tombe sur la valeur _falsy_. Le résultat est la valeur qui est évaluée en _falsy_. Si aucune des valeur n'est pas _falsy_, le résultat est la dernière valeur.
+
 ```javascript
-0 && undefined && ""
-/* va de gauche à droite et arrête toi à la première valeur falsy, s'il y en a pas - la dernière valeur */
-// 0
-"Lunch" && 0 && undefined && ""
-// 0
-"Burrito" && "Gaspacho" && "Paëlla"
-// "Paëlla"
+0 && undefined && "" // 0
+"Lunch" && 0 && undefined && "" // 0
+"Burrito" && "Gaspacho" && "Tacos" // "Tacos"
 ```
 
 ## Peut on soit-même convertir un type vers l'autre ?
@@ -311,52 +366,6 @@ null || undefined
 Pour l'instant, nous avons vu que JavaScript convertit les types dans certaines situations.  
 Est-ce possible de "imposer" cette conversion ?  
 Tout à fait :
-
-### Number
-
-```javascript
-Number("1") + // 1
-  "1" // 1
-
-Number("hello") + // NaN
-  "hello" // NaN
-
-Number(true) + // 1
-  true // 1
-
-Number(false) + // 0
-  false // 0
-
-Number(null) + // 0
-  null // 0
-
-Number("   ") + // 0
-  "   " // 0
-```
-
-### String
-
-```javascript
-String(12)
-// '12'
-String(true)
-// 'true'
-```
-
-### Boolean
-
-```javascript
-Boolean(1)
-// true
-Boolean(0)
-// false
-Boolean(null)
-// false
-Boolean(undefined)
-// false
-Boolean("")
-// false
-```
 
 La conversion des types vers "numbers" a lieu aussi quand nous exécutons certaines opérations :
 

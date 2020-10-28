@@ -105,7 +105,7 @@ typeof (10 != 2) // 'boolean'
 
 ### (primitif) **undefined**
 
-Quand JavaScript rencontre une chaine de caractères qui n'est pas entourée par des guillement, il cherche la fonction ou la variable qui est identifiée avec cette chaine de carectère. (Nous allons parles des variables et des foncions très bientôt). Si JavaScript ne trouve pas de valeur qui correspond à notre chaine, son type est `"undefined"`.
+Quand JavaScript rencontre une chaine de caractères qui n'est pas entourée par des guillemets, caractère, il cherche la fonction ou la variable qui est identifiée avec cette chaine de caractère. (Nous allons parles des variables et des foncions très bientôt). Si JavaScript ne trouve pas de valeur qui correspond à notre chaine, son type est `"undefined"`.
 
 ```javascript
 typeof a
@@ -120,7 +120,7 @@ typeof paulina
 
 Dont nous ne parlons pas encore aujourd'hui
 
-- (primitif) **null**, `null` est un type primitif et pourtant `typeof(null)` donne `"object", ceci c'est enfait une erreur du langage, `null` n'est pas un `objet`
+- (primitif) **null**, `null` est un type primitif et pourtant `typeof(null)` donne `"object", ceci c'est en fait une erreur du langage, `null` n'est pas un `objet`
 
 - (primitif) **BigInt**
 
@@ -132,7 +132,7 @@ Dont nous ne parlons pas encore aujourd'hui
 
 ## Expressions
 
-Nous parlons d'expression JavaScript quand nous démandons à JavaScript de nous **donner un résultat**. par exemple `1 + 2` est une expression, son résultat est 3 (de type "number"). Regardons ensemble d'autres exemples des expressions JavaScript.
+Nous parlons d'expression JavaScript quand nous demandons à JavaScript de nous **donner un résultat**. par exemple `1 + 2` est une expression, son résultat est 3 (de type "number"). Regardons ensemble d'autres exemples des expressions JavaScript.
 
 ### Numbers
 
@@ -217,7 +217,7 @@ Souvent un opérateur provoque la conversion du type d'une valeur. Revenons à n
 // "1" + 2 -> "1" + "2" -> "12"
 ```
 
-On peut aussi convertir le type explicitement - dans ce cas nous parlons de **type convertion.** Voici des exemples :
+On peut aussi convertir le type explicitement - dans ce cas nous parlons de **type conversion.** Voici des exemples :
 
 ```javascript
 // type conversion (changement du type explicite)
@@ -248,7 +248,7 @@ Boolean("Bonjour")
 
 ### Type conversion, *truthy* et *falsy*
 
-Pour recapituler - nous parlons de *type conversion* quand nous changeons le type d'une valeur de la manière explicite (c'est moi, le programmeur qui décide de le faire dans mon script). Pour ceci nous utilisons les fonctions :
+Pour récapituler - nous parlons de *type conversion* quand nous changeons le type d'une valeur de la manière explicite (c'est moi, le programmeur qui décide de le faire dans mon script). Pour ceci nous utilisons les fonctions :
 
  - `Number` - afin de convertir une valeur vers `"number"`
  - `String` - afin de convertir une valeur vers `"string"`
@@ -276,11 +276,11 @@ Valeurs **truthy** sont celles qui convertissent en `true`. Quelle est la liste 
   
 Nous parlons de *type coercion* quand le type d'une valeur est convertie implicitement (c'est JavaScript qui le fait à la volée afin d'effectuer une opération).
 
-Voici quelques régles :
+Voici quelques règles :
 
 - Opérateurs `-`, `*`, `/`, `**` etc. provoque la coercion vers le type `"number"`
 
-```javascipt
+```javascript
 1 - "2" // -> 1 - 2 -> -1
 "3" - "5" // -> 3 - 5 -> -2
 "2" * 10 // -> 2 + 10 -> 20
@@ -288,7 +288,7 @@ Voici quelques régles :
  
  - Opérateur binaire `+` avec un des opérands étant de type `"string"` provoque la coercion vers le type `"string"`
  
- ```javascipt
+ ```javascript
 1 + "2" // -> "1" + "2" -> "12"
 "3" + "5" // -> "3" + "5" -> "35"
 "2" + 10 // -> "2" + "10" -> "210"
@@ -305,7 +305,7 @@ Voici quelques régles :
  
  - Négation `!` provoque la coercion vers le type `"boolean"`
  
- ```javascipt
+ ```javascript
  !10 // -> !true -> false
  !null // -> !false -> true
  !0 // ->!false -> true
@@ -324,7 +324,7 @@ Voici quelques régles :
  true != 2 // => 1 != 2 -> true
  ```
 
-- Par contre dans l'égalite stricte  ("triple égal")  `===` la coercion n'est pas permise
+- Par contre dans l'égalité stricte  ("triple égal")  `===` la coercion n'est pas permise
 
  ```javascript
  1 === "1" // false
@@ -338,7 +338,7 @@ Voici quelques régles :
  
  - Opérateurs `<`, `<=` 
  
-Pour comparer des strings on utilise l'ordre alphabéthique `"A" < "Z" < "a" < "z"`
+Pour comparer des strings on utilise l'ordre alphabétique `"A" < "Z" < "a" < "z"`
 Pour comparer des valeurs de type différents, la coercion vers le type `"number"` est effectuée
 
  ```javascript
@@ -352,7 +352,7 @@ Pour en savoir plus [JavaScript Equality Table](https://dorey.github.io/JavaScri
 
 ## Opérateurs logiques `||` et `&&`
 
-Nous avons déjà vue comment `||` et `&&` opérent avec des valeurs de type `"boolean"`. Ils sont souvent utilisés avec des valeurs de types différents. Il est important de comprendre leurs comportements spécifiques.
+Nous avons déjà vue comment `||` et `&&` opèrent avec des valeurs de type `"boolean"`. Ils sont souvent utilisés avec des valeurs de types différents. Il est important de comprendre leurs comportements spécifiques.
 
 ### `||`
 
@@ -384,11 +384,34 @@ JavaScript procède de gauche à droite. Chaque valeurs est convertie dans la m�
 
 ## Opérateur conditionnel (ternaire)
 
-syntaxe `condition ? exprSiVrai : exprSiFaux`
+JavaScript permet d'évaluer le résultat en fonction si la condition est vrai ou fausse. Voici la syntaxe de l'opérateur ternaire (ternary en anglais)
+
+```javascript
+condition ? exprSiVrai : exprSiFaux
+```
 
 ```javascript
 10 > 4 ? "pain au chocolat" : "chocolatine"
-// pain au chocolat
+// "pain au chocolat"
+```
+
+```javascript
+2 * 2 === 4 ? "Burrito" : "Tacos"
+// "Burrito"
+```
+
+```javascript
+2 ** 3 === 9 ? "Burrito" : "Tacos"
+// "Tacos"
+```
+
+Pour la partie `condition` la coercion vers `"boolean"` est effectuée si besoin :)
+
+```javascript
+4 % 2 ? "Bonjour" : "Bonsoir"
+// -> 0 ? "Bonjour" : "Bonsoir"
+// -> false ? "Bonjour" : "Bonsoir"
+// -> "Bonsoir"
 ```
 
 ---

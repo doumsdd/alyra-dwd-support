@@ -34,7 +34,7 @@ Voici comment nous **déclarons** les variables dans JavaScript :
 let message
 ```
 
-Une boîte est prête pour stocker la valeur nommée "message". Maintenant nous pouvons spécifier dans notre script qui faire avec le "message", par exemple de mettre message en majuscule et l'afficher sur l'écran. Ce qui sera afficher changera en fonction de la valeur stockée dans la boîte "message".
+Ainsi, nous pouvons imaginer qu'une boîte est prête pour stocker la valeur nommée "message". Maintenant nous pouvons spécifier dans notre script quoi faire avec le "message". Par exemple, nous pouvons mettre message en majuscules et ensuite l'afficher sur l'écran. Ce qui sera affiché changera en fonction de la valeur stockée dans la boîte "message".
 
 ![](https://assets.codepen.io/4515922/message.png)
 
@@ -115,6 +115,10 @@ Les `;` à la fin de chaque ligne ne sont pas obligatoire. JavaScript considere 
 
 
 ## Mode strict
+
+Le mode strict a été introduit avec la version de JavaScript ECMAScript 5 qui proposait JavaScript plus restrictive avec quelques changements dans la syntaxe et plusieurs optimisations. En particulier, avec ECMAScript 5 certaines erreurs "silencieuses" deviennent des erreurs explicites (qui peuvent arrêter l'execution des script). Àfin de mettre en place une nouvelle version, sans compromettre les sripts existantes, l'instruction `"use strict"` à été proposé.
+
+À partir de ce moment, nous allons commencer nos scripts avec cette instruction.
 
 ---
 

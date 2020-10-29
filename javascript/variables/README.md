@@ -120,6 +120,61 @@ Le mode strict a été introduit avec la version ECMAScript 5 qui proposait Java
 
 À partir de ce moment, nous allons commencer nos scripts avec cette instruction.
 
+## Exemples :
+
+Forkez et clonez [ce repo]() ensuite ouvrez le projet dans VSCode est lancez Live Server.
+
+### Exemple 1
+
+Nous pouvons mettre le code JavaScript directement dans le document HTML entre les balises `<script>...</script>`.  Dans la plupart de cas les scripts sont attachés juste avant la fermeture de la balise `body`.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bonjour JavaScript 01</title>
+  </head>
+  <body>
+    <h1>Bonjour JavaScript 01</h1>
+    <a href="/">retour</a>
+    <p>Dans cette exemple, le navigateur te démandera ton prénom afin de te saluer "Hello ! Ravi de te rencontrer, ...."</p>
+    <p>Pour l'intéraction navigateur-utilisateur, nous utilisons des méthodes <code>alert</code> et <code>prompt</code>.</p>
+    <script>
+      // active mode strict
+      // déclare la variable message et affecte lui la valeur "Hello !"
+      // affiche le message
+      // déclare la variable name et affecte lui la valeur d'entrée utilisateur, qui répond à la question 'Comment tu t'appelles ?'
+      // personnalise le message en y ajoutant le nom d'utilisateur
+      // affiche le message
+    </script>
+  </body>
+</html>
+```
+
+Nous allons maintenant écrire notre script :
+
+```javascript
+ // active mode strict
+ "use strict"
+ // déclare la variable message et affecte lui la valeur "Hello !"
+ let message = "Hello !"
+ // affiche le message
+ alert(message)
+ // déclare la variable name et affecte lui la valeur d'entrée utilisateur, qui répond à la question 'Comment tu t'appelles ?'
+ let name = prompt('Comment tu t'appelles ?)
+ // personnalise le message en y ajoutant le nom d'utilisateur
+ message += ` Ravi de te connaître ${name} !`
+ alert(message)
+```
+
+
+
+
+
+
+
 ---
 
 ## Exercices

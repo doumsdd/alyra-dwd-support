@@ -116,7 +116,7 @@ Les `;` à la fin de chaque ligne ne sont pas obligatoire. JavaScript considere 
 
 ## Mode strict
 
-Le mode strict a été introduit avec la version de JavaScript ECMAScript 5 qui proposait JavaScript plus restrictive avec quelques changements dans la syntaxe et plusieurs optimisations. En particulier, avec ECMAScript 5 certaines erreurs "silencieuses" deviennent des erreurs explicites (qui peuvent arrêter l'execution des script). Àfin de mettre en place une nouvelle version, sans compromettre les sripts existantes, l'instruction `"use strict"` à été proposé.
+Le mode strict a été introduit avec la version ECMAScript 5 qui proposait JavaScript plus restrictif, plus sécurisé, avec quelques changements dans la syntaxe et plusieurs optimisations. En particulier, avec ECMAScript 5 certaines erreurs "silencieuses" deviennent des erreurs explicites (qui peuvent arrêter l'execution des script). Àfin de mettre en place une nouvelle version, sans compromettre les sripts existantes, l'instruction `"use strict"` à été proposé.
 
 À partir de ce moment, nous allons commencer nos scripts avec cette instruction.
 

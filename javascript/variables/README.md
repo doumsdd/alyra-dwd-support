@@ -122,9 +122,9 @@ Le mode strict a été introduit avec la version ECMAScript 5 qui proposait Java
 
 ## Exemples :
 
-Forkez et clonez [ce repo]() ensuite ouvrez le projet dans VSCode est lancez Live Server.
+Forkez et clonez [ce repo](https://github.com/pehaa/js-start) ensuite ouvrez le projet dans VSCode est lancez Live Server.
 
-### Exemple 1
+### Exemple (01)
 
 Nous pouvons mettre le code JavaScript directement dans le document HTML entre les balises `<script>...</script>`.  Dans la plupart de cas les scripts sont attachés juste avant la fermeture de la balise `body`.
 
@@ -166,14 +166,49 @@ Nous allons maintenant écrire notre script :
  let name = prompt('Comment tu t'appelles ?)
  // personnalise le message en y ajoutant le nom d'utilisateur
  message += ` Ravi de te connaître ${name} !`
+ // affiche le message
  alert(message)
 ```
 
+### Exemple (04)
 
+Il est recommander de créer les fichiers JavaScript (avec l'extension `.js`) est l'inclure dans le document HTML avec les balises `script` et l'attribut `src`, comme dans l'exemple suivant :
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bonjour JavaScript 04</title>
+  </head>
 
+  <body>
+    <h1>Bonjour JavaScript 04</h1>
+    <a href="/">retour</a>
+    <!-- écris ton javascript dans un fichier séparé script.js, qui devrait être executé ci-dessous -->
+    <script src="script.js"></script>
+  </body>
+</html>
+```
 
-
+```javascript
+// script.js
+/* 
+créer la variable answer
+demander confirmation 'Confirmez-vous d'être majeur ?' 
+affecter la réponse à la variable answer
+*/
+const answer = confirm('Confirmez-vous d'être majeur ?')
+// answer est de type "boolean"
+/*
+créer la variable message
+affecter-lui soit 'Bienvenue !' si la réponse et positive (answer est true) soit  'Vous n'être pas autorisé !' (dans le cas contraire)
+Afficher le message
+*/
+const message = answer ?  'Bienvenue !' : 'Vous n'êtes pas autorisé !'
+alert(message)
+```
 
 ---
 

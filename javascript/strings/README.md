@@ -1,14 +1,19 @@
 # Strings - que pouvons nous faire avec ?
 
 ```javasscript
-let message = "Bonjour tout le monde !"
+let message = "Parlons du type string !"
 ```
+
+Vous vous rappelez bien que `"string"` est un des type prymitif dans JavaScript. Il existe plusieures méthodes que nous pouvons appliquer aux "strings" pour changer leur format ou récuperer des information spécifiques.
+
 
 ## 1. Quelle est la longueur d'un string ?
 
 ```javascript
 message.length
 ```
+
+Pourquoi est-ce important ? Par exemple, pour vérifier si la longeur du mot de pass est suffisante ?
 
 **Exemple:**
 

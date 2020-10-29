@@ -215,4 +215,5 @@ alert(message)
 ## Exercices
 
 [javascript quizzes - variables (1)](https://javascript-quizzes.netlify.app/variables-1)
+[javascript variables - repo ex. restants](https://github.com/pehaa/js-start)
 

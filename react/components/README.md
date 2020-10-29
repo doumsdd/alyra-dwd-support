@@ -1,6 +1,6 @@
 # Components
 
-**Components** (ou composants en français) constituent une base de React. Ils permettent de découper l’interface utilisateur en éléments indépendants et réutilisables. Nous créons nos propres briques avec lesquelles nous assemblons notre application web. Ceci nous permet de travailler plus vite, ne pas nous répéter et mieux organiser notre code. Il est plus facile de modifier une partie spécifique de markup, réutiliser la même interface pour différents contenus est aussi quasi-automatique.
+**Components** (ou composants en français) constitue une base de React. Ils permettent de découper l’interface utilisateur en éléments indépendants et réutilisables. Nous créons nos propres briques avec lesquelles nous assemblons notre application web. Ceci nous permet de travailler plus vite, ne pas nous répéter et mieux organiser notre code. Il est plus facile de modifier une partie spécifique de markup, réutiliser la même interface pour différents contenus est aussi quasi automatique.
 
 ## Component step by step
 
@@ -74,7 +74,7 @@ ReactDOM.render(element, document.getElementById("root"))
 
 `schoolAlyra` et `schoolSimplon` (ainsi que d'autres écoles que j'ajouterai dans l'avenir) partagent le même markup avec des différences dans le nom, la description et le lien vers l'école.
 
-Pour ne pas me répéter (le principe _DRY = don't repeat yourself_), nous pouvons créer une fonction qui retourne notre article. Voici à quoi aurait pu ressembler une telle fonction et son application :
+Pour ne pas me répéter (le principe _DRY = don't repeat yourself_), nous pouvons créer une fonction qui retourne notre article. Voici à quoi auraient pu ressembler une telle fonction et son application :
 
 ```javascript
 const school = (props) => {
@@ -268,9 +268,9 @@ ReactDOM.render(element, document.getElementById("root"))
 
 https://codepen.io/alyra/pen/poyNoeG
 
-## Decomposition au niveau d'argument
+## Décomposition au niveau d'argument
 
-Parfois, on utilise la decomposition au niveau des arguments d'un component, comme ceci :
+Parfois, on utilise la décomposition au niveau des arguments d'un component, comme ceci :
 
 ```javascript
 const School = ({ name, link, children }) => {

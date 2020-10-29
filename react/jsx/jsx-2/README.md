@@ -103,7 +103,7 @@ const element = (
 )
 ```
 
-Cette espace vide `{" "}` que vous voyez dans le code ci-dessus, vient d'être ajoutée par _Prettier_ (l'extension de l'éditeur qui formate le code) quand j'ai sauvegardé le code suivant :
+Cet espace vide `{" "}` que vous voyez dans le code ci-dessus, vient d'être ajouté par _Prettier_ (l'extension de l'éditeur qui formate le code) quand j'ai sauvegardé le code suivant :
 
 ```javascript
 const element = (
@@ -202,7 +202,7 @@ const element = (
     {length ? (
       <p>Vous avez {length} articles à acheter.</p>
     ) : (
-      <p>Avez-vous besoin de quelque-chose ?</p>
+      <p>Avez-vous besoin de quelque chose ?</p>
     )}
   </section>
 )
@@ -239,7 +239,7 @@ const element = <h1 {...props}>Hello World</h1>
 */
 ```
 
-L'utilisation de _spread_ n'exclue pas l'ajout d'autres propriétés. Regardons l'exemple suivant :
+L'utilisation de _spread_ n'exclut pas l'ajout d'autres propriétés. Regardons l'exemple suivant :
 
 ```
 const props = {
@@ -268,7 +268,7 @@ Nous devons alors répondre à la question suivante : Quel est le résultat de `
 Object.assign({className: "display-4"}, props, { lang: "fr" })
 //
 Object.assign({className: "display-4"}, {lang: "en", id: "top", className: "display-1"}, { lang: "fr" })
-// -> valeurs à droite l'emportent sur celles a gauches
+// -> valeurs à droite l'emportent sur celles a gauche
 {className: "display-1", lang: "fr", id: "top"}
 ```
 
@@ -310,7 +310,7 @@ const element = (
 
 ### Attribut spécial `key`
 
-Chaque élément d'un array devrait avoir un attribut `key` avec des valeurs uniques, une omission de cette attribut provoquera un warning dans la console. Une clé unique pour chaque élément de la liste permet au React d'effectuer correctement et efficacement son algorithme de comparaison (_diffing algorithm_).
+Chaque élément d'un array devrait avoir un attribut `key` avec des valeurs uniques, une omission de cet attribut provoquera un warning dans la console. Une clé unique pour chaque élément de la liste permet au React d'effectuer correctement et efficacement son algorithme de comparaison (_diffing algorithm_).
 
 https://codepen.io/alyra/pen/MWyvGRZ
 

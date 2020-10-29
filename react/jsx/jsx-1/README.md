@@ -6,9 +6,9 @@ Si vous vous posez cette question, je pense que c'est un réflexe tout à fait l
 
 Heureusement, **JSX** nous vient à la rescousse !
 
-**JSX** est une extension syntaxique de JavaScript, créée par des dévelopeurs de React et recommandée par React. Comme indiqué dans la documentation : _fondamentalement, JSX fournit juste du sucre syntaxique pour la fonction `React.createElement`_. Pourtant c'est un vrai _game changer_ pour nous, les développeurs.
+**JSX** est une extension syntaxique de JavaScript, créée par des développeurs de React et recommandée par React. Comme indiqué dans la documentation : _fondamentalement, JSX fournit juste du sucre syntaxique pour la fonction `React.createElement`_. Pourtant c'est un vrai _game changer_ pour nous, les développeurs.
 
-Regardons le code qui nous génère le petite mémo sur les pandas roux.
+Regardons le code qui nous génère le petit mémo sur les pandas roux.
 
 ```javascript
 const rootElement = document.getElementById("root")
@@ -39,7 +39,7 @@ const article = React.createElement(
 ReactDOM.render(article, rootElement)
 ```
 
-Voici, le même code re-écrit avec JSX :
+Voici, le même code réécrit avec JSX :
 
 ```javascript
 const rootElement = document.getElementById("root");
@@ -111,8 +111,8 @@ const element = React.createElement(
 
 ## BABEL
 
-Vous vous rappelez de Sass ?  
-Nous avons dit que Sass est une extension de CSS. Le navigateur ne comprend pas Sass. Le code Sass doit passer par le compilateur et être transformé en CSS. C'est pareil pour JSX, les navigateurs ne comprennent pas cette syntaxe. Comme pour Sass, nous devons utiliser un compilateur. Afin de compiler JSX en JavaScript allons utiliser [**babel**](https://babeljs.io).
+Vous vous souvenez de Sass ?  
+Nous avons dit que Sass est une extension de CSS. Le navigateur ne comprend pas Sass. Le code Sass doit passer par le compilateur et être transformé en CSS. C'est pareil pour JSX, les navigateurs ne comprennent pas cette syntaxe. Comme pour Sass, nous devons utiliser un compilateur. Afin de compiler JSX en JavaScript nous allons utiliser [**babel**](https://babeljs.io).
 
 ### Comment utiliser Babel ?
 
@@ -146,13 +146,13 @@ ReactDOM.render(<h1>Hello World</h1>, root)
 
 ## React sans JSX
 
-JSX est juste une extension syntaxique, il n'est pas donc indispensable pour un projet React. Dans certain cas, on peut préférer pouvoir se passer d'un compilateur. Vous pouvez [en lire davantage dans cette article.](https://fr.reactjs.org/docs/react-without-jsx.html)
+JSX est juste une extension syntaxique, il n'est pas donc indispensable pour un projet React. Dans certains cas, on peut préférer pouvoir se passer d'un compilateur. Vous pouvez [en lire davantage dans cet article.](https://fr.reactjs.org/docs/react-without-jsx.html)
 
 ## Syntaxe JSX en détails (1)
 
 ### Toutes les balises sont obligatoirement fermées (xml-style)
 
-Dans HTML on peut se permettre de ne pas fermer des balises auto-fermantes (_self-closing tags_), tel que `<input>` ou `<img src="img1.jpg" alt="">`.
+Dans HTML on peut se permettre de ne pas fermer des balises autofermantes (_self-closing tags_), tel que `<input>` ou `<img src="img1.jpg" alt="">`.
 
 Ceci n'est pas correct dans JSX, et provoquera une erreur.
 

@@ -25,7 +25,7 @@ if (answer.length < 8) {
 }
 ```
 
-## 2. Et si voulais le mettre en majuscule ?
+## 2. Et si voulais mettre un string en majuscule, est-ce possible ?
 
 ```javascript
 message.toUpperCase()
@@ -42,7 +42,11 @@ if (answer.toUppercase() === "ALYRA") {
 }
 ```
 
-## 3. On a besoin d'enlever les espaces au début et à la fin
+On s'en sert souvent ? Oui ! Comme si pouvez le voir ci dessous unifier la case des lettre permet de faciliter la comparaison avec le string attendu.
+
+## 3. Peut-on enlever les espaces au début et à la fin d'un string ?
+
+Tout à fait. Pour cela nous utilisons la méthode `trim`.
 
 ```javascript
 message = "  uhm...  "
@@ -50,7 +54,7 @@ message.trim()
 // "uhm..."
 ```
 
-## 4. Trouver la position d'un substring
+## 4. ... et trouver la position d'un substring ?
 
 Pour cela on utilise la méthode `.indexOf()` qui retourne la position (attention, on compte à partir de 0) ou `-1` si le substring n'est pas trouvé.
 
@@ -90,7 +94,9 @@ if (answer.indexOf("Alyra") === -1) {
 }
 ```
 
-## 5. Trouver le carectère selon la position
+## 5. Trouver le carectère selon la position ?
+
+Vous avez besoin de connaître le premier caractère d'un string? Ou le 10e. Première chose à retenir - les caractères sont numérotés à partir du zéro. Le premier caractère est celui avec l'index `0`. 
 
 ```javascript
 message[0]
@@ -99,7 +105,7 @@ message.charAt(0)
 message.charAt(10)
 ```
 
-et sur la dernière position ?
+Et sur la dernière position ?
 
 Prenons 'Alyra' comme exemple, ce string a la valeur `'Alyra'.length` égale à 5, par contre les caractères sont comptés à partir de 0 alors le dernier a le numéro 4, ceci dit `'Alyra'.length - 1`
 
@@ -109,7 +115,7 @@ message[message.length - 1]
 message.charAt(message.length - 1)
 ```
 
-## 6. Découper une partie du string
+## 6. Découper une partie du string ?
 
 ```javascript
 let message = "Bonjour Alyra"
@@ -127,7 +133,9 @@ message = message[0].toUpperCase() + message.slice(1)
 // Bonjour
 ```
 
-## 7. Depuis peu il existe aussi 3 méthodes `includes`, `startsWith` et `endsWith` 🤩
+## 7. Peut on vérifier si le string contient, commence par ou finit par quelque chose ?
+
+Oui on peut. Ceci est possible, au plus simple, avec des méthodes : `includes`, `startsWith` et `endsWith` 🤩
 
 ```javascript
 let message = "Bonjour Alyra !"
@@ -138,6 +146,8 @@ message.startsWith("Bon")
 message.endsWith("!!")
 // false
 ```
+
+---
 
 ## Exercices
 

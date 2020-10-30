@@ -222,10 +222,9 @@ bonjour()
 
 ```javascript
 "use strict"
+console.log(this) // window (*)
 const hello = () => {
-  console.log(this) // window
-  console.log(this === window) // true
-  console.log(this === undefined) // false
+  console.log(this) // window <- le même que (*)
 }
 hello()
 ```
@@ -251,11 +250,12 @@ alien.isAdult() // this de la ligne (*) devient alien
 `this` comme il était, arrow function ne "bind" pas `this`, avec functions arrow, `this` répresent l'objet où la fonction était créée.
 
 ```javascript
+// console.log(this) // window (*)
 const alien = {
   name: "Deej",
   age: 100,
   isAdult: () => {
-    return this.age >= 300 // (**)
+    return this.age >= 300 // window <- le même que (*)
   },
 }
 alien.isAdult() // this de la ligne (**) est window
@@ -295,9 +295,9 @@ https://codepen.io/alyra/pen/ExKYKVR
 `this` comme il était, arrow function arrow function ne "bind" pas `this`, avec functions arrow, `this` répresent l'objet où la fonction était créée alors `window`
 
 ```javascript
+// console.log(this) // window (*)
 document.body.addEventListener("click", () => {
-  // this est égale à window
-  this.classList.toggle("clicked")
+  this.classList.toggle("clicked") // this le même que (*)
 })
 ```
 
@@ -305,13 +305,13 @@ document.body.addEventListener("click", () => {
 const alien = {
   name: "Deej",
   sayHiOnClick() {
+    console.log(this) // alien (*)
     document.body.addEventListener("click", () => {
-      alert(this.name)
+      alert(this.name) // this le même que (*) donc alien
     })
   },
 }
 alien.sayHiOnClick()
-// en appellant `alien.sayHiOnClick()` this devient alien. En utilisant une fonction arrow comme callback dans addEventListener, this reste intacte, et toujours correspond à alien !
 ```
 
 ### fonction callback, syntaxe classique, dans setTimeout et setInterval
@@ -324,7 +324,7 @@ alien.sayHiOnClick()
 
 ## Binding
 
-Il peut nous arriver de devoir changer le contexte de `this`. On a des outils pour cela, la méthode `bind`.
+Il peut nous arriver de devoir changer le contexte de `this`. On a des outils pour cela, en particulier la méthode `bind`.
 
 ```html
 <button id="say-hi-btn" type="button">Dis Bonjour</button>

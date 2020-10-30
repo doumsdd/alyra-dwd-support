@@ -1,9 +1,11 @@
+
+
 # Type `"numbers"` - méthodes utiles
 
 ## Vérification
 
 Les valeurs transmises par l'utilisateur, via un formulaire par exemple, sont souvent de type `"string"`. 
-Nous avons besoin des méthodes qui vérifiernt si un string contient une valeur numérique ?
+Nous avons besoin des méthodes qui vérifient si un string contient une valeur numérique ?
 
 Pour cela nous pouvons utiliser des fonctions `isNaN()` ou `isFinite()`. 
 
@@ -84,20 +86,20 @@ On peut aussi utiliser la méthode `.toFixed()` comme ci-dessous. Attention, le 
 
 ### Les nombres aléatoires
 
-`Math.random()` génére un nombre aléatoire entre 0 (inclu) et 1 (exclu) [0, 1)
+`Math.random()` génère un nombre aléatoire entre 0 (inclut) et 1 (exclu) [0, 1)
 
-À l'aide des opérations arithmétiques et d'autres méthodes disponibles pour nombresm nous pouvons obtenir des nombres aléatoires des intervaux différents.
+À l'aide des opérations arithmétiques et d'autres méthodes disponibles pour nombres nous pouvons obtenir des nombres aléatoires des intervalles différentes.
 
-Par exemple afin d'obtenir les nombres d'intérval `[a, b)` :
+Par exemple afin, d'obtenir les nombres d'intervalle `[a, b)` :
 
 ```javascript
-(b - a) * Math.random() + a
+(b - a) * Math.random() + a // [a, b)
 ```
 
-Afin d'obtenir les nombres entières d'un iterval : `a, a+1, ...., b`
+Afin d'obtenir les nombres entières d'un intervalle : `a, a+1, ...., b`
 
 ```javascript
-Math.floor(Math.random * (b + 1 - a)) + a
+Math.floor(Math.random * (b + 1 - a)) + a // `a, a+1, ...., b`
 ```
 
 ```javascript
@@ -105,7 +107,7 @@ Math.floor(Math.random * 6) + 1 // comme si on lancé un dé, 6 résultats possi
 ```
 
 ```javascript
-Math.floor(Math.random * 2) // comme si on lancé une monnaie, deux résulats possible : 0 ou 1
+Math.floor(Math.random * 2) // comme si on lancé une monnaie, deux résultats possible : 0 ou 1
 ```
 
 ### Valeurs maximale et minimale
@@ -119,11 +121,11 @@ Math.min(8 * 7, 6 * 9) // 54
 Math.max(8 * 7, 6 * 9) // 56
 ```
 
-### Convertion en système binaire, héxadecimal, etc.
+### Conversion en système binaire, hexadécimal, etc.
 
 `().toString(base)`
 
-le paramètre `base` prend des valeur de `2` au `36`, sa valeur par défault et `10`
+le paramètre `base` prend des valeur de `2` au `36`, sa valeur par défaut et `10`
 
 ````javascript
 (255).toString(16)  // 'ff'
@@ -135,4 +137,4 @@ le paramètre `base` prend des valeur de `2` au `36`, sa valeur par défault et 
 
 ## Exercices
 
-[JavaScript Quizzez - Numbers](https://javascript-quizzes.netlify.app/numbers)
+[JavaScript Quizzes - Numbers](https://javascript-quizzes.netlify.app/numbers)

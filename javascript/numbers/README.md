@@ -1,18 +1,29 @@
-# Méthodes pour numbers
+# Type `"numbers"` - méthodes utiles
 
 ## Vérification
 
-Comment vérifier si un string est une valeur numérique ?
+Les valeurs transmises par l'utilisateur, via un formulaire par exemple, sont souvent de type `"string"`. 
+Nous avons besoin des méthodes qui vérifiernt si un string contient une valeur numérique ?
 
-C'est particulièrement important dans le cas d'entrée d'utilisateur.
+Pour cela nous pouvons utiliser des fonctions `isNaN()` ou `isFinite()`. 
 
-Nous pouvons utiliser `isNaN()` et `isFinite()`
+`isNaN` nous donnera `true` si le string **n'est pas** une valeur numérique, `NaN` correspondant à "**not** a number"
 
 ```javascript
-isNaN("5") // false
 isNaN("haha") // true
 isNaN("3 chatons") // true
+``
 
+Par contre :
+```javascript
+isNaN("78") // false
+isNaN("3") // false
+``
+
+`isFinite` agit de la façon inverse, et donne `true` pour les valeur numériques :
+
+```
+isFinite("78") // true
 isFinite("5") // true
 isFinite("haha") // false
 isFinite("3 chatons") // false
@@ -61,20 +72,32 @@ Math.ceil(-2.6) // -2
 Math.trunc(-2.6) // -2
 ```
 
-On peut aussi utiliser la méthode `.toFixed()` comme ci-dessous. Attention, le résultat sera de type "string".
+On peut aussi utiliser la méthode `.toFixed()` comme ci-dessous. Attention, le résultat sera de type `"string"`.
 
 ```javascript
-;(2.789)
-  .toFixed(1)(
-    // '2.8'
-    2.789
-  )
-  .toFixed(0) // '3'
+(2.789).toFixed(1)
+// '2.8'
+(2.789).toFixed(0) 
+// '3'
 ```
 
-### Les nombres aléatoire
+### Les nombres aléatoires
 
 `Math.random()` génére un nombre aléatoire entre 0 (inclu) et 1 (exclu) [0, 1)
+
+À l'aide des opérations arithmétiques et d'autres méthodes disponibles pour nombresm nous pouvons obtenir des nombres aléatoires des intervaux différents.
+
+Par exemple afin d'obtenir les nombres d'intérval `[a, b)` :
+
+```javascript
+(b-a)*Math.random() + a
+```
+
+Afin d'obtenir les nombres entières d'un iterval : `a, a+1, ...., b`
+
+```javascript
+Math.floor(Math.random * (b + 1 - a)) + a
+```
 
 ```javascript
 Math.floor(Math.random * 6) + 1 // comme si on lancé un dé, 6 résultats possible : 1, 2, 3, 4, 5 ou 6

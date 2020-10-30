@@ -233,7 +233,7 @@ hello()
 
 ### this - méthode d'un objet - fonction avec la syntaxe classique
 
-`this` devient l'objet auquel on applique la méthode
+`this` devient l'objet auquel on applique la méthode (parfois nous apellons ça "binding").
 
 ```javascript
 const alien = {

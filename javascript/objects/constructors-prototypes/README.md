@@ -64,6 +64,20 @@ const alien1 = new Alien("Deej", 200)
 const alien2 = new Alien("Flax")
 ```
 
+Quand la fonction `Alien` est appelée avec l'opérateur `new`, deux actions supplémentaires et implicites ont lieu :
+
+- (\*) `this` est initié avec `{}`
+- (\*\*) la fonction retourne `this`. (Je vous rappele que normalement, quand appelée sans l'opérateur `new`, une fonction qui ne contient pas un `return` explicite, retourne `undefined`).
+
+```javascript
+function Alien(name, age = 100) {
+// (*) this = {}
+  this.name = name
+  this.age = age
+// (**) return this
+}
+```
+
 Tous nos aliens partagent les mêmes clés avec des valeur différentes
 
 ![](https://assets.codepen.io/4515922/proto.png)

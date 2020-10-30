@@ -2,7 +2,7 @@
 
 ## Objects - méthodes
 
-Les objets ne sont pas limités aux propriétés 'statiques', on peut aussi leur définir des méthodes (fonctions). Ci dessous nous ajoutons une clé `sayHi` à `alien`, `sayHi` est une fonction. Pour l'éxécuter nous allons appeler `alien.sayHi()`.
+Les objets ne sont pas limités aux propriétés 'statiques', on peut aussi leur définir des méthodes (fonctions). Ci dessous, nous ajoutons une clé `sayHi` à `alien` où `sayHi` est une fonction. Pour l'éxécuter nous allons appeler `alien.sayHi()`.
 
 ```javascript
 const alien = {
@@ -57,6 +57,87 @@ const alien = {
 
 ## this
 
+`this` est un mot-clé spécial (keyword). Sa valeur change selon le contexte où il est utilisé.
+Quand une méthode est appelée, `this` correspond à l'objet. Voici un exemple qui vous aidera de comprendre l'importance de `this` :
+
+Nos aliens découvrent le système bancaire, notre alien Zork ouvre un compte bancaire, c'est le premier client. Dans le système de la banque la variable `client` est créée :
+
+```javascript
+const client = {
+  name: "Zork",
+  deposit: 320,
+  hi() {
+    console.log("Bienvenue dans notre banque !!!")
+  }
+}
+```
+
+Le banque ajoute une méthode `transfer` qui permet de modifier la valeur de `deposit`, le dévéloppeur inexperimenté tente :
+
+```javascript
+const client = {
+  name: "Zork",
+  deposit: 320,
+  hi() {
+    console.log("Bienvenue dans notre banque !!!")
+  },
+  transfer(amount = 0) {
+    client.deposit += amount
+  }
+}
+```
+
+Quand `100` arrive sur le comte de Zork, la méthode est appliquée et fonctionne correctement.
+
+```javascript
+client.transter(100)
+console.log("Zork", client.deposit) // Zork 420
+```
+
+Peu après, Deej rejouint la banque, afin de ne pas se répéter la nouvelle variable `clientD` est créée de la façon suivante :
+
+```javascript
+const clientD = { ...client}
+clientD.name = "Deej"
+clientD.deposit = 0
+// ceci est équivalent à const clientD = {...client, name: "Deej", deposit: 0}
+```
+
+et le transfer est effectué
+
+```javascript
+clientD.transfer(200)
+```
+
+Regardons maintenant les comptes :
+
+```javascript
+console.log("Zork", client.deposit)
+console.log("Deej", clientD.deposit)
+
+// "Zork" 620
+// "Deej" 0
+```
+
+Nous appellons `clientD.transfer()` mais la méthode `transfer` n'opère pas sur l'objet `clientD` mais sur `client` puisqu'elle étais concue ainsi. Nous pouvons y remedier avec le mot-clé `this`, comme ceci :
+
+```javascript
+const client = {
+  name: "Zork",
+  deposit: 320,
+  hi() {
+    console.log("Bienvenue dans notre banque !!!")
+  },
+  transfer(amount = 0) {
+    this.deposit += amount
+  }
+}
+```
+
+Quand une fonction est **appelée** en tant qu'une méthode d'un objet, `this` correspondera à l'objet en question.
+
+https://codepen.io/alyra/pen/vYKRmYL
+
 ```javascript
 const alien = {
   name: "Zork",
@@ -75,7 +156,7 @@ Quand `sayHi` ou `getOlder` sont **appelées** en tant que des méthodes d'un ob
 ```javascript
 alien.sayHi() // this devient alien -> Salutions Terriens, mon nom est Zork !
 alien.name = "Jaba"
-alien.sayHi() // alien a changé -> Salutions Terriens, mon nom est Jaba !
+alien.sayHi() // alien name a changé -> Salutions Terriens, mon nom est Jaba !
 ```
 
 Par contre, `this` **ne correspond pas** à l'objet, si fonction est appelée directement
@@ -92,7 +173,7 @@ useOutside() // Uncaught TypeError: Cannot read property 'name' of undefined
 
 https://codepen.io/alyra/pen/bGEXNeb
 
-`this` est un mot-clé spécial (keyword). Sa valeur change selon le contexte où il est utilisé. Voici quelques exemples :
+ Voici quelques exemples :
 
 ### directement dans le script et pas dans le body d'une fonction
 

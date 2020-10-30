@@ -1,6 +1,6 @@
 # Objects - introduction
 
-Un objet est un ensemble de propriétés regroupées ensemble dans une structure clé-valeur. Par exemple le droid R2-D2 a plusieurs propriétés (non, taille, poids et couleur des yeux). On peut regrouper toutes les informations concernant R2-D2 dans un objet.
+Un objet est un ensemble de propriétés regroupées dans une structure clé-valeur. Par exemple le droid R2-D2 a plusieurs propriétés (non, taille, poids et couleur des yeux), l'objet `rdd2` a les clés : `name`, `height`, `mass` et `eyeColor`. Leur valeurs respectives sont : `"R2-D2"`, `96`, `32` et `"red"`. Ainsi nous regroupons toutes les informations concernant R2-D2 dans un objet `rdd2`.
 
 ```javascript
 const rdd2 = {

@@ -1,10 +1,25 @@
 # DOM - Document Object Model
 
-## document.documentElement -> html
+Autrement dit, Document Object Model, (DOM), est une répresentation objet du document HTML. Quand nous utilisons JavaScript dans le navigateur nous avons accès à l'objet `document`. 
+Cet objet contient la structure de notre document HTML, nous permet de la modifier et gérér des intéractions. Nous allons analyser ses propriétés et méthodes les plus importantes.
 
-```html
-<html lang="fr"></html>
+```javascript
+console.dir(document)
 ```
+
+Nous allons utiliser [ce repo]().
+
+## document.documentElement
+
+
+`document.documentElement` nous donne accès à l'élément `html` de notre document.
+```javascript
+console.dir(document.documentElement)
+```
+
+
+
+
 
 ```javascript
 document.documentElement // correspond au html

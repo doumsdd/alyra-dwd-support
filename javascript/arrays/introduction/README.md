@@ -1,4 +1,4 @@
-# Array - Introduction
+# Arrays - affectation par référence
 
 PeHaa et son mari Vains ont pour habitude de faire leurs courses alimentaires le samedi matin, après leur petit déjeuner.
 Ce samedi matin, en sirotant son café, PeHaa commence à noter tout ce qu'ils doivent acheter. Quoi de plus pratique qu'une liste 🗒:

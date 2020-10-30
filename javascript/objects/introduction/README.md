@@ -13,7 +13,7 @@ const rdd2 = {
 
 Voici un autre exemple :
 
-```
+```javascript
 const paulina = {
   name: "Paulina",
   position: "formateur",

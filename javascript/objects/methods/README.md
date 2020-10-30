@@ -179,7 +179,7 @@ https://codepen.io/alyra/pen/bGEXNeb
 
  Voici quelques exemples :
 
-### directement dans le script et pas dans le body d'une fonction
+### this directement dans le script et pas dans le body d'une fonction
 
 ```javascript
 "use strict"
@@ -195,7 +195,9 @@ window.scrollTo(0, 300)
 console.log(window.scrollY) // 300
 ```
 
-### dans une fonction classique (pas une arrow function) appelée directement (pas comme une méthode)
+**Attention,** dans Node.js `window` n'est defini, est c'est l'objet `global` qui fait l'equivalent de `window`.
+
+### this dans une fonction classique (pas une arrow function) appelée directement (pas comme une méthode)
 
 `this` devient `undefined`
 
@@ -216,7 +218,7 @@ function bonjour() {
 bonjour()
 ```
 
-### dans une fonction fléchée (arrow function) appelée directement
+### this dans une fonction fléchée (arrow function) appelée directement
 
 `this` reste `window`, avec functions arrow, `this` répresent l'objet où la fonction était créée.
 
@@ -229,7 +231,7 @@ const hello = () => {
 hello()
 ```
 
-### méthode d'un objet - fonction avec la syntaxe classique
+### this - méthode d'un objet - fonction avec la syntaxe classique
 
 `this` devient l'objet auquel on applique la méthode
 
@@ -245,7 +247,7 @@ const alien = {
 alien.isAdult() // this de la ligne (*) devient alien
 ```
 
-### méthode d'un objet - fonction avec la syntaxe arrow
+### this - méthode d'un objet - fonction avec la syntaxe arrow
 
 `this` comme il était, arrow function ne "bind" pas `this`, avec functions arrow, `this` répresent l'objet où la fonction était créée.
 
@@ -261,7 +263,7 @@ const alien = {
 alien.isAdult() // this de la ligne (**) est window
 ```
 
-### fonction callback, syntaxe classique, dans addEventListener
+### this - fonction callback, syntaxe classique, dans addEventListener
 
 `this` correspond à élément sur lequel on applique `addEventListener`
 
@@ -290,7 +292,7 @@ document.body.addEventListener('click', function(){
 
 https://codepen.io/alyra/pen/ExKYKVR
 
-### fonction callback, syntaxe arrow, dans addEventListener
+### this - fonction callback, syntaxe arrow, dans addEventListener
 
 `this` comme il était, arrow function arrow function ne "bind" pas `this`, avec functions arrow, `this` répresent l'objet où la fonction était créée alors `window`
 
@@ -314,11 +316,11 @@ const alien = {
 alien.sayHiOnClick()
 ```
 
-### fonction callback, syntaxe classique, dans setTimeout et setInterval
+### this - fonction callback, syntaxe classique, dans setTimeout et setInterval
 
 `this` devient window
 
-### fonction callback, syntaxe arrow, dans setTimeout et setInterval
+### this - fonction callback, syntaxe arrow, dans setTimeout et setInterval
 
 `this` répresent l'objet où la fonction fléchée a était créée.
 
@@ -375,7 +377,7 @@ setTimeout(() => {
 setTimeout(user.sayHi.bind(user), 1000) // Salut, je suis Marie
 ```
 
-# getters & setters
+## getters & setters
 
 Afin de comprendre l'utilité de ce concept, regardons l'exemple suivaint :
 
@@ -408,7 +410,7 @@ website.domain = "alyra.com"
 website.fullLink() // donne https://alyra.com
 ```
 
-Ca a l'air de résoudre le problème et souvant est une approche suffisante. Par contre, on n'est pas protégé contre la situation suivainte
+Ça a l'air de résoudre le problème et souvant est une approche suffisante. Par contre, on n'est pas protégé contre la situation suivainte :
 
 ```javascript
 website.fullLink = "https://codepen.io"

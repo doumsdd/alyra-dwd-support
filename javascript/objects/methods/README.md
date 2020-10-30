@@ -94,13 +94,15 @@ client.transter(100)
 console.log("Zork", client.deposit) // Zork 420
 ```
 
-Peu après, Deej rejouint la banque, afin de ne pas se répéter la nouvelle variable `clientD` est créée de la façon suivante :
+Peu après, Deej rejoint la banque. Pour ne pas se répéter la nouvelle variable `clientD` est créée de la façon suivante :
 
 ```javascript
-const clientD = { ...client}
+const clientD = { ...client, name: "Deej", deposit: 0 }
+/* ceci est est équivalent à 
+const clientD = { ...client }
 clientD.name = "Deej"
 clientD.deposit = 0
-// ceci est équivalent à const clientD = {...client, name: "Deej", deposit: 0}
+*/
 ```
 
 et le transfer est effectué
@@ -119,7 +121,9 @@ console.log("Deej", clientD.deposit)
 // "Deej" 0
 ```
 
-Nous appellons `clientD.transfer()` mais la méthode `transfer` n'opère pas sur l'objet `clientD` mais sur `client` puisqu'elle étais concue ainsi. Nous pouvons y remedier avec le mot-clé `this`, comme ceci :
+Nous appellons `clientD.transfer()` mais la méthode `transfer` n'opère pas sur l'objet `clientD` mais sur `client`. C'est tout a fait normale, elle était conçue ainsi, regardez le code de `transfer`. Voici une faille dans notre système bancaire 😱.
+
+Nous pouvons y remedier avec le mot-clé `this`, comme ceci :
 
 ```javascript
 const client = {

@@ -78,7 +78,7 @@ https://codepen.io/alyra/pen/oNbKENV
 
 ## Prototype
 
-On peut aussi associer les valeurs et les méthodes communes à toutes les instances. Nous allons les attacher au clè `prototype` de notre constructeur.
+On peut aussi associer les valeurs et les méthodes communes à toutes les instances. Nous allons les attacher au clè `prototype`.
 
 ```javascript
 // constructor

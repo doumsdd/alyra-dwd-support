@@ -19,11 +19,11 @@ Par contre :
 ```javascript
 isNaN("78") // false
 isNaN("3") // false
-``
+```
 
 `isFinite` agit de la façon inverse, et donne `true` pour les valeur numériques :
 
-```
+```javascript
 isFinite("78") // true
 isFinite("5") // true
 isFinite("haha") // false

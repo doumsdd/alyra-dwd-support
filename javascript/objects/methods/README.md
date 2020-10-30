@@ -520,6 +520,6 @@ alien.id = "hahaha" // ne fonctionne pas -> erreur
 
 ## Exercices
 
-- [tour object methods](https://javascript-quizzes.netlify.app/object-methods)
+- [JavaScript Quizzes - object methods](https://javascript-quizzes.netlify.app/object-methods)
 - [Object - restaurant methods](https://codepen.io/alyra/pen/NWxXEbd) | [solution](https://codepen.io/alyra/pen/b8fc4c9f454bfebda41b4621d9283a13)
 - [this](https://codepen.io/alyra/pen/xxVKVmN)

@@ -1,17 +1,24 @@
 # Objects - introduction
 
+Un objet est un ensemble de propriétés regroupées ensemble dans une structure clé-valeur. Par exemple le droid R2-D2 a plusieurs propriétés (non, taille, poids et couleur des yeux). On peut regrouper toutes les informations concernant R2-D2 dans un objet.
+
 ```javascript
-const droid = {
+const rdd2 = {
   name: "R2-D2",
   height: 96,
   mass: 32,
   eyeColor: "red",
 }
-const staffMember = {
+```
+
+Voici un autre exemple :
+
+```
+const paulina = {
   name: "Paulina",
   position: "formateur",
   timeBasis: "plein temps",
-  mission: ["cours HTML", "cours CSS", "cours JS"],
+  mission: ["cours HTML", "cours CSS", "cours JS", "cours React"],
 }
 ```
 
@@ -42,6 +49,8 @@ const veilles = [
 ]
 ```
 
+Ici, `veilles` est un array contant des objets. Dans la variable `paulina`, la clé mission contient un array des strings.
+
 ## Création
 
 ```javascript
@@ -53,7 +62,7 @@ const obj3 = {
 }
 ```
 
-Comme pour les arrays (aussi typeof object), des variables stockent des références et pas les object eux-mêmes.
+Comme pour les arrays (qui sont aussi de type `"object"`), des variables stockent des références et pas les object eux-mêmes.
 
 Par conséquence :
 
@@ -64,14 +73,14 @@ obj1 === obj2 // false
 ## Modification
 
 ```javascript
-const planningVacancesPeHaa = {
+const planningVacancesPaulina = {
   destination: "Ile de Batz",
   start: "2020/08/15",
   transport: "train",
-  shopping: ["2 tshirts", "lunettes", "crème spf50"],
+  shopping: ["2 t-shirt", "lunettes", "crème spf50"],
 }
 
-const planningVacancesVains = planningVacancesPeHaa
+const planningVacancesVains = planningVacancesPaulina
 // modification
 planningVacancesVains.start = "2020/08/14"
 // ajout d'une nouvelle clé
@@ -81,17 +90,17 @@ planningVacancesVains.end = "2020/08/30"
 On peut aussi supprimer une clé
 
 ```
-delete planningVacancesPeHaa.transport
+delete planningVacancesPaulina.transport
 ```
 
-Afin d'accèder une clé :
+Afin d'accéder une clé :
 
 ```javascript
-console.log(planningVacancesPeHaa.destination)
-console.log(planningVacancesPeHaa["destination"])
-console.log(planningVacancesPeHaa.shopping[1])
+console.log(planningVacancesPaulina.destination)
+console.log(planningVacancesPaulina["destination"])
+console.log(planningVacancesPaulina.shopping[1])
 const key = "end"
-console.log(planningVacancesPeHaa[key])
+console.log(planningVacancesPaulina[key])
 ```
 
 ## Parcourir l'objet
@@ -110,7 +119,7 @@ Object.keys(droid) // ['name', 'height', 'mass', 'eyeColor']
 // les valeurs
 Object.values(droid) // ['R2-D2', 96, 32, 'red']
 
-// les pairs clé,valeur
+// les pairs clé, valeur
 Object.entries(droid) // [['name', 'R2-D2'], ['height', 96], ['mass', 32], ['eyeColor', 'red']]
 ```
 

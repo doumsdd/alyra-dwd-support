@@ -123,12 +123,12 @@ Object.defineProperty(Alien.prototype, 'sayHi', {
 ```
 
 - `enumerable` - la propriété va être listée (par exemple dans la boucle `for .. in`)
-- `writable` - la valeur peut être modifiée (on peut associer une autre fonction pour sayHi
+- `writable` - la valeur peut être modifiée (on peut associer une autre fonction à `sayHi`
 - `configurable` - on peut supprimer la propriété et changer les valeurs des `enumerable`, `writable` ou `configurable`
 
-Attention, avec l'approche `Alien.prototype.sayHi = ...`, tous les trois `enumerable`, `writable` et `configurable` sont `true`
+**Attention,** avec l'approche `Alien.prototype.sayHi = ...`, tous les trois `enumerable`, `writable` et `configurable` sont `true`
 
-Nous pouvons aussi définir getters et setters. Ici on utilisera aussi la méthode `Object.defineProperty`. Au lieu d'utiliser 'value' on utilisera `get` et `set` :
+La méthode `Object.defineProperty` nous permet de définir getters et setters. Dans ce cas, au lieu d'utiliser `value`, on utilisera `get` et `set` :
 
 ```javascript
 Object.defineProperty(Alien.prototype, "id", {
@@ -141,8 +141,7 @@ Object.defineProperty(Alien.prototype, "id", {
 
 ## Héritage et chaîne de prototype
 
-
-JavaScript est souvent décrit comme un langage basé sur les prototypes. Chaque objet a un prototype objet d'où il hérite des méthodes et des attributs. Plus précisément les objets ont une propriété cachée prototype, [[Prototype]],  qui est soit une référence vers un objet ou `null`.
+JavaScript est souvent décrit comme un langage basé sur les prototypes. Chaque objet a un prototype objet d'où il hérite des méthodes et des attributs. Plus précisément, les objets ont une propriété cachée prototype, [[Prototype]], qui est soit une référence vers un objet ou `null`.
 
 Lorsqu'on tente d'accéder aux propriétés d'un objet, la propriété sera recherchée d'abord sur l'objet même, puis sur son prototype, puis sur le prototype du prototype et ainsi de suite.
 

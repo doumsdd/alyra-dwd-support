@@ -21,7 +21,7 @@ const alien1 = {
 }
 ```
 
-Jaba, Zork, Deej, Plok est vient d'avoir 100 ans et ils doivent désormais être ajouter dans le registre des aliens.
+Jaba, Zork, Deej, Plok est vient d'avoir 100 ans et ils doivent désormais être ajoutés dans le registre des aliens.
 
 ```javascript
 const alien2 = {
@@ -42,6 +42,8 @@ const alien2 = {
 
 const aliensRegistry = [alien1, alien2, alien3, alien4]
 ```
+
+Nos objets aliens partagent les mêmes clés.
 
 ```javascript
 function Alien(name, age = 100) {

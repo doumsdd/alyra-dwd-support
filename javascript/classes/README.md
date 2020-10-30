@@ -1,5 +1,10 @@
 # Classes
 
+
+Nous avons souvent besoin de créer des objets du même type. Nous avons déja vu comment y arriver avec des constructeurs et l'opérateur `new`. Nous allons maintenant aller plus loin avec la syntaxe de `class` introduite dans la version ES6 de JavaScript.
+
+Voici un exemple :
+
 ```javascript
 class Alien {
   constructor(name, age = 10) {
@@ -17,10 +22,12 @@ class Alien {
 }
 
 const alien1 = new Alien("Zork", 120)
+const alien2 = new Alien("Deej", 150)
 alien1.sayHi() // Salut Terriens, mon nom est Zork, j'ai 120 ans.
+alien2.sayHi() // Salut Terriens, mon nom est Deej, j'ai 150 ans.
 ```
 
-Attention :
+Attention à la syntaxe :
 
 - pas de `()` dans la déclaration `class ClassName`
 - pas de virgules
@@ -46,9 +53,7 @@ class Alien {
 }
 ```
 
-Quand on appelle  
-`const alien1 = new Alien('Zork', 120)`  
-un nouvel objet est crée, et la fonction `constructor` est executée.
+Quand on appelle  `const alien1 = new Alien('Zork', 120)` un nouvel objet est crée et la fonction `constructor` est executée.
 
 Regardons ce qui affiche `console.log(alien1)`
 
@@ -70,10 +75,12 @@ Alien.prototype.sayHi = function (years = 1) {
 }
 ```
 
-# getters & setters
+## getters & setters
 
-Classes ont getters et setters avec la syntaxe comme ceci :
+Voici la syntaxe qui permet d'utiliser *getters* et *setters*  :
 
+
+### `Alien` avec un *getter* `isAdult`
 ```javascript
 class Alien {
   constructor(name, age = 10) {
@@ -98,7 +105,7 @@ alien1.growUp(200)
 alien1.isAdult // true
 ```
 
-Classes ont getters et setters avec la syntaxe comme ceci :
+### `Url` avec un *getter* & *setter* `fullLink`
 
 ```javascript
 class Url {
@@ -110,7 +117,7 @@ class Url {
     return `${this.protocol}://${this.domain}`
   }
   set fullLink(value) {
-    ;[this.protocol, this.domain] = value.split("://")
+    [this.protocol, this.domain] = value.split("://")
   }
 }
 
@@ -155,7 +162,7 @@ alien1.majorityAge // 250 puisque contructor écrase la valeur de 300
 
 **Attention** Dans le cas des classes dérivées (créées avec `extends`), champs de classe sont initialisés directement **après** `super()`
 
-# focus sur this
+# this
 
 ```javascript
 class Alien {

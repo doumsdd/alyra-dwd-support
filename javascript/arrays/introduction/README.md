@@ -7,7 +7,7 @@ Ce samedi matin, en sirotant son café, PeHaa commence à noter tout ce qu'ils d
 const listeCoursesPeHaa = ['tortillas', 'haricots', 'piment']
 ```
 
-Comme vous pouvez vous en doûter, ce soir, burritos au menu 🌮! Et pas uniquement chez PeHaa et Vains. Inspirée par sa voisine et munie de la même recette super-easy, Anne-Françoise, note ce qui suit :
+Comme vous pouvez vous en douter, ce soir, burritos au menu 🌮! Et pas uniquement chez PeHaa et Vains. Inspirée par sa voisine et munie de la même recette super-easy, Anne-Françoise, note ce qui suit :
 
 ```javascript
 const listeCoursesAF = ['tortillas', 'haricots', 'piment']
@@ -25,7 +25,7 @@ typeof(['tortillas', 'haricots', 'piment'])
 
 Les valeurs primitives sont stockées et copiées en tant que telles. Ceci n'est pas vrai pour les objets. Quand un object est affecté à une variable, cette dernière ne stocke pas l'objet lui-même, mais son «adresse en mémoire», la «référence» de cet objet.
 
-PeHaa et Anne-Françoise ont créé leurs listes independemment. La liste de PeHaa n'a pas la même adresse en mémoire que la liste d'Anne-Françoise. Ce sont 2 listes différentes. Même si elles sont tout à fait identiques.
+PeHaa et Anne-Françoise ont créé leurs listes indépendamment. La liste de PeHaa n'a pas la même adresse en mémoire que la liste d'Anne-Françoise. Ce sont 2 listes différentes. Même si elles sont tout à fait identiques.
 
 ```javascript
 listeCoursesPeHaa === listeCoursesAF
@@ -34,7 +34,7 @@ listeCoursesPeHaa === listeCoursesAF
 
 ![](https://assets.codepen.io/4515922/difrefarray.png)
 
-Revenons sur la liste de PeHaa. Elle se rapelle qu'elle vient d'utiliser le dernier oeuf en préparant des pancakes 🥞 ce matin. Alors, elle ajoute des oeufs à sa liste 
+Revenons sur la liste de PeHaa. Elle se rappelle qu'elle vient d'utiliser le dernier oeuf en préparant des pancakes 🥞 ce matin. Alors, elle ajoute des oeufs à sa liste 
 
 ```javascript
 listeCoursesPeHaa.push('oeufs')
@@ -46,7 +46,7 @@ La méthode `push` ajoute des nouveau éléments **à la fin** de l'array. Dans 
 
 Attendez 🧐, la liste vient d'être modifiée. La variable a été déclarée avec le mot `const` - hey, console, comment ça, y a pas d'erreur ??!
 
-Ben non, la liste était modifiée, mais son addresse en mémoire (sa référrence) est restée la même. Rappellons, que la variable `listeCoursesPeHaa` indique la référence, et non la liste.
+Ben non, la liste était modifiée, mais son adresse en mémoire (sa référence) est restée la même. Rappelons, que la variable `listeCoursesPeHaa` indique la référence, et non la liste.
 
 > "Hmmm, j'ai du oublier plein de choses, tu veux regarder, s'il te plaît :) ?" - demande PeHaa à son mari. 
 
@@ -109,5 +109,3 @@ Ceci n'est pas possible. Ici on vient de créer un nouvel objet (liste vide), un
 
 
 PS. Les personnages et les situations de ce récit étant purement fictifs, toute ressemblance avec des personnes ou des situations existantes ou ayant existé ne serait que pure coincidence.
-
-

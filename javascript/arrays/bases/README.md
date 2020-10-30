@@ -2,16 +2,18 @@
 
 Arrays (tableaux) permettent de stocker des collections (listes) de données.
 
-## Voici comment on peut les créer
+## Création
 
 ```javascript
 const myList1 = [] // []
 const myList2 = new Array() // []
 const myListMisc = new Array("hello", 13, 8 === "8") // ['hello', 13, false]
 const shopping = ["tshirt", "shorts", "pareo"]
+const myArray = new Array(3) // [undefined, undefined, undefined]
+const myLetters = new Array.from("abcd") // ["a", "b", "c", "d"]
 ```
 
-## Voici comment on peut obtenir le nombre d'éléments
+## Nombre d'éléments
 
 ```javascript
 const myList1 = []
@@ -20,7 +22,17 @@ const shopping = ["tshirt", "shorts", "pareo"]
 shopping.length // 3
 ```
 
-## Voici comment on peut accéder à un élément en particulier
+La propriété `length` est souvent utilisée dans le contexte booléen, puisque `[]` est une valeur *truthy*. Dans l'exemple suivant, nous utilisons `shopping.length` puisque `shopping` serait toujours évalué *truthy*.
+
+```javascipt
+if (shopping.length) {
+  alert("let's go shopping !")
+} else {
+  alert("Vous n'avez rien à acheter")
+}
+```
+
+## Élément par index
 
 Les éléments de la liste sont indéxés à partir de zéro: 0, 1, &hellip; Le dernier élément de la liste `myList` a l'index `myList.length - 1`
 
@@ -45,10 +57,10 @@ myList1[2] = -1
 
 ```javascript
 const myList1 = [2, 5, 8, 90]
-myList1.pop() // myList1 devient [2, 5, 8]
-myList1.push(77) // myList1 devient [2, 5, 8, 77]
-myList1.shift() // myList1 devient [5, 8, 77]
-myList1.unshift(-11) // myList1 devient [-11, 5, 8, 77]
+myList1.pop() // myList1 devient [2, 5, 8], retourne 90
+myList1.push(77) // myList1 devient [2, 5, 8, 77], retourne 4
+myList1.shift() // myList1 devient [5, 8, 77], retourne 2
+myList1.unshift(-11) // myList1 devient [-11, 5, 8, 77], retourne 4
 ```
 
 Méthodes `push` et `unshift` modifient l'array et retournent length de l'array après modification
@@ -67,7 +79,7 @@ const removed = myList1.pop() // myList1 devient [2, 5, 8]
 console.log(removed) // 90
 ```
 
-<div class="post-note">Les méthodes `pop` et `push` sont beacoup plus rapide qut `shift` et `unshift`.</div>
+Attention : Les méthodes `pop` et `push` sont beacoup plus rapide qut `shift` et `unshift`.
 
 Pour d'autre cas que début et fin de l'array, nous avons la méthode `splice`
 

@@ -12,9 +12,10 @@ Pour cela nous pouvons utiliser des fonctions `isNaN()` ou `isFinite()`.
 ```javascript
 isNaN("haha") // true
 isNaN("3 chatons") // true
-``
+```
 
 Par contre :
+
 ```javascript
 isNaN("78") // false
 isNaN("3") // false

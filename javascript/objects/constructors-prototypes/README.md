@@ -45,10 +45,10 @@ const alien2 = {
 const aliensRegistry = [alien1, alien2, alien3, alien4]
 ```
 
-Nos objets aliens partagent les mêmes clés. La structure des données est des méthodes sont partagées par chacun d'eux. Au lieu de répéter le code ci-dessus pour chaque alien, il est possible de créer une fonction qui va nous servir pour le constructeur de chaque alien.
+Nos objets aliens partagent les mêmes clés. La structure des données est des méthodes sont partagées par chacun d'eux. Au lieu de répéter le code ci-dessus pour chaque alien, il est possible de créer une fonction qui va nous servir pour le constructeur d'un alien.
 La fonction "constructeur" qui nous permettra de créer plusieurs instances d'un objet avec la même structure (le mêmes clés). 
 
-Voici un exemple, d'une fonction "constructeur". La convention veut que les constructeurs commencent par une letter en majuscule.
+Voici un exemple, d'une fonction "constructeur", `Alien`. La convention veut que les constructeurs commencent par une letter en majuscule.
 
 ```javascript
 function Alien(name, age = 100) {
@@ -57,7 +57,7 @@ function Alien(name, age = 100) {
 }
 ```
 
-Ensuite, nous utilisont un opérateur `new` pour créer des nouvelles instances des Aliens :
+Ensuite, nous utilisons un opérateur `new` pour créer des nouvelles instances des Aliens. Tous nos aliens partagent les mêmes clés avec des valeur différentes :
 
 ```javascript
 const alien1 = new Alien("Deej", 200)
@@ -66,8 +66,8 @@ const alien2 = new Alien("Flax")
 
 Quand la fonction `Alien` est appelée avec l'opérateur `new`, deux actions supplémentaires et implicites ont lieu :
 
-- (\*) `this` est initié avec `{}`
-- (\*\*) la fonction retourne `this`. (Je vous rappele que normalement, quand appelée sans l'opérateur `new`, une fonction qui ne contient pas un `return` explicite, retourne `undefined`).
+- (\*) `this` est initié en tant que `{}`
+- (\*\*) la fonction retourne `this`. (Je vous rappelle que normalement, quand appelée sans l'opérateur `new`, une fonction qui ne contient pas un `return` explicite, retourne `undefined`).
 
 ```javascript
 function Alien(name, age = 100) {
@@ -78,21 +78,19 @@ function Alien(name, age = 100) {
 }
 ```
 
-Tous nos aliens partagent les mêmes clés avec des valeur différentes
-
-![](https://assets.codepen.io/4515922/proto.png)
-
-
 **À retenir :**
 
-- Les noms des functions constructor commencent par une lettre en majuscules (c'est une convention)
-- Les fonctions contructor doivent être appelées avec `new` (attention, oublie de `new` provoque une erreur `Uncaught TypeError: Cannot set property ... of undefined`)
+- Les noms des functions constructeurs commencent par une lettre en majuscules (c'est une convention).
+- Les fonctions contructeurs doivent être appelées avec `new` (attention, oublie de `new` provoque une erreur `Uncaught TypeError: Cannot set property ... of undefined`).
 
 https://codepen.io/alyra/pen/oNbKENV
 
+
+![](https://assets.codepen.io/4515922/proto.png)
+
 ## Prototype
 
-On peut aussi associer les valeurs et les méthodes communes à toutes les instances. Nous allons les attacher au clè `prototype`.
+On peut aussi associer les valeurs et les méthodes communes à toutes les instances. Nous allons les attacher au clé `prototype`.
 
 ```javascript
 // constructor
@@ -143,6 +141,9 @@ Object.defineProperty(Alien.prototype, "id", {
 
 ## Héritage et chaîne de prototype
 
+
+JavaScript est souvent décrit comme un langage basé sur les prototypes. Chaque objet a un prototype objet d'où il hérite des méthodes et des attributs. Plus précisément les objets ont une propriété cachée prototype, [[Prototype]],  qui est soit une référence vers un objet ou `null`.
+
 Lorsqu'on tente d'accéder aux propriétés d'un objet, la propriété sera recherchée d'abord sur l'objet même, puis sur son prototype, puis sur le prototype du prototype et ainsi de suite.
 
 ```javascript
@@ -162,7 +163,7 @@ Alien.prototype.sayHi = function () {
 
 const alien1 = new Alien("Flax")
 alien1.sayHi = function () {
-  ;`Salut tout le monde, c'est ${this.name.toUpperCase()} qui parle`
+  `Salut tout le monde, c'est ${this.name.toUpperCase()} qui parle`
 }
 alien1.sayHi() // Salut tout le monde, c'est FLAX qui parle
 delete alien1.sayHi

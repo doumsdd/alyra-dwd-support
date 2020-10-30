@@ -111,7 +111,7 @@ Alien.prototype.sayHi = function () {
 
 https://codepen.io/alyra/pen/abdeYWv
 
-On a plus de contrôle en utilisant [`Object.defineProperty`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/defineProperty)
+La même chose peut être effectuer avec [`Object.defineProperty`.](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/defineProperty) Dans ce cas nous pouvons configurer le comportement de nos propriétés : 
 
 ```javascript
 Object.defineProperty(Alien.prototype, 'sayHi', {

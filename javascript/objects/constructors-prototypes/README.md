@@ -1,5 +1,7 @@
 # Constructors & Prototypes
 
+## Constructor, opérateur `new`
+
 Nous avons appris à définir et utiliser des objets :
 
 ```javascript
@@ -43,7 +45,10 @@ const alien2 = {
 const aliensRegistry = [alien1, alien2, alien3, alien4]
 ```
 
-Nos objets aliens partagent les mêmes clés.
+Nos objets aliens partagent les mêmes clés. La structure des données est des méthodes sont partagées par chacun d'eux. Au lieu de répéter le code ci-dessus pour chaque alien, il est possible de créer une fonction qui va nous servir pour le constructeur de chaque alien.
+La fonction "constructeur" qui nous permettra de créer plusieurs instances d'un objet avec la même structure (le mêmes clés). 
+
+Voici un exemple, d'une fonction "constructeur". La convention veut que les constructeurs commencent par une letter en majuscule.
 
 ```javascript
 function Alien(name, age = 100) {
@@ -52,25 +57,28 @@ function Alien(name, age = 100) {
 }
 ```
 
-Et voici comment on crée des nouvelles instances des Aliens
+Ensuite, nous utilisont un opérateur `new` pour créer des nouvelles instances des Aliens :
 
 ```javascript
 const alien1 = new Alien("Deej", 200)
 const alien2 = new Alien("Flax")
 ```
 
+Tous nos aliens partagent les mêmes clés avec des valeur différentes
+
 ![](https://assets.codepen.io/4515922/proto.png)
 
-Au lieu de répéter le code ci-dessus pour chaque alien, il est possible de créer une fonction qui va nous servir pour le constructeur de chaque alien :
 
-**Remarques :**
+**À retenir :**
 
 - Les noms des functions constructor commencent par une lettre en majuscules (c'est une convention)
 - Les fonctions contructor doivent être appelées avec `new` (attention, oublie de `new` provoque une erreur `Uncaught TypeError: Cannot set property ... of undefined`)
 
 https://codepen.io/alyra/pen/oNbKENV
 
-# Prototype
+## Prototype
+
+On peut aussi associer les valeurs et les méthodes communes à toutes les instances. Nous allons les attacher au clè `prototype` de notre constructeur.
 
 ```javascript
 // constructor

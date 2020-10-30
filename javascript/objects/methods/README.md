@@ -2,7 +2,7 @@
 
 ## Objects - méthodes
 
-Les objets ne sont pas limités aux propriétés 'statiques', on peut aussi leur définir des méthodes (fonctions). Ci dessous, nous ajoutons une clé `sayHi` à `alien` où `sayHi` est une fonction. Pour l'éxécuter nous allons appeler `alien.sayHi()`.
+Les objets ne sont pas limités aux propriétés 'statiques', on peut aussi leur définir des méthodes (fonctions). Dans l'exemple ci-dessous, nous ajoutons une clé `sayHi` à `alien` où `sayHi` est une fonction. Pour l'éxécuter nous allons appeler `alien.sayHi()`.
 
 ```javascript
 const alien = {
@@ -94,7 +94,7 @@ client.transter(100)
 console.log("Zork", client.deposit) // Zork 420
 ```
 
-Peu après, Deej rejoint la banque. Pour ne pas se répéter la nouvelle variable `clientD` est créée de la façon suivante :
+Peu après, Deej rejoint la banque. Pour ne pas se répéter, la nouvelle variable `clientD` est créée de la façon suivante :
 
 ```javascript
 const clientD = { ...client, name: "Deej", deposit: 0 }
@@ -138,7 +138,7 @@ const client = {
 }
 ```
 
-Quand une fonction est **appelée** en tant qu'une méthode d'un objet, `this` correspondera à l'objet en question.
+Quand une fonction est **appelée** en tant qu'une méthode d'un objet, `this` correspondera à l'objet en question, `client.transfer(40)` ajoutera 40 sur le compte de `client` et `clientD.transfer(100)` ajoutera 40 sur le compte de `clientD`.
 
 https://codepen.io/alyra/pen/vYKRmYL
 

@@ -91,7 +91,7 @@ On peut aussi utiliser la méthode `.toFixed()` comme ci-dessous. Attention, le 
 Par exemple afin d'obtenir les nombres d'intérval `[a, b)` :
 
 ```javascript
-(b-a)*Math.random() + a
+(b - a) * Math.random() + a
 ```
 
 Afin d'obtenir les nombres entières d'un iterval : `a, a+1, ...., b`

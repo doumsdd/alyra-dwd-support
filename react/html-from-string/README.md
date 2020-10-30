@@ -10,7 +10,7 @@ const alyra = {
 }
 ```
 
-Dans ce cas là, `name`, `link`, `description` sont en format `string`. Les clés `description` contiennent les balises HTML. Insérer des balises HTML d'une source tierce est une opération à risque, exposant notre application aux attaques XSS. Pour nous protéger contre ceci, React échappe toutes les balises HTML. Regardons ce que ça veut dire en pratique.
+Dans ce cas-là, `name`, `link`, `description` sont en format `string`. Les clés `description` contiennent les balises HTML. Insérer des balises HTML d'une source tierce est une opération à risque, exposant notre application aux attaques XSS. Pour nous protéger contre ceci, React échappe toutes les balises HTML. Regardons ce que ça veut dire en pratique.
 
 ```javascript
 const School = (props) => {
@@ -32,7 +32,7 @@ ReactDOM.render(<App />, document.getElementById("root"))
 
 ![](https://assets.codepen.io/4515922/alyrahtmlstring.png)
 
-Voici notre **problème** : Description est récupérée depuis le string dans `alyra.description`. Pour des raisons de sécurité toutes les balises sont converties en string.
+Voici notre **problème** : Description est récupérée depuis le string dans `alyra.description`. Pour des raisons de sécurité, toutes les balises sont converties en string.
 
 ```javascript
 const htmlString = `<h1>Je suis un string <b>avec HTML !</b></h1>`

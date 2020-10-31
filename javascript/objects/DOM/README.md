@@ -1,6 +1,6 @@
 # DOM - Document Object Model
 
-Autrement dit, Document Object Model, (DOM), est une répresentation objet du document HTML. Quand nous utilisons JavaScript dans le navigateur nous avons accès à l'objet `document`. 
+Document Object Model, (DOM), est une répresentation objet du document HTML. Quand nous utilisons JavaScript dans le navigateur nous avons accès à l'objet `document`. 
 Cet objet contient la structure de notre document HTML, nous permet de la modifier et gérér des intéractions. Nous allons analyser ses propriétés et méthodes les plus importantes.
 
 ```javascript

@@ -15,7 +15,7 @@ Nous allons faire nos premiers pas avec React dans CodePen. Afin de commencer à
 - **React** [https://unpkg.com/react/umd/react.development.js](https://unpkg.com/react/umd/react.development.js)
 - **ReactDOM** [https://unpkg.com/react-dom/umd/react-dom.development.js](https://unpkg.com/react-dom/umd/react-dom.development.js)
 
-Avec ces 2 ressources chargées dans la page, nous obtenons deux objets `React` et `ReactDOM`.
+Avec ces 2 ressources chargées dans la page, nous obtenons deux variables globales, des objets `React` et `ReactDOM`.
 
 Pendant que <b>`React`</b> crée une représentation virtuelle de l'interface utilisateur (appelé DOM virtuel), <b>`ReactDOM`</b> met à jour efficacement le DOM en fonction de ce DOM virtuel. Autrement dit, `ReactDOM` permet de lier React et le DOM.
 

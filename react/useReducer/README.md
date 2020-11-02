@@ -69,13 +69,13 @@ const Counter = () => {
 }
 ```
 
-Ce qu'on peut voir dans l'exemple ci-dessus est que la mise en place de
+Nous pouvons observer que le code suivant :
 
 ```javascript
 const [state, setState] = React.useState(initialState)
 ```
 
-et équivalent à
+est équivalent à :
 
 ```javascript
 const reducer = (state, newState) => newState

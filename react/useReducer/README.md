@@ -216,7 +216,7 @@ const AddProductForm = (props) => {
 
 Dans l'exemple si-dessus nous appelons `setShopping` pour effectuer une des deux actions :
 
-- ajouter un nouvel produit sur la liste (nous pouvons appeler cette action "ADD")
+- ajouter un nouveau produit sur la liste (nous pouvons appeler cette action "ADD")
 - retirer un produit de la liste ("REMOVE")
 
 Par convention les noms des actions sont souvent en majuscules.

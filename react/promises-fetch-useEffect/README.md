@@ -2,7 +2,7 @@
 
 ## Promise
 
-JavaScript est synchronique. Le script est executé du haut en bas, une chose à la fois.
+JavaScript est synchrone. Le script est executé du haut en bas, une chose à la fois.
 
 Ceci n'est pas toujours suffisant. Imaginons que notre script a besoin des informations qui arrivent avec certain délai, et en plus la durée de ce délai n'est pas connue.
 

@@ -72,7 +72,7 @@ https://codepen.io/alyra/pen/vYGxebw
 
 ## export & import
 
-Si modules ont leur propre scope, comment utiliser les variables et fonctions définies dans un autre modules ?
+Si modules ont leur propre scope, comment utiliser les variables et fonctions définies dans un autre module ?
 
 <strong>Modules échangent des fonctionnalités avec des directives `export` et `import`.</strong>
 
@@ -133,7 +133,7 @@ et comment la récuperer (un détails clé, ici nous n'avons pas des accolades) 
 import GradientsList from "./path/to/GradientsList.js"
 ```
 
-Dans ce cas là, nous pouvons nommer librement notre variable importée, le suivant marcherait également :
+Dans ce cas-là, nous pouvons nommer librement notre variable importée, le suivant marcherait également :
 
 ```javascript
 /* App.js */
@@ -188,8 +188,8 @@ console.log("Unique tags :", tags)
 
 ### index.html
 
-Remarquez que nous n'inclueons pas de fichier `gradients.js`, uniquement `app.js` est inclu.  
-L'attribut `type="module"` est undispensable. Son omission provoque une erreur : `Uncaught SyntaxError: Cannot use import statement outside a module`.
+Remarquez que nous n'incluons pas de fichier `gradients.js`, uniquement `app.js` est inclu.  
+L'attribut `type="module"` est indispensable. Son omission provoque une erreur : `Uncaught SyntaxError: Cannot use import statement outside a module`.
 
 ```html
 <!DOCTYPE html>

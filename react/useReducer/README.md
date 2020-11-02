@@ -106,7 +106,7 @@ Est-ce cet exemple plus simple (lisible, maintenable) avec `useReducer` qu'avec 
 
 Nous allons maintenant passer aux exemples où l'utilisation de `useReducer` est justifiée (notre code deviendra plus lisible, plus court, plus maintanable). Nous allons voir dans les exemples suivants que nous pouvons tailler `reducer` selon nos besoins. Par conséquent, nous avons aussi plus de liberté au niveau de la fonction `dispatch`.
 
-## Exemple 2
+## Exemple 2 - Font Preview Widget
 
 https://codepen.io/alyra/pen/vYKjmvg
 
@@ -156,7 +156,7 @@ Vous trouverez le code complet dans le pen suivant :
 
 https://codepen.io/alyra/pen/OJXZgJQ
 
-## Exemple 3
+## Exemple 3 - Shopping List
 
 https://codepen.io/alyra/pen/zYBjade
 
@@ -216,7 +216,7 @@ const AddProductForm = (props) => {
 
 Dans l'exemple si-dessus nous appelons `setShopping` pour effectuer une des deux actions :
 
-- ajouter un nouvel produit sur la liste (nous pouvons appeler cette action "ADD")
+- ajouter un nouveau produit sur la liste (nous pouvons appeler cette action "ADD")
 - retirer un produit de la liste ("REMOVE")
 
 Par convention les noms des actions sont souvent en majuscules.
@@ -260,7 +260,7 @@ Vous trouverez le code complet ici :
 
 https://codepen.io/alyra/pen/jOrxZov
 
-## Exemple 4
+## Exemple 4 - Starwars Planets
 
 Analysez l'exemple ci-dessous qui fusionne l'approche d'exemple 2 et d'exemple 3
 

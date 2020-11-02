@@ -2,18 +2,12 @@
 
 ## Introduction et prérequis
 
-Dans ce cours, nous allons mettre en pratique, ce que nous avons appris, en particulier `useState`. Nous allons créer une _shopping list_ - une liste des courses interactive. Nous allons démarrer avec [ce pen là](https://codepen.io/alyra/pen/PoNQWGJ)
+Dans ce cours, nous allons mettre en pratique, ce que nous avons appris, en particulier `useState`. Nous allons créer une _shopping list_ - une liste des courses interactive. Nous allons démarrer avec [le code suivant (lien vers le pen de départ).](https://codepen.io/alyra/pen/PoNQWGJ)
 
 ```html
 <div id="root"></div>
-<script
-  crossorigin
-  src="https://unpkg.com/react/umd/react.development.js"
-></script>
-<script
-  crossorigin
-  src="https://unpkg.com/react-dom/umd/react-dom.development.js"
-></script>
+<script crossorigin src="https://unpkg.com/react/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
 ```
 
 ```javascript
@@ -54,15 +48,17 @@ const App = () => {
 ReactDOM.render(<App />, document.getElementById("root"))
 ```
 
-Et, comme d'habitude nous utilisons le fichier style de bootboostrapstrap version 5.
+Et, comme d'habitude nous utilisons le fichier style de boostrap5.
 
 https://codepen.io/alyra/pen/PoNQWGJ
 
 ## Variable de state
 
+
 Le but de cette application est d'afficher la liste des courses. Cette liste est alimentée à chaque fois où un nouveau produit est ajouté via le formulaire. On peut aussi retirer chaque produit de la liste en cliquant sur son bouton "done!"
 
-Notre variable de state (appelons-la `shopping`) sera un array des strings. Mettons-la en place :
+Notre variable de state (appelons-la `shopping`) sera un array avec des éléments de type `"string"`. Mettons-la en place :
+
 
 ```javascript
 const ShoppingApp = () => {
@@ -81,8 +77,8 @@ La valeur initiale peut être un array vide `[]`, ici je l'ai préremplie de que
 
 ## Rendu des produits de la liste `shopping`
 
-Les produits dans `shopping` seront listés au sein de la liste numérotée `ol`.
-Le markup pour chaque produit est prévu comme ceci
+Les produits dans `shopping` seront affichés au sein de la liste numérotée `ol`.
+Le markup pour chaque produit est prévu comme ceci :
 
 ```html
 <li class="mb-2">
@@ -93,7 +89,7 @@ Le markup pour chaque produit est prévu comme ceci
 </li>
 ```
 
-Nous allons parcourir `shopping` avec la méthode `.map` :
+Nous allons parcourir notre *array* `shopping` avec la méthode `.map` :
 
 ```javascript
 const ShoppingApp = () => {
@@ -104,13 +100,13 @@ const ShoppingApp = () => {
       <ol>
         {shopping.map((product) => {
           /* 
-            jsx pour chaque élément de la liste
-            nous allons utilisé le markup de <li>
+            Pour chaque élément de la liste nous allons utiliser le markup prévu pour <li>
+            Pour le mettre compatible avec jsx nous devons :
             - changer class pour className
-            - ajouter key
+            - ajouter l'attribut spécial key
             - remplacer lait  par {product}
           */
-          ;<li key={product} className="mb-2">
+          <li key={product} className="mb-2">
             <div className="d-flex align-items-center justify-content-between">
               {product}
               <button type="button" className="btn btn-sm btn-warning">
@@ -126,28 +122,28 @@ const ShoppingApp = () => {
 }
 ```
 
-Dans notre application nous allons prendre soin d'avoir les produits uniques dans la liste, pour cela nous pouvons utiliser `{product}` pour l'attribut `key`.
+Dans notre application nous allons prendre soin d'avoir la liste des produits uniques. Grâce à cela nous pouvons utiliser `{product}` pour l'attribut `key`.
 
-## Formulaire et onSubmit
+## Formulaire et `onSubmit`
 
-Nous allons maintenant alimenter notre liste via le formulaire. Pour ceci nous devons ajouter `onSubmit={handleFormSubmit}` à notre élément `form`. En même temps nous allons définir la fonction `handleFormSubmit`
+Nous allons maintenant donner la possibilité d'ajouter des produits notre liste via le formulaire. Pour ceci nous devons mettre en place un *handler* d'événement `submit` à notre élément `form`, `onSubmit={handleFormSubmit}`. En même temps nous devons définir la fonction `handleFormSubmit`.
 
 ```javascript
 const AddProductForm = (props) => {
   const { shopping, setShopping } = props
   const handleFormSubmit = (event) => {
-    // empêcher action de formulaire, js prend ça en main
+    // nous devons empêcher action par défaut de notre formulaire, js prend la relève !
     event.preventDefault()
-    // récupérer la valeur depuis le champs input#product
+    // récupérer la valeur depuis le champ input#product
     const newProduct = event.target.elements.product.value
-    //shopping : ['..', '..', '..'] -> ['..', '..', '..', newProduct]
-    // on n'a pas le droit d'utiliser push sur shopping !!!! puisque push modifie shopping
+    // s'assurer que la liste contient des produits uniques
     if (shopping.includes(newProduct)) {
       alert(`${newProduct} est déjà sur la liste`)
     } else {
+      // on n'a pas le droit d'utiliser push sur shopping !!!! puisque push modifie shopping, nous devons retourner une nouvelle array
       setShopping([...shopping, newProduct])
     }
-    // vider l'input
+    // vider l'input (remettre le formulaire à zéro)
     event.target.reset()
   }
   return (
@@ -219,7 +215,7 @@ const handleDoneClick = (product) => {
 }
 ```
 
-Vous trouverez le code final ici
+Vous trouverez le code final ici :
 
 https://codepen.io/alyra/pen/jOqYggy
 

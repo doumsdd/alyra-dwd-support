@@ -264,7 +264,7 @@ https://codepen.io/alyra/pen/jOrxZov
 
 Analysez l'exemple ci-dessous qui fusionne l'approche d'exemple 2 et d'exemple 3
 
-`useState` - code de départ
+`useState` - code de départ est ici :
 
 https://codepen.io/alyra/pen/VwaBvqZ
 
@@ -281,7 +281,7 @@ const initialState = {
 
 Notre fonction `reducer` supportera 3 actions "LOADING" (`loading` devient `true`), "DATA" et "NEXT PAGE".
 
-`useReducer` - code complet
+`useReducer` - vous trouverez le code complet ici :
 
 https://codepen.io/alyra/pen/GRqdxrQ
 

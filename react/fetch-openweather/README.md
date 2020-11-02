@@ -1,7 +1,7 @@
 # 🌤 Weather App
 
 ## Prérequis 
-- Commencez par forker et cloner [notre repo de départ](https://github.com/pehaa/alyra-react-weather-app)
+- Commencez par forker et cloner [notre repo de départ.](https://github.com/pehaa/alyra-react-weather-app)
 - Avant de commencer prenez un moment pour [créer votre clé API sur OpenWeatherMap](https://home.openweathermap.org/api_keys) et clonez ce repo. 
 
 [Voici ce que nous allons construire ensemble.](https://alyra-weather-widget.netlify.app/)

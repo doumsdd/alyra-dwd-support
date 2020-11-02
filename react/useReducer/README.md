@@ -2,7 +2,7 @@
 
 Le hook `useReducer` permet de gérer le _state_, il a le même rôle que `useState`.
 
-`useState` sera le premier choix en ce qui concerne la gestion du state et `useReducer` est son alternative, plus complèxe. En fait `useReducer` et une extension de `useState.`
+`useState` sera le premier choix en ce qui concerne la gestion du state et `useReducer` est son alternative, plus complèxe. Nous pouvons dire que `useReducer` et une extension de `useState.`
 
 Pour comprendre son comportement nous allons transformer quelques exemples où nous utilisons initiallement `useState` vers `useReducer`.
 

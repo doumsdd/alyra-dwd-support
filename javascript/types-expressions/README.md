@@ -8,15 +8,17 @@ _Qu'est que ça veut dire type de données ? Pourquoi devons nous en parler ?_ V
 
 Nous pouvons aussi effectuer des opérations sur les chaines de caractères. Par exemple, `"Java" + "Script"` sera évalué en tant que `"JavaScript"`. De la même façon `"1" + "2"` donnera `"12"`. Vous voyez la différence entre `"1" + "2"` et `1 + 2` ? 
 
-Par contre, quel sera le résultat de `"1" + 2` 🧐 ? Vous saurez répondre à cette question suite à ce premier cours de JavaScript !
+Mais quel sera alors le résultat de `"1" + 2` 🧐 ? Vous saurez répondre à cette question suite à ce premier cours de JavaScript !
 
-## Types de données :
+## Types de données, opérateur `typeof` :
 
-Nous allons utiliser JavaScript avec Node.js que vous avez installé et qui est disponible dans votre terminal. Vous pouvez alors ouvrir votre terminal et taper `node`. Pour sortir de mode "node", tapez `.exit` Pour vérifier le "type" nous disposons de l'opérateur `typeof` qui retourne le type.
+Nous allons utiliser JavaScript avec Node.js que vous avez installé et qui est disponible dans votre terminal. Vous pouvez alors ouvrir votre terminal et taper `node`. Pour sortir de mode "node", tapez `.exit` 
+
+Pour vérifier le "type" nous disposons de l'opérateur `typeof` qui retourne le type.
 
 ### (primitif) **number**
 
-Voici quelques exemples de type primitif `"number"` :
+Voici quelques exemples de type primitif `"number"`, testez chacun d'eux avec `typeof` dans votre terminal :
 
 ```javascript
 2
@@ -31,8 +33,8 @@ typeof(5)
 // 'number'
 ```
 
-Essayer de taper `typeof(..)` pour chaque de ces exemples donnera le résultat `"number"`.
-On effectuant des opérations arithmétiques sur les données de type "number" nous obtenons des résultat de type `"number"`, par exemple :
+Comme vous pouvez l'observer, pour chaque de nos exemples `typeof(...)` nous donne le résultat `"number"`.
+Pareil, en effectuant des opérations arithmétiques sur les données de type "number" nous obtenons des résultat de type `"number"`, par exemple :
 
 ```javascript
 typeof(2 + 4) // 'number'
@@ -56,20 +58,22 @@ Le chaine de caractères (`"string"`) est entourée par des guillemets, comme da
 '123'
 `123`
 
-//'Je m'appelle Paulina'
+
 "Je m'appelle Paulina"
 `Je m'appelle Paulina`
+//'Je m'appelle Paulina' <- ceci génère une erreur mais nous pouvons le fixer avec le symbole "\"
 'Je m\'appelle Paulina'
-
-("Bonjour et \
-Bonsoir")
 
 "Je pense que 320px donnera " + 320 / 16 + "rems"
 
 `Je pense que 320px donnera ${320 / 16}rems`
 
+
+// le string avec un saut de ligne est possible uniqument avec des ``
 `Bonjour et
 Bonsoir`
+
+// ou nous sommes obligés d'ajouter le symbole "\" 
 
 "Bonjour et \
 Bonsoir"
@@ -84,12 +88,12 @@ typeof("123")
 
 ### (primitif) **boolean**,
 
-Le troisième type primitif, particulièrement important est `"boolean".` Il prend une des deux valeurs possibles : `true` (vrai)  ou `false` (faux).
+Le troisième type primitif, particulièrement important est `"boolean".` Il prend une des deux valeurs possibles : `true` (vrai)  ou `false` (faux).  
 Ceci permet de conditionner le comportement de notre script. 
 
-Par exemple, si l'utilisateur est connecté l'interface affiche son tableau de bord, dans le cas contraire l'interface affiche le formulaire de connexion.
+Par exemple, si l'utilisateur est connecté - l'interface affiche son tableau de bord, dans le cas contraire l'interface affiche le formulaire de connexion.
 
-Quels sont des exemples du type `"boolean"` ? Ce sont `true` est `false` mais aussi tous les résultat de comparaison, tels que `10 > 2` ou `-3 < -4`. 
+Quels sont des exemples du type `"boolean"` ? Ce seront tous les résultats de comparaison, tels que `10 > 2` ou `-3 < -4`. 
 
 
 ```javascript
@@ -105,7 +109,7 @@ typeof (10 != 2) // 'boolean'
 
 ### (primitif) **undefined**
 
-Quand JavaScript rencontre une chaine de caractères qui n'est pas entourée par des guillemets, caractère, il cherche la fonction ou la variable qui est identifiée avec cette chaine de caractère. (Nous allons parles des variables et des foncions très bientôt). Si JavaScript ne trouve pas de valeur qui correspond à notre chaine, son type est `"undefined"`.
+Quand JavaScript rencontre une chaine de caractères qui n'est pas entourée par des guillemets, il cherche la fonction ou la variable qui est identifiée avec cette chaine de caractère. (Nous allons parles des variables et des foncions très bientôt). Si JavaScript ne trouve pas de valeur qui correspond à notre chaine, son type est `"undefined"`.
 
 ```javascript
 typeof a
@@ -120,7 +124,7 @@ typeof paulina
 
 Dont nous ne parlons pas encore aujourd'hui
 
-- (primitif) **null**, `null` est un type primitif et pourtant `typeof(null)` donne `"object", ceci c'est en fait une erreur du langage, `null` n'est pas un `objet`
+- (primitif) **null**, `null` est un type primitif et pourtant `typeof(null)` donne `"object"` - ceci est en fait une erreur du langage, `null` n'est pas un `object`.
 
 - (primitif) **BigInt**
 
@@ -132,7 +136,7 @@ Dont nous ne parlons pas encore aujourd'hui
 
 ## Expressions
 
-Nous parlons d'expression JavaScript quand nous demandons à JavaScript de nous **donner un résultat**. par exemple `1 + 2` est une expression, son résultat est 3 (de type "number"). Regardons ensemble d'autres exemples des expressions JavaScript.
+Nous parlons d'expression JavaScript quand nous demandons à JavaScript de nous **donner un résultat**. Par exemple, `1 + 2` est une expression, son résultat est 3. Regardons ensemble d'autres exemples des expressions JavaScript.
 
 ### Numbers
 
@@ -177,6 +181,8 @@ Dans le contexte de valeurs du type `"boolean"`, nous utilisons souvent les opé
 // false
 !false
 // true
+!(10 < 2)
+// !false -> true
 ```
 
 **or / ou** `||`
@@ -209,7 +215,7 @@ false && false
 
 **Type coercion** (ou en français coercition de type) est la conversion automatique ou implicite de valeurs d'un type de données à un autre (par exemple : de string à nombre) [définition - source MDN.](https://developer.mozilla.org/fr/docs/Glossaire/Type_coercion)
 
-Souvent un opérateur provoque la conversion du type d'une valeur. Revenons à notre exemple du début du cours où nous essayons d'effectuer l'opération `"1" + 2` (additionner un `"string"` et un `"number"`). Afin que cette opération soit possible, le type d'un de ses opérands devra être converti. La valeur numérique sera convertie en `"string"` et le résultat de cette opération sera `"12"`.
+Souvent un opérateur provoque la conversion du type d'une valeur. Revenons à notre exemple du début du cours où nous essayons d'effectuer l'opération `"1" + 2` (additionner un `"string"` et un `"number"`). Afin que cette opération soit possible, le type d'une de ses opérandes devra être converti. La valeur numérique sera convertie en `"string"` et le résultat de cette opération sera `"12"`.
 
 ```javascript
 // type coercion (changement du type implicite)
@@ -323,6 +329,8 @@ Voici quelques règles :
  true == 2 // => 1 == 2 -> false
  true != 2 // => 1 != 2 -> true
  ```
+ 
+ **Attention :** `a != b` est équivalent à `!(a == b)`
 
 - Par contre, dans **l'égalité stricte**  ("triple égal")  **`===` la coercion n'est pas permise**
 
@@ -335,6 +343,8 @@ Voici quelques règles :
  false === 0 // false
  false !== 0 // true
  ```
+ 
+  **Attention :** `a !== b` est équivalent à `!(a === b)`
  
  Pour en savoir plus [JavaScript Equality Table](https://dorey.github.io/JavaScript-Equality-Table/)
  

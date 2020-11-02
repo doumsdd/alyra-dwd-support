@@ -1,8 +1,8 @@
 # Projet Gradients
 
-Le temps du projet est arrivé ! Dans ce challenge vous avez pour le but construire une application web _monopage_ [comme celle-ci.](https://alyra-gradients-bonus.netlify.app/)
+Le temps du projet est arrivé ! Dans ce challenge vous avez pour but de construire une application web _monopage_ [comme celle-ci.](https://alyra-gradients-bonus.netlify.app/)
 
-Vous devez utiliser CRA en tant que starter. Ci-dessous vous trouverez quelques indications qui vous aideront à structurer votre projet.
+Vous devez utiliser CRA en tant que starter. Ci-dessous, vous trouverez quelques indications qui vous aideront à structurer votre projet.
 
 ## CRA - configuration initiale
 
@@ -18,13 +18,13 @@ yarn add bootstrap@next
 
 ### Head
 
-Configurez la partie head, ne particulier :
+Configurez la partie head, en particulier :
 
 - title
 - lang
 - meta
 
-Vous devez aussi remplacez les icônes et configurez `manifest.json`.
+Vous devez aussi remplacer les icônes et configurez `manifest.json`.
 
 ## Structure du projet
 

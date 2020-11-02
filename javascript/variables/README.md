@@ -109,6 +109,12 @@ Il est important de savoir qu'il existe aussi le mot-clé `var` qui permet de d�
 Peut-on appeler une variable librement ? Presque, il existe quelques limitations.
 Le nom d'une variable (son identifiant) peut contenir des lettres majuscules ou minuscules, des chiffres (sauf en première position) et certains caractères comme le dollar `$` ou underscore `_`.
 
+Les noms de variables sont sensibles à la casse : `firstName`, `firstname`, `FirstName` et `FIRSTNAME` sont 4 variables différentes. 
+
+Le format *camelCase* est fortement privilégié.
+
+Il existe aussi quelques mot-clés spéciaux qui ont leur propre signification dans JavaScript et ne peuvent pas alors être utilisés en tant que noms des variables. Vous trouverez la liste des mots interdits [ici.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords)
+
 ## Fin de la ligne (`;`)
 
 Les `;` à la fin de chaque ligne ne sont pas obligatoire. JavaScript considere (avec quelques rares exceptions) que la ligne finit par un `;`
@@ -116,9 +122,9 @@ Les `;` à la fin de chaque ligne ne sont pas obligatoire. JavaScript considere 
 
 ## Mode strict
 
-Le mode strict a été introduit avec la version ECMAScript 5 qui proposait JavaScript plus restrictif, plus sécurisé, avec quelques changements dans la syntaxe et plusieurs optimisations. En particulier, avec ECMAScript 5 certaines erreurs "silencieuses" deviennent des erreurs explicites (qui peuvent arrêter l'execution des script). Àfin de mettre en place une nouvelle version, sans compromettre les sripts existantes, l'instruction `"use strict"` à été proposé.
+Le mode strict a été introduit avec la version ECMAScript 5 qui proposait JavaScript plus restrictif, plus sécurisé, avec quelques changements dans la syntaxe et plusieurs optimisations. En particulier, avec ECMAScript 5 certaines erreurs "silencieuses" deviennent des erreurs explicites (qui peuvent arrêter l'execution des scripts). Àfin de mettre en place une nouvelle version, sans compromettre les sripts existantes, l'instruction `"use strict"` a été proposé. Si la directive `"use strict"` est trouvé au début du script, la version restrictive de JavaScript est servie.
 
-À partir de ce moment, nous allons commencer nos scripts avec cette instruction.
+À partir de ce moment, nous allons commencer nos scripts avec cette directive.
 
 ## Exemples :
 

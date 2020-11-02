@@ -90,9 +90,9 @@ Utilisez le code des exercices CodePen et migrez le tout dans votre app.
 
 Mettez en place un component `GradientsSelect` avec le filtre par tag.
 
-## Tag Boutons
+## Tag Buttons
 
-Listez des tags pour chaque bouton. Faites les tags interactifs, rendez-les en tant que bouton et filtrez par tag suite au "click"
+Comme sur l'image ci-dessous, listez des tags pour chaque dégradé. Un tag devrait être rendu en tant qu'un `button`. L'évènement "click" devrait déclancher le filtrage par tag en question (sur le [site de référence](https://alyra-gradients-bonus.netlify.app/) cliquez le bouton 'gris' et observez ce qui se passe).
 
 ![](https://wptemplates.pehaa.com/assets/alyra/gradients-tags.png)
 

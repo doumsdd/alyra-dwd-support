@@ -158,7 +158,7 @@ https://codepen.io/alyra/pen/OJXZgJQ
 
 ## Exemple 3
 
-https://codepen.io/alyra/pen/jOqYggy
+https://codepen.io/alyra/pen/zYBjade
 
 ```javascript
 const ShoppingApp = () => {
@@ -213,17 +213,13 @@ Dans l'exemple si-dessus nous appelons `setShopping` pour effectuer une des deux
 
 Par convention les noms des actions sont souvent en majuscules.
 
-https://codepen.io/alyra/pen/jOrxZov
-
 Voici comment nous allons remplacer `useState` :
 
 ```javascript
-// avant : const [shopping, setShopping] = React.useState(["cumin", "curry", "poivre"]);
-const [shopping, dispatch] = React.useReducer(shoppingReducer, [
-  "cumin",
-  "curry",
-  "poivre",
-])
+// const initialShopping = ["cumin", "curry", "poivre"]
+// avant : const [shopping, setShopping] = React.useState(initialShopping);
+const initialShopping = ["cumin", "curry", "poivre"]
+const [shopping, dispatch] = React.useReducer(shoppingReducer, initialShopping)
 ```
 
 Et voici la fonction `shoppingReducer` :

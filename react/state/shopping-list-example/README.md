@@ -213,7 +213,7 @@ const handleDoneClick = (product) => {
 }
 ```
 
-Vous trouverez le code final ici
+Vous trouverez le code final ici :
 
 https://codepen.io/alyra/pen/jOqYggy
 

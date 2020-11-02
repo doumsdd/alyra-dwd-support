@@ -70,7 +70,7 @@ const Weather = ({ city }) => {
 export default Weather
 ```
 
-Nous allons utiliser `useEffect` afin de "fetch" les données concernant la météo actuelle dans notre `city` (initiallement Paris)
+Nous allons utiliser `useEffect` afin de "fetch" les données concernant la météo actuelle dans notre `city` (initialement Paris)
 
 Voici l'url que nous allons utiliser :
 
@@ -94,7 +94,7 @@ const Weather = ({ city }) => {
         if (response.ok) {
           return response.json()
         }
-        throw new Error("météo untrouvable")
+        throw new Error("météo introuvable")
       })
       .then((data) => {
         console.log(data)
@@ -132,7 +132,7 @@ Quelle informations de `data` allons nous utiliser ? Nous pouvons opter pour :
 
 ## .env.local
 
-Ce n'est pas une bonne idée de laisser les clés API dans le fichier que nous partageons via github. Nous pouvons garder nos clés dans le fichier `.env.local` dans la racine du projet (`.env.local` est inclu dans `.gitignore`)
+Ce n'est pas une bonne idée de laisser les clés API dans le fichier que nous partageons via GitHub. Nous pouvons garder nos clés dans le fichier `.env.local` dans la racine du projet (`.env.local` est inclus dans `.gitignore`)
 
 ```bash
 touch .env.local
@@ -149,7 +149,7 @@ touch .env
 REACT_APP_OPENWEATHER_API_KEY= votrekeyvientici
 ```
 
-Ensuite, dans `Weather.js` nous allons avoir accès à notre key en tant qu `process.env.REACT_APP_OPENWEATHER_API_KEY`
+Ensuite, dans `Weather.js` nous allons avoir accès à notre key en tant que `process.env.REACT_APP_OPENWEATHER_API_KEY`
 
 Plus de détails dans la documentation de [CRA](https://create-react-app.dev/docs/adding-custom-environment-variables/)
 
@@ -206,7 +206,7 @@ const Weather = ({ city }) => {
         if (response.ok) {
           return response.json()
         }
-        throw new Error("météo untrouvable")
+        throw new Error("météo introuvable")
       })
       .then((data) => {
         setLocation(`${data.name}, ${data.sys.country}`)
@@ -398,7 +398,7 @@ const useWeather = (city) => {
         if (response.ok) {
           return response.json()
         }
-        throw new Error("météo untrouvable")
+        throw new Error("météo introuvable")
       })
       .then((data) => {
         setLocation(`${data.name}, ${data.sys.country}`)

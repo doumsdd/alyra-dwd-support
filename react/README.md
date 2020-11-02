@@ -19,3 +19,4 @@
 - [Promises, fetch & useEffect](./promises-fetch-useEffect)
 - [fetch en pratique avec l'api OpenWeather](https://github.com/pehaa/alyra-react-weather-app)
 - [Project Google Fonts (brief)](./project-google-fonts)
+- [useReducer](./useReducer)

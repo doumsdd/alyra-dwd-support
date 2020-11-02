@@ -260,7 +260,7 @@ Vous trouverez le code complet ici :
 
 https://codepen.io/alyra/pen/jOrxZov
 
-## Exemple 4 - Starwars Planets
+## Exemple 4 - Star Wars Planets
 
 Analysez l'exemple ci-dessous qui fusionne l'approche d'exemple 2 et d'exemple 3
 

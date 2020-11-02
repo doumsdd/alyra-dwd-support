@@ -5,7 +5,7 @@
 ## Pourquoi ?
 
 - CRA configure tous les outils de développement de l'application, en particulier :
-  - webpack (bundler des fichier)
+  - webpack (bundler des fichiers)
   - babel (compilateur)
   - prettier (pour formater votre code)
   - linter (pour détecter des erreurs)
@@ -38,7 +38,7 @@ Ouvrir le Terminal dans VSCode et lancer app en _mode dévéloppement_
 yarn start
 ```
 
-L'appli est lancée, elle "hot-reload" sous l'addresse http://localhost:3000 (le numéro du port peut varier). Nous pouvons à chaque moment arrêter le serveur avec `Ctrl+C` (et ensuite le relancer avec `yarn start`).
+L'appli est lancée, elle "hot-reload" sous l'adresse http://localhost:3000 (le numéro du port peut varier). Nous pouvons à chaque moment arrêter le serveur avec `Ctrl+C` (et ensuite le relancer avec `yarn start`).
 
 ### Step 2 - bootstrap (si besoin)
 
@@ -82,7 +82,7 @@ C'est un passage obligatoire pour mettre à jour la partie `head` de l'appli (la
 
 ### src/index.js
 
-Ici, on peut mettre en place le fichier CSS principale
+Ici, on peut mettre en place le fichier CSS principal
 
 ```javascript
 import React from "react"
@@ -97,8 +97,8 @@ import * as serviceWorker from "./serviceWorker"
 
 ### Components
 
-Pour mieux organiser notre projet, nous allons créer un dossier _components_ dans le repertoire `src`.
-Tous nos components seront placés dans ce repertoire.
+Pour mieux organiser notre projet, nous allons créer un dossier _components_ dans le répertoire `src`.
+Tous nos components seront placés dans ce répertoire.
 
 ```bash
 mkdir src/components
@@ -124,11 +124,11 @@ src
 └── setupTests.js
 ```
 
-Attention: `MonComponent1` est un très mauvais nom pour un component, nommez vos components selons leurs rôles dans l'application.
+Attention: `MonComponent1` est un très mauvais nom pour un component, nommez vos components selon leurs rôles dans l'application.
 
 #### Component-Starter
 
-Voici un petit starter qui vous permettera de démarrer avec n'importe quel component :
+Voici un petit starter qui vous permettra de démarrer avec n'importe quel component :
 
 ```javascript
 // src/components/MonComponent1.js

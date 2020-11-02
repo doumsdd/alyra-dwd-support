@@ -2,7 +2,7 @@
 
 Le hook `useReducer` permet de gérer le _state_, il a le même rôle que `useState`.
 
-`useState` sera le premier choix en ce qui concerne la gestion du state. `useReducer` est son alternative, plus configurable mais aussi plus complèxe. Nous pouvons dire que `useReducer` et une extension de `useState.`
+`useState` sera le premier choix en ce qui concerne la gestion du state. Le hook `useReducer` est son alternative **plus configurable** mais aussi **plus complèxe.** Nous pouvons dire que `useReducer` et une extension de `useState.`
 
 Pour comprendre son comportement nous allons transformer quelques exemples où nous utilisons initiallement `useState` vers `useReducer`.
 
@@ -17,7 +17,7 @@ const reducer = (state, action) => {
 const [state, dispatch] = React.useReducer(reducer, initialState, init)
 ```
 
-Comme dans l'API de `useState`, `useReducer` retourne un array, le premier élément est notre state, le deuxième une fonction (`dispatch`).
+Comme dans l'API de `useState`, `useReducer` retourne un array, le premier élément est notre state, le deuxième est une fonction (`dispatch`).
 
 Nous appellons la fonction `dispatch` à chaque fois où nous allons mettre à jour `state`. Pourtant la fonction `dispatch` ne modifie pas `state` directement. Elle délègue ceci à la fonction `reducer`.
 
@@ -33,7 +33,7 @@ reducer(state, action)
 
 La dénomination `dispatch`, `action` et `reducer` est tout à fait facultative et suit une certaine convention qui a ces racines dans `Redux`.
 
-Dans notre premier exemple, pour voir plus clairement le passage de `useState` vers `useReducer` nous n'allons pas utiliser les noms `dispatch` ou `action`.
+Dans notre premier exemple, pour voir plus clairement le passage de `useState` vers `useReducer`, nous n'allons pas utiliser les noms `dispatch` ou `action`.
 
 ## Exemple 1
 
@@ -86,23 +86,25 @@ où nous ajoutons un étape supplémentaire - `reducer`.
 
 ---
 
-**Digression (optionnelle) :** Pour être plus précis, il faudrait prendre en compte aussi que `setState` peut avoir une _fonction_ comme paramètre, par exemple `setCount(count => count + 1)`. Le code ci-dessous fonctionne correctement dans les 2 cas `setCount(count + 1)` et `setCount(count => count + 1)` :
+**Digression (optionnelle) :** Pour être plus précis, il faudrait prendre en compte aussi qu'avec l'API de `useState`, `setCount` peut avoir une _fonction_ comme paramètre, par exemple `setCount(count => count + 1)`. Le code ci-dessous fonctionne correctement dans les 2 cas `setCount(count + 1)` et `setCount(count => count + 1)` :
 
 ```javascript
-const reducer = (state, newState) =>
-  typeof newState === "function" ? newState(state) : newState
-const [state, setState] = React.useReducer(reducer, initialState)
+const reducer = (count, newCount) =>
+  typeof newCount === "function" ? newCount(count) : newCount
+const [count, setCount] = React.useReducer(reducer, 0)
 ```
 
 ---
 
-Pour résumer, `useReducer` est comme `useState` avec un étape supplémentaire, la fonction `reducer` que nous pouvons tailler selon nos besoin. Par conséquant, nous avons aussi plus de liberté en ce qui concerne l'utilisation de la fonction `dispatch` (ou `setState`).
+Pour résumer, `useReducer` est comme `useState` avec une étape supplémentaire, la fonction `reducer`.
 
-Vouci le code complet :
+Voici le code complet :
 
 https://codepen.io/alyra/pen/Pozeedw
 
 Est-ce Exemple 1 plus simple (lisible, maintenable) avec `useReducer` qu'avec `useState` ? Non, et nous allons pas utiliser `useReducer` dans ce type des cas.
+
+Nous allons maintenant passer aux exemples où l'utilisation de `useReducer` est justifiée (notre code deviendra plus lisible, plus court, plus maintanable). Nous allons voir dans les exemples suivants que nous pouvons tailler `reducer` selon nos besoins. Par conséquant, nous avons aussi plus de liberté au niveau de la fonction `dispatch`.
 
 ## Exemple 2
 
@@ -116,7 +118,7 @@ const [size, setSize] = React.useState("20")
 const [italic, setItalic] = React.useState(false)
 ```
 
-ou nous utilisons ensuite
+et nous utilisons ensuite :
 
 - `setText(event.target.value)`,
 - `setSize(event.target.value)`
@@ -133,7 +135,7 @@ const initialState = {
 const [state, setState] = React.useReducer(reducer, initialState)
 ```
 
-avec `reducer` défini comme ci-dessous :
+Notre fonction `reducer` est définie comme ci-dessous :
 
 ```
 const reducer = (state, newState) => {
@@ -144,11 +146,11 @@ const reducer = (state, newState) => {
 }
 ```
 
-et les mise à jour de state appelées comme ceci :
+et les mises à jour de state appelées comme ceci :
 
-- `setState({ text: event.target.value })`,
-- `setState({ size: event.target.value })`
-- `setState({ italic: event.target.checked })`
+- `setState({ text: event.target.value })` => `reducer` modifira la clè `text`,
+- `setState({ size: event.target.value })` => `reducer` modifira la clè `size`
+- `setState({ italic: event.target.checked })` => `reducer` modifira la clè `italic`
 
 Vous trouverez le code complet dans le pen suivant :
 

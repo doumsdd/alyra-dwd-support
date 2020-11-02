@@ -1,10 +1,10 @@
 # CRA
 
-[Create React App (ou CRA)](https://create-react-app.dev/) est un starter pour des applications React, officiellement recommandé et maintenu par l'équipe de React.
+[Create React App (ou CRA)](https://create-react-app.dev/) est un *starter* pour des applications React, officiellement recommandé et maintenu par l'équipe de React.
 
 ## Pourquoi ?
 
-- CRA configure tous les outils de développement de l'application, en particulier :
+- CRA configure plusieurs outils de développement de l'application, en particulier :
   - webpack (bundler des fichier)
   - babel (compilateur)
   - prettier (pour formater votre code)
@@ -14,7 +14,7 @@
 
 ## cra + bootstrap5 step by step
 
-Dans la partie suivante, nous allons voir comment nous pouvons démarrer un projet avec CRA et bootstrap 5.
+Dans la partie suivante, nous allons démarrer un projet avec CRA et bootstrap 5.
 
 ### Step 0 - installer une nouvelle app
 
@@ -48,8 +48,10 @@ Nous allons installer bootstrap5 dans le projet
 yarn add bootstrap@next
 ```
 
+(Au moment où ce support est rédigé, la version officielle de bootstrap reste encore 4. Une fois version 5 officialisée, nous allons installer bootstap5 avec `yarn add bootstrap`).
+
 Suite à son installation, `bootstrap` sera ajouté dans le dossier `node_modules`.
-Un peu plus tard, nous allons importer le fichier complet de bootstrap `node_modules/bootstrap/dist/css/bootstrap.css`.
+Un peu plus tard, nous allons **importer** le fichier complet de bootstrap `node_modules/bootstrap/dist/css/bootstrap.css` dans notre application.
 
 ### Architecture initiale du projet
 
@@ -78,11 +80,11 @@ Un peu plus tard, nous allons importer le fichier complet de bootstrap `node_mod
 
 ### public/index.html
 
-C'est un passage obligatoire pour mettre à jour la partie `head` de l'appli (lang, title, meta, favicons, apple-touch-icon, etc.). À l'occasion on met à jour le ficher `public/manifest.json`
+C'est un passage obligatoire pour mettre à jour la partie `head` de l'appli (lang, title, meta, favicons, apple-touch-icon, etc.). À l'occasion nous mettons à jour le ficher `public/manifest.json.`
 
 ### src/index.js
 
-Ici, on peut mettre en place le fichier CSS principale
+Ici, nous pouvent mettre en place notre fichier CSS principale (fichier bootstrap en l'occurence).
 
 ```javascript
 import React from "react"
@@ -98,7 +100,7 @@ import * as serviceWorker from "./serviceWorker"
 ### Components
 
 Pour mieux organiser notre projet, nous allons créer un dossier _components_ dans le repertoire `src`.
-Tous nos components seront placés dans ce repertoire.
+Nous allons ensuite prendre soin de placer tous nos composants dans ce repertoire.
 
 ```bash
 mkdir src/components

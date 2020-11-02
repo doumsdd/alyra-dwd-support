@@ -3,7 +3,7 @@
 Jusqu'ici nous avons utilisé les fichiers `js` comme ceci :
 
 ```html
-<!DOCTYPE ="html">
+<!DOCTYPE html>
 <html>
   <!-- ... -->
   <body>
@@ -22,7 +22,7 @@ Par exemple:
 const gradients = [{ start: "red", end: "magenta" }]
 ```
 
-`script2.js` est inclu après `script1.js` alors la variable `gradients` est disponible dans `script2.js`
+Dans notre fichier HTML, `script2.js` est inclus après `script1.js` alors la variable `gradients` est disponible dans `script2.js`
 
 ```javascript
 /* script2.js */
@@ -39,7 +39,7 @@ console.log(gradients.length)
 Il est aussi possible d'utiliser des fichiers JavaScript en tant que des _modules_.
 
 ```html
-<!DOCTYPE ="html">
+<!DOCTYPE html>
 <html>
   <!-- ... -->
   <body>
@@ -55,7 +55,7 @@ Il est aussi possible d'utiliser des fichiers JavaScript en tant que des _module
 const gradients = [{ start: "red", end: "magenta" }]
 ```
 
-Même si `script2.js` est inclu après `script1.js`, la variable `gradients` n'est pas disponible dans `script2.js`
+Même si `script2.js` est inclus après `script1.js`, la variable `gradients` n'est pas disponible dans `script2.js`
 
 ```javascript
 /* script2.js */
@@ -99,7 +99,7 @@ export const gradients = [
 export const uniqueTags = ["gris", "vert"]
 ```
 
-et voici comment nous les recupérons dans `GradientsList.js`:
+et voici comment nous les récupérons dans `GradientsList.js`:
 
 ```javascript
 /* GradientsList.js */
@@ -115,25 +115,25 @@ import { gradients as myGradients, uniqueTags } from "./path/to/gradients.js"
 
 ### _default_ exports
 
-À côté des _named exports_, nous avons aussi _default exports._
-Chaque module peut avoir au maximum un _export default._
+À côté des _named exports_, nous avons aussi un _default export._
+Chaque module peut avoir un seul _default export._
 
 Voici comment exposer la variable :
 
 ```javascript
-/* GradientsList.js */ */
+/* GradientsList.js */
 const GradientsList = (props) => {...}
 export default GradientsList
 ```
 
-et comment la récuperer (un détails clé, ici nous n'avons pas des accolades) :
+et comment la récupérer (un détails clé - ici nous n'avons pas des accolades) :
 
 ```javascript
 /* App.js */
 import GradientsList from "./path/to/GradientsList.js"
 ```
 
-Dans ce cas-là, nous pouvons nommer librement notre variable importée, le suivant marcherait également :
+Dans le cas de _default export_, nous pouvons nommer librement notre variable importée, le suivant marcherait également :
 
 ```javascript
 /* App.js */
@@ -188,7 +188,9 @@ console.log("Unique tags :", tags)
 
 ### index.html
 
-Remarquez que nous n'incluons pas de fichier `gradients.js`, uniquement `app.js` est inclu.  
+
+Remarquez que nous n'incluons pas de fichier `gradients.js`, uniquement `app.js` est inclus.  
+
 L'attribut `type="module"` est indispensable. Son omission provoque une erreur : `Uncaught SyntaxError: Cannot use import statement outside a module`.
 
 ```html
@@ -211,3 +213,4 @@ L'attribut `type="module"` est indispensable. Son omission provoque une erreur :
 
 - [ressources - modules](https://javascript.info/modules-intro)
 - [ressources - export/import](https://javascript.info/import-export)
+

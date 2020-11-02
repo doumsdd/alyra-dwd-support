@@ -2,7 +2,7 @@
 
 Le hook `useReducer` permet de gérer le *state*, il a le même rôle que `useState`. 
 
-`useState` sera le premier choix en ce qui concerne la gestion du state et `useReducer` est son alternative, plus complèxe. En fait `useReducer` et une extension de `useState`.
+`useState` sera le premier choix en ce qui concerne la gestion du state et `useReducer` est son alternative, plus complèxe. En fait `useReducer` et une extension de `useState.`
 
 Pour comprendre son comportement nous allons transformer quelques exemples où nous utilisons initiallement `useState` vers `useReducer`. 
 
@@ -15,7 +15,7 @@ const [state, dispatch] = React.useReducer(reducer, initialState, init)
 ```
 
 
-Comme dans l'API de `useState`, `useReducer` retourne un array, le premier élément est notre state, le deuxième une fonction (`dispatch`). La fonction `dispatch` ne modifie pas `state` directement mais délégue ça à la fonction `reducer`. Nous appellons la fonction `dispatch` à chaque fois que nous allons mettre à jour `state`, et c'est la logique de la fonction `reducer` qui met à jour state. 
+Comme dans l'API de `useState`, `useReducer` retourne un array, le premier élément est notre state, le deuxième une fonction (`dispatch`). La fonction `dispatch` ne modifie pas `state` directement, mais délégue ceci à la fonction `reducer`. Nous appellons la fonction `dispatch` à chaque fois que nous allons mettre à jour `state`, et c'est la logique de la fonction `reducer` qui met à jour state. 
 
 ```javascript
 dispatch(action) 

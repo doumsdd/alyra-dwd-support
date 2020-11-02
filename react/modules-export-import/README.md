@@ -72,7 +72,7 @@ https://codepen.io/alyra/pen/vYGxebw
 
 ## export & import
 
-Si modules ont leur propre scope, comment utiliser les variables et fonctions définies dans un autre modules ?
+Si modules ont leur propre scope, comment utiliser les variables et fonctions définies dans un autre module ?
 
 <strong>Modules échangent des fonctionnalités avec des directives `export` et `import`.</strong>
 
@@ -188,7 +188,9 @@ console.log("Unique tags :", tags)
 
 ### index.html
 
+
 Remarquez que nous n'incluons pas de fichier `gradients.js`, uniquement `app.js` est inclus.  
+
 L'attribut `type="module"` est indispensable. Son omission provoque une erreur : `Uncaught SyntaxError: Cannot use import statement outside a module`.
 
 ```html

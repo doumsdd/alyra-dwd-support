@@ -2,9 +2,9 @@
 
 Le hook `useReducer` permet de gérer le _state_, il a le même rôle que `useState`.
 
-`useState` sera le premier choix en ce qui concerne la gestion du state. Le hook `useReducer` est son alternative **plus configurable** mais aussi **plus complèxe.** Nous pouvons dire que `useReducer` et une extension de `useState.`
+`useState` sera le premier choix en ce qui concerne la gestion du state. Le hook `useReducer` est son alternative **plus configurable** mais aussi **plus complexe.** Nous pouvons dire que `useReducer` et une extension de `useState.`
 
-Pour comprendre son comportement nous allons transformer quelques exemples où nous utilisons initiallement `useState` vers `useReducer`.
+Pour comprendre son comportement nous allons transformer quelques exemples où nous utilisons initialement `useState` vers `useReducer`.
 
 ## Anatomie
 
@@ -19,9 +19,9 @@ const [state, dispatch] = React.useReducer(reducer, initialState, init)
 
 Comme dans l'API de `useState`, `useReducer` retourne un array, le premier élément est notre state, le deuxième est une fonction (`dispatch`).
 
-Nous appellons la fonction `dispatch` à chaque fois où nous allons mettre à jour `state`. Pourtant la fonction `dispatch` ne modifie pas `state` directement. Elle délègue ceci à la fonction `reducer`.
+Nous appelons la fonction `dispatch` à chaque fois où nous allons mettre à jour `state`. Pourtant la fonction `dispatch` ne modifie pas `state` directement. Elle délègue ceci à la fonction `reducer`.
 
-La fonction `reducer` retourne une nouvelle valeur de state et si la modification de state est détéctée le re-render est déclanché.
+La fonction `reducer` retourne une nouvelle valeur de state et si la modification de state est détectée le re-render est déclenché.
 
 ```javascript
 dispatch(action)
@@ -102,9 +102,9 @@ Voici le code complet :
 
 https://codepen.io/alyra/pen/Pozeedw
 
-Est-ce Exemple 1 plus simple (lisible, maintenable) avec `useReducer` qu'avec `useState` ? Non, et nous allons pas utiliser `useReducer` dans ce type des cas.
+Est-ce cet exemple plus simple (lisible, maintenable) avec `useReducer` qu'avec `useState` ? Non, et nous allons pas utiliser `useReducer` dans ce type des cas.
 
-Nous allons maintenant passer aux exemples où l'utilisation de `useReducer` est justifiée (notre code deviendra plus lisible, plus court, plus maintanable). Nous allons voir dans les exemples suivants que nous pouvons tailler `reducer` selon nos besoins. Par conséquant, nous avons aussi plus de liberté au niveau de la fonction `dispatch`.
+Nous allons maintenant passer aux exemples où l'utilisation de `useReducer` est justifiée (notre code deviendra plus lisible, plus court, plus maintanable). Nous allons voir dans les exemples suivants que nous pouvons tailler `reducer` selon nos besoins. Par conséquent, nous avons aussi plus de liberté au niveau de la fonction `dispatch`.
 
 ## Exemple 2
 
@@ -148,9 +148,9 @@ const reducer = (state, newState) => {
 
 et les mises à jour de state appelées comme ceci :
 
-- `setState({ text: event.target.value })` => `reducer` modifira la clè `text`,
-- `setState({ size: event.target.value })` => `reducer` modifira la clè `size`
-- `setState({ italic: event.target.checked })` => `reducer` modifira la clè `italic`
+- `setState({ text: event.target.value })` => `reducer` modifiera la clé `text`,
+- `setState({ size: event.target.value })` => `reducer` modifiera la clé `size`
+- `setState({ italic: event.target.checked })` => `reducer` modifiera la clé `italic`
 
 Vous trouverez le code complet dans le pen suivant :
 
@@ -206,7 +206,7 @@ const AddProductForm = (props) => {
 }
 ```
 
-Dans l'exemple si-dessus nous appellons `setShopping` pour effectuer une des deux actions :
+Dans l'exemple si-dessus nous appelons `setShopping` pour effectuer une des deux actions :
 
 - ajouter un nouvel produit sur la liste (nous pouvons appeler cette action "ADD")
 - retirer un produit de la liste ("REMOVE")
@@ -241,7 +241,7 @@ const shoppingReducer = (shopping, action) => {
 }
 ```
 
-Quand la fonction `dispatch` est appellée, `shoppingReducer` est executée. Les arguments de `shoppingReducer` est state (`shopping`) dans notre cas, 2e paramètre (`action`) reprend l'argument passé à `dispatch`.
+Quand la fonction `dispatch` est appelée, `shoppingReducer` est exécutée. Les arguments de `shoppingReducer` est state (`shopping`) dans notre cas, 2e paramètre (`action`) reprend l'argument passé à `dispatch`.
 
 Nous devons alors passer `type` et `product` dans `dispatch`.
 
@@ -258,7 +258,7 @@ https://codepen.io/alyra/pen/jOrxZov
 
 ## Exemple 4
 
-Analisez l'exemple ci-dessous qui fusionne l'approche d'exemple 2 et d'exemple 3
+Analysez l'exemple ci-dessous qui fusionne l'approche d'exemple 2 et d'exemple 3
 
 `useState` - code de départ
 
@@ -275,7 +275,7 @@ const initialState = {
 }
 ```
 
-Notre fontion `reducer` supportera 3 actions "LOADING" (`loading` devient `true`), "DATA" et "NEXT PAGE".
+Notre fonction `reducer` supportera 3 actions "LOADING" (`loading` devient `true`), "DATA" et "NEXT PAGE".
 
 `useReducer` - code complet
 
@@ -291,7 +291,7 @@ Vous vous rappelez de "lazy initial state" dans l'API de `useState` ?
 const [shopping, setShopping] = useState(expensiveOperationFunction()) // pas bien 👎
 ```
 
-React a besoin du résulat de `expensiveOperationFunction` uniquement une fois, quand le component monte, pour initier `shopping`. Pourtant mis en place comme ci-dessus, `expensiveOperationFunction` sera executé à chaque re-render.
+React a besoin du résultat de `expensiveOperationFunction` uniquement une fois, quand le component monte, pour initier `shopping`. Pourtant mis en place comme ci-dessus, `expensiveOperationFunction` sera exécutée à chaque re-render.
 
 Par contre :
 

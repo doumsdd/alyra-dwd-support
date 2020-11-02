@@ -2,7 +2,7 @@
 
 Le hook `useReducer` permet de gérer le _state_, il a le même rôle que `useState`.
 
-`useState` sera le premier choix en ce qui concerne la gestion du state et `useReducer` est son alternative, plus complèxe. Nous pouvons dire que `useReducer` et une extension de `useState.`
+`useState` sera le premier choix en ce qui concerne la gestion du state. `useReducer` est son alternative, plus configurable mais aussi plus complèxe. Nous pouvons dire que `useReducer` et une extension de `useState.`
 
 Pour comprendre son comportement nous allons transformer quelques exemples où nous utilisons initiallement `useState` vers `useReducer`.
 
@@ -19,7 +19,7 @@ const [state, dispatch] = React.useReducer(reducer, initialState, init)
 
 Comme dans l'API de `useState`, `useReducer` retourne un array, le premier élément est notre state, le deuxième une fonction (`dispatch`).
 
-Nous appellons la fonction `dispatch` à chaque fois où nous allons mettre à jour `state`.Pourtant la fonction `dispatch` ne modifie pas `state` directement. Elle délègue ceci à la fonction `reducer`.
+Nous appellons la fonction `dispatch` à chaque fois où nous allons mettre à jour `state`. Pourtant la fonction `dispatch` ne modifie pas `state` directement. Elle délègue ceci à la fonction `reducer`.
 
 La fonction `reducer` retourne une nouvelle valeur de state et si la modification de state est détéctée le re-render est déclanché.
 
@@ -98,7 +98,11 @@ const [state, setState] = React.useReducer(reducer, initialState)
 
 Pour résumer, `useReducer` est comme `useState` avec un étape supplémentaire, la fonction `reducer` que nous pouvons tailler selon nos besoin. Par conséquant, nous avons aussi plus de liberté en ce qui concerne l'utilisation de la fonction `dispatch` (ou `setState`).
 
-Est-ce exemple 1 plus simple (lisible, maintenable) avec `useReducer` qu'avec `useState` ? Non, nous allons pas utiliser `useReducer` dans ce type des cas.
+Vouci le code complet :
+
+https://codepen.io/alyra/pen/Pozeedw
+
+Est-ce Exemple 1 plus simple (lisible, maintenable) avec `useReducer` qu'avec `useState` ? Non, et nous allons pas utiliser `useReducer` dans ce type des cas.
 
 ## Exemple 2
 
@@ -143,8 +147,8 @@ const reducer = (state, newState) => {
 et les mise à jour de state appelées comme ceci :
 
 - `setState({ text: event.target.value })`,
-- `setState({ size: e.target.value })`
-- `setState({ italic: e.target.checked })`
+- `setState({ size: event.target.value })`
+- `setState({ italic: event.target.checked })`
 
 Vous trouverez le code complet dans le pen suivant :
 
@@ -252,8 +256,62 @@ https://codepen.io/alyra/pen/jOrxZov
 
 ## Exemple 4
 
-`useState`
+Analisez l'exemple ci-dessous qui fusionne l'approche d'exemple 2 et d'exemple 3
+
+`useState` - code de départ
+
 https://codepen.io/alyra/pen/VwaBvqZ
 
-`useReducer`
+Essayez de faire le refactoring vous même, vous devez alors mettre en place une variable `state` avec la valeur initiale
+
+```javascript
+const initialState = {
+  planets: [],
+  loading: false,
+  page: 1,
+  hasNext: true,
+}
+```
+
+Notre fontion `reducer` supportera 3 actions "LOADING" (`loading` devient `true`), "DATA" et "NEXT PAGE".
+
+`useReducer` - code complet
+
 https://codepen.io/alyra/pen/GRqdxrQ
+
+---
+
+## "Lazy initial state"
+
+Vous vous rappelez de "lazy initial state" dans l'API de `useState` ?
+
+```javascript
+const [shopping, setShopping] = useState(expensiveOperationFunction()) // pas bien 👎
+```
+
+React a besoin du résulat de `expensiveOperationFunction` uniquement une fois, quand le component monte, pour initier `shopping`. Pourtant mis en place comme ci-dessus, `expensiveOperationFunction` sera executé à chaque re-render.
+
+Par contre :
+
+```javascript
+const [shopping, setShopping] = useState(() => expensiveOperationFunction()) //  bien 👍
+```
+
+ou simplement
+
+```javascript
+const [shopping, setShopping] = useState(expensiveOperationFunction) //  bien 👍
+```
+
+L'API de `useReducer` nous permet également à initier state uniquement a premier render. Pour cela nous utilisons le 3 argument de `useReducer`, par exemple
+
+```javascript
+const init = (initialState) = {
+  // initialState = le 2e param de useReducer
+  if (localStorage.getItem("shopping")) {
+    return JSON.parse(localStorage.getItem("shopping"))
+  }
+  return initialState
+}
+const [shopping, dispatch] = React.useReducer(reducer, [], init)
+```

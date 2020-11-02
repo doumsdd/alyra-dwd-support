@@ -394,7 +394,7 @@ JavaScript procède de gauche à droite. Chaque valeurs est convertie dans la m�
 JavaScript permet d'évaluer le résultat en fonction si la condition est vrai ou fausse. Voici la syntaxe de l'opérateur ternaire (ternary en anglais)
 
 ```javascript
-condition ? exprSiVrai : exprSiFaux
+condition ? expressionSiVrai : expressionSiFaux
 ```
 
 ```javascript

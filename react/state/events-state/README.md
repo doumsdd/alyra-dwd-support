@@ -42,7 +42,7 @@ const handleButtonClick = (event) => {
 <Button onClick={handleButtonClick} />
 ```
 
-En particulier, nous pouvons profiter de `event.target` pour avoir l'accès à l'élément qui a déclenché _event_. Nous pouvons lire la valeur du champs `input` avec `event.target.input`.
+En particulier, nous pouvons profiter de `event.target` pour avoir l'accès à l'élément qui a déclenché _event_. Nous pouvons lire la valeur du champs `input` avec `event.target.value`.
 
 ```javascript
 const Input = () => {

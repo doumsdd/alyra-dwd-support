@@ -54,9 +54,11 @@ https://codepen.io/alyra/pen/PoNQWGJ
 
 ## Variable de state
 
-Le but de cette application est d'afficher la liste des courses. Cette liste est alimentée à chaque fois où un nouveau produit est ajouté via le formulaire. On peut aussi retirer un produit de la liste en cliquant sur son bouton "done!"
 
-Notre variable de state (appellons-la `shopping`) sera un array avec des éléments de type `"string"`. Mettons-la en place :
+Le but de cette application est d'afficher la liste des courses. Cette liste est alimentée à chaque fois où un nouveau produit est ajouté via le formulaire. On peut aussi retirer chaque produit de la liste en cliquant sur son bouton "done!"
+
+Notre variable de state (appelons-la `shopping`) sera un array avec des éléments de type `"string"`. Mettons-la en place :
+
 
 ```javascript
 const ShoppingApp = () => {
@@ -71,7 +73,7 @@ const ShoppingApp = () => {
 }
 ```
 
-La valeur initiale peut être un array vide `[]`, ici je l'ai pré-remplie de quelques produits afin qu'on puisse plus rapidement travailler avec le rendu.
+La valeur initiale peut être un array vide `[]`, ici je l'ai préremplie de quelques produits afin qu'on puisse plus rapidement travailler avec le rendu.
 
 ## Rendu des produits de la liste `shopping`
 
@@ -138,7 +140,7 @@ const AddProductForm = (props) => {
     if (shopping.includes(newProduct)) {
       alert(`${newProduct} est déjà sur la liste`)
     } else {
-      // on a pas le droit d'utiliser push sur shopping !!!! puisque push modifie shopping, nous devons retourner une nouvelle array
+      // on n'a pas le droit d'utiliser push sur shopping !!!! puisque push modifie shopping, nous devons retourner une nouvelle array
       setShopping([...shopping, newProduct])
     }
     // vider l'input (remettre le formulaire à zéro)
@@ -205,7 +207,7 @@ const ShoppingApp = () => {
 }
 ```
 
-La dernière chose est de définir `handleDoneClick`. Nous pouvons utiliser la méthode `filter`,`shopping.filter((el) => el !== product)` retourne la liste où nous gardons tous les éléments différent que `product`.
+La dernière chose est de définir `handleDoneClick`. Nous pouvons utiliser la méthode `filter`,`shopping.filter((el) => el !== product)` retourne la liste où nous gardons tous les éléments différents que `product`.
 
 ```javascript
 const handleDoneClick = (product) => {

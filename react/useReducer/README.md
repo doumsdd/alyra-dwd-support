@@ -165,6 +165,7 @@ const ShoppingApp = () => {
   const initialShopping = ["cumin", "curry", "poivre"]
   const [shopping, setShopping] = React.useState(initialShopping)
   const handleDoneClick = (product) => {
+    // action "REMOVE"
     setShopping(shopping.filter((el) => el !== product))
   }
   return (
@@ -193,6 +194,7 @@ const AddProductForm = (props) => {
     if (shopping.includes(newProduct)) {
       alert(`${newProduct} est déjà sur la liste`)
     } else {
+      // action "ADD"
       setShopping([...shopping, newProduct])
     }
     event.target.reset()

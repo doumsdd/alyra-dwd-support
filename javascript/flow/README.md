@@ -63,6 +63,28 @@ if (day === 1) {
 
 ### switch
 
+Nous pouvons enchainer `else if` sans limite :
+
+
+```javascript
+const day = new Date().getDay()
+if (day === 1) {
+  alert("Nous sommes lundi")
+} else if (day === 2) {
+  alert("Nous sommes mardi")
+} else if (day === 3) {
+  alert("Nous sommes mercredi")
+} else if (day === 4) {
+  alert("Nous sommes jeudi")
+} else if (day === 5) {
+  alert("Nous sommes vendredi")
+} else {
+  alert("Nous sommes en week-end")
+}
+```
+
+mais le code ci-dessous n'est pas très lisible. Une des alternative est la syntaxe de `switch`, voici notre exemple réécrit avec `switch` :
+
 ```javascript
 const day = new Date().getDay()
 switch (day) {

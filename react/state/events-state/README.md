@@ -243,7 +243,7 @@ Pour assurer leur fonctionnement correct, hooks doivent être appelés dans le m
 
 ## Class Components
 
-React hooks, en particulier `useState` ne marchent pas dans les class components.
+React hooks, en particulier `useState` ne marchent pas dans les components qui utilisent la syntaxe de `class`.
 
 Dans ce cas là, nous initialisons `state` dans le constructeur, et utilisant fonction `setState` pour les mises à jour de state.
 

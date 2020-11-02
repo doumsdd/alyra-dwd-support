@@ -35,7 +35,7 @@ La dénomination `dispatch`, `action` et `reducer` est tout à fait facultative 
 
 Dans notre premier exemple, pour voir plus clairement le passage de `useState` vers `useReducer`, nous n'allons pas utiliser les noms `dispatch` ou `action`.
 
-## Exemple 1
+## Exemple 1 - Counter
 
 ```javascript
 // avec useState

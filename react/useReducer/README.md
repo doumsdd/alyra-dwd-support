@@ -164,10 +164,12 @@ https://codepen.io/alyra/pen/zYBjade
 const ShoppingApp = () => {
   const initialShopping = ["cumin", "curry", "poivre"]
   const [shopping, setShopping] = React.useState(initialShopping)
+
   const handleDoneClick = (product) => {
     // action "REMOVE"
     setShopping(shopping.filter((el) => el !== product))
   }
+
   return (
     <section>
       <h2>My shopping List</h2>
@@ -188,9 +190,11 @@ const ShoppingApp = () => {
 
 const AddProductForm = (props) => {
   const { shopping, setShopping } = props
+
   const handleFormSubmit = (event) => {
     event.preventDefault()
     const newProduct = event.target.elements.product.value
+
     if (shopping.includes(newProduct)) {
       alert(`${newProduct} est déjà sur la liste`)
     } else {
@@ -199,6 +203,7 @@ const AddProductForm = (props) => {
     }
     event.target.reset()
   }
+
   return (
     <form onSubmit={handleFormSubmit}>
       <label htmlFor="product">Ajouter sur la liste</label>

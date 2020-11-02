@@ -150,4 +150,4 @@ Dans le deuxième exemple nous allons jouer avec l'api Star Wars et afficher la 
 L'url qui nous permet d'afficher les planètes est `https://swapi.dev/api/planets/?page=${page}`, le paramètre `page` permet d'afficher des planètes par dizaine, `page=3` affiche 3e dizaine des planètes.
 
 
-https://codepen.io/alyra/pen/VwaBvqZ
+https://codepen.io/alyra/pen/KKMRGrB

@@ -14,7 +14,7 @@ cd todos-app
 `index.js` et le fichier de départ de votre application.
 
 - Supprimez le contenu du fichier `src/index.css`
-- Installez bootstrap5 dans notre projet et utiliser le fichier css de bootstrap
+- Installez bootstrap5 dans notre projet et utilisez le fichier css de bootstrap
 
 ```bash
 yarn add bootstrap@next
@@ -43,7 +43,7 @@ C'est dans le fichier `public/index.html` où nous devons modifier l'attribut `l
 Le fichier `manifest.json` permet d'installer un bouton vers votre app sur l'appareil mobile, vous pouvez [en lire davantage, par exemple, ici.](https://web.dev/add-manifest-react/)
 
 Vous pouvez créer votre pack d'icônes avec un des générateurs disponibles en ligne, tel que [favicon-generator.org](https://www.favicon-generator.org/).
-Copiez ensuite des icônes dans le dossier `public` et remplacer `"short_name"`, `"name"` et toute l'array `"icons"` dans `manifest.json` :
+Copiez ensuite des icônes dans le dossier `public` et remplacez `"short_name"`, `"name"` et tout l'array `"icons"` dans `manifest.json` :
 
 ```javascript
 {

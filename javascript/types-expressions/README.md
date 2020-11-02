@@ -211,24 +211,17 @@ false && false
 //false
 ```
 
-## Type coercion & type conversion
+## Type conversion & type coercion
 
-**Type coercion** (ou en français coercition de type) est la conversion automatique ou implicite de valeurs d'un type de données à un autre (par exemple : de string à nombre) [définition - source MDN.](https://developer.mozilla.org/fr/docs/Glossaire/Type_coercion)
+### Type conversion, *truthy* et *falsy*
 
-Souvent un opérateur provoque la conversion du type d'une valeur. Revenons à notre exemple du début du cours où nous essayons d'effectuer l'opération `"1" + 2` (additionner un `"string"` et un `"number"`). Afin que cette opération soit possible, le type d'une de ses opérandes devra être converti. La valeur numérique sera convertie en `"string"` et le résultat de cette opération sera `"12"`.
+Nous parlons de *type conversion* quand nous changeons le type d'une valeur de la manière explicite (c'est moi, le programmeur, qui décide de le faire dans mon script).
 
-```javascript
-// type coercion (changement du type implicite)
-"1" + 2
-// "1" + 2 -> "1" + "2" -> "12"
-```
-
-On peut aussi convertir le type explicitement - dans ce cas nous parlons de **type conversion.** Voici des exemples :
 
 ```javascript
 // type conversion (changement du type explicite)
-Number("1") + Number(2) // Number("1") + Number(2) -> 1 + 2 -> 3
-Number("Bonjour" // NaN
+Number("1") + Number("2") // Number("1") + Number("2") -> 1 + 2 -> 3
+Number("Bonjour") // NaN
 Number(false) // 0
 Number(true) // 1
 Number(null) // 0
@@ -252,9 +245,7 @@ Boolean("Bonjour")
 // Boolean("Bonjour") -> true
 ```
 
-### Type conversion, *truthy* et *falsy*
-
-Pour récapituler - nous parlons de *type conversion* quand nous changeons le type d'une valeur de la manière explicite (c'est moi, le programmeur qui décide de le faire dans mon script). Pour ceci nous utilisons les fonctions :
+Comme vous l'observez pour convertir le type nous utilisons les fonctions :
 
  - `Number` - afin de convertir une valeur vers `"number"`
  - `String` - afin de convertir une valeur vers `"string"`
@@ -275,12 +266,18 @@ NaN
 ``
 ```
 
-Valeurs **truthy** sont celles qui convertissent en `true`. Quelle est la liste des valeurs **truthy** ? Ce n'est pas possible de la monter, par contre, il suffit de savoir, qu'une valeur est *truthy* si elle n'est pas *falsy*.
+Valeurs **truthy** sont celles qui convertissent en `true`. Quelle est la liste des valeurs **truthy** ? Ce n'est pas possible de la monter, par contre, il suffit de savoir, qu'une valeur est *truthy* si elle n'est pas *falsy* 🤓.
 
 
 ### Type coercion
   
-Nous parlons de *type coercion* quand le type d'une valeur est convertie implicitement (c'est JavaScript qui le fait à la volée afin d'effectuer une opération).
+Nous parlons de *type coercion* quand le type d'une valeur est convertie implicitement (c'est JavaScript qui le fait à la volée afin d'effectuer une opération). Souvent un opérateur provoque la conversion du type d'une valeur. Revenons à notre exemple du début du cours où nous essayons d'effectuer l'opération `"1" + 2` (additionner un `"string"` et un `"number"`). Afin que cette opération soit possible, le type d'une de ses opérandes devra être converti. La valeur numérique sera convertie en `"string"` et le résultat de cette opération sera `"12"`.
+
+```javascript
+// type coercion (changement du type implicite)
+"1" + 2
+// "1" + 2 -> "1" + "2" -> "12"
+```
 
 Voici quelques règles :
 
@@ -317,7 +314,7 @@ Voici quelques règles :
  !0 // ->!false -> true
  ```
  
- - L'égalité faible ("double égal")  `==` - si les valeurs ne sont pas du même type, provoque la coercion
+ - **L'égalité faible** ("double égal")  `==` si les valeurs ne sont pas du même type, **provoque la coercion**
  
  ```javascript
  1 == "1" // -> 1 == 1 -> true

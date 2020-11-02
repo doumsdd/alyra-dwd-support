@@ -86,7 +86,7 @@ https://codepen.io/alyra/pen/ZEWvjQN
 
 ### Component interactif (approche "from scratch")
 
-Dans React, _state_ variable est une variable qui est responsable pour éventuel re-render d'un component. Si une des variables de _state_ change, le component React se met à jour. Bien évidemment pas tous les components sont interactifs. Les components dont le markup ne changent pas sont appelés _stateless_ (sans _state_).
+Dans React, _state_ variable est une variable qui est responsable pour éventuel re-render d'un component. Si une des variables de _state_ change, le component React se met à jour. Bien évidemment pas tous les components sont interactifs. Les components dont le markup ne change pas sont appelés _stateless_ (sans _state_).
 
 Voici un exemple de component _stateless_ `<Article>` :
 

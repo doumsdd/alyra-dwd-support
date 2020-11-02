@@ -80,6 +80,6 @@
 - [useContext](./react/useContext)
 - [useEffect](./react/useEffect)
 - [Promises, fetch & useEffect](./react/promises-fetch-useEffect)
-- [fetch en pratique avec l'api OpenWeather](https://github.com/pehaa/alyra-react-weather-app)
+- [fetch en pratique avec l'api OpenWeather](./react/fetch-openweather)
 - [Project Google Fonts (brief)](./react/project-google-fonts)
 - [useReducer](./react/useReducer)

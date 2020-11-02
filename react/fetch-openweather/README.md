@@ -138,7 +138,7 @@ Ce n'est pas une bonne idée de laisser les clés API dans le fichier que nous p
 touch .env.local
 ```
 
-Attention le nom de la variable [doit commencer par REACT_APP](https://create-react-app.dev/docs/adding-custom-environment-variables/)
+**Attention :** le nom de la variable [doit commencer par REACT_APP](https://create-react-app.dev/docs/adding-custom-environment-variables/)
 
 ```bash
 touch .env

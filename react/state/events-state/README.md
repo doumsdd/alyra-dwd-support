@@ -27,7 +27,7 @@ Comme vous pouvez l'observer et ce qui sera **à retenir** :
 
 ---
 
-Dans l'exemple suivante nous allons un pas plus loin. La fonction passée dans _event handler_ a par défaut accès à l'objet `event`.
+Dans l'exemple suivant nous allons un pas plus loin. La fonction passée dans _event handler_ a par défaut accès à l'objet `event`.
 
 ```javascript
 <Button onClick={(event) => {...}} />
@@ -86,7 +86,7 @@ https://codepen.io/alyra/pen/ZEWvjQN
 
 ### Component interactif (approche "from scratch")
 
-Dans React, _state_ variable est une variable qui est responsable pour éventuel re-render d'un component. Si une des variables de _state_ change, le component React se met à jour. Bien évidemment pas tous les components sont interactifs. Les components dont le markup ne change pas sont appelés _stateless_ (sans _state_).
+Dans React, _state_ variable est une variable qui est responsable pour éventuel re-render d'un component. Si une des variables de _state_ change, le component React se met à jour. Bien évidemment pas tous les components sont interactifs. Les components dont le markup ne change pas et sont appelés _stateless_ (sans _state_).
 
 Voici un exemple de component _stateless_ `<Article>` :
 
@@ -109,7 +109,7 @@ https://wptemplates.pehaa.com/assets/alyra/state-article.mp4
 
 ### Faking "useState"
 
-Le exemple ci-dessous a pour but illustrer comment l'interactivité fonctionne sous le capot :
+L'exemple ci-dessous a pour but illustrer comment l'interactivité fonctionne sous le capot :
 
 ```javascript
 // notre component App a 2 state variables like et name
@@ -190,7 +190,7 @@ const [name, setName] = React.useState("Inconnu")
 ```
 
 On appelle `React.useState` avec la valeur initiale de la variable state.
-`React.useState` **retourne un array,** son première élément est une clé de state variable, le seconde est la fonction pour modifier la valeur de notre state variable (setter).
+`React.useState` **retourne un array,** son premier élément est une clé de state variable, la seconde est la fonction pour modifier la valeur de notre state variable (setter).
 
 ```javascript
 const App = () => {
@@ -231,7 +231,7 @@ https://codepen.io/alyra/pen/rNepaOy
 
 ## React Hooks et ses règles 
 
-`useState` est un des hooks de React. Nous appelons hooks dans les components React (ou dans les hooks personnalisés). Nous allons bientôt découvrir d'autres hooks (`useContext`, `useEffect`). Les hooks sont des fonctions JavaScript, mais des fonctions un peu spéciales. Ceci dit nous devons suivre certains règles d'utilisation.
+`useState` est un des hooks de React. Nous appelons hooks dans les components React (ou dans les hooks personnalisés). Nous allons bientôt découvrir d'autres hooks (`useContext`, `useEffect`). Les hooks sont des fonctions JavaScript, mais des fonctions un peu spéciales. Ceci dit nous devons suivre certaines règles d'utilisation.
 
 Pour assurer leur fonctionnement correct, hooks doivent être appelés dans le même ordre à chaque affichage du composant. Par conséquent, hooks ne peuvent pas être utilisés :
  - à l’intérieur de boucles

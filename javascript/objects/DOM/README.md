@@ -9,32 +9,31 @@ console.dir(document)
 
 Nous allons utiliser [ce repo]().
 
-## document.documentElement
+## Sélectionner un élément : 
 
+### document.documentElement
 
 `document.documentElement` nous donne accès à l'élément `html` de notre document.
 ```javascript
 console.dir(document.documentElement)
 ```
 
-
-
-
-
 ```javascript
 document.documentElement // correspond au html
 document.documentElement.lang // 'fr'
 ```
 
-## document.body -> body
+### document.body
+
+`document.body` nous donne accès à l'élément `body` de notre document.
 
 ```javascript
 document.body.style.background = "red"
 ```
 
-## document.getElementById()
+### document.getElementById()
 
-`document.getElementById('id-name')` retourne l'élément ou `null`
+`document.getElementById('id-name')` nous donne accès à l'élément avec l'attribut id `id-name`.  `document.getElementById('id-name')` retourne l'élément s'il existe ou `null.`
 
 On peut avoir le même résultat avec la méthode plus générique `document.querySelector('#id-name')`, dans ce cas il faut ajouter le symbol "#"
 
@@ -45,7 +44,7 @@ document.getElementById("cookie-info").remove()
 document.getElementById("#pub").remove()
 ```
 
-## document.querySelector(), element.querySelector()
+### document.querySelector(), element.querySelector()
 
 Utilise les même selecteurs que css.  
 Trouve un élément, premier que correspond au sélecteur.
@@ -55,11 +54,16 @@ const cookie = document.querySelector("#cookie-info")
 cookie.querySelector("span").remove()
 ```
 
-## document.querySelectorAll('selector')
+On aura le même résultat pour `document.querySelector('#id-name')` et  `document.getElementById('id-name')`.
 
-Le résultat est une NodeList, une structure semblable à l'array.
-Si aucun élément ne correspond pas au selecteur, le résultat est une liste vide []
-On peut la parcourrir avec la boucle `for of`, la méthode `.forEach()` (et avec la boucle for classique)
+### document.querySelectorAll('selector')
+
+Le résultat retourné est une `NodeList`, une structure semblable à l'array.
+Si aucun élément ne correspond pas au selecteur, le résultat est une liste vide `[]`
+On peut parcourrir  `document.querySelectorAll('selector')` avec 
+  - la boucle `for ... of`, 
+  - la méthode `.forEach()` 
+  - avec la boucle for classique
 
 ```javascript
 const allButtons = document.querySelectorAll("button")
@@ -70,33 +74,34 @@ for (let button of allButtons) {
 
 ```javascript
 const allButtons = document.querySelectorAll("button")
-allButtons.forEach((btn) => {
-  btn.disabled = true
+allButtons.forEach((button) => {
+  button.disabled = true
 })
 ```
 
-## document.getElementsByTagName('tag')
+### document.getElementsByTagName('tag')
 
 ```javascript
 const allParagraphs = document.getElementsByTagName("p")
 ```
 
-## document.getElementsByClassName('.class-name')
+### document.getElementsByClassName('.class-name')
 
 ```javascript
 const allParagraphs = document.getElementsByClassName(".hidden")
 ```
 
-# Attributes
+## Des attributes
 
-## standard attributes
+### Les attributes `standard`
 
-Standard HTML attributs peuvent être utiliser "directement" en tant que une propriété d'un élément
+Les attributes HTML `standard` peuvent être utilisés  "directement" en tant que une propriété d'un élément
 
 ```javascript
+// attribut lang
 document.documentElement.lang
-document.body.class
 const el = document.querySelector("p")
+// attribut id
 el.id
 ```
 
@@ -121,8 +126,8 @@ document.body.classList.remove("container")
 
 ## non-standard attributes
 
-Pour non-standard attributs (crée par utilisateur) nous devons utiliser les méthodes `hasAttribute(), setAttribute(), getAttribute(), removeAttribute()`.
-Elles fonctionnent aussi pour des attributs standard.
+Pour non-standard attributs (les attributs crées par l'utilisateur) nous devons utiliser les méthodes `hasAttribute(), setAttribute(), getAttribute(), removeAttribute()`.
+Ces méthodes fonctionnent aussi pour des attributs standard.
 
 ```html
 <body author="Franck"></body>
@@ -137,7 +142,7 @@ document.body.getAttribute("author") // 'Paulina'
 document.body.removeAttribute("author")
 ```
 
-Attention, ceci n'est pas une bonne pratique. Les attributs personnalisés devraient toujous commancer par `data-`. Dans ce cas là ils sont accèssible via la propriété `dataset`
+Attention, ceci n'est pas une bonne pratique. Les attributs personnalisés devraient toujous commancer par `data-`. Dans ce cas-là ils sont accèssible via la propriété `dataset`
 
 ```html
 <body data-author="Franck"></body>
@@ -145,7 +150,7 @@ Attention, ceci n'est pas une bonne pratique. Les attributs personnalisés devra
 
 ```javascript
 document.body.hasAttribute("data-author") // true
-document.body[data - author] // undefined
+document.body["data-author"] // undefined
 document.body.dataset.author // 'Franck'
 document.body.dataset.author = "Maxime"
 document.body.getAttribute("data-author") // 'Maxime'
@@ -156,9 +161,9 @@ document.body.removeAttribute("data-author")
 delete document.body.dataset.author
 ```
 
-# Modification du document
+## Modification du document
 
-## element.textContent
+### element.textContent
 
 ```javascript
 const tagline = document.querySelector("#tagline")
@@ -167,7 +172,7 @@ const randomHelloIndex = Math.floor(Math.random() * hellos.length)
 tagline.textContent = hellos[randomHelloIndex]
 ```
 
-## element.innerHTML
+### element.innerHTML
 
 ```javascript
 const tagline = document.querySelector("#tagline")
@@ -176,7 +181,7 @@ const randomHelloIndex = Math.floor(Math.random() * hellos.length)
 tagline.innerHTML = `<strong>${hellos[randomHelloIndex]}</strong>`
 ```
 
-## document.createElement(), before, after, prepend/append
+### document.createElement(), before, after, prepend/append
 
 ```javascript
 const 'cookieInfo' = document.createElement("p")
@@ -188,7 +193,7 @@ document.body.append(cookieInfo)
 
 https://codepen.io/alyra/pen/GRoLXBj
 
-## insertAdjacentHTML
+### insertAdjacentHTML
 
 ```javascript
 const 'cookieInfo' = `<p>Ce site n'utilise pas des cookies.</p>`
@@ -199,7 +204,7 @@ document.body.insertAdjacentHTML('afterend', cookieInfo)
 
 https://codepen.io/alyra/pen/ZEQZMqq
 
-## element.addEventListener
+### element.addEventListener
 
 `el.addEventListener(event, eventHandler)`
 

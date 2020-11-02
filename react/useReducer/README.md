@@ -137,7 +137,7 @@ const [state, setState] = React.useReducer(reducer, initialState)
 
 Notre fonction `reducer` est définie comme ci-dessous :
 
-```
+```javascript
 const reducer = (state, newState) => {
   return {
     ...state,

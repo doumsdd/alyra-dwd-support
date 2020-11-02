@@ -4,7 +4,7 @@
 
 Dans le code, comme dans la vie, certaines actions ont lieu uniquement dans certaines situations.
 
-### if
+### `if`, `if ... else` et `if ... else if ... else`
 
 ```javascript
 if (🌧) {
@@ -32,6 +32,8 @@ if (🌧) {
 }
 ```
 
+Après ces 3 exemples "symboliques" nous allons passer au code :
+
 ```javascript
 const age = prompt("Quel âge as-tu ?")
 if (age > 18) {
@@ -44,11 +46,13 @@ if (age > 18) {
 ```javascript
 const random = Math.random()
 if (random < 0.5) {
-  alert("cette fois tu as perdu")
+  alert("cette fois tu as perdu !")
 } else {
-  alert("cette fois tu as gagné")
+  alert("cette fois tu as gagné !")
 }
 ```
+
+
 
 ### switch
 

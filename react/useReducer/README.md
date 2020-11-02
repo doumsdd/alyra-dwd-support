@@ -162,7 +162,8 @@ https://codepen.io/alyra/pen/zYBjade
 
 ```javascript
 const ShoppingApp = () => {
-  const [shopping, setShopping] = React.useState(["cumin", "curry", "poivre"])
+  const initialShopping = ["cumin", "curry", "poivre"]
+  const [shopping, setShopping] = React.useState(initialShopping)
   const handleDoneClick = (product) => {
     setShopping(shopping.filter((el) => el !== product))
   }

@@ -52,6 +52,13 @@ if (random < 0.5) {
 }
 ```
 
+```javascript
+const day = new Date().getDay()
+if (day === 1) {
+  alert("Pourquoi le lundi est si loin du vendredi, alors que vendredi est si proche du lundi ?")
+}
+```
+
 
 
 ### switch

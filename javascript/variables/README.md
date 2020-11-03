@@ -44,16 +44,15 @@ let message = "Bonjour"
 
 ![](https://assets.codepen.io/4515922/message1.png)
 
-Nous allons donc afficher "BONJOUR".
+Nous venons d'attribuer une valeur à notre variable. Cette opération s'appelle **"affectation".**
 
 Il est possible de remplacer la valeur stockée sous le nom "message".
 
 ```javascript
 let message = "Bonjour"
+// un peu plus tard dans notre script on affecte "Hello World", la valeur de message change
 message = "Hello World"
 ```
-
-Nous allons alors plutôt afficher "HELLO WORLD".
 
 ![](https://assets.codepen.io/4515922/message2.png)
 
@@ -62,6 +61,14 @@ Voici comment nous pouvons modifier la valeur au lieu de la remplacer :
 let message = "Hello World"
 message += "!"
 // message devient "Hello World!"
+```
+
+L'opération que nous venons d'effectuer `message += "!"` joint affectation et addition et s'appelle en fait **"affectation après addition"**. 
+Elle est équivalente à
+
+```javascript
+message = message + "!"
+// message += "!"
 ```
 
 Notre code complet aurait pu être comme ceci :
@@ -81,11 +88,11 @@ Attention, il n'est pas possible de "re-déclarer" la variable.
 
 ```javascript
 let message = "Hello World"
-// 🚫 ceci n'est pas correcte !!!
+// 🚫 ceci n'est pas correcte !!! la boîte message existe déjà !!
 let message = "Bonjour"
 ```
  
- On peut aussi déclarer les variables "read-only", qu'on ne peut pas modifier. Pour cela on utilise le mot-clé `const`
+Il est aussi possible de déclarer une variable avec un *mot-clé* `const` (et pas `let`). Dans ce cas-là nous n'avons pas le droit de modifier sa valeur. 
  
  ```javascript
 let message = "Hello"
@@ -100,29 +107,28 @@ const name = "Alyra"
 name = "Cambridge"
 ```
 
-Il est important de savoir qu'il existe aussi le mot-clé `var` qui permet de déclarer les variables. Son utilisation est en déclin. Il est remplacé par `let` et `const` avec la version de JavaScript référencée comme ES6 (ECMAScript 6 ou ECMAScript 2015).
+Il est important de savoir qu'il existe aussi le troisième mot-clé permettant de déclarer une variable : `var`. Il était remplacé par `let` et `const` avec l'arrivée d'ECMAScript 2015. L'utilisation de `var` est en déclin. Vous allez sans doute le voir dans multiples ressources qui n'étaient pas encore re-adapté à ECMAScript 2015. Mais nous allons jamais l'utiliser.
 
 ---
 
 ## Noms de variables
 
-Peut-on appeler une variable librement ? Presque, il existe quelques limitations.
+Peut-on appeler une variable librement ? Presque, il existe pourtant quelques limitations.
 Le nom d'une variable (son identifiant) peut contenir des lettres majuscules ou minuscules, des chiffres (sauf en première position) et certains caractères comme le dollar `$` ou underscore `_`.
 
-Les noms de variables sont sensibles à la casse : `firstName`, `firstname`, `FirstName` et `FIRSTNAME` sont 4 variables différentes. 
+Les noms de variables sont sensibles à la casse : `firstName`, `firstname`, `FirstName` et `FIRSTNAME` correspondraient aux 4 variables différentes. 
+Le format *camelCase* (`firstName`) est fortement privilégié.
 
-Le format *camelCase* est fortement privilégié.
-
-Il existe aussi quelques mot-clés spéciaux qui ont leur propre signification dans JavaScript et ne peuvent pas alors être utilisés en tant que noms des variables. Vous trouverez la liste des mots interdits [ici.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords)
+Il existe aussi quelques mot-clés spéciaux qui ont leur propre signification dans JavaScript et ne peuvent pas être utilisés en tant que noms des variables. Vous trouverez la liste des mots interdits [ici.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords)
 
 ## Fin de la ligne (`;`)
 
-Les `;` à la fin de chaque ligne ne sont pas obligatoire. JavaScript considere (avec quelques rares exceptions) que la ligne finit par un `;`
+Les `;` à la fin de chaque ligne ne sont pas obligatoires. JavaScript considère (avec quelques rares exceptions) que la ligne finit par un `;`
 
 
 ## Mode strict
 
-Le mode strict a été introduit avec la version ECMAScript 5 qui proposait JavaScript plus restrictif, plus sécurisé, avec quelques changements dans la syntaxe et plusieurs optimisations. En particulier, avec ECMAScript 5 certaines erreurs "silencieuses" deviennent des erreurs explicites (qui peuvent arrêter l'execution des scripts). Àfin de mettre en place une nouvelle version, sans compromettre les sripts existantes, l'instruction `"use strict"` a été proposé. Si la directive `"use strict"` est trouvé au début du script, la version restrictive de JavaScript est servie.
+Le mode strict a été introduit avec la version ECMAScript 5 qui proposait JavaScript plus restrictif, plus sécurisé, avec quelques changements dans la syntaxe et plusieurs optimisations. En particulier, avec ECMAScript 5 certaines erreurs "silencieuses" deviennent des erreurs explicites (qui peuvent arrêter l'execution des scripts). Afin de mettre en place une nouvelle version, sans compromettre les scripts existantes, l'instruction `"use strict"` a été proposé. Si la directive `"use strict"` est trouvé au début du script, la version restrictive de JavaScript est servie.
 
 À partir de ce moment, nous allons commencer nos scripts avec cette directive.
 
@@ -145,8 +151,8 @@ Nous pouvons mettre le code JavaScript directement dans le document HTML entre l
   <body>
     <h1>Bonjour JavaScript 01</h1>
     <a href="/">retour</a>
-    <p>Dans cette exemple, le navigateur te démandera ton prénom afin de te saluer "Hello ! Ravi de te rencontrer, ...."</p>
-    <p>Pour l'intéraction navigateur-utilisateur, nous utilisons des méthodes <code>alert</code> et <code>prompt</code>.</p>
+    <p>Dans cette exemple, le navigateur te demandera ton prénom afin de te saluer "Hello ! Ravi de te rencontrer, ...."</p>
+    <p>Pour l'interaction navigateur-utilisateur, nous utilisons des méthodes <code>alert</code> et <code>prompt</code>.</p>
     <script>
       // active mode strict
       // déclare la variable message et affecte lui la valeur "Hello !"
@@ -192,7 +198,7 @@ Il est recommander de créer les fichiers JavaScript (avec l'extension `.js`) es
   <body>
     <h1>Bonjour JavaScript 04</h1>
     <a href="/">retour</a>
-    <!-- écris ton javascript dans un fichier séparé script.js, qui devrait être executé ci-dessous -->
+    <!-- écris ton javascript dans un fichier séparé script.js, qui devrait être exécuté ci-dessous -->
     <script src="script.js"></script>
   </body>
 </html>

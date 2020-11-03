@@ -150,7 +150,7 @@ Le mode strict a été introduit avec la version ECMAScript 5 qui proposait Java
 
 ## Exemples :
 
-Forkez et clonez [ce repo](https://github.com/pehaa/js-start) ensuite ouvrez le projet dans VSCode est lancez Live Server.
+Forkez et clonez [ce repo,](https://github.com/pehaa/js-start) ensuite ouvrez le projet dans VSCode est lancez Live Server.
 
 ### Exemple (01)
 
@@ -242,6 +242,6 @@ alert(message)
 
 ## Exercices
 
-[javascript quizzes - variables (1)](https://javascript-quizzes.netlify.app/variables-1)
-[javascript variables - repo ex. restants](https://github.com/pehaa/js-start)
+- [javascript quizzes - variables (1)](https://javascript-quizzes.netlify.app/variables-1)
+- [javascript variables - repo ex. restants](https://github.com/pehaa/js-start)
 

@@ -64,11 +64,27 @@ message += "!"
 ```
 
 L'opération que nous venons d'effectuer `message += "!"` joint affectation et addition et s'appelle en fait **"affectation après addition"**. 
-Elle est équivalente à
+Elle est équivalente à :
 
 ```javascript
 message = message + "!"
 // message += "!"
+```
+
+Nous ne sommes pas limités à l'opération "+=", il existe aussi **affectation après soustraction,** **affectation après multiplication** etc.
+
+```javascript
+let price = 100
+const discount = 20
+price -= discount
+// price = price - discount
+```
+
+```javascript
+let price = 100
+const percentDiscount = 0.2
+price *= 1 - percentDiscount
+// price = price * (1 - percentDiscount)
 ```
 
 Notre code complet aurait pu être comme ceci :
@@ -82,7 +98,7 @@ message = message.toUpperCase()
 alert(message)
 ```
 
-Attention, il n'est pas possible de "re-déclarer" la variable.
+**Attention,** il n'est pas possible de "re-déclarer" la variable.
 
 ![](https://assets.codepen.io/4515922/message3.png)
 

@@ -296,21 +296,19 @@ Vous vous rappelez de "lazy initial state" dans l'API de `useState` ?
 const [shopping, setShopping] = useState(expensiveOperationFunction()) // pas bien 👎
 ```
 
-React a besoin du résultat de `expensiveOperationFunction` uniquement une fois, quand le component monte, pour initier `shopping`. Pourtant mis en place comme ci-dessus, `expensiveOperationFunction` sera exécutée à chaque re-render.
+React a besoin du résultat de `expensiveOperationFunction` uniquement une fois, quand le component monte, pour initier `shopping`. Pourtant avec le code comme ci-dessus, la fonction `expensiveOperationFunction` sera exécutée à chaque re-render.
 
-Par contre :
+Pour y remedier et empêcher la re-évaluation d'une fonction coûteuse, nous passons **cette fonction** en tant que "initial state".
 
 ```javascript
-const [shopping, setShopping] = useState(() => expensiveOperationFunction()) //  bien 👍
+const [shopping, setShopping] = useState(expensiveOperationFunction) //  bien 👍 ici nous passons la fonction, mais nous ne l'appelons pas
 ```
 
 ou simplement
 
-```javascript
-const [shopping, setShopping] = useState(expensiveOperationFunction) //  bien 👍
-```
 
-L'API de `useReducer` nous permet également à initier state uniquement a premier render. Pour cela nous utilisons le 3 argument de `useReducer`, par exemple
+
+L'API de `useReducer` nous permet également à initier state uniquement au premier "render". Pour cela nous devons utiliser le 3 argument de `useReducer`, par exemple :
 
 ```javascript
 const init = (initialState) = {

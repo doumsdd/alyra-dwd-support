@@ -5,7 +5,7 @@
 ## Vérification
 
 Les valeurs transmises par l'utilisateur, via un formulaire par exemple, sont souvent de type `"string"`. 
-Nous avons besoin des méthodes qui vérifient si un string contient une valeur numérique ?
+Nous avons besoin des méthodes qui vérifient si un string contient une valeur numérique.
 
 Pour cela nous pouvons utiliser des fonctions `isNaN()` ou `isFinite()`. 
 
@@ -59,10 +59,12 @@ parseInt("11111111", 2) // 255
 
 ### Comment arrondir les nombres ?
 
-- `Math.round(number)` - vers le nombre entier le plus proche
-- `Math.floor(number)` - vers le bas (floor = sol)
-- `Math.ceil(number)` - vers le haut (ceil = plafond)
+- `Math.round(number)` - arrondit vers le nombre entier le plus proche
+- `Math.floor(number)` - arrondit vers le bas (floor = sol)
+- `Math.ceil(number)` - arrondit vers le haut (ceil = plafond)
 - `Math.trunc(number)` - coupe tout ce qui suit `.`
+
+Voici quelques exemples :
 
 ```javascript
 Math.round(2.6) // 3
@@ -75,7 +77,7 @@ Math.ceil(-2.6) // -2
 Math.trunc(-2.6) // -2
 ```
 
-On peut aussi utiliser la méthode `.toFixed()` comme ci-dessous. Attention, le résultat sera de type `"string"`.
+On peut aussi utiliser la méthode `.toFixed()` comme ci-dessous. Mais attention, le résultat sera de type `"string"`.
 
 ```javascript
 (2.789).toFixed(1)
@@ -86,11 +88,20 @@ On peut aussi utiliser la méthode `.toFixed()` comme ci-dessous. Attention, le 
 
 ### Les nombres aléatoires
 
-`Math.random()` génère un nombre aléatoire entre 0 (inclut) et 1 (exclu) [0, 1)
+`Math.random()` génère un nombre aléatoire entre 0 (inclut) et 1 (exclu) `[0, 1)`
 
-À l'aide des opérations arithmétiques et d'autres méthodes disponibles pour nombres nous pouvons obtenir des nombres aléatoires des intervalles différentes.
+À l'aide des opérations arithmétiques et d'autres méthodes disponibles pour nombres, nous pouvons obtenir des nombres aléatoires des intervalles différentes.
 
-Par exemple afin, d'obtenir les nombres d'intervalle `[a, b)` :
+#### Exemples d'utilisation Math.random()
+
+
+Afin d'obtenir les nombres d'intervalle `[0, b)` :
+
+```javascript
+b * Math.random() // [0, b)
+```
+
+Afin d'obtenir les nombres d'intervalle `[a, b)` :
 
 ```javascript
 (b - a) * Math.random() + a // [a, b)
@@ -110,7 +121,7 @@ Math.floor(Math.random * 6) + 1 // comme si on lancé un dé, 6 résultats possi
 Math.floor(Math.random * 2) // comme si on lancé une monnaie, deux résultats possible : 0 ou 1
 ```
 
-### Valeurs maximale et minimale
+### Valeurs maximales et minimales
 
 `Math.max(num1, num2)`
 `Math.min(num1, num2, num3)`
@@ -127,13 +138,10 @@ Math.max(8 * 7, 6 * 9) // 56
 
 le paramètre `base` prend des valeur de `2` au `36`, sa valeur par défaut et `10`
 
-````javascript
+```javascript
 (255).toString(16)  // 'ff'
 (255).toString(2)   // '11111111'
-```javascript
-
-[JS - Tours - 1a](https://jstours-1a.netlify.app/)
-````
+```
 
 ## Exercices
 

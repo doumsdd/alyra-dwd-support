@@ -13,7 +13,7 @@ Vous vous rappelez bien que `"string"` est un des type prymitif dans JavaScript.
 message.length
 ```
 
-Pourquoi est-ce important ? Par exemple, pour vérifier si la longeur du mot de pass est suffisante ?
+Pourquoi est-ce important ? Par exemple, pour vérifier si la longeur du mot de pass est suffisante :
 
 **Exemple:**
 
@@ -25,7 +25,7 @@ if (answer.length < 8) {
 }
 ```
 
-## 2. Et si voulais mettre un string en majuscule, est-ce possible ?
+## 2. Et si on voulait mettre un string en majuscule, est-ce possible ?
 
 ```javascript
 message.toUpperCase()
@@ -42,11 +42,11 @@ if (answer.toUppercase() === "ALYRA") {
 }
 ```
 
-On s'en sert souvent ? Oui ! Comme si pouvez le voir ci dessous unifier la case des lettre permet de faciliter la comparaison avec le string attendu.
+On s'en sert souvent ? Oui ! Comme vous pouvez le voir ci-dessus, unifier la casse des lettres permet de faciliter la comparaison avec le string attendu.
 
 ## 3. Peut-on enlever les espaces au début et à la fin d'un string ?
 
-Tout à fait. Pour cela nous utilisons la méthode `trim`.
+Tout à fait. Nous utilisons la méthode `trim` et cela permet de "nettoyer" l'entrée d'utilisateur.
 
 ```javascript
 message = "  uhm...  "
@@ -56,7 +56,7 @@ message.trim()
 
 ## 4. ... et trouver la position d'un substring ?
 
-Pour cela on utilise la méthode `.indexOf()` qui retourne la position (attention, on compte à partir de 0) ou `-1` si le substring n'est pas trouvé.
+Pour cela on utilise la méthode `.indexOf()` qui retourne la position. Mais attention, avec JavaScript on compte à partir de 0. Si le substring n'est pas trouvé le résultate de `.indexOf()` est `-1`.
 
 **Exemple:**
 
@@ -81,22 +81,23 @@ answer.lastIndexOf("a")
 // 4, le dernier 'a' est à la 5e position, alors 4
 ```
 
-<div class="post-note">
-On peut utiliser indexOf pour vérifier si le substring est présent, comme dans l'exemple ci-dessous.
-</div>
+Nous pouvons, par exemple, vérifier si un lien hypertexte commence par "#"
 
 **Exemple:**
 
 ```javascript
-let answer = prompt("Listez vos écoles?")
-if (answer.indexOf("Alyra") === -1) {
-  alert("Vous n'avez pas mentionné Alyra")
+let link1 = "#top"
+// let link1 = "https://alyra.fr"
+if (link1.indexOf("#") === 0) {
+  console.log("link1 est un lien interne")
+} else {
+  console.log("link1 est un lien externe")
 }
 ```
 
 ## 5. Trouver le carectère selon la position ?
 
-Vous avez besoin de connaître le premier caractère d'un string? Ou le 10e. Première chose à retenir - les caractères sont numérotés à partir du zéro. Le premier caractère est celui avec l'index `0`. 
+Vous avez besoin de connaître le premier caractère d'un string? Ou le 10e. Rappellons-nous - avec JavaScript nous comptons à partir de zéro - les caractères sont numérotés à partir du zéro. Le premier caractère est celui avec l'index `0`. 
 
 ```javascript
 message[0]
@@ -135,7 +136,7 @@ message = message[0].toUpperCase() + message.slice(1)
 
 ## 7. Peut on vérifier si le string contient, commence par ou finit par quelque chose ?
 
-Oui on peut. Ceci est possible, au plus simple, avec des méthodes : `includes`, `startsWith` et `endsWith` 🤩
+Oui on peut. Ceci est possible, avec des méthodes : `includes`, `startsWith` et `endsWith` 🤩
 
 ```javascript
 let message = "Bonjour Alyra !"

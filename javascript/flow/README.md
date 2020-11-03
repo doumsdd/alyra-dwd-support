@@ -164,6 +164,8 @@ Ci-dessous nous allons afficher les nombres de 0 a 5 à trois méthodes
 
 ### while
 
+![](https://wptemplates.pehaa.com/assets/alyra/while.png)
+
 ```javascript
 let i = 0
 while (i <= 5) {
@@ -173,24 +175,28 @@ while (i <= 5) {
 // i = 0
 // while (0 <= 5) -> true -> j'entre dans la boucle
 // ***** console.log(0) *****
-// i = 0 + 1 = 1
+// ***** i = 0 + 1 = 1  *****
 // while (1 <= 5) -> true -> je reste dans la boucle
 // ***** console.log(1) *****
-// i = 1 + 1 = 2
+// ***** i = 1 + 1 = 2  *****
 // while (2 <= 5) -> true -> je reste dans la boucle
 // ***** console.log(2) *****
-// i = 2 + 1 = 3
+// ***** i = 2 + 1 = 3  *****
 // while (3 <= 5) -> true -> je reste dans la boucle
 // ***** console.log(3) *****
-// i = 3 + 1 = 4
+// ***** i = 3 + 1 = 4  *****
 // while (4 <= 5) -> true -> je reste dans la boucle
 // ***** console.log(4) *****
-// i = 4 + 1 = 5
+// ***** i = 4 + 1 = 5  *****
 // while (5 <= 5) -> true -> je reste dans la boucle
 // ***** console.log(5) *****
-// i = 5 + 1 = 6
+// ***** i = 5 + 1 = 6  *****
 // while (6 <= 5) -> false -> je n'entre pas dans la boucle
 ```
+
+### do while
+
+![](https://wptemplates.pehaa.com/assets/alyra/do_while.png)
 
 
 ```javascript
@@ -203,69 +209,31 @@ do {
 // i = 0
 // j'entre dans la boucle
 // ***** console.log(0) *****
-// i = 0 + 1 = 1
+// ***** i = 0 + 1 = 1  *****
 // while (1 <= 5) -> true -> je reste dans la boucle
 // ***** console.log(1) *****
-// i = 1 + 1 = 2
+// ***** i = 1 + 1 = 2  *****
 // while (2 <= 5) -> true -> je reste dans la boucle
 // ***** console.log(2) *****
-// i = 2 + 1 = 3
+// ***** i = 2 + 1 = 3  *****
 // while (3 <= 5) -> true -> je reste dans la boucle
 // ***** console.log(3) *****
-// i = 3 + 1 = 4
+// ***** i = 3 + 1 = 4  *****
 // while (4 <= 5) -> true -> je reste dans la boucle
 // ***** console.log(4) *****
-// i = 4 + 1 = 5
+// ***** i = 4 + 1 = 5  *****
 // while (5 <= 5) -> true -> je reste dans la boucle
 // ***** console.log(5) *****
-// i = 5 + 1 = 6
+// ***** i = 5 + 1 = 6  *****
 // while (6 <= 5) -> false -> je sors de pas la boucle
 ```
 
 ```javascript
-/* ici on affiche toutes les nombers paires 0, 2, 4, ..., 100 */
-let i = 0
-while (i <= 100) {
-  console.log(i)
-  i += 2
-}
-```
-
-```javascript
 const question = "Choisis un nombre positif"
-let answer = 1
-while (answer <= 0) {
-  answer = prompt(question)
-}
-/* La question n'était pas posée */
-```
-
-### do while
-
-```javascript
-let i = 0
-do {
-  console.log(i)
-  i++
-} while (i <= 100)
-```
-
-```javascript
-/* ici on affiche toutes les nombers paires 0, 2, 4, ..., 100 */
-let i = 0
-do {
-  console.log(i)
-  i += 2
-} while (i <= 100)
-```
-
-```javascript
-const question = "Choisis un nombre positif"
-let answer = 1
+let answer
 do {
   answer = prompt(question)
 } while (answer <= 0)
-/* La question était posée une fois */
 ```
 
 ### for

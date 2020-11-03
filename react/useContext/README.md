@@ -53,7 +53,7 @@ ensuite nous passons `filter` et `setFilter` en tant que props dans `GradientsSe
 
 Nous devons aussi poursuivre tout le chemin entre `Gradients` vers `GradientTagButton` en passant à chaque fois des props `filter` et `setFilter`.
 
-Existe-il une autre possibilité ? Passer les props tout le long n'est pas très gênant dans ce projet-ci, mais imaginons un projet plus complexe...
+Existe-t-il une autre possibilité ? Passer les props tout le long n'est pas très gênant dans ce projet-ci, mais imaginons un projet plus complexe...
 
 Dans la programmation, le mot _context_ peut être interprété comme "l'information pertinente". On utilise _context_ dans React si une information est pertinente pour plusieurs components en même temps. Les exemples type sont : theme (_dark_ vs. _light_), language (version 'FR' ou 'EN'), le choix de devise dans une application e-commerce.
 
@@ -288,7 +288,7 @@ export default GradientsSelect
   - exporter le contexte et son provider
 - Pour utiliser le contexte
   - Emballer vos components avec le provider
-  - Dans les fichiers components, importer le contexte et passer le au hook `useContext`
+  - Dans les fichiers components, importer le contexte et passez-le au hook `useContext`
 
 ---
 

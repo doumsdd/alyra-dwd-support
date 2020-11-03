@@ -280,7 +280,7 @@ const initialState = {
 }
 ```
 
-Notre fonction `reducer` supportera 4 actions "LOADING" (`loading` devient `true`), "RESOLVED", "ERROR" et "NEXT PAGE".
+Notre fonction `reducer` supportera 4 actions "LOADING", "NEXT PAGE", "RESOLVED" et "ERROR".
 
 ```javascript
 const reducer = (state, action) => {

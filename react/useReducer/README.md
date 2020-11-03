@@ -141,7 +141,7 @@ Notre fonction `reducer` est définie comme ci-dessous :
 const reducer = (state, newState) => {
   return {
     ...state,
-    ...newState
+    ...newState,
   }
 }
 ```
@@ -264,11 +264,11 @@ https://codepen.io/alyra/pen/jOrxZov
 
 Analysez l'exemple ci-dessous qui fusionne l'approche d'exemple 2 et d'exemple 3
 
-`useState` - code de départ est ici :
+Vous trouverez le code de départ (fonctionnel mais utilisant `useState`) ici :
 
 https://codepen.io/alyra/pen/VwaBvqZ
 
-Essayez de faire le refactoring vous même, vous devrez alors mettre en place une variable `state` avec la valeur initiale.
+Essayez de faire le refactoring vous même, vous devez alors mettre en place une variable `state` avec la valeur initiale
 
 ```javascript
 const initialState = {
@@ -276,13 +276,80 @@ const initialState = {
   loading: false,
   page: 1,
   hasNext: true,
-  error: false
+  error: false,
 }
 ```
 
-Notre fonction `reducer` supportera 4 actions "LOADING" (`loading` devient `true`), "RESOLVED", "ERROR" et "NEXT PAGE".
+Notre fonction `reducer` supportera 4 actions "LOADING", "NEXT PAGE", "RESOLVED" et "ERROR".
 
-`useReducer` - vous trouverez le code complet ici :
+```javascript
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "LOADING":
+      return {
+        ...state,
+        loading: true,
+      }
+    case "NEXT PAGE":
+      return {
+        ...state,
+        page: state.page + 1,
+      }
+    case "RESOLVED":
+      return {
+        ...state,
+        loading: false,
+        hasNext: !!action.data.next,
+        planets: [...state.planets, ...action.data.results],
+      }
+    case "ERROR":
+      return {
+        ...state,
+        error: action.error,
+      }
+    default:
+      throw new Error(`Unsupported action type ${action.type}`)
+  }
+}
+```
+
+et nous allons remplacer chaque state "setter" comme ceci :
+
+```javascript
+/* avant :
+// action type "NEXT PAGE"
+setPage(page + 1)
+*/
+dispatch({ type: "NEXT PAGE" })
+```
+
+```javascript
+/* avant :
+// action type "LOADING"
+setLoading(true);
+*/
+dispatch({ type: "LOADING" })
+```
+
+```javascript
+/* avant :
+// action type "RESOLVED"
+setLoading(false);
+setPlanets([...planets, ...data.results]);
+setHasNext(!!data.next);
+*/
+dispatch({ type: "RESOLVED", data })
+```
+
+```javascript
+/*
+// action type "ERROR"
+setError(error.message);
+*/
+dispatch({ type: "ERROR", error: error.message })
+```
+
+Vous trouverez le code complet ici :
 
 https://codepen.io/alyra/pen/GRqdxrQ
 
@@ -303,7 +370,6 @@ Pour remédier à ce problème et empêcher la re-évaluation d'une fonction co�
 ```javascript
 const [shopping, setShopping] = useState(expensiveOperationFunction) //  bien 👍 ici nous passons la fonction, mais nous ne l'appelons pas
 ```
-
 
 **L'API de `useReducer`** nous permet également d'initier state uniquement au premier "render". Pour cela nous devons utiliser le 3 argument de `useReducer`, par exemple :
 

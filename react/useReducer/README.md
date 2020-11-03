@@ -2,7 +2,7 @@
 
 Le hook `useReducer` permet de gérer le _state_, il a le même rôle que `useState`.
 
-`useState` sera le premier choix en ce qui concerne la gestion du state. Le hook `useReducer` est son alternative **plus configurable** mais aussi **plus complexe.** Nous pouvons dire que `useReducer` et une extension de `useState.`
+`useState` sera le premier choix en ce qui concerne la gestion du state. Le hook `useReducer` est son alternative **plus configurable** mais aussi **plus complexe.** Nous pouvons dire que `useReducer` est une extension de `useState.`
 
 Pour comprendre son comportement nous allons transformer quelques exemples où nous utilisons initialement `useState` vers `useReducer`.
 
@@ -11,7 +11,7 @@ Pour comprendre son comportement nous allons transformer quelques exemples où n
 ```javascript
 const reducer = (state, action) => {
   /* ... */
-  // retourne nouvelle valeur de state
+  // retourne une nouvelle valeur de state
 }
 
 const [state, dispatch] = React.useReducer(reducer, initialState, init)
@@ -31,7 +31,7 @@ reducer(state, action)
 
 ![](https://wptemplates.pehaa.com/assets/alyra/usereducer-anatomie.png)
 
-La dénomination `dispatch`, `action` et `reducer` est tout à fait facultative et suit une certaine convention qui a ces racines dans `Redux`.
+La dénomination `dispatch`, `action` et `reducer` est tout à fait facultative et suit une certaine convention provenant de `Redux`.
 
 Dans notre premier exemple, pour voir plus clairement le passage de `useState` vers `useReducer`, nous n'allons pas utiliser les noms `dispatch` ou `action`.
 
@@ -96,13 +96,13 @@ const [count, setCount] = React.useReducer(reducer, 0)
 
 ---
 
-Pour résumer, `useReducer` est comme `useState` avec une étape supplémentaire, la fonction `reducer`.
+Pour résumer, `useReducer` est comme `useState` avec en un complément, la fonction `reducer`.
 
 Voici le code complet :
 
 https://codepen.io/alyra/pen/Pozeedw
 
-Est-ce cet exemple plus simple (lisible, maintenable) avec `useReducer` qu'avec `useState` ? Non, et nous allons pas utiliser `useReducer` dans ce type des cas.
+Est-ce que cet exemple est plus simple, plus lisible, plus maintenable avec `useReducer` qu'avec `useState` ? Non, et nous allons pas utiliser `useReducer` dans ce type des cas.
 
 Nous allons maintenant passer aux exemples où l'utilisation de `useReducer` est justifiée (notre code deviendra plus lisible, plus court, plus maintanable). Nous allons voir dans les exemples suivants que nous pouvons tailler `reducer` selon nos besoins. Par conséquent, nous avons aussi plus de liberté au niveau de la fonction `dispatch`.
 
@@ -124,7 +124,7 @@ et nous utilisons ensuite :
 - `setSize(event.target.value)`
 - `setItalic(event.target.checked)`
 
-Voici la possible version avec `React.useReducer`
+Voici un exemple d'une version avec `React.useReducer`
 
 ```javascript
 const initialState = {
@@ -214,7 +214,7 @@ const AddProductForm = (props) => {
 }
 ```
 
-Dans l'exemple si-dessus nous appelons `setShopping` pour effectuer une des deux actions :
+Dans l'exemple ci-dessus nous appelons `setShopping` pour effectuer une des deux actions :
 
 - ajouter un nouveau produit sur la liste (nous pouvons appeler cette action "ADD")
 - retirer un produit de la liste ("REMOVE")
@@ -264,11 +264,11 @@ https://codepen.io/alyra/pen/jOrxZov
 
 Analysez l'exemple ci-dessous qui fusionne l'approche d'exemple 2 et d'exemple 3
 
-Vous trouverez le code de départ (fonctionnel mais utilisant `useState`) ici :
+`useState` - code de départ est ici :
 
 https://codepen.io/alyra/pen/VwaBvqZ
 
-Essayez de faire le refactoring vous même, vous devez alors mettre en place une variable `state` avec la valeur initiale
+Essayez de faire le refactoring vous même, vous devrez alors mettre en place une variable `state` avec la valeur initiale.
 
 ```javascript
 const initialState = {
@@ -280,76 +280,9 @@ const initialState = {
 }
 ```
 
-Notre fonction `reducer` supportera 4 actions "LOADING", "NEXT PAGE", "RESOLVED" et "ERROR".
+Notre fonction `reducer` supportera 4 actions "LOADING" (`loading` devient `true`), "RESOLVED", "ERROR" et "NEXT PAGE".
 
-```javascript
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "LOADING":
-      return {
-        ...state,
-        loading: true
-      };
-    case "NEXT PAGE":
-      return {
-        ...state,
-        page: state.page + 1
-      };
-    case "RESOLVED":
-      return {
-        ...state,
-        loading: false,
-        hasNext: !!action.data.next,
-        planets: [...state.planets, ...action.data.results]
-      };
-    case "ERROR":
-      return {
-        ...state,
-        error: action.error
-      };
-    default:
-      throw new Error(`Unsupported action type ${action.type}`);
-  }
-}
-```
-
-et nous allons remplacer chaque state "setter" comme ceci :
-
-```javascript
-/* avant :
-// action type "NEXT PAGE"
-setPage(page + 1)
-*/
-dispatch({ type: "NEXT PAGE" })
-```
-
-```javascript
-/* avant :
-// action type "LOADING"
-setLoading(true);
-*/
-dispatch({ type: "LOADING" })
-```
-
-```javascript
-/* avant :
-// action type "RESOLVED"
-setLoading(false);
-setPlanets([...planets, ...data.results]);
-setHasNext(!!data.next);
-*/
-dispatch({ type: "RESOLVED", data });
-```
-
-```javascript
-/*
-// action type "ERROR"
-setError(error.message);
-*/
-dispatch({ type: "ERROR", error: error.message });
-```
-
-Vous trouverez le code complet ici :
+`useReducer` - vous trouverez le code complet ici :
 
 https://codepen.io/alyra/pen/GRqdxrQ
 
@@ -363,16 +296,16 @@ Vous vous rappelez de "lazy initial state" dans l'API de `useState` ?
 const [shopping, setShopping] = useState(expensiveOperationFunction()) // pas bien 👎
 ```
 
-React a besoin du résultat de `expensiveOperationFunction` uniquement une fois, quand le component monte, pour initier `shopping`. Pourtant avec le code comme ci-dessus, la fonction `expensiveOperationFunction` sera exécutée à chaque re-render.
+React a besoin du résultat de `expensiveOperationFunction` une fois seulement, lorsque le component est monté, pour initier `shopping`. Cependant avec le code présenté ci-dessus, la fonction `expensiveOperationFunction` sera exécutée à chaque re-render.
 
-Pour y remedier et empêcher la re-évaluation d'une fonction coûteuse, nous passons **cette fonction** (sans l'appeler) en tant que "initial state".
+Pour remédier à ce problème et empêcher la re-évaluation d'une fonction coûteuse, nous passons **cette fonction** (sans l'appeler) en tant que "initial state".
 
 ```javascript
 const [shopping, setShopping] = useState(expensiveOperationFunction) //  bien 👍 ici nous passons la fonction, mais nous ne l'appelons pas
 ```
 
 
-**L'API de `useReducer`** nous permet également à initier state uniquement au premier "render". Pour cela nous devons utiliser le 3 argument de `useReducer`, par exemple :
+**L'API de `useReducer`** nous permet également d'initier state uniquement au premier "render". Pour cela nous devons utiliser le 3 argument de `useReducer`, par exemple :
 
 ```javascript
 const init = (initialState) = {

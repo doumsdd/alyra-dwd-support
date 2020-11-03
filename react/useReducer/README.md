@@ -282,6 +282,73 @@ const initialState = {
 
 Notre fonction `reducer` supportera 4 actions "LOADING" (`loading` devient `true`), "RESOLVED", "ERROR" et "NEXT PAGE".
 
+```javascript
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "LOADING":
+      return {
+        ...state,
+        loading: true
+      };
+    case "NEXT PAGE":
+      return {
+        ...state,
+        page: state.page + 1
+      };
+    case "RESOLVED":
+      return {
+        ...state,
+        loading: false,
+        hasNext: !!action.data.next,
+        planets: [...state.planets, ...action.data.results]
+      };
+    case "ERROR":
+      return {
+        ...state,
+        error: action.error
+      };
+    default:
+      throw new Error(`Unsupported action type ${action.type}`);
+  }
+}
+```
+
+et nous allons remplacer chaque state "setter" comme ceci :
+
+```javascript
+/* avant :
+// action type "NEXT PAGE"
+setPage(page + 1)
+*/
+dispatch({ type: "NEXT PAGE" })
+```
+
+```javascript
+/* avant :
+// action type "LOADING"
+setLoading(true);
+*/
+dispatch({ type: "LOADING" })
+```
+
+```javascript
+/* avant :
+// action type "RESOLVED"
+setLoading(false);
+setPlanets([...planets, ...data.results]);
+setHasNext(!!data.next);
+*/
+dispatch({ type: "RESOLVED", data });
+```
+
+```javascript
+/*
+// action type "ERROR"
+setError(error.message);
+*/
+dispatch({ type: "ERROR", error: error.message });
+```
+
 `useReducer` - vous trouverez le code complet ici :
 
 https://codepen.io/alyra/pen/GRqdxrQ

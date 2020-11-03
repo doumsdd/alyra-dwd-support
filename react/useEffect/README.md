@@ -4,7 +4,7 @@
 
 La mission d'un component React et de créer un rendu dans la page. La fonction qui définit le component est réévaluée à chaque fois où une valeur de props ou la valeur de state change.
 
-Le nouvel rendu est généré, il est comparé détail par détail avec le rendu existant. Les éléments qui changent, sont mis à jour.
+Le nouvel rendu est généré, il est comparé détail par détail avec le rendu existant. Les éléments qui changent sont mis à jour.
 
 Parfois, nous avons besoin de faire quelque chose d'autre, par exemple :
 
@@ -147,14 +147,14 @@ Maintenant à chaque fois que `ShoppingApp` _render_ le titre du document est mo
 
 ### localStorage
 
-Nous avons utiliser `localStorage` afin d'enregistrer dans la mémoire du navigateur notre liste des courses et la récupérer à la prochaine visite (après rechargement de la page).
+Nous avons utilisé `localStorage` afin d'enregistrer dans la mémoire du navigateur notre liste des courses et la récupérer à la prochaine visite (après rechargement de la page).
 
 Un petit rappel sur l'utilisation de `localStorage` :
 
 - `localStorage.setItem("colorMode", mode)` - enregistre la valeur de mode dans l'objet `localStorage`
 - `localStorage.getItem("colorMode")` - permet de récupérer la valeur enregistrée sous la clé `"colorMode"`
 - localStorage enregistre tout en format de `string`
-- afin d'enregistrer un objet nous utilisons le format JSON :
+- afin d'enregistrer un objet, nous utilisons le format JSON :
   - `JSON.stringify(myObjet)` transforme objet `myObjet` en string format JSON
   - `JSON.parse(myJSONString)` transforme `myJSONString` en objet JavaScript
 

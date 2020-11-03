@@ -304,11 +304,8 @@ Pour y remedier et empêcher la re-évaluation d'une fonction coûteuse, nous pa
 const [shopping, setShopping] = useState(expensiveOperationFunction) //  bien 👍 ici nous passons la fonction, mais nous ne l'appelons pas
 ```
 
-ou simplement
 
-
-
-L'API de `useReducer` nous permet également à initier state uniquement au premier "render". Pour cela nous devons utiliser le 3 argument de `useReducer`, par exemple :
+**L'API de `useReducer`** nous permet également à initier state uniquement au premier "render". Pour cela nous devons utiliser le 3 argument de `useReducer`, par exemple :
 
 ```javascript
 const init = (initialState) = {

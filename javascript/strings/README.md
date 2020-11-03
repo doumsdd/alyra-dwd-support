@@ -4,16 +4,16 @@
 let message = "Parlons du type string !"
 ```
 
-Vous vous rappelez bien que `"string"` est un des type prymitif dans JavaScript. Il existe plusieures méthodes que nous pouvons appliquer aux "strings" pour changer leur format ou récuperer des information spécifiques.
+Vous vous rappelez bien que `"string"` est un des type primitif dans JavaScript. Il existe plusieurs méthodes que nous pouvons appliquer aux "strings" pour changer leur format ou récupérer des information spécifiques.
 
 
 ## 1. Quelle est la longueur d'un string ?
-
+plusieurs
 ```javascript
 message.length
 ```
 
-Pourquoi est-ce important ? Par exemple, pour vérifier si la longeur du mot de pass est suffisante :
+Pourquoi est-ce important ? Par exemple, pour vérifier si la longueur du mot de pass est suffisante :
 
 **Exemple:**
 
@@ -56,7 +56,7 @@ message.trim()
 
 ## 4. ... et trouver la position d'un substring ?
 
-Pour cela on utilise la méthode `.indexOf()` qui retourne la position. Mais attention, avec JavaScript on compte à partir de 0. Si le substring n'est pas trouvé le résultate de `.indexOf()` est `-1`.
+Pour cela on utilise la méthode `.indexOf()` qui retourne la position. Mais attention, avec JavaScript on compte à partir de 0. Si le substring n'est pas trouvé le résultat de `.indexOf()` est `-1`.
 
 **Exemple:**
 
@@ -95,9 +95,9 @@ if (link1.indexOf("#") === 0) {
 }
 ```
 
-## 5. Trouver le carectère selon la position ?
+## 5. Trouver le caractère selon la position ?
 
-Vous avez besoin de connaître le premier caractère d'un string? Ou le 10e. Rappellons-nous - avec JavaScript nous comptons à partir de zéro - les caractères sont numérotés à partir du zéro. Le premier caractère est celui avec l'index `0`. 
+Vous avez besoin de connaître le premier caractère d'un string? Ou le 10e. Rappelons-nous - avec JavaScript nous comptons à partir de zéro - les caractères sont numérotés à partir du zéro. Le premier caractère est celui avec l'index `0`. 
 
 ```javascript
 message[0]
@@ -120,10 +120,10 @@ message.charAt(message.length - 1)
 
 ```javascript
 let message = "Bonjour Alyra"
-message.slice(0, 5) // 'Bonjo', de 0 à 5 (5 pas inclu)
-message.slice(0, 1) // 'B', de 0 à 1, (1 pas inclu)
+message.slice(0, 5) // 'Bonjo', de 0 à 5 (5 pas inclus)
+message.slice(0, 1) // 'B', de 0 à 1, (1 pas inclus)
 message.slice(8) // 'Alyra', de 8 à la fin
-message.slice(8, 10) // 'Al', de 8 à 10, (10 pas inclu)
+message.slice(8, 10) // 'Al', de 8 à 10, (10 pas inclus)
 ```
 
 Voici comment on peut utiliser `slice` pour mettre en majuscule uniquement le premier caractère :
@@ -152,4 +152,4 @@ message.endsWith("!!")
 
 ## Exercices
 
-[JavaScript Quizzez - Strings](https://javascript-quizzes.netlify.app/strings)
+[JavaScript Quizzes - Strings](https://javascript-quizzes.netlify.app/strings)

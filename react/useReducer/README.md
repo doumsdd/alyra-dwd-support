@@ -298,7 +298,7 @@ const [shopping, setShopping] = useState(expensiveOperationFunction()) // pas bi
 
 React a besoin du résultat de `expensiveOperationFunction` uniquement une fois, quand le component monte, pour initier `shopping`. Pourtant avec le code comme ci-dessus, la fonction `expensiveOperationFunction` sera exécutée à chaque re-render.
 
-Pour y remedier et empêcher la re-évaluation d'une fonction coûteuse, nous passons **cette fonction** en tant que "initial state".
+Pour y remedier et empêcher la re-évaluation d'une fonction coûteuse, nous passons **cette fonction** (sans l'appeler) en tant que "initial state".
 
 ```javascript
 const [shopping, setShopping] = useState(expensiveOperationFunction) //  bien 👍 ici nous passons la fonction, mais nous ne l'appelons pas

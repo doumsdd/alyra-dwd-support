@@ -238,10 +238,34 @@ do {
 
 ### for
 
+![](https://wptemplates.pehaa.com/assets/alyra/for.png)
+
 ```javascript
-for (let i = 0; i <= 100; i++) {
+for (let i = 0; i <= 5; i += 1) {
   console.log(i)
 }
+
+
+// begin : i = 0
+// 0 <= 5 -> true -> j'entre dans la boucle
+// ***** console.log(0) *****
+// step : i = 0 + 1 = 1
+// 1 <= 5 -> true -> je reste dans la boucle
+// ***** console.log(1) *****
+// step : i = 1 + 1 = 2
+// 2 <= ) -> true -> je reste dans la boucle
+// ***** console.log(2) *****
+// step : i = 2 + 1 = 3
+// 3 <= 5 -> true -> je reste dans la boucle
+// ***** console.log(3) *****
+// step : i = 3 + 1 = 4 
+// 4 <= 5 -> true -> je reste dans la boucle
+// ***** console.log(4) *****
+// step : i = 4 + 1 = 5 
+// 5 <= 5 -> true -> je reste dans la boucle
+// ***** console.log(5) *****
+// step :  i = 5 + 1 = 6  
+// 6 <= 5 -> false -> je sors de pas la boucle
 ```
 
 ```javascript
@@ -252,35 +276,49 @@ for (let i = 0; i <= 100; i += 2) {
 
 ## Scope
 
+Observons ces 2 exemples du code où je programme mes repas (burrito le week-end et salade dans la semaine).
+Dans le premier exemple je déclare la variable `dinner` dans la racine de mon script. Ensuite selon le jour (week-end ou pas) j'affecte une valeur à `dinner`.
+
 ```javascript
+"use strict"
 const day = new Date().getDay()
 let dinner
 if (day > 5) {
-  dinner = "burrito"
+  dinner = "pizza 🍕"
+  console.log(`Aujourd'hui c'est ${dinner}.`)
 } else {
-  dinner = "salade"
+  dinner = "salade 🥗"
+  console.log(`Aujourd'hui c'est ${dinner}.`)
 }
 
-console.log(dinner) // 'burrito' ou 'salade' selon le jour
+console.log(`Tu as aimé ta ${dinner} au dinner ?`)
+
+// "Aujourd'hui c'est salade 🥗."
+// "Tu as aimé ta salade 🥗 au dinner ?"
 ```
 
+Dans le 2e exemple la variable `dinner` est déclarée et la valeur est attribuée en même temps, dans le body de `if` ou `else`.
 Que sera affiché ?
 
 ```javascript
+"use strict"
 const day = new Date().getDay()
 if (day > 5) {
-  let dinner = "burrito"
-  alert(`Aujourd'hui c'est ${dinner}`)
+  let dinner = "pizza 🍕"
+  console.log(`Aujourd'hui c'est ${dinner}`)
 } else {
-  let dinner = "salade"
-  alert(`Aujourd'hui c'est ${dinner}`)
+  let dinner = "salade 🥗"
+  console.log(`Aujourd'hui c'est ${dinner}`)
 }
-alert(`Aujourd'hui c'est ${dinner}`)
+console.log(`Aujourd'hui c'est ${dinner}`)
+//"Aujourd'hui c'est salade 🥗"
+// Uncaught ReferenceError: dinner is not defined at script.js:10
 ```
 
 `const` et `let` ont la **scope** (portée) limitée au bloc ({...}) dans lequel elles sont déclarées.  
-Les variables `const` et `let` ne sont pas "vues" à l'exterieur du bloc dans lequel elles sont déclarées.  
-On peur utiliser le même nom de variable dans un bloc intérieur, ceci va prendre-dessus - _shadow_ la variable extérieure.
+Autrement dit, les variables `const` et `let` ne sont pas "vues" **à l'exterieur** du bloc dans lequel elles sont déclarées.  
+
+On peut utiliser le même nom de variable dans un bloc intérieur, ceci va prendre-dessus - _shadow_ la variable extérieure.
 
 Et maintenant, que sera affiché ?
 

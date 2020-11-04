@@ -287,8 +287,30 @@ for (let i = 0; i <= 5; i += 1) {
 // 6 <= 5 -> false -> je sors de pas la boucle
 ```
 
+## *Breaking the Loop*
+
+Nous pouvons forcer la sortie de la boucle. Pour cela nous utilisons la directive `break` (comme dans `switch`).  
+Par exemple :
+
 ```javascript
+const dinner = "pizza"
+let answer 
+do {
+  answer = prompt("Devine ce que nous avons pour le dinner ?")
+  if ( answer === "je n'ai pas faim") break
+} while (answer !== dinner)
+if (answer === dinner) {
+  alert("Tu a deviné!")
+}
+```
+
+Il est aussi possible de forcer la boucle à aller vers l'itération suivante. 
+Par exemple :
+
+```javascript
+// la boucle for pour les superstitieux ;)
 for (let i = 0; i <= 100; i += 2) {
+  if (i === 13) continue
   console.log(i)
 }
 ```

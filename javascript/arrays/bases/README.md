@@ -221,9 +221,12 @@ console.log(array3)
 // ["a", "b", "c", "d", "e", "f"]
 ```
 
-## String ↔️ Array
+## String ↔️ Array `split` & `join`
 
-`split` & `join`
+Il eat pratique de savoir comment transformer les strings en arrays et vice versa. Pour cela nous avons deux méthodes :
+- `split` qui opere sur les valeurs de type `"string"`
+- `join` qui opere sur les arrays
+
 
 ```javascript
 const arrayFromString = "hello".split("")

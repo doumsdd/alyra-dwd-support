@@ -194,6 +194,25 @@ while (i <= 5) {
 // while (6 <= 5) -> false -> je n'entre pas dans la boucle
 ```
 
+Si nous savons afficher le chiffres de 0 à 5, rien nous empêche d'afficher les nombres de 0 à 1000, 1000000, etc.
+Et si nous savons afficher les nombres, rien nous empêche de faire quelque choses plus utiles avec, par exemples calculer leur somme.
+
+
+```javascript
+// 0 + 1 + 2 + .... + 100
+// j'initialise sum
+let sum = 0
+let i = 0
+while (i <= 100) {
+  console.log(i)
+  sum += i
+  i += 1  
+}
+console.log(sum)
+// 5050
+```
+
+
 ### do while
 
 ![](https://wptemplates.pehaa.com/assets/alyra/do_while.png)
@@ -334,8 +353,10 @@ if (day > 5) {
 }
 console.log(`Tu as aimé ta ${dinner} au dinner ?`)
 //"Aujourd'hui c'est salade 🥗"
-// "Tu as aimé ta soupe 🍜 au dinner ?"
+//"Tu as aimé ta soupe 🍜 au dinner ?"
 ```
+
+Comme vous pouvez voir, *scope* d'une variable est important. Une utilisation sans contrôle peut provoquer des erreurs silencieuses qui faussent execution de votre script. Nous allons revenir à ce sujet prochainement, à l'occasion d'introduction des fonctions.
 
 ## Exercices
 

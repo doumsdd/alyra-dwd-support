@@ -22,7 +22,7 @@ const shopping = ["tshirt", "shorts", "pareo"]
 shopping.length // 3
 ```
 
-La propriété `length` est souvent utilisée dans le contexte booléen, puisque `[]` est une valeur *truthy*. Dans l'exemple suivant, nous utilisons `shopping.length` puisque `shopping` serait toujours évalué *truthy*.
+La propriété `length` est souvent utilisée dans le contexte booléen, afin de vérifier si un array est vide. (Rappelons nous que `[]` est une valeur *truthy*). Dans l'exemple suivant, nous utilisons `shopping.length` puisque `shopping` serait toujours évalué *truthy*.
 
 ```javascript
 if (shopping.length) {
@@ -63,7 +63,7 @@ myList1.shift() // myList1 devient [5, 8, 77], retourne 2
 myList1.unshift(-11) // myList1 devient [-11, 5, 8, 77], retourne 4
 ```
 
-Méthodes `push` et `unshift` modifient l'array et retournent length de l'array après modification
+Méthodes `push` et `unshift` modifient l'array et retournent la longueur (`length`) de l'array  après modification
 
 ```
 const myList1 = [2, 5, 8, 90]
@@ -79,15 +79,15 @@ const removed = myList1.pop() // myList1 devient [2, 5, 8]
 console.log(removed) // 90
 ```
 
-Attention : Les méthodes `pop` et `push` sont beacoup plus rapide qut `shift` et `unshift`.
+Attention : Les méthodes `pop` et `push` sont beaucoup plus rapide qut `shift` et `unshift`.
 
-Pour d'autre cas que début et fin de l'array, nous avons la méthode `splice`
+Le méthodes `pop`, `push` et `shift`, `unshift` opèrent sur les extremités d'un array. Nous avons aussi une méthode générique `splice`
 
-syntaxe: `arr.splice(index[, deleteCount, elem1, ..., elemN])`
+Le syntaxe: `arr.splice(index[, deleteCount, elem1, ..., elemN])` peut étre lu :
 
 - positionne-toi au numéro indiqué par index, enlève `deleteCount` éléments et insère `elem1, ..., elemN`
 
-Cette méthode modifie `arr` et retourne l'array des élément enlevé.
+Méthode `splice` modifie `arr` et retourne l'array des éléments enlevés.
 
 Voici les exemples (source [splice sur mdn](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/splice))
 
@@ -125,8 +125,9 @@ let enleves = mesPoissons.splice(2)
 
 ## Méthode slice
 
-Il existe aussi la méthode slice (plus simple et "moins puissante") qui fonctionne comme slice pour les strings, `slice` ne modifie pas l'array, mais crée une copie.
-
+Il existe aussi la méthode `slice` (plus simple et "moins puissante") qui fonctionne comme `slice` pour les strings.   
+`slice` ne modifie pas l'array, mais crée une copie.
+`
 ```javascript
 const mesPoissons = ["scalaire", "clown", "mandarin", "chirurgien", "bleu"]
 let poissonsChoisis = mesPoissons.slice(2)
@@ -157,13 +158,13 @@ Il existe aussi méthode `sort` qui permet de changer l'ordre des éléments sel
 
 ## Parcourir la liste
 
-méthode classique
+- méthode classique, boucle `for` classique
 
 ```javascript
 const shoppingList = ["2 tshirts", "un short", "un pareo"]
 
 for (let i = 0; i <= shoppingList.length - 1; i++) {
-  alert(`J'ai besoin d'acheter ${shoppingList[i]}`)
+  console.log(`J'ai besoin d'acheter ${shoppingList[i]}`)
 }
 
 /* affiche :
@@ -173,7 +174,7 @@ J'ai besoin d'acheter un pareo
 */
 ```
 
-méthode moderne 😍
+- méthode moderne 😍, boucle `for ... of`
 
 ```javascript
 const shoppingList = ["2 tshirts", "un short", "un pareo"]
@@ -189,13 +190,13 @@ J'ai besoin d'acheter un pareo
 */
 ```
 
-méthode `forEach`
+- méthode `forEach`
 
 ```javascript
 const shoppingList = ["2 tshirts", "un short", "un pareo"]
 
 const iterationFunction = (el, index, array) => {
-  alert(`(${index + 1}/${array.length}) J'ai besoin d'acheter ${el}`)
+  console.log(`(${index + 1}/${array.length}) J'ai besoin d'acheter ${el}`)
 }
 
 shoppingList.forEach(iterationFunction)
@@ -204,20 +205,6 @@ shoppingList.forEach(iterationFunction)
 (1/3) J'ai besoin d'acheter 2 tshirts
 (2/3) J'ai besoin d'acheter un short
 (3/3) J'ai besoin d'acheter un pareo
-*/
-```
-
-Plus souvent on verra la fonction repsonsable pour l'itération intégrée directement dans `forEach` comme ceci :
-
-```javascript
-const shoppingList = ["2 tshirts", "un short", "un pareo"]
-
-shoppingList.forEach((el) => `J'ai besoin d'acheter ${el}`)
-
-/* affiche :
-J'ai besoin d'acheter 2 tshirts
-J'ai besoin d'acheter un short
-J'ai besoin d'acheter un pareo
 */
 ```
 

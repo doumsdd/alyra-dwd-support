@@ -1,5 +1,7 @@
 # Functions
 
+Fonction permettent d'englober les partie du code afin de les rendre **reutilisables** et **paramétrables**. Imaginons que nous avons besoins 
+
 ## déclaration
 
 ```javascript

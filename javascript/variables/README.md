@@ -123,7 +123,7 @@ const name = "Alyra"
 name = "Cambridge"
 ```
 
-Il est important de savoir qu'il existe aussi le troisième mot-clé permettant de déclarer une variable : `var`. Il était remplacé par `let` et `const` avec l'arrivée d'ECMAScript 2015. L'utilisation de `var` est en déclin. Vous allez sans doute le voir dans multiples ressources qui n'étaient pas encore re-adapté à ECMAScript 2015. Mais nous allons jamais l'utiliser.
+Il est important de savoir qu'il existe aussi le troisième mot-clé permettant de déclarer une variable : `var`. Il était remplacé par `let` et `const` avec l'arrivée d'ECMAScript 2015. L'utilisation de `var` est en déclin. Vous allez sans doute le voir dans multiples ressources qui n'étaient pas encore re-adapté à ECMAScript 2015. Mais nous n'allons jamais l'utiliser.
 
 ---
 
@@ -135,7 +135,7 @@ Le nom d'une variable (son identifiant) peut contenir des lettres majuscules ou 
 Les noms de variables sont sensibles à la casse : `firstName`, `firstname`, `FirstName` et `FIRSTNAME` correspondraient aux 4 variables différentes. 
 Le format *camelCase* (`firstName`) est fortement privilégié.
 
-Il existe aussi quelques mot-clés spéciaux qui ont leur propre signification dans JavaScript et ne peuvent pas être utilisés en tant que noms des variables. Vous trouverez la liste des mots interdits [ici.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords)
+Il existe aussi quelques mots-clés spéciaux qui ont leur propre signification dans JavaScript et ne peuvent pas être utilisés en tant que noms des variables. Vous trouverez la liste des mots interdits [ici.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords)
 
 ## Fin de la ligne (`;`)
 
@@ -144,7 +144,7 @@ Les `;` à la fin de chaque ligne ne sont pas obligatoires. JavaScript considèr
 
 ## Mode strict
 
-Le mode strict a été introduit avec la version ECMAScript 5 qui proposait JavaScript plus restrictif, plus sécurisé, avec quelques changements dans la syntaxe et plusieurs optimisations. En particulier, avec ECMAScript 5 certaines erreurs "silencieuses" deviennent des erreurs explicites (qui peuvent arrêter l'execution des scripts). Afin de mettre en place une nouvelle version, sans compromettre les scripts existantes, l'instruction `"use strict"` a été proposé. Si la directive `"use strict"` est trouvé au début du script, la version restrictive de JavaScript est servie.
+Le mode strict a été introduit avec la version ECMAScript 5 qui proposait JavaScript plus restrictif, plus sécurisé, avec quelques changements dans la syntaxe et plusieurs optimisations. En particulier, avec ECMAScript 5 certaines erreurs "silencieuses" deviennent des erreurs explicites (qui peuvent arrêter l'exécution des scripts). Afin de mettre en place une nouvelle version, sans compromettre les scripts existantes, l'instruction `"use strict"` a été proposé. Si la directive `"use strict"` est trouvée au début du script, la version restrictive de JavaScript est servie.
 
 À partir de ce moment, nous allons commencer nos scripts avec cette directive.
 
@@ -167,13 +167,13 @@ Nous pouvons mettre le code JavaScript directement dans le document HTML entre l
   <body>
     <h1>Bonjour JavaScript 01</h1>
     <a href="/">retour</a>
-    <p>Dans cette exemple, le navigateur te demandera ton prénom afin de te saluer "Hello ! Ravi de te rencontrer, ...."</p>
+    <p>Dans cet exemple, le navigateur te demandera ton prénom afin de te saluer "Hello ! Ravi de te rencontrer, ...."</p>
     <p>Pour l'interaction navigateur-utilisateur, nous utilisons des méthodes <code>alert</code> et <code>prompt</code>.</p>
     <script>
       // active mode strict
-      // déclare la variable message et affecte lui la valeur "Hello !"
+      // déclare la variable message et affecte la valeur "Hello !"
       // affiche le message
-      // déclare la variable name et affecte lui la valeur d'entrée utilisateur, qui répond à la question 'Comment tu t'appelles ?'
+      // déclare la variable name et affecte la valeur d'entrée utilisateur, qui répond à la question 'Comment tu t'appelles ?'
       // personnalise le message en y ajoutant le nom d'utilisateur
       // affiche le message
     </script>
@@ -200,7 +200,7 @@ Nous allons maintenant écrire notre script :
 
 ### Exemple (04)
 
-Il est recommander de créer les fichiers JavaScript (avec l'extension `.js`) est l'inclure dans le document HTML avec les balises `script` et l'attribut `src`, comme dans l'exemple suivant :
+Il est recommandé de créer les fichiers JavaScript (avec l'extension `.js`) est l'inclure dans le document HTML avec les balises `script` et l'attribut `src`, comme dans l'exemple suivant :
 
 ```html
 <!DOCTYPE html>

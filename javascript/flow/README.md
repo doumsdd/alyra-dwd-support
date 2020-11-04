@@ -310,7 +310,7 @@ if (day > 5) {
   let dinner = "salade 🥗"
   console.log(`Aujourd'hui c'est ${dinner}`)
 }
-console.log(`Aujourd'hui c'est ${dinner}`)
+console.log(`Tu as aimé ta ${dinner} au dinner ?`)
 //"Aujourd'hui c'est salade 🥗"
 // Uncaught ReferenceError: dinner is not defined at script.js:10
 ```
@@ -318,34 +318,23 @@ console.log(`Aujourd'hui c'est ${dinner}`)
 `const` et `let` ont la **scope** (portée) limitée au bloc ({...}) dans lequel elles sont déclarées.  
 Autrement dit, les variables `const` et `let` ne sont pas "vues" **à l'exterieur** du bloc dans lequel elles sont déclarées.  
 
-On peut utiliser le même nom de variable dans un bloc intérieur, ceci va prendre-dessus - _shadow_ la variable extérieure.
+On peut utiliser le même nom de variable dans un bloc intérieur, ceci va prendre-dessus (parfois on utilise la notion _shadow_) la variable extérieure.
 
 Et maintenant, que sera affiché ?
 
 ```javascript
 const day = new Date().getDay()
-let dinner = "soupe"
+let dinner = "soupe 🍜"
 if (day > 5) {
-  let dinner = "burrito"
-  alert(`Aujourd'hui c'est ${dinner}`)
+  let dinner = "pizza 🍕"
+  console.log(`Aujourd'hui c'est ${dinner}`)
 } else {
-  let dinner = "salade"
-  alert(`Aujourd'hui c'est ${dinner}`)
+  let dinner = "salade 🥗"
+  console.log(`Aujourd'hui c'est ${dinner}`)
 }
-alert(`Aujourd'hui c'est ${dinner}`)
-```
-
-```
-let x = 1
-
-if (x === 1) {
-  let x = 2
-  console.log(x)
-  // ceci affiche ?
-}
-
-console.log(x)
-// ceci affiche ?
+console.log(`Tu as aimé ta ${dinner} au dinner ?`)
+//"Aujourd'hui c'est salade 🥗"
+// "Tu as aimé ta soupe 🍜 au dinner ?"
 ```
 
 ## Exercices

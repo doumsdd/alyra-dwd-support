@@ -320,7 +320,7 @@ const betterPassword = function (string1, string2) {
 Nous appelons `betterPassword` exactement pareil comme avant :
 
 ```javascript
-console.log(betterPassword("alyra2021", "alyraParis2020")
+console.log(betterPassword("alyra2021", "alyraParis2021")
 ```
 
 Un autre exemple :
@@ -392,8 +392,8 @@ const square = (x) => {
 ```javascript
 const betterPassword = (string1, string2) => (string1.length > string2.length ? string1 : string2)
 
-console.log(betterPassword("alyra2021", "alyraParis2020")
-// "alyraParis2020"
+console.log(betterPassword("alyra2021", "alyraParis2021")
+// "alyraParis2021"
 ```
 
 Il existe quelques subtiles différences entre cette syntaxe et *function expression* classique. Nous allons les découvrir un peu plus tard.

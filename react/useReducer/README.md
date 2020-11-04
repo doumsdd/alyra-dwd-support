@@ -374,7 +374,7 @@ const [shopping, setShopping] = useState(expensiveOperationFunction) //  bien ðŸ
 **L'API de `useReducer`** nous permet Ã©galement d'initier state uniquement au premier "render". Pour cela nous devons utiliser le 3 argument de `useReducer`, par exemple :
 
 ```javascript
-const init = (initialState) = {
+const init = (initialState) => {
   // initialState = le 2e param de useReducer
   if (localStorage.getItem("shopping")) {
     return JSON.parse(localStorage.getItem("shopping"))

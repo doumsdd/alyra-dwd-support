@@ -1,4 +1,4 @@
-# Flow : if, switch, while, for
+# Flow : conditions, boucles et *scope*
 
 ## Conditions
 

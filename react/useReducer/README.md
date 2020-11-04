@@ -4,7 +4,7 @@ Le hook `useReducer` permet de gérer le _state_, il a le même rôle que `useSt
 
 `useState` sera le premier choix en ce qui concerne la gestion du state. Le hook `useReducer` est son alternative **plus configurable** mais aussi **plus complexe.** Nous pouvons dire que `useReducer` est une extension de `useState.`
 
-Pour comprendre son comportement nous allons transformer quelques exemples où nous utilisons initialement `useState` vers `useReducer`.
+Pour comprendre son comportement, nous allons transformer quelques exemples où nous utilisons initialement `useState` vers `useReducer`.
 
 ## Anatomie
 
@@ -104,7 +104,7 @@ https://codepen.io/alyra/pen/Pozeedw
 
 Est-ce que cet exemple est plus simple, plus lisible, plus maintenable avec `useReducer` qu'avec `useState` ? Non, et nous allons pas utiliser `useReducer` dans ce type des cas.
 
-Nous allons maintenant passer aux exemples où l'utilisation de `useReducer` est justifiée (notre code deviendra plus lisible, plus court, plus maintanable). Nous allons voir dans les exemples suivants que nous pouvons tailler `reducer` selon nos besoins. Par conséquent, nous avons aussi plus de liberté au niveau de la fonction `dispatch`.
+Nous allons maintenant passer aux exemples où l'utilisation de `useReducer` est justifiée (notre code deviendra plus lisible, plus court, plus maintenable). Nous allons voir dans les exemples suivants que nous pouvons tailler `reducer` selon nos besoins. Par conséquent, nous avons aussi plus de liberté au niveau de la fonction `dispatch`.
 
 ## Exemple 2 - Font Preview Widget
 
@@ -268,7 +268,7 @@ Vous trouverez le code de départ (fonctionnel mais utilisant `useState`) ici :
 
 https://codepen.io/alyra/pen/VwaBvqZ
 
-Essayez de faire le refactoring vous même, vous devez alors mettre en place une variable `state` avec la valeur initiale
+Essayez de faire le refactoring vous-même, vous devez alors mettre en place une variable `state` avec la valeur initiale
 
 ```javascript
 const initialState = {
@@ -365,7 +365,7 @@ const [shopping, setShopping] = useState(expensiveOperationFunction()) // pas bi
 
 React a besoin du résultat de `expensiveOperationFunction` une fois seulement, lorsque le component est monté, pour initier `shopping`. Cependant avec le code présenté ci-dessus, la fonction `expensiveOperationFunction` sera exécutée à chaque re-render.
 
-Pour remédier à ce problème et empêcher la re-évaluation d'une fonction coûteuse, nous passons **cette fonction** (sans l'appeler) en tant que "initial state".
+Pour remédier à ce problème et empêcher la re-évaluation d'une fonction coûteuse, nous passons **cette fonction** (sans l'appeler) en tant qu' "initial state".
 
 ```javascript
 const [shopping, setShopping] = useState(expensiveOperationFunction) //  bien 👍 ici nous passons la fonction, mais nous ne l'appelons pas

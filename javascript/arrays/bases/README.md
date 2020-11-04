@@ -24,7 +24,7 @@ shopping.length // 3
 
 La propriété `length` est souvent utilisée dans le contexte booléen, puisque `[]` est une valeur *truthy*. Dans l'exemple suivant, nous utilisons `shopping.length` puisque `shopping` serait toujours évalué *truthy*.
 
-```javascipt
+```javascript
 if (shopping.length) {
   alert("let's go shopping !")
 } else {

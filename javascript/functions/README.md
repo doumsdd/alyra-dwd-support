@@ -44,7 +44,11 @@ if (userName.length > 8) {
 if (ok) {
   // l'identifiant est ajouté dans la base de données
 }
+```
 
+et encore :
+
+```javascript
 userName = "alyra2021"
 if (userName.length > 8) {
   console.log("Cet identifiant est trop longue")
@@ -85,13 +89,13 @@ function verifyUserName(userName) {
 }
 
 if (verifyUserName("paulina")) {
-  // l'identifiant est ajouté dans la base de données
+  // l'identifiant va etre ajouté dans la base de données
 }
 if (verifyUserName("Alyra")) {
-  // l'identifiant est ajouté dans la base de données
+  // l'identifiant va etre ajouté dans la base de données
 }
 if (verifyUserName("alyra2021")) {
-  // l'identifiant est ajouté dans la base de données
+  // l'identifiant va être ajouté dans la base de données
 }
 ```
 
@@ -99,9 +103,9 @@ if (verifyUserName("alyra2021")) {
 
 
 
-## déclaration
+## Déclaration (*function declaration*)
 
-Que vient de se passer ? Nous venons de déclarer une fonction, la fonction `verifyUserName` (lignes 1 - 15 dans l'image ci-dessus). 
+Que vient de se passer ? Nous venons de déclarer une fonction. La fonction `verifyUserName` est déclarée (ceci correspond aux lignes 1 - 14 dans l'image ci-dessus).  
 Afin de déclarer une fonction nous :
 - utilisons un mot-clé spécial `function`
 - suivie par l'identifiant que nous avons choisi pour notre fonction (la convention camelCase s'applique toujours)
@@ -116,7 +120,9 @@ function nomDeFonction(param1, param2) {
 }
 ```
 
-Afin **d'appeler la fonction** (ligne 17 l'image ci-dessus) nous utilisons son identifiant avec les paramètres entre les parenthèses `verifyUserName("paulina")` est égale à ce qui est renvoyé par la fonction (ce qui suit le mot-clé `return`). Une fonction peut aussi générer ce qu'on appelle des *side effects* (effets de bord), par exemple envoyer des alerts, des message dans la console, faire des connections network (nous allons apprendre !), enregistrer des information dans le stockage interne de navigateur etc.
+Afin **d'appeler la fonction** (ligne 17 l'image ci-dessus) nous utilisons son identifiant avec les paramètres entre les parenthèses.   `verifyUserName("paulina")` est égal à ce qui est renvoyé par la fonction (ce qui suit le mot-clé `return`). 
+
+Une fonction peut aussi générer ce qu'on appelle des *side effects* (effets de bord), par exemple envoyer des alerts, des message dans la console, faire des connections network (nous allons apprendre !), enregistrer des information dans le stockage interne de navigateur (nous allons apprendre aussi) etc.
 
 **Est-ce possible d'avoir une fonction sans paramètres ?** Tout à fait. Dans ce cas-là nous laissons les paramètres vides, voici un exemple :
 
@@ -142,7 +148,7 @@ function todayDayName() {
 }
 ```
 
-**Est-ce possible d'avoir une fonction avec plusieurs paramètres ?**
+**Est-ce possible d'avoir une fonction avec plusieurs paramètres ?** Bien sûr.
 
 Voici une fonction avec 2 paramètres :
 

@@ -4,7 +4,7 @@ Bienvenue dans le monde de JavaScript :)
 
 Nous allons commencer notre aventure par un aperçu des différents types des données. Nous allons apprendre comment travailler avec eux. Dans JavaScript il existe plusieurs types de données simples (nommés primitifs) ainsi que des objets et des fonctions (que nous allons découvrir un peu plus tard).
 
-_Qu'est que ça veut dire type de données ? Pourquoi devons nous en parler ?_ Voici un exemple. Avec JavaScript nous pouvons executer des opérations arithmétiques, par exemple `1 + 2`. Comme vous pouvez le deviner, `1 + 2` nous donnera... `3`. 
+_Qu'est que ça veut dire type de données ? Pourquoi devons-nous en parler ?_ Voici un exemple. Avec JavaScript nous pouvons exécuter des opérations arithmétiques, par exemple `1 + 2`. Comme vous pouvez le deviner, `1 + 2` nous donnera... `3`. 
 
 Nous pouvons aussi effectuer des opérations sur les chaines de caractères. Par exemple, `"Java" + "Script"` sera évalué en tant que `"JavaScript"`. De la même façon `"1" + "2"` donnera `"12"`. Vous voyez la différence entre `"1" + "2"` et `1 + 2` ? 
 
@@ -33,8 +33,8 @@ typeof(5)
 // 'number'
 ```
 
-Comme vous pouvez l'observer, pour chaque de nos exemples `typeof(...)` nous donne le résultat `"number"`.
-Pareil, en effectuant des opérations arithmétiques sur les données de type "number" nous obtenons des résultat de type `"number"`, par exemple :
+Comme vous pouvez l'observer, pour chacun de nos exemples `typeof(...)` nous donne le résultat `"number"`.
+Pareil, en effectuant des opérations arithmétiques sur les données de type "number" nous obtenons des résultats de type `"number"`, par exemple :
 
 ```javascript
 typeof(2 + 4) // 'number'
@@ -46,7 +46,7 @@ typeof(-1 / 0) // 'number'
 
 ### (primitif) **string**
 
-Le chaine de caractères (`"string"`) est entourée par des guillemets, comme dans les exemples suivantes :
+La chaine de caractères (`"string"`) est entourée par des guillemets, comme dans les exemples suivants :
 
 ```javascript
 "Bonjour tout le monde !"
@@ -61,7 +61,7 @@ Le chaine de caractères (`"string"`) est entourée par des guillemets, comme da
 
 "Je m'appelle Paulina"
 `Je m'appelle Paulina`
-//'Je m'appelle Paulina' <- ceci génère une erreur mais nous pouvons le fixer avec le symbole "\"
+//'Je m'appelle Paulina' <- ceci génère une erreur, mais nous pouvons le fixer avec le symbole "\"
 'Je m\'appelle Paulina'
 
 "Je pense que 320px donnera " + 320 / 16 + "rems"
@@ -69,7 +69,7 @@ Le chaine de caractères (`"string"`) est entourée par des guillemets, comme da
 `Je pense que 320px donnera ${320 / 16}rems`
 
 
-// le string avec un saut de ligne est possible uniqument avec des ``
+// le string avec un saut de ligne est possible uniquement avec des ``
 `Bonjour et
 Bonsoir`
 
@@ -109,7 +109,7 @@ typeof (10 != 2) // 'boolean'
 
 ### (primitif) **undefined**
 
-Quand JavaScript rencontre une chaine de caractères qui n'est pas entourée par des guillemets, il cherche la fonction ou la variable qui est identifiée avec cette chaine de caractère. (Nous allons parles des variables et des foncions très bientôt). Si JavaScript ne trouve pas de valeur qui correspond à notre chaine, son type est `"undefined"`.
+Quand JavaScript rencontre une chaine de caractères qui n'est pas entourée par des guillemets, il cherche la fonction ou la variable qui est identifiée avec cette chaine de caractère. (Nous allons parler des variables et des fonctions très bientôt). Si JavaScript ne trouve pas de valeur qui correspond à notre chaine, son type est `"undefined"`.
 
 ```javascript
 typeof a
@@ -163,7 +163,7 @@ Plusieurs expressions JavaScript peuvent être composées avec des opérations a
 
 ### Strings
 
-Dans le contexte des `"string"` l'opérateur qui est souvent utilisé est le `+` qui correspond à la concatenation. 
+Dans le contexte des `"string"` l'opérateur qui est souvent utilisé est le `+` qui correspond à la concaténation. 
 
 ```javascript
 "Hello" + " " + "World" + "!"
@@ -271,7 +271,7 @@ Valeurs **truthy** sont celles qui convertissent en `true`. Quelle est la liste 
 
 ### Type coercion
   
-Nous parlons de *type coercion* quand le type d'une valeur est convertie implicitement (c'est JavaScript qui le fait à la volée afin d'effectuer une opération). Souvent un opérateur provoque la conversion du type d'une valeur. Revenons à notre exemple du début du cours où nous essayons d'effectuer l'opération `"1" + 2` (additionner un `"string"` et un `"number"`). Afin que cette opération soit possible, le type d'une de ses opérandes devra être converti. La valeur numérique sera convertie en `"string"` et le résultat de cette opération sera `"12"`.
+Nous parlons de *type coercion* quand le type d'une valeur est converti implicitement (c'est JavaScript qui le fait à la volée afin d'effectuer une opération). Souvent un opérateur provoque la conversion du type d'une valeur. Revenons à notre exemple du début du cours où nous essayons d'effectuer l'opération `"1" + 2` (additionner un `"string"` et un `"number"`). Afin que cette opération soit possible, le type d'une de ses opérandes devra être converti. La valeur numérique sera convertie en `"string"` et le résultat de cette opération sera `"12"`.
 
 ```javascript
 // type coercion (changement du type implicite)
@@ -348,7 +348,7 @@ Voici quelques règles :
  - Opérateurs `<`, `<=` 
  
 Pour comparer des strings JavaScript utilise l'ordre alphabétique, par exemple `"A" < "Z" < "a" < "z"`.  
-Pour comparer des valeurs de type différents, la coercion vers le type `"number"` est effectuée.
+Pour comparer des valeurs de type différent, la coercion vers le type `"number"` est effectuée.
 
  ```javascript
  "100" < "21" // true
@@ -363,7 +363,7 @@ Nous avons déjà vu comment `||` et `&&` opèrent avec des valeurs de type `"bo
 
 ### `||`
 
-JavaScript procède de gauche à droite. Chaque valeurs est convertie dans la mémoire en type `"boolean"` et l'évaluation s'arrête au moment où on tombe sur la valeur _truthy_. Le résultat est la valeur qui est évaluée comme _truthy_. Si aucune des valeur n'est _truthy_, le résultat est la dernière valeur.
+JavaScript procède de gauche à droite. Chaque valeur est convertie dans la mémoire en type `"boolean"` et l'évaluation s'arrête au moment où on tombe sur la valeur _truthy_. Le résultat est la valeur qui est évaluée comme _truthy_. Si aucune des valeur n'est _truthy_, le résultat est la dernière valeur.
 
 ```javascript
 0 || undefined || "JavaScript" || "" 
@@ -378,7 +378,7 @@ JavaScript procède de gauche à droite. Chaque valeurs est convertie dans la m�
 
 ## `&&`
 
-JavaScript procède de gauche à droite. Chaque valeurs est convertie dans la mémoire en type `"boolean"` et l'évaluation s'arrête au moment où on tombe sur la valeur _falsy_. Le résultat est la valeur qui est évaluée comme _falsy_. Si aucune des valeur n'est _falsy_, le résultat est la dernière valeur.
+JavaScript procède de gauche à droite. Chaque valeur est convertie dans la mémoire en type `"boolean"` et l'évaluation s'arrête au moment où on tombe sur la valeur _falsy_. Le résultat est la valeur qui est évaluée comme _falsy_. Si aucune des valeurs n'est _falsy_, le résultat est la dernière valeur.
 
 ```javascript
 0 && undefined && "" 
@@ -391,7 +391,7 @@ JavaScript procède de gauche à droite. Chaque valeurs est convertie dans la m�
 
 ## Opérateur conditionnel (ternaire)
 
-JavaScript permet d'évaluer le résultat en fonction si la condition est vrai ou fausse. Voici la syntaxe de l'opérateur ternaire (ternary en anglais)
+JavaScript permet d'évaluer le résultat en fonction si la condition est vraie ou fausse. Voici la syntaxe de l'opérateur ternaire (ternary en anglais)
 
 ```javascript
 condition ? expressionSiVrai : expressionSiFaux

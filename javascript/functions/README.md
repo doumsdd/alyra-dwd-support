@@ -1,6 +1,7 @@
 # Functions
 
-Fonctions permettent d'englober les partie du code afin de les rendre **reutilisables** et **paramétrables**. Imaginons que nous avons un petit script qui permet de vérifier si identifiant d'utilisateur a format correct où tous le caractères doivent être en minuscule et le nombre de caractères ne dépasse pas 8.
+Fonctions permettent d'englober les parties du code afin de les rendre **reutilisables** et **paramétrables**.  
+Imaginons que nous avons un petit script qui permet de vérifier si l'identifiant d'utilisateur a un format correct. Pour qu'un identifiant utilisateur puisse être enregistrer dans notre base de données il doit être tout en minuscules avec un maximum de 8 caractères.
 
 ```javascript
 let userName = "paulina"
@@ -16,6 +17,8 @@ if (userName.length > 8) {
   console.log("Le système valide votre identifiant 👍")
   ok = true
 }
+
+// et ensuite ...
 if (ok) {
   // l'identifiant est ajouté dans la base de données
 }
@@ -36,6 +39,8 @@ if (userName.length > 8) {
   console.log("Le système valide votre identifiant 👍")
   ok = true
 }
+
+// et ensuite ...
 if (ok) {
   // l'identifiant est ajouté dans la base de données
 }
@@ -52,6 +57,8 @@ if (userName.length > 8) {
   console.log("Le système valide votre identifiant 👍")
   ok = true
 }
+
+// et ensuite ...
 if (ok) {
   // l'identifiant est ajouté dans la base de données
 }
@@ -61,20 +68,19 @@ et ainsi de suite...
 
 Une fonction nous permettra de convertir notre script en un "block" réutilisable.
 
-```
+```javascript
 function verifyUserName(userName) {
   if (userName.length > 8) {
-    console.log("Cet identifiant est trop longue")
-    ok = false
-  } else if {
-    userName.toLowerCase() !== userName
-    console.log("Cet identifiant contient des majuscules")
-    ok = false
+    console.log("Cet identifiant est trop longue");
+    ok = false;
+  } else if (userName.toLowerCase() !== userName) {
+    console.log("Cet identifiant contient des majuscules");
+    ok = false;
   } else {
-    console.log("Le système valide votre identifiant 👍")
-    ok = true
+    console.log("Le système valide votre identifiant 👍");
+    ok = true;
   }
-  return ok
+  return ok;
 }
 
 if (verifyUserName("paulina")) {

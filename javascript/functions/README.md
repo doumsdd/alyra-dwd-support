@@ -1,6 +1,93 @@
 # Functions
 
-Fonction permettent d'englober les partie du code afin de les rendre **reutilisables** et **paramétrables**. Imaginons que nous avons besoins 
+Fonctions permettent d'englober les partie du code afin de les rendre **reutilisables** et **paramétrables**. Imaginons que nous avons un petit script qui permet de vérifier si identifiant d'utilisateur a format correct où tous le caractères doivent être en minuscule et le nombre de caractères ne dépasse pas 8.
+
+```javascript
+let userName = "paulina"
+let ok
+if (userName.length > 8) {
+  console.log("Cet identifiant est trop longue")
+  ok = false
+} else if {
+  userName.toLowerCase() !== userName
+  console.log("Cet identifiant contient des majuscules")
+  ok = false
+} else {
+  console.log("Le système valide votre identifiant 👍")
+  ok = true
+}
+if (ok) {
+  // l'identifiant est ajouté dans la base de données
+}
+```
+
+Afin de vérifier la validité d'un autre identifiant nous devons repeter le même code :
+
+```javascript
+userName = "Alyra"
+if (userName.length > 8) {
+  console.log("Cet identifiant est trop longue")
+  ok = false
+} else if {
+  userName.toLowerCase() !== userName
+  console.log("Cet identifiant contient des majuscules")
+  ok = false
+} else {
+  console.log("Le système valide votre identifiant 👍")
+  ok = true
+}
+if (ok) {
+  // l'identifiant est ajouté dans la base de données
+}
+
+userName = "alyra2021"
+if (userName.length > 8) {
+  console.log("Cet identifiant est trop longue")
+  ok = false
+} else if {
+  userName.toLowerCase() !== userName
+  console.log("Cet identifiant contient des majuscules")
+  ok = false
+} else {
+  console.log("Le système valide votre identifiant 👍")
+  ok = true
+}
+if (ok) {
+  // l'identifiant est ajouté dans la base de données
+}
+```
+
+et ainsi de suite...
+
+Une fonction nous permettra de convertir notre script en un "block" réutilisable.
+
+```
+function verifyUserName(userName) {
+  if (userName.length > 8) {
+    console.log("Cet identifiant est trop longue")
+    ok = false
+  } else if {
+    userName.toLowerCase() !== userName
+    console.log("Cet identifiant contient des majuscules")
+    ok = false
+  } else {
+    console.log("Le système valide votre identifiant 👍")
+    ok = true
+  }
+  return ok
+}
+
+if (verifyUserName("paulina")) {
+  // l'identifiant est ajouté dans la base de données
+}
+if (verifyUserName("Alyra")) {
+  // l'identifiant est ajouté dans la base de données
+}
+if (verifyUserName("alyra2021")) {
+  // l'identifiant est ajouté dans la base de données
+}
+```
+
 
 ## déclaration
 

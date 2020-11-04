@@ -2,13 +2,13 @@
 
 ## Prérequis 
 - Commencez par forker et cloner [notre repo de départ.](https://github.com/pehaa/alyra-react-weather-app)
-- Avant de commencer prenez un moment pour [créer votre clé API sur OpenWeatherMap](https://home.openweathermap.org/api_keys) et clonez ce repo. 
+- Avant de commencer, prenez un moment pour [créer votre clé API sur OpenWeatherMap](https://home.openweathermap.org/api_keys) et clonez ce repo. 
 
 [Voici ce que nous allons construire ensemble.](https://alyra-weather-widget.netlify.app/)
 
 ## Components folder
 
-Nous allons démarrer avec la structure du projet comme ci-dessous. Un peu plus tard, nous allons ajouter d'autres components dans le repertoire `Weather`.
+Nous allons démarrer avec la structure du projet comme ci-dessous. Un peu plus tard, nous allons ajouter d'autres components dans le répertoire `Weather`.
 
 ```bash
 src
@@ -27,7 +27,7 @@ src
 
 ## App.js
 
-Pour commencer nous allons afficher des conditions météo pour Paris. Dans la version finale, un formulaire permettra de choisir la destination. En prévision de cela, nous allons créer une state variable `city`
+Pour commencer, nous allons afficher des conditions météo pour Paris. Dans la version finale, un formulaire permettra de choisir la destination. En prévision de cela, nous allons créer une state variable `city`
 
 ```javascript
 /* src/App.js */
@@ -114,7 +114,7 @@ const Weather = ({ city }) => {
 export default Weather
 ```
 
-Quelle informations de `data` allons nous utiliser ? Nous pouvons opter pour :
+Quelles informations de `data` allons-nous utiliser ? Nous pouvons opter pour :
 
 - **conditions :**
 
@@ -153,7 +153,7 @@ Ensuite, dans `Weather.js` nous allons avoir accès à notre key en tant que `pr
 
 Plus de détails dans la documentation de [CRA](https://create-react-app.dev/docs/adding-custom-environment-variables/)
 
-Afin de deployer l'app il faudra renseigner la variable `REACT_APP_OPENWEATHER_API_KEY`
+Afin de déployer l'app il faudra renseigner la variable `REACT_APP_OPENWEATHER_API_KEY`
 
 ![](https://assets.codepen.io/4515922/netlify.png)
 

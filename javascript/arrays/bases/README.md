@@ -223,7 +223,7 @@ J'ai besoin d'acheter un pareo
 
 ## Concatenater des arrays
 
-La méthode `concat` fusionne un ou plusieurs tableaux en les concaténant. Cette méthode ne modifie pas les tableaux existants, elle renvoie un nouveau tableau qui est le résultat de l'opération.
+La méthode `concat` fusionne deux ou plusieurs tableaux en les concaténant. Cette méthode ne modifie pas les tableaux existants, elle renvoie un nouveau tableau qui est le résultat de l'opération.
 
 ```javascript
 const array1 = ["a", "b", "c"]

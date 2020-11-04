@@ -70,6 +70,7 @@ Une fonction nous permettra de convertir notre script en un "block" réutilisabl
 
 ```javascript
 function verifyUserName(userName) {
+  let ok
   if (userName.length > 8) {
     console.log("Cet identifiant est trop longue");
     ok = false;
@@ -94,8 +95,19 @@ if (verifyUserName("alyra2021")) {
 }
 ```
 
+![](https://wptemplates.pehaa.com/assets/alyra/function.png)
+
+
 
 ## déclaration
+
+Que vient de se passer ? Nous venons de déclarer une fonction, la fonction `verifyUserName` (lignes 1 - 15 dans l'image ci-dessus). 
+Afin de déclarer une fonction nous :
+- utilisons un mot-clé spécial `function`
+- suivie par l'identifiant que nous avons choisi pour notre fonction (la convention camelCase s'applique toujours)
+- ensuite viennent des parenthèses, leur rôle est de passer des paramètres
+- esuite des accoulades entourent le *body* de notre fonction
+- le mot-clé spécial `return` renvoie le résultat de notre fonction, l'exécution de notre fonction s'arrête
 
 ```javascript
 function nomDeFonction(param1, param2) {
@@ -104,131 +116,150 @@ function nomDeFonction(param1, param2) {
 }
 ```
 
+Afin **d'appeler la fonction** (ligne 17 l'image ci-dessus) nous utilisons son identifiant avec les paramètres entre les parenthèses `verifyUserName("paulina")` est égale à ce qui est renvoyé par la fonction (ce qui suit le mot-clé `return`). Une fonction peut aussi génére ce qu'on appele des *side effects* (effets de bord), par exemple envoyer des alerts, des message dans la console, faire des connections network (nous allons apprendre !), enregistrer des information dans le stockage interne de navigateur etc.
+
+**Est-ce possible d'avoir une fonction sans paramètres ?** Tout à fait. Dans ce cas-là nous laissons les paramètres vides, voici un exemple :
+
 ```javascript
-function minimum(param1, param2) {
-  if (param1 < param2) {
-    return param1
+function todayDayName() {
+  const day = new Date().getDay()
+  switch (day) {
+    case 1:
+      return "lundi"
+    case 2:
+      return "mardi"
+    case 3:
+      return "mercredi"
+    case 4:
+      return "jeudi"
+    case 5:
+      return "vendredi"
+    case 5:
+      return "samedi"
+    default:
+      return "dimanche"
+  }
+}
+```
+
+**Est-ce possible d'avoir une fonction avec plusieurs paramètres ?**
+
+Voici une fonction avec 2 paramètres :
+
+```javascript
+function betterPassword(string1, string2) {
+  if (string1.length > string2.length) {
+    return string1
   } else {
-    return param2
+    return string2
   }
 }
 
-minimum(10, 4)
-// 4
+betterPassword("alyra2021", "alyraParis2021")
+// "alyraParis2021"
+// attention, c'est un exemple trop simpliste, dans la pratique la longueur n'est pas le seul critère pour la force d'un mot de passe
 ```
 
-![](https://assets.codepen.io/4515922/declaration-appelle.png)
-
-<div class="post-note">
-  <p>`return` arrête l'execution de la fonction</p>
-</div>
+Il est très important de comprendre que **`return` arrête l'execution de la fonction**
 
 ```javascript
 function cube(number) {
   const answer = number * number * number
   return answer
   /* console.log ne sera jamais executé */
-  console.log(param2)
+  console.log(anser)
 }
 ```
 
-```javascript
-function minimum(param1, param2) {
-  if (param1 < param2) {
-    return param1
+En sachant que `return` arrête l'exection, nous pouvons re-ecrire `verifyUserName`
+
+```
+function verifyUserName(userName) {
+  if (userName.length > 8) {
+    console.log("Cet identifiant est trop longue");
+    return false
   }
-  return param2
+  if (userName.toLowerCase() !== userName) {
+    console.log("Cet identifiant contient des majuscules");
+    return false
+  }
+  console.log("Le système valide votre identifiant 👍");
+  return true
 }
 ```
 
 ---
 
-Il est possible qu'une fonction n'a pas de `return`, dans ce cas là, elle retourne `undefined ` par exemple :
+Il est possible qu'une fonction n'a pas de `return`. Dans ce cas-là juste avant la fermeture des accolades, `return udefined` est ajouté de la façon implicite par JavaScript.
 
 ```javascript
 function showMessage() {
   let message = "Bonjour Alyra !" // variable locale
-
   alert(message)
 }
 
-showMessage() // affiche "Bonjour Alyra !"
 const output = showMessage() // affiche "Bonjour Alyra !"
-output // undefined
+console.log(output) // undefined
 ```
 
 ---
 
-Comment peut-on écrire la fonction `minimum` différemment ?
-
-```javascript
-function minimum(param1, param2) {
-  return param1 < param2 ? param1 : param2
-}
-```
-
-## Variables locales & globales
+## Variables locales & globales, scope
 
 ```javascript
 function showMessage() {
   let message = "Bonjour Alyra !" // variable locale
-
   alert(message)
 }
 
 showMessage() // affiche "Bonjour Alyra !"
-
 alert(message) // Error !
 ```
 
-Les variables dans JavaScript sont visible dans leur "scope".
+Vous vous l'appelez que les variables dans JavaScript sont visible dans leur "scope".
 Le "scope" de `let` et `const` est un block (pour `var` c'est function).
 
-Par contre, une fonction peut accèder des variables extérieures (outer)
+Une fonction a accès aux variables extérieures (outer).
 
 ```javascript
+"use strict"
 let message = "Bonjour Alyra !" // variable globale
 function showMessage() {
-  alert(message)
+  console.log(message)
 }
 
 showMessage() // affiche "Bonjour Alyra !"
-
-alert(message) // affiche "Bonjour Alyra !"
+console.log(message) // affiche "Bonjour Alyra !"
 ```
 
 Une fonction peut aussi modifier la variable globale, comme ci-dessous :
 
 ```javascript
+"use strict"
 let message = "Bonjour Alyra !" // variable globale
 function showMessage() {
   message = "Hello World!"
-  alert(message)
+  console.log(message)
 }
 
-alert(message) // affiche "Bonjour Alyra !"
-
+console.log(message) // affiche "Bonjour Alyra !"
 showMessage() // affiche "Hello World!"
-
-alert(message) // affiche "Hello World!"
+console.log(message) // affiche "Hello World!"
 ```
 
-La variable globale va être utilisé uniquement s'il n'y a pas de variable locale avec le même non.
-
-Si dans la fonction on déclare une variable avec le même nom qu'une variable globale, la variable locale est utilisée (on appelle ça parfois _shadowing_) :
+Il faut savoir que la variable globale **va être utilisée uniquement s'il n'y a pas de variable locale avec le même nom.**
+Nous pouvons dans la fonction déclarer une variable avec le même nom qu'une variable globale. Dans ce cas la variable locale est utilisée (on appelle ça parfois _shadowing_). Ce serait plus simple à analyser avec les exemples :
 
 ```javascript
 let message = "Bonjour Alyra !" // variable globale
 function showMessage() {
   let message = "Hello World!"
-  alert(message)
+  console.log(message)
 }
 
-alert(message) // affiche "Bonjour Alyra !"
-
+console.log(message) // affiche "Bonjour Alyra !"
 showMessage() // affiche "Hello World!"
-
-alert(message) // affiche "Bonjour Alyra !"
+console.log(message) // affiche "Bonjour Alyra !"
 ```
 
 L'argument d'une fonction est une variable dans son "local scope"

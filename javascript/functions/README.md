@@ -194,9 +194,17 @@ Il est possible qu'une fonction n'a pas de `return`. Dans ce cas-là juste avant
 
 ```javascript
 function showMessage() {
-  let message = "Bonjour Alyra !" // variable locale
+  let message = "Bonjour Alyra !"
   alert(message)
 }
+
+/*
+function showMessage() {
+  let message = "Bonjour Alyra !"
+  alert(message)
+  return undefined
+}
+*/
 
 const output = showMessage() // affiche "Bonjour Alyra !"
 console.log(output) // undefined
@@ -262,20 +270,20 @@ showMessage() // affiche "Hello World!"
 console.log(message) // affiche "Bonjour Alyra !"
 ```
 
-L'argument d'une fonction est une variable dans son "local scope"
+L'argument d'une fonction est une variable dans son "local scope".
 
 ```javascript
 let message = "Bonjour Alyra !" // variable globale
 function showMessage(message) {
   message += "!"
-  alert(message)
+  console.log(message)
 }
 
-alert(message) // affiche "Bonjour Alyra !"
+console.log(message) // affiche "Bonjour Alyra !"
 
 showMessage("Hello World") // affiche "Hello World!"
 
-alert(message) // affiche "Bonjour Alyra !"
+console.log(message) // affiche "Bonjour Alyra !"
 ```
 
 ![](https://assets.codepen.io/4515922/input.png)

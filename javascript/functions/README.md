@@ -211,13 +211,13 @@ Il est possible qu'une fonction n'a pas de `return`. Dans ce cas-là juste avant
 ```javascript
 function showMessage() {
   let message = "Bonjour Alyra !"
-  alert(message)
+  console.log(message)
 }
 
 /*
 function showMessage() {
   let message = "Bonjour Alyra !"
-  alert(message)
+  console.log(message)
   return undefined
 }
 */
@@ -233,11 +233,11 @@ console.log(output) // undefined
 ```javascript
 function showMessage() {
   let message = "Bonjour Alyra !" // variable locale
-  alert(message)
+  console.log(message)
 }
 
 showMessage() // affiche "Bonjour Alyra !"
-alert(message) // Error !
+console.log(message) // Error !
 ```
 
 Vous vous l'appelez que les variables dans JavaScript sont visible dans leur "scope".

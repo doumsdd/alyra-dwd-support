@@ -1,7 +1,7 @@
 # Functions
 
-Fonctions permettent d'englober les parties du code afin de les rendre **reutilisables** et **paramétrables**.  
-Imaginons que nous avons un petit script qui permet de vérifier si l'identifiant d'utilisateur a un format correct. Pour qu'un identifiant utilisateur puisse être enregistrer dans notre base de données il doit être tout en minuscules avec un maximum de 8 caractères.
+Fonctions permettent d'englober les parties du code afin de les rendre **réutilisables** et **paramétrables**.  
+Imaginons que nous avons un petit script qui permet de vérifier si l'identifiant d'utilisateur a un format correct. Nous devons respecter la spécification mise en place dans notre base de données imaginative. Pour qu'un identifiant utilisateur puisse être enregistré dans notre base, il doit être tout en minuscules avec un maximum de 8 caractères.
 
 ```javascript
 let userName = "paulina"
@@ -24,7 +24,7 @@ if (ok) {
 }
 ```
 
-Afin de vérifier la validité d'un autre identifiant nous devons repeter le même code :
+Afin de vérifier la validité d'un autre identifiant, nous devons répéter le même code :
 
 ```javascript
 userName = "Alyra"
@@ -106,7 +106,7 @@ Afin de déclarer une fonction nous :
 - utilisons un mot-clé spécial `function`
 - suivie par l'identifiant que nous avons choisi pour notre fonction (la convention camelCase s'applique toujours)
 - ensuite viennent des parenthèses, leur rôle est de passer des paramètres
-- esuite des accoulades entourent le *body* de notre fonction
+- ensuite des accolades entourent le *body* de notre fonction
 - le mot-clé spécial `return` renvoie le résultat de notre fonction, l'exécution de notre fonction s'arrête
 
 ```javascript
@@ -116,7 +116,7 @@ function nomDeFonction(param1, param2) {
 }
 ```
 
-Afin **d'appeler la fonction** (ligne 17 l'image ci-dessus) nous utilisons son identifiant avec les paramètres entre les parenthèses `verifyUserName("paulina")` est égale à ce qui est renvoyé par la fonction (ce qui suit le mot-clé `return`). Une fonction peut aussi génére ce qu'on appele des *side effects* (effets de bord), par exemple envoyer des alerts, des message dans la console, faire des connections network (nous allons apprendre !), enregistrer des information dans le stockage interne de navigateur etc.
+Afin **d'appeler la fonction** (ligne 17 l'image ci-dessus) nous utilisons son identifiant avec les paramètres entre les parenthèses `verifyUserName("paulina")` est égale à ce qui est renvoyé par la fonction (ce qui suit le mot-clé `return`). Une fonction peut aussi générer ce qu'on appelle des *side effects* (effets de bord), par exemple envoyer des alerts, des message dans la console, faire des connections network (nous allons apprendre !), enregistrer des information dans le stockage interne de navigateur etc.
 
 **Est-ce possible d'avoir une fonction sans paramètres ?** Tout à fait. Dans ce cas-là nous laissons les paramètres vides, voici un exemple :
 
@@ -166,14 +166,14 @@ Il est très important de comprendre que **`return` arrête l'execution de la fo
 function cube(number) {
   const answer = number * number * number
   return answer
-  /* console.log ne sera jamais executé */
+  /* console.log ne sera jamais exécuté */
   console.log(anser)
 }
 ```
 
-En sachant que `return` arrête l'exection, nous pouvons re-ecrire `verifyUserName`
+En sachant que `return` arrête l'exécution, nous pouvons ré-écrire `verifyUserName`
 
-```
+```javascript
 function verifyUserName(userName) {
   if (userName.length > 8) {
     console.log("Cet identifiant est trop longue");
@@ -188,9 +188,19 @@ function verifyUserName(userName) {
 }
 ```
 
+```javascript
+function betterPassword(string1, string2) {
+  if (string1.length > string2.length) {
+    return string1
+  } 
+  return string2
+}
+```
+
+
 ---
 
-Il est possible qu'une fonction n'a pas de `return`. Dans ce cas-là juste avant la fermeture des accolades, `return udefined` est ajouté de la façon implicite par JavaScript.
+Il est possible qu'une fonction n'a pas de `return`. Dans ce cas-là juste avant la fermeture des accolades, `return undefined` est ajouté de la façon implicite par JavaScript.
 
 ```javascript
 function showMessage() {
@@ -280,9 +290,7 @@ function showMessage(message) {
 }
 
 console.log(message) // affiche "Bonjour Alyra !"
-
 showMessage("Hello World") // affiche "Hello World!"
-
 console.log(message) // affiche "Bonjour Alyra !"
 ```
 
@@ -291,50 +299,82 @@ console.log(message) // affiche "Bonjour Alyra !"
 
 ## Function expressions
 
-```javascript
-const minimum = function (param1, param2) {
-  if (param1 < param2) {
-    return param1
-  }
-  return param2
-}
+Il existe une autre façon de définir une fonction. Nous pouvons affecter une fonction sans nom (anonyme) à une variable. Nous parlons dans ce cas la de *function expression*, voici un exemple :
 
-minimum(-10, -4)
-// -10
+```javascript
+const betterPassword = function (string1, string2) {
+  if (string1.length > string2.length) {
+    return string1
+  } else {
+    return string2
+  }
+}
 ```
 
+Nous appelons `betterPassword` exactement pareil comme avant :
+
 ```javascript
-const minimum = function (param1, param2) {
-  return param1 < param2 ? param1 : param2
+console.log(betterPassword("alyra2021", "alyraParis2020")
+```
+
+Un autre exemple :
+
+```javascript
+const verifyUserName = function(userName) {
+  if (userName.length > 8) {
+    console.log("Cet identifiant est trop longue");
+    return false
+  }
+  if (userName.toLowerCase() !== userName) {
+    console.log("Cet identifiant contient des majuscules");
+    return false
+  }
+  console.log("Le système valide votre identifiant 👍");
+  return true
 }
 
-minimum(-10, -4)
-// -10
+console.log(verifyUserName("alyra"))
 ```
 
 ## Arrow function
 
+Avec *function expressions* vient aussi une autre syntaxe, relativement nouvelle, introduite avec ES6. Nous l'appelons *arrow function* ou *function fléchée* en français.
+
+
 ```javascript
-const funcName = (arg1, arg2, ...) => expression retournée
+const funcName = (param1, param2) => {
+  // ....
+  return ...
+}
+
+/*
+// comme
+const funcName = function (param1, param2){
+  // ...
+  return ...
+}
+*/
 ```
+
+Si le *body* de notre fonction contient une seule ligne, notre syntaxe peut être encore plus simplifié, nous pouvons nous passes des accolades et le mot-clé `return` :
 
 ```javascript
 const square = (x) => x * x
+const cube = (x) => x * x
+console.log(square(2))
+// 4
+console.log(cube(
+```
 
+On peut aller encore un pas plus loin. Si notre fonction a un seul argument, on peut se permettre de ne pas mettre des parenthèses autour du paramètre
+
+```javascript
+const square = x => x * x
 square(2)
 // 4
 ```
 
-S'il y a qu'un seul argument, on peut se permettre à ne pas mettre des parenthèses
-
-```javascript
-const square = (x) => x * x
-
-square(2)
-// 4
-```
-
-Si notre expression doit prendre plusieur lignes, nous devons utiliser des accolades `{}` et le mot `return`
+Par contre, si notre fonction prend plusieurs lignes, nous devons utiliser des accolades `{}` et le mot `return` :
 
 ```javascript
 const square = (x) => {
@@ -344,52 +384,50 @@ const square = (x) => {
 ```
 
 ```javascript
-const minimum = (param1, param2) => (param1 < param2 ? param1 : param2)
+const betterPassword = (string1, string2) => (string1.length > string2.length ? string1 : string2)
 
-minimum(-10, -4)
-// -10
+console.log(betterPassword("alyra2021", "alyraParis2020")
+// "alyraParis2020"
 ```
 
-Parfois, le code peut être plus lisible si nous gardons les accolades et `return`
-
-```javascript
-const minimum = (param1, param2) => {
-  return param1 < param2 ? param1 : param2
-}
-
-minimum(-10, -4)
-// -10
-```
+Il existe quelques subtiles différences entre cette syntaxe et *function expression* classique. Nous allons les découvrir un peu plus tard.
 
 ## Valeurs par défaut
+
+JavaScript nous donne une très pratique possibilité de définir les valeurs par défaut pour les paramètres des fonctions. 
+
+Voici un exemple :
 
 ```javascript
 function increment(i = 0, step = 1) {
   return i + step
 }
-
-increment()
-// 1
-increment(3)
-// 4
-increment(5, 2)
-// 7
 ```
+
+Pourquoi est-ce pratique ? Si le paramètre n'est pas passé, sa valeur par défaut est appliquée :
+
+```javascript
+console.log(increment())
+// i = 0 (par défaut), step = 1 (par défaut)
+// 0 + 1 -> 1
+console.log(increment(3))
+// i = 3, step = 1 (par défaut)
+// 3 + 1 -> 4
+console.log(increment(5, 2))
+// i = 5, step = 2
+// 5 + 2 -> 7
+```
+
+La même fonction peut être aussi définit comme ceci :
 
 ```javascript
 const increment = (i = 0, step = 1) => i + step
-
-increment()
-// 1
-increment(3)
-// 4
-increment(5, 2)
-// 7
 ```
 
 ## Exercices
 
 - [js quizzes - Functions](https://javascript-quizzes.netlify.app/functions)
+- [Functions - Scope ](https://codepen.io/alyra/pen/QWyZdPo)
 - [Functions - Numbers](https://codepen.io/alyra/pen/eYJEwrO) | [solution](https://codepen.io/alyra/pen/abaea20f1823c94978546278d1a4a061)
 - [Functions - Strings](https://codepen.io/alyra/pen/LYGjwgr) | [solution](https://codepen.io/alyra/pen/2c45a0d1cb435599d910b9a042a00a39)
 - [Functions (3)](https://codepen.io/alyra/pen/pogxdzK) | [solution](https://codepen.io/alyra/pen/017b258bdaa4e071e83b34f9f73b9410)

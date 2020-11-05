@@ -1,13 +1,13 @@
 # Functions
 
-Fonctions permettent d'englober les parties du code afin de les rendre **réutilisables** et **paramétrables**.  
+Les fonctions permettent d'englober les parties du code afin de les rendre **réutilisables** et **paramétrables**.  
 Imaginons que nous avons un petit script qui permet de vérifier si l'identifiant d'utilisateur a un format correct. Nous devons respecter la spécification mise en place dans notre base de données imaginative. Pour qu'un identifiant utilisateur puisse être enregistré dans notre base, il doit être tout en minuscules avec un maximum de 8 caractères.
 
 ```javascript
 let userName = "paulina"
 let ok
 if (userName.length > 8) {
-  console.log("Cet identifiant est trop longue")
+  console.log("Cet identifiant est trop long")
   ok = false
 } else if {
   userName.toLowerCase() !== userName
@@ -29,7 +29,7 @@ Afin de vérifier la validité d'un autre identifiant, nous devons répéter le 
 ```javascript
 userName = "Alyra"
 if (userName.length > 8) {
-  console.log("Cet identifiant est trop longue")
+  console.log("Cet identifiant est trop long")
   ok = false
 } else if {
   userName.toLowerCase() !== userName
@@ -51,7 +51,7 @@ et encore :
 ```javascript
 userName = "alyra2021"
 if (userName.length > 8) {
-  console.log("Cet identifiant est trop longue")
+  console.log("Cet identifiant est trop long")
   ok = false
 } else if {
   userName.toLowerCase() !== userName
@@ -89,10 +89,10 @@ function verifyUserName(userName) {
 }
 
 if (verifyUserName("paulina")) {
-  // l'identifiant va etre ajouté dans la base de données
+  // l'identifiant va être ajouté dans la base de données
 }
 if (verifyUserName("Alyra")) {
-  // l'identifiant va etre ajouté dans la base de données
+  // l'identifiant va être ajouté dans la base de données
 }
 if (verifyUserName("alyra2021")) {
   // l'identifiant va être ajouté dans la base de données
@@ -105,7 +105,7 @@ if (verifyUserName("alyra2021")) {
 
 ## Déclaration (*function declaration*)
 
-Que vient de se passer ? Nous venons de déclarer une fonction. La fonction `verifyUserName` est déclarée (ceci correspond aux lignes 1 - 14 dans l'image ci-dessus).  
+Que vient-il de se passer ? Nous venons de déclarer une fonction. La fonction `verifyUserName` est déclarée (ceci correspond aux lignes 1 - 14 dans l'image ci-dessus).  
 Afin de déclarer une fonction nous :
 - utilisons un mot-clé spécial `function`
 - suivie par l'identifiant que nous avons choisi pour notre fonction (la convention camelCase s'applique toujours)
@@ -122,7 +122,7 @@ function nomDeFonction(param1, param2) {
 
 Afin **d'appeler la fonction** (ligne 17 l'image ci-dessus) nous utilisons son identifiant avec les paramètres entre les parenthèses.   `verifyUserName("paulina")` est égal à ce qui est renvoyé par la fonction (ce qui suit le mot-clé `return`). 
 
-Une fonction peut aussi générer ce qu'on appelle des *side effects* (effets de bord), par exemple envoyer des alerts, des message dans la console, faire des connections network (nous allons apprendre !), enregistrer des information dans le stockage interne de navigateur (nous allons apprendre aussi) etc.
+Une fonction peut aussi générer ce qu'on appelle des *side effects* (effets de bord), par exemple envoyer des alerts, des messages dans la console, faire des connexions network (nous allons apprendre !), enregistrer des informations dans le stockage interne de navigateur (nous allons apprendre aussi) etc.
 
 **Est-ce possible d'avoir une fonction sans paramètres ?** Tout à fait. Dans ce cas-là nous laissons les paramètres vides, voici un exemple :
 
@@ -166,7 +166,7 @@ betterPassword("alyra2021", "alyraParis2021")
 // attention, c'est un exemple trop simpliste, dans la pratique la longueur n'est pas le seul critère pour la force d'un mot de passe
 ```
 
-Il est très important de comprendre que **`return` arrête l'execution de la fonction**
+Il est très important de comprendre que **`return` arrête l'exécution de la fonction**
 
 ```javascript
 function cube(number) {
@@ -182,7 +182,7 @@ En sachant que `return` arrête l'exécution, nous pouvons ré-écrire `verifyUs
 ```javascript
 function verifyUserName(userName) {
   if (userName.length > 8) {
-    console.log("Cet identifiant est trop longue");
+    console.log("Cet identifiant est trop long");
     return false
   }
   if (userName.toLowerCase() !== userName) {
@@ -206,7 +206,7 @@ function betterPassword(string1, string2) {
 
 ---
 
-Il est possible qu'une fonction n'a pas de `return`. Dans ce cas-là juste avant la fermeture des accolades, `return undefined` est ajouté de la façon implicite par JavaScript.
+Il est possible qu'une fonction n'ait pas de `return`. Dans ce cas-là juste avant la fermeture des accolades, `return undefined` est ajouté de la façon implicite par JavaScript.
 
 ```javascript
 function showMessage() {
@@ -240,7 +240,7 @@ showMessage() // affiche "Bonjour Alyra !"
 console.log(message) // Error !
 ```
 
-Vous vous l'appelez que les variables dans JavaScript sont visible dans leur "scope".
+Vous vous l'appelez que les variables dans JavaScript sont visibles dans leur "scope".
 Le "scope" de `let` et `const` est un block (pour `var` c'est function).
 
 Une fonction a accès aux variables extérieures (outer).
@@ -272,7 +272,7 @@ console.log(message) // affiche "Hello World!"
 ```
 
 Il faut savoir que la variable globale **va être utilisée uniquement s'il n'y a pas de variable locale avec le même nom.**
-Nous pouvons dans la fonction déclarer une variable avec le même nom qu'une variable globale. Dans ce cas la variable locale est utilisée (on appelle ça parfois _shadowing_). Ce serait plus simple à analyser avec les exemples :
+Nous pouvons dans la fonction déclarer une variable avec le même nom qu'une variable globale. Dans ce cas-la variable locale est utilisée (on appelle ça parfois _shadowing_). Ce serait plus simple à analyser avec les exemples :
 
 ```javascript
 let message = "Bonjour Alyra !" // variable globale
@@ -328,7 +328,7 @@ Un autre exemple :
 ```javascript
 const verifyUserName = function(userName) {
   if (userName.length > 8) {
-    console.log("Cet identifiant est trop longue");
+    console.log("Cet identifiant est trop long");
     return false
   }
   if (userName.toLowerCase() !== userName) {
@@ -362,7 +362,7 @@ const funcName = function (param1, param2){
 */
 ```
 
-Si le *body* de notre fonction contient une seule ligne, notre syntaxe peut être encore plus simplifié, nous pouvons nous passes des accolades et le mot-clé `return` :
+Si le *body* de notre fonction contient une seule ligne, notre syntaxe peut être encore plus simplifiée, nous pouvons nous passes des accolades et le mot-clé `return` :
 
 ```javascript
 const square = (x) => x * x
@@ -424,7 +424,7 @@ console.log(increment(5, 2))
 // 5 + 2 -> 7
 ```
 
-La même fonction peut être aussi définit comme ceci :
+La même fonction peut être aussi définie comme ceci :
 
 ```javascript
 const increment = (i = 0, step = 1) => i + step

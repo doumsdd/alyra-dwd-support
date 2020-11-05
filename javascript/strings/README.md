@@ -4,7 +4,7 @@
 let message = "Parlons du type string !"
 ```
 
-Vous vous rappelez bien que `"string"` est un des type primitif dans JavaScript. Il existe plusieurs méthodes que nous pouvons appliquer aux "strings" pour changer leur format ou récupérer des information spécifiques.
+Vous vous rappelez bien que `"string"` est un des types primitifs dans JavaScript. Il existe plusieurs méthodes que nous pouvons appliquer aux "strings" pour changer leur format ou récupérer des informations spécifiques.
 
 
 ## 1. Quelle est la longueur d'un string ?
@@ -134,7 +134,7 @@ message = message[0].toUpperCase() + message.slice(1)
 // Bonjour
 ```
 
-## 7. Peut on vérifier si le string contient, commence par ou finit par quelque chose ?
+## 7. Peut-on vérifier si le string contient, commence par ou finit par quelque chose ?
 
 Oui on peut. Ceci est possible, avec des méthodes : `includes`, `startsWith` et `endsWith` 🤩
 

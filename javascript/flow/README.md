@@ -12,7 +12,7 @@ if (🌧) {
 }
 ```
 
-ou on prend des actions différentes selon la situtation
+ou on prend des actions différentes selon la situation
 
 ```javascript
 if (🌧) {
@@ -63,7 +63,7 @@ if (day === 1) {
 
 ### switch
 
-Nous pouvons enchainer `else if` sans limite :
+Nous pouvons enchainer `else if` sans limites :
 
 
 ```javascript
@@ -83,7 +83,7 @@ if (day === 1) {
 }
 ```
 
-mais le code ci-dessous n'est pas très lisible. Une des alternative est la syntaxe de `switch`, voici notre exemple réécrit avec `switch` :
+mais le code ci-dessous n'est pas très lisible. Une des alternatives est la syntaxe de `switch`, voici notre exemple réécrit avec `switch` :
 
 ```javascript
 const day = new Date().getDay()
@@ -152,9 +152,9 @@ J'ai peur 🙈
 
 ## Boucles aka Loops 
 
-Les boucles permettent de repeter l'execution du code jusqu'à certain moment, définit par programmeur. Imaginons un simple jeu de pendu, l'ordinateur va continuer à me demander une lettre jusqu'au moment où soit je gange, soit je perds.
+Les boucles permettent de répéter l'exécution du code jusqu'à certains moments, définis par programmeur. Imaginons un simple jeu de pendu, l'ordinateur va continuer à me demander une lettre jusqu'au moment où soit je gange, soit je perds.
 
-Il y a 3 types de boucle dans JavaScript, la boucle *for*, la boucle *while* et la boucle *do while*.
+Il y a 3 types de boucles dans JavaScript, la boucle *for*, la boucle *while* et la boucle *do while*.
 
 - `for (begin; condition; step) { body }`,
 - `while (condition) { body }`
@@ -194,8 +194,8 @@ while (i <= 5) {
 // while (6 <= 5) -> false -> je n'entre pas dans la boucle
 ```
 
-Si nous savons afficher le chiffres de 0 à 5, rien nous empêche d'afficher les nombres de 0 à 1000, 1000000, etc.
-Et si nous savons afficher les nombres, rien nous empêche de faire quelque choses plus utiles avec, par exemples calculer leur somme.
+Si nous savons afficher le chiffre de 0 à 5, rien ne nous empêche d'afficher les nombres de 0 à 1000, 1000000, etc.
+Et si nous savons afficher les nombres, rien nous empêche de faire quelque chose plus utile avec, par exemples calculer leur somme.
 
 
 ```javascript
@@ -318,7 +318,7 @@ for (let i = 0; i <= 100; i += 2) {
 ## Scope
 
 Observons ces 2 exemples du code où je programme mes repas (burrito le week-end et salade dans la semaine).
-Dans le premier exemple je déclare la variable `dinner` dans la racine de mon script. Ensuite selon le jour (week-end ou pas) j'affecte une valeur à `dinner`.
+Dans le premier exemple, je déclare la variable `dinner` dans la racine de mon script. Ensuite selon le jour (week-end ou pas) j'affecte une valeur à `dinner`.
 
 ```javascript
 "use strict"
@@ -339,7 +339,7 @@ console.log(`Tu as aimé ta ${dinner} au dinner ?`)
 ```
 
 Dans le 2e exemple la variable `dinner` est déclarée et la valeur est attribuée en même temps, dans le body de `if` ou `else`.
-Que sera affiché ?
+Que sera-t-il affiché ?
 
 ```javascript
 "use strict"
@@ -357,11 +357,11 @@ console.log(`Tu as aimé ta ${dinner} au dinner ?`)
 ```
 
 `const` et `let` ont la **scope** (portée) limitée au bloc ({...}) dans lequel elles sont déclarées.  
-Autrement dit, les variables `const` et `let` ne sont pas "vues" **à l'exterieur** du bloc dans lequel elles sont déclarées.  
+Autrement dit, les variables `const` et `let` ne sont pas "vues" **à l'extérieur** du bloc dans lequel elles sont déclarées.  
 
-On peut utiliser le même nom de variable dans un bloc intérieur, ceci va prendre-dessus (parfois on utilise la notion _shadow_) la variable extérieure.
+On peut utiliser le même nom de variable dans un bloc intérieur, ceci va prendre le dessus (parfois on utilise la notion _shadow_) sur la variable extérieure.
 
-Et maintenant, que sera affiché ?
+Et maintenant, que sera-t-il affiché ?
 
 ```javascript
 const day = new Date().getDay()
@@ -378,7 +378,7 @@ console.log(`Tu as aimé ta ${dinner} au dinner ?`)
 //"Tu as aimé ta soupe 🍜 au dinner ?"
 ```
 
-Comme vous pouvez voir, *scope* d'une variable est important. Une utilisation sans contrôle peut provoquer des erreurs silencieuses qui faussent execution de votre script. Nous allons revenir à ce sujet prochainement, à l'occasion d'introduction des fonctions.
+Comme vous pouvez voir, *scope* d'une variable est important. Une utilisation sans contrôle peut provoquer des erreurs silencieuses qui faussent l'éxecution de votre script. Nous allons revenir à ce sujet prochainement, à l'occasion de l'introduction des fonctions.
 
 ## Exercices
 

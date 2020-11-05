@@ -53,6 +53,7 @@
 - Objects
   - [Introduction](./javascript/objects/introduction)
   - [DOM - Document Object Model](./javascript/objects/DOM)
+  - [DOM - Premiers Pas](./javascript/objects/DOM-intro)
   - [Project Objects + DOM - Alyra veilles](https://github.com/pehaa/alyra-veilles-challenge)
   - [Methods + this](./javascript/objects/methods/)
   - [Desctructuring assignment](./javascript/objects/destructuring/)

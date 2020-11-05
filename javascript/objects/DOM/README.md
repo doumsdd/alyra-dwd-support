@@ -259,10 +259,6 @@ https://codepen.io/alyra/pen/vYLwyJx
 
 ---
 
-[alyra-dom repo](https://github.com/pehaa/alyra-dom)
-
----
-
 ## Exercices
 
 - [Dom - top5](https://codepen.io/alyra/pen/dyGLgoX) | [solution](https://codepen.io/alyra/pen/20c665db9b2bf35ce56635b71b37e5bd)

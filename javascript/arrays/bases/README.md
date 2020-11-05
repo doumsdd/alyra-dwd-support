@@ -8,7 +8,7 @@ Arrays (tableaux) permettent de stocker des collections (listes) de données.
 const myList1 = [] // []
 const myList2 = new Array() // []
 const myListMisc = new Array("hello", 13, 8 === "8") // ['hello', 13, false]
-const shopping = ["tshirt", "shorts", "pareo"]
+const shopping = [“t-shirt", "shorts", "pareo"]
 const myArray = new Array(3) // [undefined, undefined, undefined]
 const myLetters = new Array.from("abcd") // ["a", "b", "c", "d"]
 ```
@@ -18,7 +18,7 @@ const myLetters = new Array.from("abcd") // ["a", "b", "c", "d"]
 ```javascript
 const myList1 = []
 myList1.length // 0
-const shopping = ["tshirt", "shorts", "pareo"]
+const shopping = [“t-shirt", "shorts", "pareo"]
 shopping.length // 3
 ```
 
@@ -34,7 +34,7 @@ if (shopping.length) {
 
 ## Élément par index
 
-Les éléments de la liste sont indéxés à partir de zéro: 0, 1, &hellip; Le dernier élément de la liste `myList` a l'index `myList.length - 1`
+Les éléments de la liste sont indexés à partir de zéro: 0, 1, &hellip; Le dernier élément de la liste `myList` a l'index `myList.length - 1`
 
 ```javascript
 const myList1 = [2, 5, 8, 90]
@@ -81,9 +81,9 @@ console.log(removed) // 90
 
 Attention : Les méthodes `pop` et `push` sont beaucoup plus rapide qut `shift` et `unshift`.
 
-Le méthodes `pop`, `push` et `shift`, `unshift` opèrent sur les extremités d'un array. Nous avons aussi une méthode générique `splice`
+Le méthodes `pop`, `push` et `shift`, `unshift` opèrent sur les extrémités d'un array. Nous avons aussi une méthode générique `splice`
 
-Le syntaxe: `arr.splice(index[, deleteCount, elem1, ..., elemN])` peut étre lu :
+Le syntaxe: `arr.splice(index[, deleteCount, elem1, ..., elemN])` peut être lu :
 
 - positionne-toi au numéro indiqué par index, enlève `deleteCount` éléments et insère `elem1, ..., elemN`
 
@@ -161,7 +161,7 @@ Il existe aussi méthode `sort` qui permet de changer l'ordre des éléments sel
 - méthode classique, boucle `for` classique
 
 ```javascript
-const shoppingList = ["2 tshirts", "un short", "un pareo"]
+const shoppingList = ["2 t-shirts", "un short", "un pareo"]
 
 for (let i = 0; i <= shoppingList.length - 1; i++) {
   console.log(`J'ai besoin d'acheter ${shoppingList[i]}`)
@@ -177,14 +177,14 @@ J'ai besoin d'acheter un pareo
 - méthode moderne 😍, boucle `for ... of`
 
 ```javascript
-const shoppingList = ["2 tshirts", "un short", "un pareo"]
+const shoppingList = ["2 t-shirts", "un short", "un pareo"]
 
 for (let item of shoppingList) {
   alert(`J'ai besoin d'acheter ${item}`)
 }
 
 /* affiche :
-J'ai besoin d'acheter 2 tshirts
+J'ai besoin d'acheter 2 t-shirt
 J'ai besoin d'acheter un short
 J'ai besoin d'acheter un pareo
 */
@@ -193,7 +193,7 @@ J'ai besoin d'acheter un pareo
 - méthode `forEach`
 
 ```javascript
-const shoppingList = ["2 tshirts", "un short", "un pareo"]
+const shoppingList = ["2 t-shirts", "un short", "un pareo"]
 
 const iterationFunction = (el, index, array) => {
   console.log(`(${index + 1}/${array.length}) J'ai besoin d'acheter ${el}`)
@@ -202,13 +202,13 @@ const iterationFunction = (el, index, array) => {
 shoppingList.forEach(iterationFunction)
 
 /* affiche :
-(1/3) J'ai besoin d'acheter 2 tshirts
+(1/3) J'ai besoin d'acheter 2 t-shirt
 (2/3) J'ai besoin d'acheter un short
 (3/3) J'ai besoin d'acheter un pareo
 */
 ```
 
-## Concatenater des arrays
+## Concatener des arrays
 
 La méthode `concat` fusionne deux ou plusieurs tableaux en les concaténant. Cette méthode ne modifie pas les tableaux existants, elle renvoie un nouveau tableau qui est le résultat de l'opération.
 
@@ -223,9 +223,9 @@ console.log(array3)
 
 ## String ↔️ Array `split` & `join`
 
-Il eat pratique de savoir comment transformer les strings en arrays et vice versa. Pour cela nous avons deux méthodes :
-- `split` qui opere sur les valeurs de type `"string"`
-- `join` qui opere sur les arrays
+Il est pratique de savoir comment transformer les strings en arrays et vice versa. Pour cela nous avons deux méthodes :
+- `split` qui opère sur les valeurs de type `"string"`
+- `join` qui opère sur les arrays
 
 
 ```javascript

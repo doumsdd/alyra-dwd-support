@@ -1,5 +1,22 @@
 # Arrays - méthodes avec "callback" functions
 
+Dans le cours précédent nous avons vu la méthode `forEach` qui opère sur un array et prend une fonction (*callback function*) en tant que le paramètre. Pour le rappel :
+
+```javascript
+const printList = (el, index) => {
+   console.log(`${index + 1} - ${el}`)
+}
+const myArray = ["cumin", "curry", "chili"]
+myArray.forEach(printList)
+/*
+1 - cumin
+2 - curry
+3 - chili
+*/
+```
+
+Nous allons maintenant découvrir quelques méthodes supplémentaires qui facilitent la travail avec des tableaux. Nous allons parler de `map`, `filter`, `find`, `findIndex`, `every` `some` et `sort. 
+
 ## Méthode `map`
 
 ![](https://assets.codepen.io/4515922/map.png)
@@ -42,7 +59,7 @@ const filterCallback = (el, index, array) =>  { ... }
 const newArray = myArray.filter(filterCallback)
 ```
 
-Chaque élément de myArray est passé par `filterCallback`, si le résultat est _truthy_ l'élement reste, sinon l'élément est enlevé.
+Chaque élément de myArray est passé par `filterCallback`, si le résultat est _truthy_ l'élément reste, sinon l'élément est enlevé.
 
 ```javascript
 const myArray = [-1, 3, -3, 4, 6]
@@ -67,7 +84,7 @@ const findCallback = (el, index, array) =>  { ... }
 const element = myArray.find(findCallback)
 ```
 
-Les éléments de `myArray` sont passés, l'un après l'autre, par `findCallback`, si le résultat est _truthy_ l'élement est retourné et l'opération s'arrête.
+Les éléments de `myArray` sont passés, l'un après l'autre, par `findCallback`, si le résultat est _truthy_ l'élément est retourné et l'opération s'arrête.
 
 ```javascript
 const myArray = [-1, 3, -3, 4, 6]
@@ -151,7 +168,7 @@ console.log(months)
 // ["Dec", "Feb", "Jan", "March"]
 ```
 
-Par défault, JavaScript compare les équivalents "string" des éléments (coercion vers le type `"string"` à la volée). 
+Par défaut, JavaScript compare les équivalents "string" des éléments (coercion vers le type `"string"` à la volée). 
 Attention, ceci donne des résultats inattendus 😱 :
 
 ```javascript
@@ -161,15 +178,15 @@ console.log(numbers)
 // [1, 100000, 21, 30, 4]
 ```
 
-Pour y remedier, on utilise une fonction callback, qui permet de "customizer" le processus de trie :
+Pour y remédier, on utilise une fonction callback, qui permet de "customiser" le processus de trie :
 
 
 ```javascript
 function compareCallback(right, left) {
-  if (si right inférieur à left selon notre critère personnalisé) {
+  if (si right est inférieur à left selon notre critère personnalisé) {
     return -1; // ou une valeur négative, changement de l'ordre
   }
-  if (si right superieur à left selon notre critère personnalisé {
+  if (si right est supérieur à left selon notre critère personnalisé) {
     return 1; // ou une valeur positive, pas de changement
   }
   // si right et gauche sont égaux selon notre critère
@@ -201,5 +218,5 @@ La méthode `sort` **modifie** l'array.
 # Exercices
 
 - [ja quizzes - arrays 2](https://javascript-quizzes.netlify.app/arrays-methods)
-- [JavaScript - methodes array](https://codepen.io/alyra/pen/dyGwaRK) | [solution](https://codepen.io/alyra/pen/48b9d965e9b54d5bbf035e118677186a)
+- [JavaScript - methods array](https://codepen.io/alyra/pen/dyGwaRK) | [solution](https://codepen.io/alyra/pen/48b9d965e9b54d5bbf035e118677186a)
 - [Arrays - sort](https://codepen.io/alyra/pen/NWxovVe) | [solution](https://codepen.io/alyra/pen/5221b2d16783781f591ff80e8f1679f5)

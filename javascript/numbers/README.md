@@ -23,7 +23,7 @@ isNaN("78") // false
 isNaN("3") // false
 ```
 
-`isFinite` agit de la façon inverse, et donne `true` pour les valeur numériques :
+`isFinite` agit de la façon inverse, et donne `true` pour les valeurs numériques :
 
 ```javascript
 isFinite("78") // true
@@ -32,9 +32,9 @@ isFinite("haha") // false
 isFinite("3 chatons") // false
 ```
 
-### Conversion en nombres entières
+### Conversion en nombres entiers
 
-On utilise la fonction `parseInt(string, 10)` pour convertir en nombres entières comme ceci :
+On utilise la fonction `parseInt(string, 10)` pour convertir en nombres entiers comme ceci :
 
 ```javascript
 parseInt("3 chatons", 10) // 3
@@ -90,7 +90,7 @@ On peut aussi utiliser la méthode `.toFixed()` comme ci-dessous. Mais attention
 
 `Math.random()` génère un nombre aléatoire entre 0 (inclut) et 1 (exclu) `[0, 1)`
 
-À l'aide des opérations arithmétiques et d'autres méthodes disponibles pour nombres, nous pouvons obtenir des nombres aléatoires des intervalles différentes.
+À l'aide des opérations arithmétiques et d'autres méthodes disponibles pour nombres, nous pouvons obtenir des nombres aléatoires des intervalles différents.
 
 #### Exemples d'utilisation Math.random()
 
@@ -136,7 +136,7 @@ Math.max(8 * 7, 6 * 9) // 56
 
 `().toString(base)`
 
-le paramètre `base` prend des valeur de `2` au `36`, sa valeur par défaut et `10`
+le paramètre `base` prend des valeurs de `2` au `36`, sa valeur par défaut et `10`
 
 ```javascript
 (255).toString(16)  // 'ff'

@@ -204,14 +204,19 @@ numbers.sort((right, left) => {
   } else {
     return 0 // valeur 0 -> pas de changement
   }
-  /* sinon
-  return right - left
-  */
 })
 console.log(numbers)
 // [1, 4, 21, 30, 100000]
 ```
 
+Observez que la même fonction peut être ré-écrit de la façon beaucoup plus courte :
+
+```javascript
+const numbers = [1, 30, 4, 21, 100000]
+numbers.sort((right, left) => right - left)
+console.log(numbers)
+// [1, 4, 21, 30, 100000]
+```
 
 La méthode `sort` **modifie** l'array.
 

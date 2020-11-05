@@ -1,7 +1,7 @@
 # DOM - Document Object Model
 
-Document Object Model, (DOM), est une répresentation objet du document HTML. Quand nous utilisons JavaScript dans le navigateur nous avons accès à l'objet `document`. 
-Cet objet contient la structure de notre document HTML, nous permet de la modifier et gérér des intéractions. Nous allons analyser ses propriétés et méthodes les plus importantes.
+Document Object Model, (DOM), est une représentation objet du document HTML. Quand nous utilisons JavaScript dans le navigateur nous avons accès à l'objet `document`. 
+Cet objet contient la structure de notre document HTML, nous permet de la modifier et gérer des interactions. Nous allons analyser ses propriétés et méthodes les plus importantes.
 
 ```javascript
 console.dir(document)
@@ -46,7 +46,7 @@ document.getElementById("#pub").remove()
 
 ### document.querySelector(), element.querySelector()
 
-Utilise les même selecteurs que css.  
+Utilise les même sélecteurs que css.  
 Trouve un élément, premier que correspond au sélecteur.
 
 ```javascript
@@ -59,8 +59,8 @@ On aura le même résultat pour `document.querySelector('#id-name')` et  `docume
 ### document.querySelectorAll('selector')
 
 Le résultat retourné est une `NodeList`, une structure semblable à l'array.
-Si aucun élément ne correspond pas au selecteur, le résultat est une liste vide `[]`
-On peut parcourrir  `document.querySelectorAll('selector')` avec 
+Si aucun élément ne correspond pas au sélecteur, le résultat est une liste vide `[]`
+On peut parcourir  `document.querySelectorAll('selector')` avec 
   - la boucle `for ... of`, 
   - la méthode `.forEach()` 
   - avec la boucle for classique
@@ -142,7 +142,7 @@ document.body.getAttribute("author") // 'Paulina'
 document.body.removeAttribute("author")
 ```
 
-Attention, ceci n'est pas une bonne pratique. Les attributs personnalisés devraient toujous commancer par `data-`. Dans ce cas-là ils sont accèssible via la propriété `dataset`
+Attention, ceci n'est pas une bonne pratique. Les attributs personnalisés devraient commencer par `data-`. En plus, si nous respectons cette règle, nous pouvons les accéder via la propriété `dataset`.
 
 ```html
 <body data-author="Franck"></body>
@@ -164,6 +164,8 @@ delete document.body.dataset.author
 ## Modification du document
 
 ### element.textContent
+
+Nous pouvons modifier le contenu textuel au sein de notre document HTML.
 
 ```javascript
 const tagline = document.querySelector("#tagline")
@@ -219,7 +221,7 @@ const handleButtonClick = (event) => {
 myButton.addEventListener("click", handleButtonClick)
 ```
 
-On peut profiter de l'intéractivité des éléments de formulaires. On peut les utiliser en dehors d'élément `form`. Les types d'event que nous allons utiliser souvent sont `input` et `select` et `change`.
+On peut profiter de l'interactivité des éléments de formulaires. On peut les utiliser en dehors d'élément `form`. Les types d'event que nous allons utiliser souvent sont `input` et `select` et `change`.
 
 https://codepen.io/alyra/pen/LYGoobE
 

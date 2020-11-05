@@ -1,6 +1,6 @@
-# Destructuring Assignement
+# Destructuring Assignement (fr. affectation par décomposition)
 
-(fr. Affectation par décomposition)
+Nous allons découvrir quelques sécrets de la syntaxe des objets et tableaux qui rendent notre code plus court et souvent plus maintenable.
 
 ## objects
 
@@ -13,9 +13,14 @@ const alien = {
 }
 /* équivalent à
 alien = {
-  name (clé "name"): name (valeur de la variable name)
+  name: name,
+  age: age
+}
+alien = {
+  name (clé "name"): name (valeur de la variable name),
   age (clé "age"): age (valeur de la variable age)
 }
+*/
 ```
 
 Ca marche aussi dand le "sens inverse" :
@@ -26,9 +31,16 @@ const alien = {
   age: 300,
 }
 const { name } = alien
-// variable name égale à 'Deej'
+
+/* équivalent à
+const name = alien.name // 'Deej'
+*/
+
 const { age } = alien
-// variable age égale à 300
+
+/* équivalent à
+const age = alien.age // 300
+*/
 ```
 
 Définir plusieures variables à la fois est aussi possible est souvent utilisé :
@@ -39,11 +51,14 @@ const alien = {
   age: 300,
 }
 const { age, name } = alien
-// variable name égale à 'Deej'
-// variable age égale à 300
+
+/* équivalent à
+const name = alien.name // 'Deej'
+const age = alien.age // 300
+*/
 ```
 
-S'il n'y a pas de clé correspandant au nom de la variable :
+S'il n'y a pas de clé correspendant au nom de la variable, sa valeur est `undefined`:
 
 ```javascript
 const alien = {
@@ -52,12 +67,14 @@ const alien = {
 }
 
 const { age, id, name } = alien
-// variable age égale à 300
-// variable id égale à undefined
-// variable name égale à 'Deej'
+/* équivalent à
+const age = alien.age // 300
+const id = alien.id // undefined
+const name = alien.name // "Deej"
+*/
 ```
 
-On peut aussi avoir des valeur par défaut :
+Nous pouvons aussi prévoir un *fallback*, la valeur par défaut :
 
 ```javascript
 const alien = {
@@ -66,9 +83,11 @@ const alien = {
 }
 
 const { age = 100, id, name } = alien
-// variable age égale à 100
-// variable id égale à '_deej'
-// variable name égale à 'Deej'
+/* équivalent à
+const age = typeof alien.age !== "undefined" ? alien.age : 100 // 100
+const id = alien.id // "_deej"
+const name = alien.name // "Deej"
+*/
 ```
 
 On peut aussi récuperer une partie qui "reste" d'objet dans une variable, souvent on utilisera le nom `rest` pour cette variable (ceci est une convention). Pour cela on utilise les "..."

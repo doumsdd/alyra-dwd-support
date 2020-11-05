@@ -189,7 +189,7 @@ p.textContent = "Ce site n'utilise pas des cookies."
 document.body.append(cookieInfo)
 ```
 
-![](https://assets.codepen.io/4515922/beforeprepend.png)
+![](https://wptemplates.pehaa.com/assets/alyra/prepend-append.png)
 
 https://codepen.io/alyra/pen/GRoLXBj
 
@@ -200,25 +200,26 @@ const 'cookieInfo' = `<p>Ce site n'utilise pas des cookies.</p>`
 document.body.insertAdjacentHTML('afterend', cookieInfo)
 ```
 
-![](https://assets.codepen.io/4515922/insert.png)
+![](https://wptemplates.pehaa.com/assets/alyra/insertadjacent.png)
 
 https://codepen.io/alyra/pen/ZEQZMqq
 
 ### element.addEventListener
 
-`el.addEventListener(event, eventHandler)`
+`el.addEventListener(event, handleEvent)`
 
-`eventHandler` est une fonction callback
+`handleEvent` est une fonction callback
 
 ```javascript
 const myButton = document.querySelector("#my-button")
-myButton.addEventListener("click", (event) => {
+const handleButtonClick = (event) => {
   alert("button clicked !!!")
   console.log(event)
-})
+}
+myButton.addEventListener("click", handleButtonClick)
 ```
 
-On peut profiter de l'intéractivité des éléments de formulaires. On peut les utiliser en dehors d'élément `form`. Le type d'event qu'on utilise souvent avec `input` et `select` et `change`
+On peut profiter de l'intéractivité des éléments de formulaires. On peut les utiliser en dehors d'élément `form`. Les types d'event que nous allons utiliser souvent sont `input` et `select` et `change`.
 
 https://codepen.io/alyra/pen/LYGoobE
 

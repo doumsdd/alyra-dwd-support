@@ -2,7 +2,7 @@
 
 ## Objects - méthodes
 
-Les objets ne sont pas limités aux propriétés 'statiques', on peut aussi leur définir des méthodes (fonctions). Dans l'exemple ci-dessous, nous ajoutons une clé `sayHi` à `alien` où `sayHi` est une fonction. Pour l'éxécuter nous allons appeler `alien.sayHi()`.
+Les objets ne sont pas limités aux propriétés 'statiques', on peut aussi leur définir des méthodes (fonctions). Dans l'exemple ci-dessous, nous ajoutons une clé `sayHi` à `alien` où `sayHi` est une fonction. Pour l'exécuter nous allons appeler `alien.sayHi()`.
 
 ```javascript
 const alien = {
@@ -57,7 +57,7 @@ const alien = {
 
 ## this
 
-`this` est un mot-clé spécial (keyword). Sa valeur change selon le contexte où il est utilisé.
+`this` est un mot-clé spécial. Sa valeur change selon le contexte où il est utilisé.
 Quand une méthode est appelée, `this` correspond à l'objet. Voici un exemple qui vous aidera de comprendre l'importance de `this` :
 
 Nos aliens découvrent le système bancaire, notre alien Zork ouvre un compte bancaire, c'est le premier client. Dans le système de la banque la variable `client` est créée :
@@ -72,7 +72,7 @@ const client = {
 }
 ```
 
-Le banque ajoute une méthode `transfer` qui permet de modifier la valeur de `deposit`, le dévéloppeur inexperimenté tente :
+Le banque ajoute une méthode `transfer` qui permet de modifier la valeur de `deposit`, le développeur inexpérimenté tente :
 
 ```javascript
 const client = {
@@ -121,9 +121,9 @@ console.log("Deej", clientD.deposit)
 // "Deej" 0
 ```
 
-Nous appellons `clientD.transfer()` mais la méthode `transfer` n'opère pas sur l'objet `clientD` mais sur `client`. C'est tout a fait normale, elle était conçue ainsi, regardez le code de `transfer`. Voici une faille dans notre système bancaire 😱.
+Nous appelons `clientD.transfer()` mais la méthode `transfer` n'opère pas sur l'objet `clientD` mais sur `client`. C'est tout a fait normale, elle était conçue ainsi, regardez le code de `transfer`. Voici une faille dans notre système bancaire 😱.
 
-Nous pouvons y remedier avec le mot-clé `this`, comme ceci :
+Nous pouvons y remédier avec le mot-clé `this`, comme ceci :
 
 ```javascript
 const client = {
@@ -138,7 +138,7 @@ const client = {
 }
 ```
 
-Quand une fonction est **appelée** en tant qu'une méthode d'un objet, `this` correspondera à l'objet en question, `client.transfer(40)` ajoutera 40 sur le compte de `client` et `clientD.transfer(100)` ajoutera 40 sur le compte de `clientD`.
+Quand une fonction est **appelée** en tant qu'une méthode d'un objet, `this` correspondra à l'objet en question, `client.transfer(40)` ajoutera 40 sur le compte de `client` et `clientD.transfer(100)` ajoutera 40 sur le compte de `clientD`.
 
 https://codepen.io/alyra/pen/vYKRmYL
 
@@ -147,7 +147,7 @@ const alien = {
   name: "Zork",
   age: 320,
   sayHi() {
-    console.log(`Salutions Terriens, mon nom est ${this.name} !`)
+    console.log(`Salutations Terriens, mon nom est ${this.name} !`)
   },
   getOlder(years = 1) {
     this.age += years
@@ -155,12 +155,12 @@ const alien = {
 }
 ```
 
-Quand `sayHi` ou `getOlder` sont **appelées** en tant que des méthodes d'un objet, `this` correspondera à cet objet :
+Quand `sayHi` ou `getOlder` sont **appelées** en tant que des méthodes d'un objet, `this` correspondra à cet objet :
 
 ```javascript
-alien.sayHi() // this devient alien -> Salutions Terriens, mon nom est Zork !
+alien.sayHi() // this devient alien -> Salutations Terriens, mon nom est Zork !
 alien.name = "Jaba"
-alien.sayHi() // alien name a changé -> Salutions Terriens, mon nom est Jaba !
+alien.sayHi() // alien name a changé -> Salutations Terriens, mon nom est Jaba !
 ```
 
 Par contre, `this` **ne correspond pas** à l'objet, si fonction est appelée directement
@@ -169,7 +169,7 @@ Par contre, `this` **ne correspond pas** à l'objet, si fonction est appelée di
 const useOutside = alien.sayHi
 /*
 const useOutside = function () {
- console.log(`Salutions Terriens, mon nom est ${this.name} !`)
+ console.log(`Salutations Terriens, mon nom est ${this.name} !`)
 }
 */
 useOutside() // Uncaught TypeError: Cannot read property 'name' of undefined
@@ -195,7 +195,7 @@ window.scrollTo(0, 300)
 console.log(window.scrollY) // 300
 ```
 
-**Attention,** dans Node.js `window` n'est defini, est c'est l'objet `global` qui fait l'equivalent de `window`.
+**Attention,** dans Node.js `window` n'est défini, est c'est l'objet `global` qui fait l'equivalent de `window`.
 
 ### this dans une fonction classique (pas une arrow function) appelée directement (pas comme une méthode)
 
@@ -220,7 +220,7 @@ bonjour()
 
 ### this dans une fonction fléchée (arrow function) appelée directement
 
-`this` reste `window`, avec functions arrow, `this` répresent l'objet où la fonction était créée.
+`this` reste `window`, avec functions arrow, `this` represent l'objet où la fonction était créée.
 
 ```javascript
 "use strict"
@@ -233,7 +233,7 @@ hello()
 
 ### this - méthode d'un objet - fonction avec la syntaxe classique
 
-`this` devient l'objet auquel on applique la méthode (parfois nous apellons ça "binding").
+`this` devient l'objet auquel on applique la méthode (parfois nous appelons ça "binding").
 
 ```javascript
 const alien = {
@@ -249,7 +249,7 @@ alien.isAdult() // this de la ligne (*) devient alien
 
 ### this - méthode d'un objet - fonction avec la syntaxe arrow
 
-`this` comme il était, arrow function ne "bind" pas `this`, avec functions arrow, `this` répresent l'objet où la fonction était créée.
+`this` comme il était, arrow function ne "bind" pas `this`, avec functions arrow, `this` représente l'objet où la fonction était créée.
 
 ```javascript
 // console.log(this) // window (*)
@@ -322,7 +322,7 @@ alien.sayHiOnClick()
 
 ### this - fonction callback, syntaxe arrow, dans setTimeout et setInterval
 
-`this` répresent l'objet où la fonction fléchée a était créée.
+`this` représente l'objet où la fonction fléchée a était créée.
 
 ## Binding
 
@@ -337,7 +337,7 @@ const alien = {
   name: "Zork",
   age: 320,
   sayHi() {
-    console.log(`Salutions Terriens, mon nom est ${this.name} !`)
+    console.log(`Salutations Terriens, mon nom est ${this.name} !`)
   },
 }
 
@@ -348,7 +348,7 @@ btn.addEventListener("click", alien.sayHi)
 
 btn.addEventListener('click', function() {
   console.log(
-    `Salutions Terriens, mon nom est ${this.name} !`
+    `Salutations Terriens, mon nom est ${this.name} !`
   );
 })
 
@@ -379,7 +379,7 @@ setTimeout(user.sayHi.bind(user), 1000) // Salut, je suis Marie
 
 ## getters & setters
 
-Afin de comprendre l'utilité de ce concept, regardons l'exemple suivaint :
+Afin de comprendre l'utilité de ce concept, regardons l'exemple suivant :
 
 ```javascript
 const website = {
@@ -394,10 +394,7 @@ Quand le domain change, par exemple
 `website.domain = alyra.com`
 
 nous devons penser à changer `website.fullLink` en même temps.
-
-Pour y rémédier on aurait pu, utiliser `fullLink` en tant qu'une méthode :
-
-```javascript
+souvent```javascript
 const website = {
   protocol: "https",
   domain: "alyra.fr",
@@ -410,7 +407,7 @@ website.domain = "alyra.com"
 website.fullLink() // donne https://alyra.com
 ```
 
-Ça a l'air de résoudre le problème et souvant est une approche suffisante. Par contre, on n'est pas protégé contre la situation suivainte :
+Ça a l'air de résoudre le problème et souvent est une approche suffisante. Par contre, on n'est pas protégé contre la situation suivante :
 
 ```javascript
 website.fullLink = "https://codepen.io"
@@ -445,7 +442,7 @@ const website = {
     }
   },
 }
-// pour lire (attention si on utilise getter, on accède au clé sans parentèses)
+// pour lire (attention si on utilise getter, on accède au clé sans parenthèses)
 website.fullLink
 // et pour écrire
 website.fullLink = "https://codepen.io"

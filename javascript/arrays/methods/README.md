@@ -5,11 +5,11 @@
 ![](https://assets.codepen.io/4515922/map.png)
 
 ```javascript
-const mapCallback = (el, index, array) => ...
+const mapCallback = (el, index, array) => { ... }
 const newArray = myArray.map(mapCallback)
 ```
 
-Chaque élément de myArray est passé par `mapCallback`, la nouvelle array contient les résultats d'évaluation de `mapCallback`
+Chaque élément de `myArray` est passé par la fonction `mapCallback`. La nouvelle array contient les résultats d'évaluation de `mapCallback` :
 
 ```javascript
 const myArray = [1, 2, 3]
@@ -31,18 +31,18 @@ const newArray = myArray.map((el, index) => el * index)
 */
 ```
 
-Méthode `map` ne modifie pas l'array à laquelle elle est appliquée. Une nouvelle _array_ est créée.
+Méthode `map` **ne modifie pas** l'array à laquelle elle est appliquée. Une nouvelle _array_ est créée.
 
 ## Méthode `filter`
 
 ![](https://assets.codepen.io/4515922/filter.png)
 
 ```javascript
-const filterCallback = (el, index, array) =>  ...
+const filterCallback = (el, index, array) =>  { ... }
 const newArray = myArray.filter(filterCallback)
 ```
 
-Chaque élément de myArray est passé par `filterCallback`, si le résultat est _truthy_ l'élement reste, sinon l'élément est enlevé
+Chaque élément de myArray est passé par `filterCallback`, si le résultat est _truthy_ l'élement reste, sinon l'élément est enlevé.
 
 ```javascript
 const myArray = [-1, 3, -3, 4, 6]
@@ -56,16 +56,18 @@ const newArray = myArray.filter((el) => el > 2)
 */
 ```
 
-Méthode `filter` ne modifie pas l'array à laquelle elle est appliquée. Une nouvelle _array_ est créée.
+Méthode `filter` **ne modifie pas** l'array à laquelle elle est appliquée. Une nouvelle _array_ est créée.
 
 ## Méthode `find`
 
 ![](https://assets.codepen.io/4515922/find.png)
 
 ```javascript
-const findCallback = (el, index, array) =>  ...
+const findCallback = (el, index, array) =>  { ... }
 const element = myArray.find(findCallback)
 ```
+
+Les éléments de `myArray` sont passés, l'un après l'autre, par `findCallback`, si le résultat est _truthy_ l'élement est retourné et l'opération s'arrête.
 
 ```javascript
 const myArray = [-1, 3, -3, 4, 6]
@@ -76,7 +78,7 @@ const element = myArray.find((el) => el > 2)
 */
 ```
 
-Il existe la méthode similaire `findIndex`
+Il existe une méthode similaire `findIndex`, qui retourne l'index et pas l'élément du tableau. Les éléments de `myArray` sont passés, l'un après l'autre, par `findCallback`, si le résultat est _truthy_ l'index est retourné et l'opération s'arrête.
 
 ```javascript
 const myArray = [-1, 3, -3, 4, 6]
@@ -96,7 +98,7 @@ const someCallback = (el, index, array) =>  ...
 const hasSome = myArray.some(someCallback)
 ```
 
-Méthode `some` retourne `true` si elle trouve un élément pour lequel la fonction callback est truthy
+Méthode `some` retourne `true` si elle trouve un élément pour lequel la fonction callback est *truthy*.
 
 ```javascript
 const myArray = [-1, 3, -3, 4, 6]
@@ -107,7 +109,7 @@ const element = myArray.some((el) => el > 2)
 */
 ```
 
-Méthode `every` retourne `true` si la fonction callback est truthy pour tous les éléments
+Méthode `every` retourne `true` si la fonction callback est *truthy* pour tous les éléments.
 
 ```javascript
 const myArray = [-1, 3, -3, 4, 6]
@@ -149,7 +151,8 @@ console.log(months)
 // ["Dec", "Feb", "Jan", "March"]
 ```
 
-Par défault en sortant les éléments sont transformés en string à la volée, ceci donne des résultats inattendus /o\
+Par défault, JavaScript compare les équivalents "string" des éléments (coercion vers le type `"string"` à la volée). 
+Attention, ceci donne des résultats inattendus 😱 :
 
 ```javascript
 const numbers = [1, 30, 4, 21, 100000]
@@ -158,7 +161,21 @@ console.log(numbers)
 // [1, 100000, 21, 30, 4]
 ```
 
-Pour y remedier, on utilise une fonction callback, qui "customize" le processus de trie
+Pour y remedier, on utilise une fonction callback, qui permet de "customizer" le processus de trie :
+
+
+```javascript
+function compareCallback(right, left) {
+  if (si right inférieur à left selon notre critère personnalisé) {
+    return -1; // ou une valeur négative, changement de l'ordre
+  }
+  if (si right superieur à left selon notre critère personnalisé {
+    return 1; // ou une valeur positive, pas de changement
+  }
+  // si right et gauche sont égaux selon notre critère
+  return 0;
+}
+```
 
 ```javascript
 const numbers = [1, 30, 4, 21, 100000]
@@ -178,20 +195,8 @@ console.log(numbers)
 // [1, 4, 21, 30, 100000]
 ```
 
-```javascript
-function compareCallback(droit, gauche) {
-  if (si droit inférieur à gauche selon notre critère personnalisé) {
-    return -1; // ou une valeur négative, changement de l'ordre
-  }
-  if (si droit superieur à gauche selon notre critère personnalisé {
-    return 1; // ou une valeur positive, pas de changement
-  }
-  // si droit et gauche sont égaux selon notre critère
-  return 0;
-}
-```
 
-La méthode `sort` modifie l'array.
+La méthode `sort` **modifie** l'array.
 
 # Exercices
 

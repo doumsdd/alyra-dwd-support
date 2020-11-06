@@ -7,8 +7,9 @@ Arrays (tableaux) permettent de stocker des collections (listes) de données.
 ```javascript
 const myList1 = [] // []
 const myList2 = new Array() // []
-const myListMisc = new Array("hello", 13, 8 === "8") // ['hello', 13, false]
-const shopping = [“t-shirt", "shorts", "pareo"]
+const myListMisc = new Array("hello", 13, 8 === "8") // [
+'hello', 13, false]
+const shopping = [“t-shirt", "shorts", "paréo"]
 const myArray = new Array(3) // [undefined, undefined, undefined]
 const myLetters = new Array.from("abcd") // ["a", "b", "c", "d"]
 ```
@@ -22,7 +23,7 @@ const shopping = [“t-shirt", "shorts", "pareo"]
 shopping.length // 3
 ```
 
-La propriété `length` est souvent utilisée dans le contexte booléen, afin de vérifier si un array est vide. (Rappelons nous que `[]` est une valeur *truthy*). Dans l'exemple suivant, nous utilisons `shopping.length` puisque `shopping` serait toujours évalué *truthy*.
+La propriété `length` est souvent utilisée dans le contexte booléen, afin de vérifier si un array est vide. (Rappelons-nous que `[]` est une valeur *truthy*). Dans l'exemple suivant, nous utilisons `shopping.length` puisque `shopping` serait toujours évalué *truthy*.
 
 ```javascript
 if (shopping.length) {
@@ -81,9 +82,9 @@ console.log(removed) // 90
 
 Attention : Les méthodes `pop` et `push` sont beaucoup plus rapide qut `shift` et `unshift`.
 
-Le méthodes `pop`, `push` et `shift`, `unshift` opèrent sur les extrémités d'un array. Nous avons aussi une méthode générique `splice`
+Les méthodes `pop`, `push` et `shift`, `unshift` opèrent sur les extrémités d'un array. Nous avons aussi une méthode générique `splice`
 
-Le syntaxe: `arr.splice(index[, deleteCount, elem1, ..., elemN])` peut être lu :
+La syntaxe: `arr.splice(index[, deleteCount, elem1, ..., elemN])` peut être lu :
 
 - positionne-toi au numéro indiqué par index, enlève `deleteCount` éléments et insère `elem1, ..., elemN`
 
@@ -143,7 +144,7 @@ poissonsChoisis = mesPoissons.slice(0, 3)
 // mesPoissons - ["scalaire", "clown", "mandarin", "chirurgien", "bleu"]
 ```
 
-## Renverser l'ordre des élément
+## Renverser l'ordre des éléments
 
 ```javascript
 const myArray = ["un", "deux", "trois"]
@@ -168,32 +169,32 @@ for (let i = 0; i <= shoppingList.length - 1; i++) {
 }
 
 /* affiche :
-J'ai besoin d'acheter 2 tshirts
+J'ai besoin d'acheter 2 t-shirts
 J'ai besoin d'acheter un short
-J'ai besoin d'acheter un pareo
+J'ai besoin d'acheter un paréo
 */
 ```
 
 - méthode moderne 😍, boucle `for ... of`
 
 ```javascript
-const shoppingList = ["2 t-shirts", "un short", "un pareo"]
+const shoppingList = ["2 t-shirts", "un short", "un paréo"]
 
 for (let item of shoppingList) {
   alert(`J'ai besoin d'acheter ${item}`)
 }
 
 /* affiche :
-J'ai besoin d'acheter 2 t-shirt
+J'ai besoin d'acheter 2 t-shirts
 J'ai besoin d'acheter un short
-J'ai besoin d'acheter un pareo
+J'ai besoin d'acheter un paréo
 */
 ```
 
 - méthode `forEach`
 
 ```javascript
-const shoppingList = ["2 t-shirts", "un short", "un pareo"]
+const shoppingList = ["2 t-shirts", "un short", "un paréo"]
 
 const iterationFunction = (el, index, array) => {
   console.log(`(${index + 1}/${array.length}) J'ai besoin d'acheter ${el}`)
@@ -202,9 +203,9 @@ const iterationFunction = (el, index, array) => {
 shoppingList.forEach(iterationFunction)
 
 /* affiche :
-(1/3) J'ai besoin d'acheter 2 t-shirt
+(1/3) J'ai besoin d'acheter 2 t-shirts
 (2/3) J'ai besoin d'acheter un short
-(3/3) J'ai besoin d'acheter un pareo
+(3/3) J'ai besoin d'acheter un paréo
 */
 ```
 
@@ -223,7 +224,7 @@ console.log(array3)
 
 ## String ↔️ Array `split` & `join`
 
-Il est pratique de savoir comment transformer les strings en arrays et vice versa. Pour cela nous avons deux méthodes :
+Il est pratique de savoir comment transformer les strings en arrays et vice versa. Pour cela, nous avons deux méthodes :
 - `split` qui opère sur les valeurs de type `"string"`
 - `join` qui opère sur les arrays
 

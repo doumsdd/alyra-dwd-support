@@ -362,7 +362,7 @@ const funcName = function (param1, param2){
 */
 ```
 
-Si le *body* de notre fonction contient une seule ligne, notre syntaxe peut être encore plus simplifiée, nous pouvons nous passes des accolades et le mot-clé `return` :
+Si le *body* de notre fonction contient une seule ligne, notre syntaxe peut être encore plus simplifiée, nous pouvons nous passer des accolades et le mot-clé `return` :
 
 ```javascript
 const square = (x) => x * x

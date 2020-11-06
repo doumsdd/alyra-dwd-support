@@ -33,7 +33,11 @@ document.body.style.background = "red"
 
 `document.getElementById('id-name')` nous donne accès à l'élément avec l'attribut id `id-name`.  `document.getElementById('id-name')` retourne l'élément s'il existe ou `null.`
 
-On peut avoir le même résultat avec la méthode plus générique `document.querySelector('#id-name')`, dans ce cas il faut ajouter le symbol "#"
+On peut avoir le même résultat avec la méthode plus générique `document.querySelector()`, comparons ces 2 méthodes
+```javascript
+document.getElementById('id-name')
+document.querySelector('#id-name') // comme dans les sélecteurs CSS
+```
 
 `getElementById()` s'applique uniquement sur `document`
 

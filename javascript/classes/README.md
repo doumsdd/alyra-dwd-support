@@ -237,7 +237,7 @@ superAlien1.goOnMission()
 
 ![](https://assets.codepen.io/4515922/superAlien.png)
 
-Dans l'exemple ci-dessus, la class `SuperAlien` n'a pas de fonction `constructor`, en fait il est mis en place de la façon implicite
+Dans l'exemple ci-dessus, la class `SuperAlien` n'a pas de fonction `constructor` mise en place explicitement. En fait `constructor` (copie du `constructor` la classe parente) est mis en place de la façon implicite :
 
 ```
 class SuperAlien extends Alien {
@@ -255,7 +255,7 @@ class SuperAlien extends Alien {
 
 ## super()
 
-Parfois on veut modifier la fonction constructor, par exemple ajouter la propriété mission à `SuperAlien`.
+Parfois on veut modifier la fonction `constructor` dans la classe dérivée. Dans notre exemple, nous allons ajouter la propriété `mission` à `SuperAlien`.
 
 ```javascript
 class SuperAlien extends Alien {
@@ -280,10 +280,13 @@ class SuperAlien extends Alien {
 }
 ```
 
-`super(...)` apelle le constructor de la classe parente, on **doit** l'utiliser dans le constructor de la classe enfant (si on la met en place explicitement).  
-Par contre, on ne l'appelle pas en dehors de la fonction constructor.
+`super(...)` apelle le `constructor` de la classe parente. Voice quelque règles concerant `super()` :
 
-`super(...)` dans le `constructor` doit être appelé le premier, avant l'utilisatio de `this` - sinon `Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor`
+- On **doit** utiliser `super(...)` dans le constructor de la classe enfant
+- `super(...)` dans le `constructor` doit être appelé le premier, avant l'utilisatio de `this`. Non respect de cette règle génère une erreur : `Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor`.  
+- On n'appelle jamais `super()` en dehors de la fonction constructor.
+
+
 
 ## super.myParentMethod()
 
@@ -321,9 +324,9 @@ Je pars en mission diminuer la pollution des océans sur la planète Terre.
 */
 ```
 
-# méthodes et propriétés statiques
+# Méthodes et propriétés statiques
 
-Le mot-clé static permet de définir une méthode statique d'une classe. Les méthodes statiques ne sont pas disponibles sur les instances d'une classe mais sont appelées sur la classe elle-même. Les méthodes statiques sont généralement des fonctions utilitaires (qui peuvent permettre de créer des objets par exemple). (source [MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Classes/static))
+Le mot-clé `static` permet de définir une méthode statique d'une classe. Les méthodes statiques **ne sont pas disponibles sur les instances** d'une classe **mais** sont appelées **sur la classe elle-même.** Les méthodes statiques sont généralement des fonctions utilitaires (qui peuvent permettre de créer des objets par exemple). (source [MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Classes/static))
 
 ```javascript
 class Alien {
@@ -350,13 +353,13 @@ https://codepen.io/alyra/pen/vYGNLRg
 
 # instanceof
 
-Syntaxe
+
 
 ```javascript
-object instanceof Constructor // true ou false
+object instanceof MyConstructor // true ou false
 ```
 
-Ici on véfifie si Constructor est dans la la chaîne de prototypes de l'objet
+L'opérateur `instanceof` test si un objet possède MyConstructor dans sa chaîne de prototype.
 
 par example :
 

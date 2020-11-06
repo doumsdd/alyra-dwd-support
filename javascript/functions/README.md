@@ -99,7 +99,7 @@ if (verifyUserName("alyra2021")) {
 }
 ```
 
-![](https://wptemplates.pehaa.com/assets/alyra/function.png)
+![](https://wptemplates.pehaa.com/assets/alyra/function1.png)
 
 
 

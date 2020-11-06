@@ -7,7 +7,7 @@ Ce samedi matin, en sirotant son café, PeHaa commence à noter tout ce qu'ils d
 const listeCoursesPeHaa = ['tortillas', 'haricots', 'piment']
 ```
 
-Comme vous pouvez vous en douter, ce soir, burritos au menu 🌮! Et pas uniquement chez PeHaa et Vains. Inspirée par sa voisine et munie de la même recette super-easy, Anne-Françoise, note ce qui suit :
+Comme vous pouvez vous en douter, ce soir, burritos au menu 🌮! Et pas uniquement chez PeHaa et Vains. Inspirée par sa voisine et munie de la même recette super-easy, Anne-Françoise note ce qui suit :
 
 ```javascript
 const listeCoursesAF = ['tortillas', 'haricots', 'piment']
@@ -16,7 +16,7 @@ const listeCoursesAF = ['tortillas', 'haricots', 'piment']
 Première grande question : est-ce vrai que ```listeCoursesPeHaa === listeCoursesAF``` ?
 
 Jusqu'à maintenant nous avons travaillé avec des valeurs de type "primitifs" (number, string, boolean, undefined). 
-Les *arrays* ne sont pas de type primitifs, il sont de type 'object', voici la preuve :
+Les *arrays* ne sont pas de type primitif, ils sont de type 'object', voici la preuve :
 
 ```javascript
 typeof(['tortillas', 'haricots', 'piment'])
@@ -42,13 +42,13 @@ console.log(listeCoursesPeHaa)
 // ['tortillas', 'haricots', 'piment', 'oeufs']
 ```
 
-La méthode `push` ajoute des nouveau éléments **à la fin** de l'array. Dans notre cas 'oeufs' est ajouté à la fin de l'array dont la référence est stockée dans `listeCoursesPeHaa`.
+La méthode `push` ajoute de nouveaux éléments **à la fin** de l'array. Dans notre cas 'oeufs' est ajouté à la fin de l'array dont la référence est stockée dans `listeCoursesPeHaa`.
 
 Attendez 🧐, la liste vient d'être modifiée. La variable a été déclarée avec le mot `const` - hey, console, comment ça, y a pas d'erreur ??!
 
 Ben non, la liste était modifiée, mais son adresse en mémoire (sa référence) est restée la même. Rappelons, que la variable `listeCoursesPeHaa` indique la référence, et non la liste.
 
-> "Hmmm, j'ai du oublier plein de choses, tu veux regarder, s'il te plaît :) ?" - demande PeHaa à son mari. 
+> "Hmmm, j'ai dû oublier plein de choses, tu veux regarder, s'il te plaît :) ?" - demande PeHaa à son mari. 
 
 Vains prend le relais : 
 
@@ -57,14 +57,14 @@ const listeCoursesVains = listeCoursesPeHaa
 listeCoursesVains.push('lasagnes', 'pizza', 'bières', 'clémentines')
 ```
 
-> "Je regarde ce que tu as ajouté" - dit PeHaa
+> "Je regarde ce que tu as ajouté" - dis PeHaa
 
 ```javascript
 console.log(listeCoursesPeHaa)
 // ['tortillas', 'haricots', 'piment', 'oeufs', 'lasagnes', 'pizza', 'bières', 'clémentines']
 ```
 
-Attendez, quatre nouveaux ingrédients sur la liste de PeHaa. Qu'est ce qui vient de se passer ici ?
+Attendez, quatre nouveaux ingrédients sur la liste de PeHaa. Qu'est-ce qui vient de se passer ici ?
 
 Analysons ça, étape par étape.  
 Quand Vains a déclaré sa variable `listeCoursesVains`, il lui a affecté la valeur de `listeCoursesPeHaa`. Cette dernière est la référence de l'array que PeHaa a créé au début de cette histoire.
@@ -108,4 +108,4 @@ listeCoursesPeHaa = []
 Ceci n'est pas possible. Ici on vient de créer un nouvel objet (liste vide), un nouvel objet = une nouvelle adresse en mémoire (nouvelle référence). On essaye de réaffecter listeCoursesPeHaa qui était créée avec `const`. Ceci donne une erreur.
 
 
-PS. Les personnages et les situations de ce récit étant purement fictifs, toute ressemblance avec des personnes ou des situations existantes ou ayant existé ne serait que pure coincidence.
+PS. Les personnages et les situations de ce récit étant purement fictifs, toute ressemblance avec des personnes ou des situations existantes ou ayant existé ne serait que pure coïncidence.

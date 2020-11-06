@@ -7,8 +7,8 @@ Arrays (tableaux) permettent de stocker des collections (listes) de données.
 ```javascript
 const myList1 = [] // []
 const myList2 = new Array() // []
-const myListMisc = new Array("hello", 13, 8 === "8") // [
-'hello', 13, false]
+const myListMisc = new Array("hello", 13, 8 === "8") 
+// ['hello', 13, false]
 const shopping = [“t-shirt", "shorts", "paréo"]
 const myArray = new Array(3) // [undefined, undefined, undefined]
 const myLetters = new Array.from("abcd") // ["a", "b", "c", "d"]

@@ -7,8 +7,6 @@ Cet objet contient la structure de notre document HTML, nous permet de la modifi
 console.dir(document)
 ```
 
-Nous allons utiliser [ce repo]().
-
 ## Sélectionner un élément : 
 
 ### document.documentElement

@@ -49,7 +49,7 @@ const veilles = [
 ]
 ```
 
-Ici, `veilles` est un array contant des objets. Dans la variable `paulina`, la clé mission contient un array des strings.
+Ici, `veilles` est un array contenant des objets. Dans la variable `paulina`, la clé mission contient un array des strings.
 
 ## Création
 
@@ -87,7 +87,7 @@ planningVacancesVains.start = "2020/08/14"
 planningVacancesVains.end = "2020/08/30"
 ```
 
-On peut aussi supprimer une clé
+On peut aussi **supprimer une clé** :
 
 ```
 delete planningVacancesPaulina.transport
@@ -99,6 +99,11 @@ Afin d'accéder une clé :
 console.log(planningVacancesPaulina.destination)
 console.log(planningVacancesPaulina["destination"])
 console.log(planningVacancesPaulina.shopping[1])
+```
+
+Et si la valeur de notre clé est stockée dans une variable :
+
+```javascript
 const key = "end"
 console.log(planningVacancesPaulina[key])
 ```
@@ -112,18 +117,30 @@ const droid = {
   mass: 32,
   eyeColor: "red",
 }
+```
 
+Nous pouvons lister (ceci dit le résultat sera un array) les clés avec la méthode `Object.keys()` : 
+
+```javascript
 // les clés
 Object.keys(droid) // ['name', 'height', 'mass', 'eyeColor']
+```
 
+De la même façon, nous pouvons lister les valeurs avec la méthode `Object.values()` : 
+
+```javascript
 // les valeurs
 Object.values(droid) // ['R2-D2', 96, 32, 'red']
+```
 
+Et finalement, nous pouvons lister (format array) les pairs clé-valeur avec la méthode `Object.entries()` : 
+
+```
 // les pairs clé, valeur
 Object.entries(droid) // [['name', 'R2-D2'], ['height', 96], ['mass', 32], ['eyeColor', 'red']]
 ```
 
-On peut parcourir toutes les clés avec une boucle `for in` (attention, pour des arrays c'était `for of`)
+Afin de parcourir l'objet par les clés, nous avons dans notre arseanl la boucle `for in` (attention, pour des arrays c'était `for of`)
 
 ```javascript
 for (let key in droid) {
@@ -131,7 +148,7 @@ for (let key in droid) {
 }
 ```
 
-Etant donné que les méthodes `Object.keys`, `Object.values` et `Object.entries` retournent des arrays, on peut utiliser des méthodes telles que map, filter, find, etc, ainsi que la loop `for of`.
+Etant donné que les méthodes `Object.keys`, `Object.values` et `Object.entries` retournent des arrays, on peut "les marier" avec  des méthodes telles que `map`, `filter`, `find`, etc., ainsi que la loop `for of`.
 
 ```javascript
 for (let value of Object.values(droid)) {
@@ -156,6 +173,7 @@ const droid = {
 
 console.log("eyeColor" in droid)
 console.log(droid.eyeColor !== undefined)
+console.log(typeof droid.eyeColor !== "undefined")
 ```
 
 ## Merge objects
@@ -191,11 +209,11 @@ Object {
 
 `Object.assign(object1, object2, object3)` merge les 3 objets, si une clé est dupliquée, c'est l'objet à droite qui emporte celui à gauche
 
-Cette méthode modifie `object1`
+Cette méthode modifie `object1`.
 
 https://codepen.io/alyra/pen/abNyKYZ
 
-On peut aussi merger des objets sans modifier l'objet d'entrée
+On peut aussi "merger" des objets sans modifier l'objet d'entrée :
 
 ```javascript
 const newObject1 = { ...myInfo, ...professionalInfo }

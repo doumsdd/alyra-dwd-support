@@ -1,6 +1,6 @@
 # Arrays - méthodes avec "callback" functions
 
-Dans le cours précédent nous avons vu la méthode `forEach` qui opère sur un array et prend une fonction (*callback function*) en tant que le paramètre. Pour le rappel :
+Dans le cours précédent, nous avons vu la méthode `forEach` qui opère sur un array et prend une fonction (*callback function*) en tant que le paramètre. Pour le rappel :
 
 ```javascript
 const printList = (el, index) => {
@@ -15,7 +15,7 @@ myArray.forEach(printList)
 */
 ```
 
-Nous allons maintenant découvrir quelques méthodes supplémentaires qui facilitent la travail avec des tableaux. Nous allons parler de `map`, `filter`, `find`, `findIndex`, `every` `some` et `sort. 
+Nous allons maintenant découvrir quelques méthodes supplémentaires qui facilitent le travail avec des tableaux. Nous allons parler de `map`, `filter`, `find`, `findIndex`, `every` `some` et `sort. 
 
 ## Méthode `map`
 
@@ -26,7 +26,7 @@ const mapCallback = (el, index, array) => { ... }
 const newArray = myArray.map(mapCallback)
 ```
 
-Chaque élément de `myArray` est passé par la fonction `mapCallback`. La nouvelle array contient les résultats d'évaluation de `mapCallback` :
+Chaque élément de `myArray` est passé par la fonction `mapCallback`. Le nouvelle array contient les résultats d'évaluation de `mapCallback` :
 
 ```javascript
 const myArray = [1, 2, 3]
@@ -102,7 +102,7 @@ const myArray = [-1, 3, -3, 4, 6]
 const element = myArray.findIndex((el) => el > 2)
 // 1
 /* -1 -> -1 > 2 -> false -> ce n'est pas le bon élément
-    3 ->  3 > 2 -> true  -> c'est bon ! je m'arrête et je retourne l'index (la position) d'élément 3 qui est égale à 1 
+    3 ->  3 > 2 -> true  -> c'est bon ! je m'arrête et je retourne l'index (la position) d'élément 3 qui est égal à 1 
 */
 ```
 
@@ -200,7 +200,7 @@ numbers.sort((right, left) => {
   if (right > left) {
     return 1 // valeur positive -> pas de changement
   } else if (right < left) {
-    return -1 // valeur negative -> changement !!!
+    return -1 // valeur négative -> changement !!!
   } else {
     return 0 // valeur 0 -> pas de changement
   }
@@ -209,7 +209,7 @@ console.log(numbers)
 // [1, 4, 21, 30, 100000]
 ```
 
-Observez que la même fonction peut être ré-écrit de la façon beaucoup plus courte :
+Observez que la même fonction peut être ré-écrite de la façon beaucoup plus courte :
 
 ```javascript
 const numbers = [1, 30, 4, 21, 100000]

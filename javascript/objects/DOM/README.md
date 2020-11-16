@@ -1,3 +1,6 @@
+
+
+
 # DOM - Document Object Model
 
 Document Object Model, (DOM), est une représentation objet du document HTML. Quand nous utilisons JavaScript dans le navigateur nous avons accès à l'objet `document`. 
@@ -16,6 +19,18 @@ console.dir(document)
 console.dir(document.documentElement)
 ```
 
+```html
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- ...  -->
+  </head>
+  <body>
+    <!-- ...  -->
+  </body>
+</html>
+```
+
 ```javascript
 document.documentElement // correspond au html
 document.documentElement.lang // 'fr'
@@ -31,9 +46,11 @@ document.body.style.background = "red"
 
 ### document.getElementById()
 
-`document.getElementById('id-name')` nous donne accès à l'élément avec l'attribut id `id-name`.  `document.getElementById('id-name')` retourne l'élément s'il existe ou `null.`
+`document.getElementById('id-name')` nous donne accès à l'élément avec l'attribut id `id-name`.  
+`document.getElementById('id-name')` retourne l'élément s'il existe ou `null.`
 
-On peut avoir le même résultat avec la méthode plus générique `document.querySelector()`, comparons ces 2 méthodes
+Nous pouvons obtenir le même résultat avec la méthode plus générique `document.querySelector()`.  
+Comparons ces 2 méthodes
 ```javascript
 document.getElementById('id-name')
 document.querySelector('#id-name') // comme dans les sélecteurs CSS
@@ -48,8 +65,10 @@ document.getElementById("#pub").remove()
 
 ### document.querySelector(), element.querySelector()
 
-Utilise les même sélecteurs que css.  
-Trouve un élément, premier que correspond au sélecteur.
+La méthode `querySelector()` utilise les même sélecteurs que CSS.  
+Elle retourne un élément, premier que correspond au sélecteur, ou `null`. Lequel élément est le premier ? Attention, puisque ce n'est pas tout à fait intuitif, voici le règle :
+
+> Note : La correspondance est effectuée en utilisant le parcours pré-ordonné profondeur-d'abord des nœuds du document, en partant du premier élément dans le balisage du document et en itérant à travers les nœuds en séquence, par ordre du compte de nœuds enfants (source [MDN](https://developer.mozilla.org/fr/docs/Web/API/Document/querySelector))
 
 ```javascript
 const cookie = document.querySelector("#cookie-info")
@@ -81,9 +100,17 @@ allButtons.forEach((button) => {
 })
 ```
 
+```javascript
+const allButtons = document.querySelectorAll("button")
+for (let i = 0; i < allButtons.length; i++) {
+   allButtons[i].disabled = true
+}
+```
+
 ### document.getElementsByTagName('tag')
 
 ```javascript
+const allButtons = document.getElementsByTagName("button")
 const allParagraphs = document.getElementsByTagName("p")
 ```
 
@@ -97,7 +124,7 @@ const allParagraphs = document.getElementsByClassName(".hidden")
 
 ### Les attributes `standard`
 
-Les attributes HTML `standard` peuvent être utilisés  "directement" en tant que une propriété d'un élément
+Lorsque le navigateur analyse le code HTML pour générer l'objet DOM, il reconnaît les attributs standard et crée des propriétés DOM à partir d'eux. Dans ce cas, un attribut HTML `standard` peut être utilisé  "directement" en tant qu'une propriété :
 
 ```javascript
 // attribut lang
@@ -109,7 +136,7 @@ el.id
 
 ## class
 
-Au lieu de propriété `class` nous avons `className` et `classList`
+Afin d'éviter des conflits avec le mot-clé "class", la propriété `className` est utilisée. Il existe aussi  `classList`
 
 ```html
 <body class="bg-dark container"></body>
@@ -118,6 +145,11 @@ Au lieu de propriété `class` nous avons `className` et `classList`
 ```javascript
 document.body.class // undefined
 document.body.className // "bg-dark container"
+```
+
+`className` retourne un `"string"` composé de la liste des classes, séparées par des espaces. Ceci n'est pas toujours pratique, surtout si nous souhaitons manipules les noms des classes. Nous allons plus souvent utiliser la propriété `classList` avec ses méthodes `add`, `remove`, `contains`, `toggle` ou `replace.` 
+
+```javascript
 document.body.classList.length // 2
 document.body.classList.contains("bg-dark") // true
 document.body.classList.add("text-white")
@@ -126,9 +158,9 @@ document.body.classList.remove("container")
 
 [Plus d'information ici - MDN](https://developer.mozilla.org/fr/docs/Web/API/Element/classList)
 
-## non-standard attributes
+## Non-standard attributes
 
-Pour non-standard attributs (les attributs crées par l'utilisateur) nous devons utiliser les méthodes `hasAttribute(), setAttribute(), getAttribute(), removeAttribute()`.
+Pour non-standard attributs (ceux qui ne sont pas accessibles directement en tant que des propriétés) nous devons utiliser les méthodes `hasAttribute(), setAttribute(), getAttribute(), removeAttribute()`.
 Ces méthodes fonctionnent aussi pour des attributs standard.
 
 ```html

@@ -222,7 +222,7 @@ bonjour()
 
 ### `this` dans une fonction fléchée (arrow function) appelée directement
 
-`this` reste `window`, avec functions arrow, `this` est le même où la fonction était créée.
+`this` reste `window`, avec une functions fléchée, `this` reste le `this` du contexte où la fonction a été créée.
 
 ```javascript
 "use strict"
@@ -251,8 +251,7 @@ alien.isAdult() // this de la ligne (*) devient alien
 
 ### `this` - méthode d'un objet - fonction avec la syntaxe arrow
 
-`this` comme il était, arrow function ne "bind" pas `this`, avec functions arrow, `this` est le même où la fonction était créée.
-
+arrow function ne "bind" pas `this`, `this` reste `window`, avec une functions fléchée, `this` reste le `this` du contexte où la fonction a été créée.
 ```javascript
 // console.log(this) // window (*)
 const alien = {
@@ -296,7 +295,7 @@ https://codepen.io/alyra/pen/ExKYKVR
 
 ### `this` - fonction callback, syntaxe arrow, dans addEventListener
 
-arrow function arrow function ne "bind" pas `this`, avec functions fléchée, `this` est le même où la fonction était créée
+arrow function ne "bind" pas `this`,  avec une functions fléchée, `this` reste le `this` du contexte où la fonction a été créée.
 
 ```javascript
 // console.log(this) // window (*)
@@ -318,15 +317,16 @@ const alien = {
 alien.sayHiOnClick()
 ```
 
-### `this` - fonction callback, syntaxe classique, dans setTimeout et setInterval
+### `this` - fonction callback, syntaxe classique, dans window.setTimeout et window.setInterval
 
 `this` devient window
 
 ### `this` - fonction callback, syntaxe arrow, dans setTimeout et setInterval
 
-`this` représente l'objet où la fonction fléchée a était créée.
+`this` reste le `this` du contexte où la fonction a été créée.
 
-## Binding
+
+## Explicit Binding
 
 Il peut nous arriver de devoir changer le contexte de `this`. On a des outils pour cela, en particulier la méthode `bind`.
 
@@ -379,7 +379,7 @@ setTimeout(() => {
 setTimeout(user.sayHi.bind(user), 1000) // Salut, je suis Marie
 ```
 
-## getters & setters
+## Méthode spéciales - getters & setters
 
 Afin de comprendre l'utilité de ce concept, regardons l'exemple suivant :
 

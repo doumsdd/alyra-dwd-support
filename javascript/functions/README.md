@@ -102,7 +102,7 @@ if (verifyUserName("alyra2021")) {
 
 ## Déclaration (*function declaration*)
 
-Que vient-il de se passer ? Nous venons de déclarer une fonction. La fonction `verifyUserName` est déclarée (ceci correspond aux lignes 1 - 14 dans l'image ci-dessus).  
+Que vient-il de se passer ? Nous venons de **déclarer une fonction.** La fonction `verifyUserName` est déclarée (ceci correspond aux lignes 1 - 14 dans l'image ci-dessus).  
 Afin de déclarer une fonction nous :
 - utilisons un mot-clé spécial `function`
 - suivie par l'identifiant que nous avons choisi pour notre fonction (la convention camelCase s'applique toujours)

@@ -393,7 +393,7 @@ Quand le domain change, par exemple
 
 `website.domain = alyra.com`
 
-nous devons penser à changer `website.fullLink` en même temps.
+nous devons penser à changer `website.fullLink` en même temps. Nous pouvons alors définir `fullLink` en tant qu'une méthode.
 
 ```javascript
 const website = {
@@ -482,7 +482,7 @@ website.fullLink = "https://codepen.io"
 
 https://codepen.io/alyra/pen/dyMyNXP
 
-On peut aussi utiliser uniquement getter, au lieu de mettre en place la méthode id comme ceci:
+On peut aussi utiliser uniquement *getter*, au lieu de mettre en place la méthode id comme ceci:
 
 ```javascript
 const alien = {

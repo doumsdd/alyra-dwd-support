@@ -58,7 +58,9 @@ const alien = {
 ## this
 
 `this` est un mot-clé spécial. Sa valeur change selon le contexte où il est utilisé.
-Quand une méthode est appelée, `this` correspond à l'objet. Voici un exemple qui vous aidera de comprendre l'importance de `this` :
+Quand une méthode est appelée (`myObject.myMethod()`), `this` correspond à l'objet sur lequel la méthode (`myMéthode()`) est appelé (`myObject` dans notre cas).
+
+Voici un exemple qui vous aidera de comprendre l'importance de `this` :
 
 Nos aliens découvrent le système bancaire, notre alien Zork ouvre un compte bancaire, c'est le premier client. Dans le système de la banque la variable `client` est créée :
 

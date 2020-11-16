@@ -164,7 +164,7 @@ Il existe aussi méthode `sort` qui permet de changer l'ordre des éléments sel
 
 ## Parcourir la liste
 
-- méthode classique, boucle `for` classique
+### boucle `for` classique
 
 ```javascript
 const shoppingList = ["2 t-shirts", "un short", "un pareo"]
@@ -180,7 +180,7 @@ J'ai besoin d'acheter un paréo
 */
 ```
 
-- méthode moderne 😍, boucle `for ... of`
+### méthode moderne 😍, boucle `for ... of`
 
 ```javascript
 const shoppingList = ["2 t-shirts", "un short", "un paréo"]
@@ -196,15 +196,49 @@ J'ai besoin d'acheter un paréo
 */
 ```
 
-- méthode `forEach`
+### méthode `forEach`
+
+Le paramètre de la méthode `forEach` est une fonction (fonction "callback", dans l'exemple ci-dessous `iterationFunction`) qui sera utilisée pour chaque élément du tableau. La fonction `iterationFunction` a des paramètres. Son premier paramètre est la valeur de l'élément du tableau en cours de traitement.
 
 ```javascript
 const shoppingList = ["2 t-shirts", "un short", "un paréo"]
 
+const iterationFunction = (el) => {
+  // el - valeur de l'élément du tableau en cours de traitement
+  console.log(`J'ai besoin d'acheter ${el}.`)
+}
+
+/* affiche :
+J'ai besoin d'acheter 2 t-shirts.
+J'ai besoin d'acheter un short.
+J'ai besoin d'acheter un paréo.
+*/
+```
+
+La fonction `iterationFunction` a aussi accès à l'indice de l'élément du tableau en cours de traitement - ce sera son deuxième paramètre.
+
+```javascript
+const shoppingList = ["2 t-shirts", "un short", "un paréo"]
+
+const iterationFunction = (el, index) => {
+  // el - valeur de l'élément du tableau en cours de traitement
+  // index - l'indice de l'élément du tableau en cours de traitement.
+  console.log(`(${index}) J'ai besoin d'acheter ${el}.`)
+}
+
+/* affiche :
+(1) J'ai besoin d'acheter 2 t-shirts.
+(2) J'ai besoin d'acheter un short.
+(3) J'ai besoin d'acheter un paréo.
+*/
+```
+
+Et enfin, avec son 3e paramètre, `iterationFunction` a accès au tableau sur lequel la méthode forEach est appliquée.
+
+```javascript
 const iterationFunction = (el, index, array) => {
   console.log(`(${index + 1}/${array.length}) J'ai besoin d'acheter ${el}`)
 }
-
 shoppingList.forEach(iterationFunction)
 
 /* affiche :

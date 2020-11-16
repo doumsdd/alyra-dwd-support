@@ -66,7 +66,7 @@ myList1.unshift(-11) // myList1 devient [-11, 5, 8, 77], retourne 4
 
 Méthodes `push` et `unshift` modifient l'array et retournent la longueur (`length`) de l'array  après modification
 
-```
+```javascript
 const myList1 = [2, 5, 8, 90]
 let newLength = myList1.push(80) // myList1 devient [2, 5, 8, 90, 80]
 console.log(newLength) // 5
@@ -74,7 +74,7 @@ console.log(newLength) // 5
 
 Méthodes `pop` et `shift` modifient l'array et retournent l'élément enlevé.
 
-```
+```javascript
 const myList1 = [2, 5, 8, 90]
 const removed = myList1.pop() // myList1 devient [2, 5, 8]
 console.log(removed) // 90

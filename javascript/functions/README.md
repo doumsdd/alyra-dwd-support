@@ -65,7 +65,7 @@ if (ok) {
 }
 ```
 
-et ainsi de suite...
+et ainsi de suite... 🥵
 
 Une fonction nous permettra de convertir notre script en un "block" réutilisable.
 

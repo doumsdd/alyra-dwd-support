@@ -359,7 +359,7 @@ https://codepen.io/alyra/pen/vYGNLRg
 object instanceof MyConstructor // true ou false
 ```
 
-L'opérateur `instanceof` test si un objet possède MyConstructor dans sa chaîne de prototype.
+L'opérateur `instanceof` teste si un objet possède MyConstructor dans sa chaîne de prototype.
 
 par example :
 

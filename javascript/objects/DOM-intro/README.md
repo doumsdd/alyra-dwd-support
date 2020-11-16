@@ -99,7 +99,7 @@ if (pubEl) {
 }
 ```
 
-6b. Ce que nous venons de faire dans l'étape précédente est en fait une très mauvais pratique. Nous venons d'attacher un `eventListener` à l'élément de type `div`, alors à un élément qui n'est pas naturellement interactif. C'est problématique au niveau d'accessibilité, une personne qui se déplace au sein de notre page avec un clavier et pas avec un souris (souris, touch-pad et équivalent) ne pourra pas accéder à cet élément.
+6b. Ce que nous venons de faire dans l'étape précédente est en fait une mauvaise pratique. Nous venons d'attacher un `eventListener` à l'élément de type `div`, alors à un élément qui n'est pas naturellement interactif. C'est problématique au niveau d'accessibilité, une personne qui se déplace au sein de notre page avec un clavier et pas avec un souris (souris, touch-pad et équivalent) ne pourra pas accéder à cet élément.
 
 Pour y remédier nous allons ajouter un bouton dans notre document HTML :
 

@@ -64,7 +64,7 @@ Exemples **non valides** 🚫 :
 
 ```javascript
 const lang = "en"
-const element = <h1 lang="{lang}">Hello World!</h1>` // 🚫
+const element = <h1 lang="{lang}">Hello World!</h1> // 🚫
 
 // <h1 lang="{lang}">Hello World!</h1>
 ```
@@ -73,7 +73,7 @@ versus l'utilisation correcte :
 
 ```javascript
 const lang = "en"
-const element = <h1 lang={lang}>Hello World!</h1>` // ✅
+const element = <h1 lang={lang}>Hello World!</h1> // ✅
 
 // <h1 lang="en">Hello World!</h1>
 ```
@@ -82,7 +82,7 @@ JSX est aussi une expression JavaScript.
 
 ```javascript
 const bold = true
-const element = <h1>{bold ? <b>texte important</b> : <span>texte</span>}</h1>` // ✅
+const element = <h1>{bold ? <b>texte important</b> : <span>texte</span>}</h1> // ✅
 
 // <h1 lang="en">Hello World!</h1>
 ```

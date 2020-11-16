@@ -94,9 +94,7 @@ if (infoBtn) {
 
 ```javascript
 const pubEl = document.getElementById("pub")
-if (pubEl) {
-  pubEl.addEventListener("click", () => pubEl.remove())
-}
+pubEl?.addEventListener("click", () => pubEl.remove())
 ```
 
 6b. Ce que nous venons de faire dans l'étape précédente est en fait une mauvaise pratique. Nous venons d'attacher un `eventListener` à l'élément de type `div`, alors à un élément qui n'est pas naturellement interactif. C'est problématique au niveau d'accessibilité, une personne qui se déplace au sein de notre page avec un clavier et pas avec un souris (souris, touch-pad et équivalent) ne pourra pas accéder à cet élément.
@@ -119,7 +117,7 @@ Ensuite nous allons attacher notre event handler à notre nouveau bouton et pas 
 
 ```javascript
 const pubEl = document.getElementById("pub")
-const pubBtn = pubEl.querySelector("button")
+const pubBtn = pubEl?.querySelector("button")
 pubBtn?.addEventListener("click", () => pubEl.remove())
 ```
 
@@ -128,7 +126,7 @@ pubBtn?.addEventListener("click", () => pubEl.remove())
 ```javascript
 const headerEl = document.getElementById("header")
 const taglineEl = document.getElementById("tagline")
-const headerBtn = headerEl.querySelector()
+const headerBtn = headerEl?.querySelector("button")
 
 const generateHeader = () => {
   const colors = ["hotpink", "tomato", "orange"]
@@ -136,15 +134,15 @@ const generateHeader = () => {
   const hellos = ["Hello", "Salut", "Hola", "Cześć"]
   const randomIndexHellos = Math.floor(Math.random() * hellos.length)
 
-  headerEl.setAttribute(
+  headerEl?.setAttribute(
     "style",
     `background-color:${colors[randomIndexColor]}!important;`
   )
-  taglineEl.textContent = `${hellos[randomIndexHellos]} 😊`
+  taglineEl?.textContent = `${hellos[randomIndexHellos]} 😊`
 }
 
 generateHeader()
-headerBtn.addEventListener("click", generateHeader)
+headerBtn?.addEventListener("click", generateHeader)
 ```
 
 ---

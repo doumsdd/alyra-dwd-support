@@ -179,7 +179,7 @@ useOutside() // Uncaught TypeError: Cannot read property 'name' of undefined
 
 https://codepen.io/alyra/pen/bGEXNeb
 
- Voici quelques exemples :
+Nous allons voir quelques scénarios d'utilisation de `this`, **attention** dans tous nos exemples nous supposons l'utilisation de la variante restrictive de JavaScript (`"use strict"`).
 
 ### `this` directement dans le script et pas dans le body d'une fonction
 

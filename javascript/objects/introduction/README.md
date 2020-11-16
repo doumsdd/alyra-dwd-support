@@ -224,7 +224,7 @@ https://codepen.io/alyra/pen/abNyKYZ
 On peut aussi "merger" des objets sans modifier l'objet d'entrée :
 
 ```javascript
-const newObject1 = { ...myInfo, ...professionalInfo }
+const newObject1 = { {...myInfo}, professionalInfo }
 ```
 
 https://codepen.io/alyra/pen/abNyKKm

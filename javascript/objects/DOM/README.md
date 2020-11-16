@@ -136,7 +136,7 @@ el.id
 
 ## class
 
-Afin d'éviter des conflits avec le mot-clé "class", la propriété `className` est utilisée. Il existe aussi  `classList`
+Afin d'éviter des conflits avec le mot-clé "class", la propriété `className` est utilisée.
 
 ```html
 <body class="bg-dark container"></body>
@@ -147,7 +147,7 @@ document.body.class // undefined
 document.body.className // "bg-dark container"
 ```
 
-`className` retourne un `"string"` composé de la liste des classes, séparées par des espaces. Ceci n'est pas toujours pratique, surtout si nous souhaitons manipules les noms des classes. Nous allons plus souvent utiliser la propriété `classList` avec ses méthodes `add`, `remove`, `contains`, `toggle` ou `replace.` 
+`className` retourne un `"string"` composé de la liste des classes, séparées par des espaces. Ceci n'est pas toujours pratique quand nous avons besoin de manipuler les classes d'un élément. Dans ce cas, nous utilisons plutôt la propriété `classList` avec ses méthodes `add`, `remove`, `contains`, `toggle` ou `replace.` 
 
 ```javascript
 document.body.classList.length // 2

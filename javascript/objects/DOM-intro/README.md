@@ -95,7 +95,7 @@ if (infoBtn) {
 ```javascript
 const pubEl = document.getElementById("pub")
 if (pubEl) {
-  pubEl?.addEventListener("click", () => pubEl.remove())
+  pubEl.addEventListener("click", () => pubEl.remove())
 }
 ```
 

@@ -63,6 +63,7 @@ myList1.push(77) // myList1 devient [2, 5, 8, 77], retourne 4
 myList1.shift() // myList1 devient [5, 8, 77], retourne 2
 myList1.unshift(-11) // myList1 devient [-11, 5, 8, 77], retourne 4
 ```
+### `push` & `unshift`
 
 Méthodes `push` et `unshift` modifient l'array et retournent la longueur (`length`) de l'array  après modification
 
@@ -71,6 +72,8 @@ const myList1 = [2, 5, 8, 90]
 let newLength = myList1.push(80) // myList1 devient [2, 5, 8, 90, 80]
 console.log(newLength) // 5
 ```
+
+### `pop` & `shift`
 
 Méthodes `pop` et `shift` modifient l'array et retournent l'élément enlevé.
 
@@ -83,6 +86,8 @@ console.log(removed) // 90
 Attention : Les méthodes `pop` et `push` sont beaucoup plus rapide qut `shift` et `unshift`.
 
 Les méthodes `pop`, `push` et `shift`, `unshift` opèrent sur les extrémités d'un array. Nous avons aussi une méthode générique `splice`
+
+### `splice`
 
 La syntaxe: `arr.splice(index[, deleteCount, elem1, ..., elemN])` peut être lu :
 
@@ -124,11 +129,11 @@ let enleves = mesPoissons.splice(2)
 // enleves vaut ["bleu", "trompette", "chirurgien"]
 ```
 
-## Méthode slice
+### `slice`
 
 Il existe aussi la méthode `slice` (plus simple et "moins puissante") qui fonctionne comme `slice` pour les strings.   
 `slice` ne modifie pas l'array, mais crée une copie.
-`
+
 ```javascript
 const mesPoissons = ["scalaire", "clown", "mandarin", "chirurgien", "bleu"]
 let poissonsChoisis = mesPoissons.slice(2)

@@ -143,7 +143,7 @@ Object.values(droid) // ['R2-D2', 96, 32, 'red']
 
 Et finalement, nous pouvons lister (format array) les pairs clé-valeur avec la méthode `Object.entries()` : 
 
-```
+```javascript
 // les pairs clé, valeur
 Object.entries(droid) // [['name', 'R2-D2'], ['height', 96], ['mass', 32], ['eyeColor', 'red']]
 ```

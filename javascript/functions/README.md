@@ -9,8 +9,7 @@ let ok
 if (userName.length > 8) {
   console.log("Cet identifiant est trop long")
   ok = false
-} else if {
-  userName.toLowerCase() !== userName
+} else if (userName.toLowerCase() !== userName) {
   console.log("Cet identifiant contient des majuscules")
   ok = false
 } else {
@@ -31,8 +30,7 @@ userName = "Alyra"
 if (userName.length > 8) {
   console.log("Cet identifiant est trop long")
   ok = false
-} else if {
-  userName.toLowerCase() !== userName
+} else if (  userName.toLowerCase() !== userName) {
   console.log("Cet identifiant contient des majuscules")
   ok = false
 } else {

@@ -220,7 +220,7 @@ bonjour()
 
 ### `this` dans une fonction fléchée (arrow function) appelée directement
 
-`this` reste `window`, avec functions arrow, `this` represent l'objet où la fonction était créée.
+`this` reste `window`, avec functions arrow, `this` est le même où la fonction était créée.
 
 ```javascript
 "use strict"
@@ -249,7 +249,7 @@ alien.isAdult() // this de la ligne (*) devient alien
 
 ### `this` - méthode d'un objet - fonction avec la syntaxe arrow
 
-`this` comme il était, arrow function ne "bind" pas `this`, avec functions arrow, `this` représente l'objet où la fonction était créée.
+`this` comme il était, arrow function ne "bind" pas `this`, avec functions arrow, `this` est le même où la fonction était créée.
 
 ```javascript
 // console.log(this) // window (*)
@@ -294,7 +294,7 @@ https://codepen.io/alyra/pen/ExKYKVR
 
 ### `this` - fonction callback, syntaxe arrow, dans addEventListener
 
-`this` comme il était, arrow function arrow function ne "bind" pas `this`, avec functions arrow, `this` répresent l'objet où la fonction était créée alors `window`
+arrow function arrow function ne "bind" pas `this`, avec functions fléchée, `this` est le même où la fonction était créée
 
 ```javascript
 // console.log(this) // window (*)

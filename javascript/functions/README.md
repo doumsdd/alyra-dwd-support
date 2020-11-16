@@ -117,7 +117,7 @@ function nomDeFonction(param1, param2) {
 }
 ```
 
-Afin **d'appeler la fonction** (ligne 17 l'image ci-dessus) nous utilisons son identifiant avec les paramètres entre les parenthèses.   `verifyUserName("paulina")` est égal à ce qui est renvoyé par la fonction (ce qui suit le mot-clé `return`). 
+Afin **d'appeler la fonction** (ligne 17 l'image ci-dessus) nous utilisons son identifiant avec les paramètres entre les parenthèses. Le résultat de `verifyUserName("paulina")` est égal à ce qui est renvoyé par la fonction (ce qui suit le mot-clé `return`). 
 
 Une fonction peut aussi générer ce qu'on appelle des *side effects* (effets de bord), par exemple envoyer des alerts, des messages dans la console, faire des connexions network (nous allons apprendre !), enregistrer des informations dans le stockage interne de navigateur (nous allons apprendre aussi) etc.
 
@@ -240,7 +240,7 @@ console.log(message) // Error !
 Vous vous l'appelez que les variables dans JavaScript sont visibles dans leur "scope".
 Le "scope" de `let` et `const` est un block (pour `var` c'est function).
 
-Une fonction a accès aux variables extérieures (outer).
+Une fonction a accès aux variables extérieures (*outer*).
 
 ```javascript
 "use strict"
@@ -302,7 +302,7 @@ console.log(message) // affiche "Bonjour Alyra !"
 
 ## Function expressions
 
-Il existe une autre façon de définir une fonction. Nous pouvons affecter une fonction sans nom (anonyme) à une variable. Nous parlons dans ce cas la de *function expression*, voici un exemple :
+Il existe une autre façon de définir une fonction. Nous pouvons affecter une fonction sans nom (anonyme, en anglais *anonymous function*) à une variable. Nous parlons dans ce cas la de *function expression*, voici un exemple :
 
 ```javascript
 const betterPassword = function (string1, string2) {

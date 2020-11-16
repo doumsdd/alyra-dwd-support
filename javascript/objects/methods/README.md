@@ -2,7 +2,7 @@
 
 ## Objects - méthodes
 
-Les objets ne sont pas limités aux propriétés 'statiques', on peut aussi leur définir des méthodes (fonctions). Dans l'exemple ci-dessous, nous ajoutons une clé `sayHi` à `alien` où `sayHi` est une fonction. Pour l'exécuter nous allons appeler `alien.sayHi()`.
+Les objets ne sont pas limités aux propriétés "statiques", on peut aussi leur définir des méthodes (fonctions). Dans l'exemple ci-dessous, nous ajoutons une clé `sayHi` à `alien` où `sayHi` est une fonction. Pour l'exécuter nous allons appeler `alien.sayHi()`.
 
 ```javascript
 const alien = {
@@ -179,7 +179,7 @@ https://codepen.io/alyra/pen/bGEXNeb
 
  Voici quelques exemples :
 
-### this directement dans le script et pas dans le body d'une fonction
+### `this` directement dans le script et pas dans le body d'une fonction
 
 ```javascript
 "use strict"
@@ -195,9 +195,9 @@ window.scrollTo(0, 300)
 console.log(window.scrollY) // 300
 ```
 
-**Attention,** dans Node.js `window` n'est défini, est c'est l'objet `global` qui fait l'equivalent de `window`.
+**Attention,** dans Node.js `window` n'est pas défini, est c'est l'objet `global` qui fait l'equivalent de `window`.
 
-### this dans une fonction classique (pas une arrow function) appelée directement (pas comme une méthode)
+### `this` dans une fonction classique (pas une arrow function) appelée directement (pas comme une méthode)
 
 `this` devient `undefined`
 
@@ -218,7 +218,7 @@ function bonjour() {
 bonjour()
 ```
 
-### this dans une fonction fléchée (arrow function) appelée directement
+### `this` dans une fonction fléchée (arrow function) appelée directement
 
 `this` reste `window`, avec functions arrow, `this` represent l'objet où la fonction était créée.
 
@@ -231,7 +231,7 @@ const hello = () => {
 hello()
 ```
 
-### this - méthode d'un objet - fonction avec la syntaxe classique
+### `this` - méthode d'un objet - fonction avec la syntaxe classique
 
 `this` devient l'objet auquel on applique la méthode (parfois nous appelons ça "binding").
 
@@ -247,7 +247,7 @@ const alien = {
 alien.isAdult() // this de la ligne (*) devient alien
 ```
 
-### this - méthode d'un objet - fonction avec la syntaxe arrow
+### `this` - méthode d'un objet - fonction avec la syntaxe arrow
 
 `this` comme il était, arrow function ne "bind" pas `this`, avec functions arrow, `this` représente l'objet où la fonction était créée.
 
@@ -263,7 +263,7 @@ const alien = {
 alien.isAdult() // this de la ligne (**) est window
 ```
 
-### this - fonction callback, syntaxe classique, dans addEventListener
+### `this` - fonction callback, syntaxe classique, dans addEventListener
 
 `this` correspond à élément sur lequel on applique `addEventListener`
 
@@ -292,7 +292,7 @@ document.body.addEventListener('click', function(){
 
 https://codepen.io/alyra/pen/ExKYKVR
 
-### this - fonction callback, syntaxe arrow, dans addEventListener
+### `this` - fonction callback, syntaxe arrow, dans addEventListener
 
 `this` comme il était, arrow function arrow function ne "bind" pas `this`, avec functions arrow, `this` répresent l'objet où la fonction était créée alors `window`
 
@@ -316,11 +316,11 @@ const alien = {
 alien.sayHiOnClick()
 ```
 
-### this - fonction callback, syntaxe classique, dans setTimeout et setInterval
+### `this` - fonction callback, syntaxe classique, dans setTimeout et setInterval
 
 `this` devient window
 
-### this - fonction callback, syntaxe arrow, dans setTimeout et setInterval
+### `this` - fonction callback, syntaxe arrow, dans setTimeout et setInterval
 
 `this` représente l'objet où la fonction fléchée a était créée.
 
@@ -394,7 +394,8 @@ Quand le domain change, par exemple
 `website.domain = alyra.com`
 
 nous devons penser à changer `website.fullLink` en même temps.
-souvent```javascript
+
+```javascript
 const website = {
   protocol: "https",
   domain: "alyra.fr",

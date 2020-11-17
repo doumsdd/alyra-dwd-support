@@ -1,6 +1,6 @@
 # Destructuring Assignement (fr. affectation par décomposition)
 
-Nous allons découvrir quelques sécrets de la syntaxe des objets et tableaux qui rendent notre code plus court et souvent plus maintenable.
+Nous allons découvrir quelques secrets de la syntaxe des objets et tableaux qui rendent notre code plus court et souvent plus maintenable.
 
 ## objects
 
@@ -23,7 +23,7 @@ alien = {
 */
 ```
 
-Ca marche aussi dand le "sens inverse" :
+Ça marche aussi dans le "sens inverse" :
 
 ```javascript
 const alien = {
@@ -43,7 +43,7 @@ const age = alien.age // 300
 */
 ```
 
-Définir plusieures variables à la fois est aussi possible est souvent utilisé :
+Définir plusieurs variables à la fois est aussi possible est souvent utilisé :
 
 ```javascript
 const alien = {
@@ -90,7 +90,7 @@ const name = alien.name // "Deej"
 */
 ```
 
-On peut aussi récuperer une partie qui "reste" d'objet dans une variable, souvent on utilisera le nom `rest` pour cette variable (ceci est une convention). Pour cela on utilise les "..."
+On peut aussi récupérer une partie qui "reste" d'objet dans une variable, souvent on utilisera le nom `rest` pour cette variable (ceci est une convention). Pour cela on utilise les "..."
 
 ```javascript
 const alien = {
@@ -112,7 +112,7 @@ console.log(rest)
 
 ## arrays
 
-Dans arrays les valeurs sont indéxées et ne possèdent pas des noms des clés mais la décomposition est possible :
+Dans arrays les valeurs sont indexées et ne possèdent pas des noms des clés, mais la décomposition est possible :
 
 ```javascript
 const spices = ["chili", "poivre", "sel"]

@@ -83,7 +83,7 @@ const removed = myList1.pop() // myList1 devient [2, 5, 8]
 console.log(removed) // 90
 ```
 
-Attention : Les méthodes `pop` et `push` sont beaucoup plus rapide qut `shift` et `unshift`.
+Attention : Les méthodes `pop` et `push` sont beaucoup plus rapide que `shift` et `unshift`.
 
 Les méthodes `pop`, `push` et `shift`, `unshift` opèrent sur les extrémités d'un array. Nous avons aussi une méthode générique `splice`
 
@@ -289,3 +289,4 @@ arrayFromString.join(" ")
 - [Arrays (1)](https://codepen.io/alyra/pen/RwrqEbg) | [solution](https://codepen.io/alyra/pen/49924ef5f70f5aa180939fa4577423b0)
 - [Arrays Magic Ball](https://codepen.io/alyra/pen/QWyJzbJ) | [solution](https://codepen.io/alyra/pen/150130653967a99107d42d5bf2ad3837)
 - [js quizzes - arrays](https://javascript-quizzes.netlify.app/arrays)
+

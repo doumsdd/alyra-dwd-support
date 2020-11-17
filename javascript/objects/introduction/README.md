@@ -1,12 +1,12 @@
 # Objects - introduction
 
-Un objet est un ensemble de propriétés regroupées dans une structure clé-valeur. Par exemple le droid R2-D2 a plusieurs propriétés :
+Un objet est un ensemble de propriétés regroupées dans une structure clé-valeur. Par exemple, le droid R2-D2 a plusieurs propriétés :
 - nom, 
 - taille, 
 - poids,
 - couleur des yeux.
 
-L'objet `rdd2` aura alors les clés : `name`, `height`, `mass` et `eyeColor`. Leur valeurs respectives sont : `"R2-D2"`, `96`, `32` et `"red"`. Ainsi nous regroupons toutes les informations concernant R2-D2 dans un objet `rdd2`.
+L'objet `rdd2` aura alors les clés : `name`, `height`, `mass` et `eyeColor`. Leurs valeurs respectives sont : `"R2-D2"`, `96`, `32` et `"red"`. Ainsi nous regroupons toutes les informations concernant R2-D2 dans un objet `rdd2`.
 
 ```javascript
 const rdd2 = {
@@ -70,7 +70,7 @@ const obj3 = {
 
 Comme pour les arrays (qui sont aussi de type `"object"`), des variables stockent des références et pas les object eux-mêmes.
 
-Par conséquence :
+Par conséquent :
 
 ```javascript
 const obj1 = {}
@@ -165,7 +165,7 @@ for (let value of Object.values(droid)) {
 ```
 
 ```javascript
-// filtrer toutes les valeur de type number
+// filtrer toutes les valeurs de type number
 Object.values(character).filter((el) => typeof el === "number")
 ```
 

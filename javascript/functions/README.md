@@ -121,7 +121,7 @@ Afin **d'appeler la fonction** (ligne 17 l'image ci-dessus) nous utilisons son i
 
 Une fonction peut aussi générer ce qu'on appelle des *side effects* (effets de bord), par exemple envoyer des alerts, des messages dans la console, faire des connexions network (nous allons apprendre !), enregistrer des informations dans le stockage interne de navigateur (nous allons apprendre aussi) etc.
 
-**Est-ce possible d'avoir une fonction sans paramètres ?** Tout à fait. Dans ce cas-là nous laissons les paramètres vides, voici un exemple :
+**Est-ce possible d'avoir une fonction sans paramètre ?** Tout à fait. Dans ce cas-là, nous laissons les paramètres vides, voici un exemple :
 
 ```javascript
 function todayDayName() {
@@ -269,7 +269,7 @@ console.log(message) // affiche "Hello World!"
 ```
 
 Il faut savoir que la variable globale **va être utilisée uniquement s'il n'y a pas de variable locale avec le même nom.**
-Nous pouvons dans la fonction déclarer une variable avec le même nom qu'une variable globale. Dans ce cas-la variable locale est utilisée (on appelle ça parfois _shadowing_). Ce serait plus simple à analyser avec les exemples :
+Nous pouvons dans la fonction déclarer une variable avec le même nom qu'une variable globale. Dans ce cas, la variable locale est utilisée (on appelle ça parfois _shadowing_). Ce serait plus simple à analyser avec les exemples :
 
 ```javascript
 let message = "Bonjour Alyra !" // variable globale
@@ -302,7 +302,7 @@ console.log(message) // affiche "Bonjour Alyra !"
 
 ## Function expressions
 
-Il existe une autre façon de définir une fonction. Nous pouvons affecter une fonction sans nom (anonyme, en anglais *anonymous function*) à une variable. Nous parlons dans ce cas la de *function expression*, voici un exemple :
+Il existe une autre façon de définir une fonction. Nous pouvons affecter une fonction sans nom (anonyme, en anglais *anonymous function*) à une variable. Nous parlons dans ce cas-là de *function expression*, voici un exemple :
 
 ```javascript
 const betterPassword = function (string1, string2) {

@@ -1,7 +1,7 @@
 # Classes
 
 
-Nous avons souvent besoin de créer des objets du même type. Nous avons déja vu comment y arriver avec des constructeurs et l'opérateur `new`. Nous allons maintenant aller plus loin avec la syntaxe de `class` introduite dans la version ES6 de JavaScript.
+Nous avons souvent besoin de créer des objets du même type. Nous avons déjà vu comment y arriver avec des constructeurs et l'opérateur `new`. Nous allons maintenant aller plus loin avec la syntaxe de `class` introduite dans la version ES6 de JavaScript.
 
 Voici un exemple :
 
@@ -53,16 +53,16 @@ class Alien {
 }
 ```
 
-Quand on appelle  `const alien1 = new Alien('Zork', 120)` un nouvel objet est crée et la fonction `constructor` est executée.
+Quand on appelle  `const alien1 = new Alien('Zork', 120)` un nouvel objet est créé et la fonction `constructor` est exécutée.
 
 Regardons ce qui affiche `console.log(alien1)`
 
 ![](https://assets.codepen.io/4515922/AlienClass.png)
 
-Le code qu'on vient d'executer produit le résultat comparable au résultat de :
+Le code qu'on vient d'exécuter produit le résultat comparable au résultat de :
 
 ```javascript
-// approche "CLASSique" ceci dit, avant l'introductions des classes ;)
+// approche "CLASSique" ceci dit, avant l'introduction des classes ;)
 function Alien(name, age = 10) {
   this.name = name
   this.age = age
@@ -130,7 +130,7 @@ console.log(url)
 
 # Champs de classe - class fields
 
-Il est aussi possible d'ajouter des propriétés sans passer par la fonction `constructor`. Elles sont ajoutées pour chaque instance, et ne pas au niveau de prototype.
+Il est aussi possible d'ajouter des propriétés sans passer par la fonction `constructor`. Elles sont ajoutées pour chaque instance, et non pas au niveau de prototype.
 
 ```javascript
 class Alien {
@@ -145,7 +145,7 @@ const alien1 = new Alien("Plok")
 
 ![](https://assets.codepen.io/4515922/AlienMA.png)
 
-Champs de classe sont initialisés **avant** le constructor, par conséquant
+Champs de classe sont initialisés **avant** le constructor, par conséquent
 
 ```javascript
 class Alien {
@@ -190,7 +190,7 @@ https://codepen.io/alyra/pen/oNxXqrN
 btn1?.addEventListener("click", alien1.sayName)
 /*
 btn1?.addEventListener("click", function() {
- // this correspindera au btn1
+ // this correspondra au btn1
  console.log(`Mon nom est ${this.name}.`);
 });
 */
@@ -255,7 +255,7 @@ class SuperAlien extends Alien {
 
 ## super()
 
-Parfois on veut modifier la fonction `constructor` dans la classe dérivée. Dans notre exemple, nous allons ajouter la propriété `mission` à `SuperAlien`.
+Parfois, on veut modifier la fonction `constructor` dans la classe dérivée. Dans notre exemple, nous allons ajouter la propriété `mission` à `SuperAlien`.
 
 ```javascript
 class SuperAlien extends Alien {
@@ -268,7 +268,7 @@ class SuperAlien extends Alien {
   }
   mais attention : Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
   */
-  // la version suivante et correcte
+  // la version suivante est correcte
   constructor(name, age, mission) {
     // appelle constructor d'Alien
     super(name, age)
@@ -280,10 +280,10 @@ class SuperAlien extends Alien {
 }
 ```
 
-`super(...)` apelle le `constructor` de la classe parente. Voice quelque règles concerant `super()` :
+`super(...)` apelle le `constructor` de la classe parente. Voici quelques règles concernant `super()` :
 
 - On **doit** utiliser `super(...)` dans le constructor de la classe enfant
-- `super(...)` dans le `constructor` doit être appelé le premier, avant l'utilisatio de `this`. Non respect de cette règle génère une erreur : `Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor`.  
+- `super(...)` dans le `constructor` doit être appelé le premier, avant l'utilisation de `this`. Non-respect de cette règle génère une erreur : `Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor`.  
 - On n'appelle jamais `super()` en dehors de la fonction constructor.
 
 

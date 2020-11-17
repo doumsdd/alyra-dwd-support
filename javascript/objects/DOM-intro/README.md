@@ -35,13 +35,13 @@ const headerEl = document.getElementById("header")
 headerEl.setAttribute("style", "background-color:tomato!important;")
 ```
 
-2c. Ce n'est pas une bonne pratique de sur-utiliser JavaScript. Tout ce qui concerne la mise en page et ce qui peut être effectué par CSS, devrait être fait avec CSS. Souvent on va gagner sur la performance et l'expérience utilisateur.
+2c. Ce n'est pas une bonne pratique de surutiliser JavaScript. Tout ce qui concerne la mise en page et ce qui peut être effectué par CSS, devrait être fait avec CSS. Souvent, on va gagner sur la performance et l'expérience utilisateur.
 
 ```javascript
 headerEl.setAttribute("style", "background-color:tomato!important;")
 ```
 
-Nous allons maintenant intervenir sur la mise en page avec un effet qui n'est pas réalisable avec pure CSS. Nous allons rendre la propriété `background-color` de l'élément `header` aléatoire `["hotpink", "tomato", "orange"]`. A chaque chargement de la page JavaScript devrait indiquer la couleur.
+Nous allons maintenant intervenir sur la mise en page avec un effet qui n'est pas réalisable avec pure CSS. Nous allons rendre la propriété `background-color` de l'élément `header` aléatoire `["hotpink", "tomato", "orange"]`. À chaque chargement de la page, JavaScript devrait indiquer la couleur.
 
 ```javascript
 const colors = ["hotpink", "tomato", "orange"]
@@ -61,7 +61,7 @@ const randomIndexHellos = Math.floor(Math.random() * hellos.length)
 tagline.textContent = `${hellos[randomIndexHellos]} 😊`
 ```
 
-4. Imaginons que le nombre de critères change de temps en temps (les utilisateur envoient leurs témoignages et suggestions etc.). Pour ne pas avoir à les compter et ce protéger des erreur, le développeur laisse cette tâche au JavaScript.  
+4. Imaginons que le nombre de critères change de temps en temps (les utilisateurs envoient leurs témoignages et suggestions etc.). Pour ne pas avoir à les compter et se protéger des erreurs, le développeur laisse cette tâche au JavaScript.  
    L'élément `#count` devrait contenir l'information sur le nombre de critères.
 
 ```javascript
@@ -97,7 +97,7 @@ const pubEl = document.getElementById("pub")
 pubEl?.addEventListener("click", () => pubEl.remove())
 ```
 
-6b. Ce que nous venons de faire dans l'étape précédente est en fait une mauvaise pratique. Nous venons d'attacher un `eventListener` à l'élément de type `div`, alors à un élément qui n'est pas naturellement interactif. C'est problématique au niveau d'accessibilité, une personne qui se déplace au sein de notre page avec un clavier et pas avec un souris (souris, touch-pad et équivalent) ne pourra pas accéder à cet élément.
+6b. Ce que nous venons de faire dans l'étape précédente est en fait une mauvaise pratique. Nous venons d'attacher un `eventListener` à l'élément de type `div`, alors à un élément qui n'est pas naturellement interactif. C'est problématique au niveau d'accessibilité, une personne qui se déplace au sein de notre page avec un clavier et pas avec une souris (souris, touch-pad et équivalent) ne pourra pas accéder à cet élément.
 
 Pour y remédier nous allons ajouter un bouton dans notre document HTML :
 

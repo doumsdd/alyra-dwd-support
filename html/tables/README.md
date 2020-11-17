@@ -40,24 +40,9 @@
 </table>
 ```
 
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="alyra" data-slug-hash="PoPvKEV" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Qu'est qui va pas ici ? ">
-  <span>See the Pen <a href="https://codepen.io/alyra/pen/PoPvKEV">
-  Table - exemple </a> by Alyra (<a href="https://codepen.io/alyra">@alyra</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<!---
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
--->
+https://codepen.io/alyra/pen/PoPvKEV
 
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="result" data-user="alyra" data-slug-hash="dyYQLPE" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Live Coding - HTML table - Mes repas de la semaine">
-  <span>See the Pen <a href="https://codepen.io/alyra/pen/dyYQLPE">
-  Live Coding - HTML table - Mes repas de la semaine</a> by Alyra (<a href="https://codepen.io/alyra">@alyra</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<!---
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
--->
-
+https://codepen.io/alyra/pen/dyYQLPE
 ---
 
 ## Exercices

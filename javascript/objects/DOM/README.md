@@ -65,10 +65,10 @@ document.getElementById("#pub").remove()
 
 ### document.querySelector(), element.querySelector()
 
-La méthode `querySelector()` utilise les même sélecteurs que CSS.  
-Elle retourne un élément, premier que correspond au sélecteur, ou `null`. Lequel élément est le premier ? Attention, puisque ce n'est pas tout à fait intuitif, voici le règle :
+La méthode `querySelector()` utilise les mêmes sélecteurs que CSS.  
+Elle retourne un élément, premier qui correspond au sélecteur, ou `null`. Quel élément est le premier ? Attention, puisque ce n'est pas tout à fait intuitif, voici la règle :
 
-> Note : La correspondance est effectuée en utilisant le parcours pré-ordonné profondeur-d'abord des nœuds du document, en partant du premier élément dans le balisage du document et en itérant à travers les nœuds en séquence, par ordre du compte de nœuds enfants (source [MDN](https://developer.mozilla.org/fr/docs/Web/API/Document/querySelector))
+> Note : La correspondance est effectuée en utilisant le parcours préordonné profondeur d'abord des nœuds du document, en partant du premier élément dans le balisage du document et en itérant à travers les nœuds en séquence, par ordre du compte de nœuds enfants (source [MDN](https://developer.mozilla.org/fr/docs/Web/API/Document/querySelector))
 
 ```javascript
 const cookie = document.querySelector("#cookie-info")
@@ -120,11 +120,11 @@ const allParagraphs = document.getElementsByTagName("p")
 const allParagraphs = document.getElementsByClassName(".hidden")
 ```
 
-## Des attributes
+## Des attributs
 
-### Les attributes `standard`
+### Les attributs `standard`
 
-Lorsque le navigateur analyse le code HTML pour générer l'objet DOM, il reconnaît les attributs standard et crée des propriétés DOM à partir d'eux. Dans ce cas, un attribut HTML `standard` peut être utilisé  "directement" en tant qu'une propriété :
+Lorsque le navigateur analyse le code HTML pour générer l'objet DOM, il reconnaît les attributs standard et crée des propriétés DOM à partir d'eux. Dans ce cas, un attribut HTML `standard` peut être utilisé  "directement" en tant que propriété :
 
 ```javascript
 // attribut lang

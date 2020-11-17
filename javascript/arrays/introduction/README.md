@@ -15,7 +15,7 @@ const listeCoursesAF = ['tortillas', 'haricots', 'piment']
 
 Première grande question : est-ce vrai que ```listeCoursesPeHaa === listeCoursesAF``` ?
 
-Jusqu'à maintenant nous avons travaillé avec des valeurs de type "primitifs" (number, string, boolean, undefined). 
+Jusqu'à maintenant, nous avons travaillé avec des valeurs de type "primitifs" (number, string, boolean, undefined). 
 Les *arrays* ne sont pas de type primitif, ils sont de type `'object'`, voici la preuve :
 
 ```javascript

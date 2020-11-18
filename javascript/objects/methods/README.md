@@ -11,7 +11,7 @@ const alien = {
 }
 
 alien.sayHi = function () {
-  console.log(`Salutions Terriens`)
+  console.log(`Salutations Terriens`)
 }
 
 alien.sayHi()
@@ -24,7 +24,7 @@ const alien = {
   name: "Zork",
   age: 320,
   sayHi: function () {
-    console.log(`Salutions Terriens`)
+    console.log(`Salutations Terriens`)
   },
 }
 ```
@@ -37,7 +37,7 @@ const alien = {
   age: 320,
   sayHi() {
     // sayHi: function() -> sayHi()
-    console.log(`Salutions Terriens`)
+    console.log(`Salutations Terriens`)
   },
 }
 ```
@@ -47,7 +47,7 @@ const alien = {
   name: "Zork",
   age: 320,
   sayHi() {
-    console.log(`Salutions, Terriens`)
+    console.log(`Salutations, Terriens`)
   },
   sayGoodBye() {
     console.log(`Soyez en paix, Humains`)
@@ -58,7 +58,7 @@ const alien = {
 ## this
 
 `this` est un mot-clé spécial. Sa valeur change selon le contexte où il est utilisé.
-Quand une méthode est appelée (`myObject.myMethod()`), `this` correspond à l'objet sur lequel la méthode (`myMethod()`) est appelé (`myObject` dans notre cas).
+Quand une méthode est appelée (`myObject.myMethod()`), `this` correspond à l'objet sur lequel la méthode (`myMethod()`) est appelée (`myObject` dans notre cas).
 
 Voici un exemple qui vous aidera de comprendre l'importance de `this` :
 
@@ -123,7 +123,7 @@ console.log("Deej", clientD.deposit)
 // "Deej" 0
 ```
 
-Nous appelons `clientD.transfer()` mais la méthode `transfer` n'opère pas sur l'objet `clientD` mais sur `client`. C'est tout a fait normale, elle était conçue ainsi, regardez le code de `transfer`. Voici une faille dans notre système bancaire 😱.
+Nous appelons `clientD.transfer()` mais la méthode `transfer` n'opère pas sur l'objet `clientD` mais sur `client`. C'est tout à fait normale, elle était conçue ainsi, regardez le code de `transfer`. Voici une faille dans notre système bancaire 😱.
 
 Nous pouvons y remédier avec le mot-clé `this`, comme ceci :
 
@@ -197,7 +197,7 @@ window.scrollTo(0, 300)
 console.log(window.scrollY) // 300
 ```
 
-**Attention,** dans Node.js `window` n'est pas défini, est c'est l'objet `global` qui fait l'equivalent de `window`.
+**Attention,** dans Node.js `window` n'est pas défini, c'est l'objet `global` qui fait l'equivalent de `window`.
 
 ### `this` dans une fonction classique (pas une arrow function) appelée directement (pas comme une méthode)
 
@@ -251,7 +251,7 @@ alien.isAdult() // this de la ligne (*) devient alien
 
 ### `this` - méthode d'un objet - fonction avec la syntaxe arrow
 
-arrow function ne "bind" pas `this`, `this` reste `window`, avec une functions fléchée, `this` reste le `this` du contexte où la fonction a été créée.
+arrow function ne "bind" pas `this`, `this` reste `window`, avec une fonction fléchée, `this` reste le `this` du contexte où la fonction a été créée.
 ```javascript
 // console.log(this) // window (*)
 const alien = {
@@ -270,7 +270,7 @@ alien.isAdult() // this de la ligne (**) est window
 
 ```javascript
 document.body.addEventListener("click", function () {
-  // this est égale à document.body
+  // this est égal à document.body
   this.classList.toggle("clicked")
 })
 ```
@@ -285,7 +285,7 @@ const alien = {
 document.body.addEventListener("click", alien.sayHi)
 /* le code ci-dessus et équivalent à 
 document.body.addEventListener('click', function(){
-  // this est égale à document.body
+  // this est égal à document.body
   console.log(this.name)
 })
 */
@@ -295,7 +295,7 @@ https://codepen.io/alyra/pen/ExKYKVR
 
 ### `this` - fonction callback, syntaxe arrow, dans addEventListener
 
-arrow function ne "bind" pas `this`,  avec une functions fléchée, `this` reste le `this` du contexte où la fonction a été créée.
+arrow function ne "bind" pas `this`,  avec une fonction fléchée, `this` reste le `this` du contexte où la fonction a été créée.
 
 ```javascript
 // console.log(this) // window (*)
@@ -379,7 +379,7 @@ setTimeout(() => {
 setTimeout(user.sayHi.bind(user), 1000) // Salut, je suis Marie
 ```
 
-## Méthode spéciales - getters & setters
+## Méthodes spéciales - getters & setters
 
 Afin de comprendre l'utilité de ce concept, regardons l'exemple suivant :
 
@@ -395,7 +395,7 @@ Quand le domain change, par exemple
 
 `website.domain = alyra.com`
 
-nous devons penser à changer `website.fullLink` en même temps. Nous pouvons alors définir `fullLink` en tant qu'une méthode.
+nous devons penser à changer `website.fullLink` en même temps. Nous pouvons alors définir `fullLink` en tant que méthode.
 
 ```javascript
 const website = {
@@ -445,7 +445,7 @@ const website = {
     }
   },
 }
-// pour lire (attention si on utilise getter, on accède au clé sans parenthèses)
+// pour lire (attention si on utilise getter, on accède à la clé sans parenthèses)
 website.fullLink
 // et pour écrire
 website.fullLink = "https://codepen.io"

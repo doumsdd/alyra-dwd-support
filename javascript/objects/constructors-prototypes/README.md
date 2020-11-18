@@ -48,7 +48,7 @@ const aliensRegistry = [alien1, alien2, alien3, alien4]
 Nos objets aliens partagent les mêmes clés. La structure des données est des méthodes sont partagées par chacun d'eux. Au lieu de répéter le code ci-dessus pour chaque alien, il est possible de créer une fonction qui va nous servir pour le constructeur d'un alien.
 La fonction "constructeur" qui nous permettra de créer plusieurs instances d'un objet avec la même structure (le mêmes clés). 
 
-Voici un exemple, d'une fonction "constructeur", `Alien`. La convention veut que les constructeurs commencent par une letter en majuscule.
+Voici un exemple, d'une fonction "constructeur", `Alien`. La convention veut que les constructeurs commencent par une lettre en majuscule.
 
 ```javascript
 function Alien(name, age = 100) {
@@ -57,7 +57,7 @@ function Alien(name, age = 100) {
 }
 ```
 
-Ensuite, nous utilisons un opérateur `new` pour créer des nouvelles instances des Aliens. Tous nos aliens partagent les mêmes clés avec des valeur différentes :
+Ensuite, nous utilisons un opérateur `new` pour créer de nouvelles instances des Aliens. Tous nos aliens partagent les mêmes clés avec des valeurs différentes :
 
 ```javascript
 const alien1 = new Alien("Deej", 200)
@@ -81,7 +81,7 @@ function Alien(name, age = 100) {
 **À retenir :**
 
 - Les noms des functions constructeurs commencent par une lettre en majuscules (c'est une convention).
-- Les fonctions contructeurs doivent être appelées avec `new` (attention, oublie de `new` provoque une erreur `Uncaught TypeError: Cannot set property ... of undefined`).
+- Les fonctions constructeurs doivent être appelées avec `new` (attention, oublie de `new` provoque une erreur `Uncaught TypeError: Cannot set property ... of undefined`).
 
 https://codepen.io/alyra/pen/oNbKENV
 
@@ -90,7 +90,7 @@ https://codepen.io/alyra/pen/oNbKENV
 
 ## Prototype
 
-On peut aussi associer les valeurs et les méthodes communes à toutes les instances. Nous allons les attacher au clé `prototype`.
+On peut aussi associer les valeurs et les méthodes communes à toutes les instances. Nous allons les attacher à la clé `prototype`.
 
 ```javascript
 // constructor
@@ -111,7 +111,7 @@ Alien.prototype.sayHi = function () {
 
 https://codepen.io/alyra/pen/abdeYWv
 
-La même chose peut être effectuer avec [`Object.defineProperty`.](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/defineProperty) Dans ce cas nous pouvons configurer le comportement de nos propriétés : 
+La même chose peut être effectuée avec [`Object.defineProperty`.](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/defineProperty) Dans ce cas, nous pouvons configurer le comportement de nos propriétés : 
 
 ```javascript
 Object.defineProperty(Alien.prototype, 'sayHi', {

@@ -109,7 +109,7 @@ https://codepen.io/alyra/pen/BaobgZP
 
 ## Lecture supplémentaire :
 
-- [respimagelint](https://ausi.github.io/respimagelint/docs.html)
+- [RespImageLint Linters](https://ausi.github.io/respimagelint/docs.html)
 - [A Guide to the Responsive Images Syntax in HTML](https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/)
 
 ---

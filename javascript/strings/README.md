@@ -1,6 +1,6 @@
 # Strings - que pouvons nous faire avec ?
 
-```javasscript
+```javascript
 let message = "Parlons du type string !"
 ```
 

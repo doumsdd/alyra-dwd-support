@@ -23,7 +23,7 @@ https://codepen.io/alyra/pen/bGeywNy
 
 ![rangement ikea](https://s3-us-west-2.amazonaws.com/s.cdpn.io/4515922/wardrobe.jpg)
 
-J'aime comparer la structure HTML d'un document web à un rangement Ikea. Les balises sont des des placards, des étagères, des tiroirs, des boîtes, des cintres... 
+J'aime comparer la structure HTML d'un document web à un rangement Ikea. Les balises sont des placards, des étagères, des tiroirs, des boîtes, des cintres... 
 - Chaque élément à son usage spécifique (comme une balise a son sens sémantique). Nous n'accrochons pas des chaussettes sur les cintres et nous ne mettons pas des costumes dans les tiroirs.
 - Les éléments sont emboîtés l'un dans l'autre - mais pas tout à fait librement - par exemple, nous ne mettons pas de cintres dans les tiroirs. Pareil, dans HTML nous n'encadrons pas un titre par un paragraphe.
 - Les éléments du même type peuvent avoir leurs spécificité (par exemple un tiroir magnétique). Nous pouvons aussi leur donner des étiquettes (accrocher un autocollant chaussettes 🧦 sur un tiroir, marqués certains placards "hiver", etc.)
@@ -40,9 +40,7 @@ J'aime comparer la structure HTML d'un document web à un rangement Ikea. Les ba
 L'ordre dans lequel nous listons des attributs n'a pas d'importance. Les valeurs devrait être encadrées par des guillemets (`""`).
 
 ```html
-<nomdebalise attribut1="sa valeur" attribut2="sa valeur"
-  >contenu de l'élément</nomdebalise
->
+<nomdebalise attribut1="sa valeur" attribut2="sa valeur">contenu de l'élément</nomdebalise>
 ```
 
 ![](https://wptemplates.pehaa.com/assets/alyra/balises-html2.png)

@@ -127,7 +127,8 @@ Attention: Cette liste n'est pas 100% complète. Dans un objectif de clarté, ce
 ### Métadonnées du document
 
 `head`  
-` base``link `  
+`base`  
+`link`  
 `style`
 `title`
 `meta`

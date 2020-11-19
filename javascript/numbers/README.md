@@ -1,6 +1,6 @@
 
 
-# Type `"numbers"` - méthodes utiles
+# Type <code>"number"</code> - méthodes utiles
 
 ## Vérification
 

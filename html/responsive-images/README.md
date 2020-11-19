@@ -98,10 +98,14 @@ On peut aller plus loin :
 
 ## Exemples
 
-- logo le Parisien  
+- logo le Parisien
+
 https://codepen.io/alyra/pen/vYNPMvw
-- Origami Fox  
+
+- Origami Fox
+
 https://codepen.io/alyra/pen/BaobgZP
+
 
 ## Lecture supplémentaire :
 
@@ -110,7 +114,7 @@ https://codepen.io/alyra/pen/BaobgZP
 
 ---
 
-## Exercice
+## Exercices
 
 - [Responsive Images](https://codepen.io/alyra/pen/YzyOvgB) | [solution](https://codepen.io/alyra/pen/d16804479e5379fa44246c1b3ab34347)
 - [Personal Landing Page](https://codepen.io/alyra/pen/WNQgyBw) | [solution](https://codepen.io/alyra/pen/b950fa9db46fd30932aadb41562dd400)

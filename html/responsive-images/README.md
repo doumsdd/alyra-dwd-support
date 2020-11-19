@@ -98,8 +98,10 @@ On peut aller plus loin :
 
 ## Exemples
 
-- [logo le Parisien](https://codepen.io/alyra/pen/vYNPMvw)
-- [Origami Fox](https://codepen.io/alyra/pen/BaobgZP)
+- logo le Parisien
+https://codepen.io/alyra/pen/vYNPMvw
+- Origami Fox
+https://codepen.io/alyra/pen/BaobgZP
 
 ## Lecture supplémentaire :
 

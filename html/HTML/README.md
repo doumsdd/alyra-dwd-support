@@ -23,10 +23,10 @@ https://codepen.io/alyra/pen/bGeywNy
 
 ![rangement ikea](https://s3-us-west-2.amazonaws.com/s.cdpn.io/4515922/wardrobe.jpg)
 
-J'aime comparer la structure HTML d'un document web à un rangement ikea. Les balises sont des des placards, des étagères, des tirrois, des boîtes, des cintres... 
-- Chaque élément à son usage spécifique (comme une balise a son sens sémantique). Nous n'accrochons pas des chaussettes sur les cintres et nous ne mettons pas des costumes dans les tirroirs.
-- Les éléments sont emboîtés l'un dans l'autre - mais pas tout à fait librément - par exemple, nous ne mettons pas de cintres dans les tirroirs. Pareil, dans HTML nous n'encadrons pas un titre par un paragraphe.
-- Les éléments du même type peuvent avoir leurs spécificité (par exemple un tirroir magnétique). Nous pouvons aussi leur donner des étiquettes (accrocher un autocollant chaussettes 🧦 sur un tirroir, marqués certains placards "hiver", etc.)
+J'aime comparer la structure HTML d'un document web à un rangement Ikea. Les balises sont des des placards, des étagères, des tiroirs, des boîtes, des cintres... 
+- Chaque élément à son usage spécifique (comme une balise a son sens sémantique). Nous n'accrochons pas des chaussettes sur les cintres et nous ne mettons pas des costumes dans les tiroirs.
+- Les éléments sont emboîtés l'un dans l'autre - mais pas tout à fait librement - par exemple, nous ne mettons pas de cintres dans les tiroirs. Pareil, dans HTML nous n'encadrons pas un titre par un paragraphe.
+- Les éléments du même type peuvent avoir leurs spécificité (par exemple un tiroir magnétique). Nous pouvons aussi leur donner des étiquettes (accrocher un autocollant chaussettes 🧦 sur un tiroir, marqués certains placards "hiver", etc.)
 
 ## Anatomie d'une balise HTML
 
@@ -36,8 +36,8 @@ J'aime comparer la structure HTML d'un document web à un rangement ikea. Les ba
 
 ![](https://wptemplates.pehaa.com/assets/alyra/balises-html1.png)
 
-Éléments HTML peuvent aussi avoir des attributs (caractéristiques et ettiquètes).  
-L'ordre dans lequel nous listons des attributs n'a pas d'importance. Les valeurs devrait être encadrées par des quillemets (`""`).
+Éléments HTML peuvent aussi avoir des attributs (caractéristiques et étiquettes).  
+L'ordre dans lequel nous listons des attributs n'a pas d'importance. Les valeurs devrait être encadrées par des guillemets (`""`).
 
 ```html
 <nomdebalise attribut1="sa valeur" attribut2="sa valeur"
@@ -73,7 +73,7 @@ https://codepen.io/alyra/pen/zYBQoWe
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Metadonnées du document -->
+    <!-- Métadonnées du document -->
   </head>
   <body>
     <!-- Contenu du document -->
@@ -103,10 +103,14 @@ https://codepen.io/alyra/pen/zYBQoWe
 </html>
 ```
 
+Revenons à notre métaphore "rangement Ikea". Le `body` du document html correspond au rangement lui-même. Mais seront nous capable de l'assembler sans sa notice (partie `head` du document html) ?
+
+L'élément HTML `<head>` fournit des informations générales (métadonnées) sur le document. Les plus important sont :
+- le titre du document
+- liens ou des définitions vers des scripts et feuilles de style
+- le jeux de caractères utilisé
 
 
-###Métaphore
-Un rangement Ikea (html) = la notice qui permet de l'assembler ([head](https://developer.mozilla.org/fr/docs/Web/HTML/Element/head)) + le rangement lui-même ([body](https://developer.mozilla.org/fr/docs/Web/HTML/Element/body))
 
 <a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4515922/removehead.mp4" target="_blank" rel="noreferrer noopener">Voici ce qui se passe quand on enlève la partie head.</a>
 
@@ -116,7 +120,7 @@ A en lire aussi [ici](https://developer.mozilla.org/fr/docs/Apprendre/Commencer_
 
 Ci-dessous vous trouverez les principales balises HTML **classées par le contexte d'utilisation.**
 
-Attention: Cette liste n'est pas 100% complète. Dans un objectif de clarté, certaines balises rarement utilisées, obsoletes ou "experimentales" ne sont pas inclues.
+Attention: Cette liste n'est pas 100% complète. Dans un objectif de clarté, certaines balises rarement utilisées, obsoletes ou "expérimentales" ne sont pas inclues.
 
 ### Racine principale (root)
 
@@ -199,11 +203,11 @@ Attention: Cette liste n'est pas 100% complète. Dans un objectif de clarté, ce
 </script>
 <noscript
   >Pour recevoir nos salutations, veillez activer JavaScript dans votre
-  navigatuer :)</noscript
+  navigateur :)</noscript
 >
 ```
 
-Vous pouvez voir le code ci-dessus en action en cliquant [ce lien](https://cdpn.io/alyra/debug/1a70873c7b9713e08a6d00b45ee1b0ab) et ensuite en désactivant JavaScript dans votre navigateur et en réchargant la page.
+Vous pouvez voir le code ci-dessus en action en cliquant [ce lien](https://cdpn.io/alyra/debug/1a70873c7b9713e08a6d00b45ee1b0ab) et ensuite en désactivant JavaScript dans votre navigateur et en rechargeant la page.
 
 ### Tables
 
@@ -227,7 +231,7 @@ Vous pouvez voir le code ci-dessus en action en cliquant [ce lien](https://cdpn.
 `progress`  
 `textarea`
 
-### Éléments interacifs
+### Éléments interactifs
 
 `details` `summary`
 
@@ -280,7 +284,7 @@ Chaque élément HTML est membre d'un certain nombre de catégories de contenu (
 
 ```html
 <!-- ceci est correct (et vrai) -->
-<p>Ca se complique, hein ? Ne vous inquietez pas, on va continuer doucement en veillant que vous appreniez de bonnes pratiques.</p>
+<p>Ca se complique, hein ? Ne vous inquiétez pas, on va continuer doucement en veillant que vous appreniez de bonnes pratiques.</p>
 
 <!-- ceci n'est pas correct (et faux) -->
 <p><div>Pfff, c'est trop compliqué.</div></p>
@@ -313,7 +317,7 @@ Regardons ensemble, le code dans le pen suivant. Pourquoi le texte n'est pas éc
 
 - [Sac de voyage](https://codepen.io/alyra/pen/yLYxEpJ) | [solution](https://codepen.io/alyra/pen/50e0ae1bd5d18d37e3f239c6d673c1d1)
 - [Trottinette](https://codepen.io/alyra/pen/vYNzrav) | [solution](https://codepen.io/alyra/pen/03cdc8f33f5523d04ba8ac8c9c5a615b)
-- [Personnages Starwars](https://codepen.io/alyra/pen/QWjPjMz) | [solution](https://codepen.io/alyra/pen/aab636e7598ee96a853e589048316ed0)
+- [Personnages Star Wars](https://codepen.io/alyra/pen/QWjPjMz) | [solution](https://codepen.io/alyra/pen/aab636e7598ee96a853e589048316ed0)
 - [Portfolio de Sonia](https://codepen.io/alyra/pen/PoPXqVy) | [solution](https://codepen.io/alyra/pen/c0ef3d8ffd9ed715e85f8a3665694057)
 - [Jamais sans passer par Markup Validation W3c](https://codepen.io/alyra/pen/JjYaZZL) | [solution](https://codepen.io/alyra/pen/0c8fdb50e2715f0dc4bd3e7ae555f220)
 - [Divitis](https://codepen.io/alyra/pen/yLYxEvJ) | [solution](https://codepen.io/alyra/pen/09a63aef27a9616d22ea61ddaf214010)

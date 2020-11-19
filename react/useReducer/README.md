@@ -1,4 +1,4 @@
-# `useReducer` hook
+# <code>useReducer</code> hook
 
 Le hook `useReducer` permet de gérer le _state_, il a le même rôle que `useState`.
 

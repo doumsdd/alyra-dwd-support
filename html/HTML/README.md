@@ -218,7 +218,7 @@ Vous pouvez voir le code ci-dessus en action en cliquant [ce lien](https://cdpn.
 
 **Objectif** : Envoyer des données !!!
 
-`form`
+`form`  
 `fieldset`  
 `legend`  
 `label`  

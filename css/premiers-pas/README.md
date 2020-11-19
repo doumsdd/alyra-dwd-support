@@ -1,4 +1,4 @@
-# CSS
+# CSS - Introduction
 
 CSS vient de Cascading Style Sheets, ce qui se traduit en français par ou « feuilles de style en cascade » (source MDN)
 

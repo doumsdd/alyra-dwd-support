@@ -11,7 +11,7 @@ Nous allons apprendre comment mettre en place  des contrôles interactifs permet
 
 ## <code>form</code>
 
-Notre aventure commence avec l'élément `<form>` qui représente une section d'un document qui regroupe les élément interactifs.
+Notre aventure commence avec l'élément `<form>`. `<form>` représente une section qui regroupe les élément interactifs.
 
 ```html
 <form action="/ou/envoyer/" method="POST">
@@ -48,9 +48,39 @@ Vous pouvez [en lire davantage ici (MDN).](https://developer.mozilla.org/fr/docs
 
 ![](https://wptemplates.pehaa.com/assets/alyra/fieldset.png)
 
+## Contrôle interactif - <code>input</input>
+
+L'élément vide `<input>` crée un contrôle interactif. Les saisies possibles et son comportement dépend fortement de la valeur indiquée par son attribut `type`.
+
+```html
+<input type="email" id="email" name="email" required />
+```
+
+Regardons les attributs souvent utilisé avec `input`
+
+- `type` - par défaut text
 
 
- 
+
+### <code>input</code> type text et email
+
+Chaque contrôle interactif (`input`) est accompagné par son élément qui le décrit [`label`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/label). Pour que la liason fonctionne l'attribut `for` de `<label>` doit correspondre à l'attribut `id` de `input`.
+
+```html
+<label for="user-name">Votre nom</label>
+<input id="user-name" name="user-name" type="text" />
+```
+
+et un autre exemple 
+
+```html
+<label for="user-email">Votre e-mail</label>
+<input id="user-email" name="user-email" type="email" />
+```
+
+![](https://wptemplates.pehaa.com/assets/alyra/labelinput.png)
+
+
 
 mettre ne place - [basé sur ce pen](https://codepen.io/alyra/pen/qBOzGRo)
 

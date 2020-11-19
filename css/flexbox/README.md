@@ -1,6 +1,6 @@
-Le temps est venu de tenter des [layouts plus élaborés...](https://wp-pehaa.xyz/assets/layout.mp4)
-
 # Flexbox
+
+Le temps est venu de tenter des [layouts plus élaborés...](https://wp-pehaa.xyz/assets/layout.mp4)
 
 Le **Module Flexbox** permet de contrôler la disposition des éléments verticalement ou horizontalement.
 

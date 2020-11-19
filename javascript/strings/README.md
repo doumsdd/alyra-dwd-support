@@ -8,7 +8,7 @@ Vous vous rappelez bien que `"string"` est un des types primitifs dans JavaScrip
 
 
 ## 1. Quelle est la longueur d'un string ?
-plusieurs
+
 ```javascript
 message.length
 ```

@@ -25,21 +25,35 @@ https://codepen.io/alyra/pen/bGeywNy
 
 J'aime comparer la structure HTML d'un document web à un rangement ikea. Les balises sont des des placards, des étagères, des tirrois, des boîtes, des cintres... 
 - Chaque élément à son usage spécifique (comme une balise a son sens sémantique). Nous n'accrochons pas des chaussettes sur les cintres et nous ne mettons pas des costumes dans les tirroirs.
-- Les éléments sont emboîtés l'une dans l'autre - mais pas tout à fait librément - par exemple nous ne mettons pas de cintres dans les tirroirs. Pareil, dans HTML nous n'encadrons pas un titre par un paragraphe.
+- Les éléments sont emboîtés l'un dans l'autre - mais pas tout à fait librément - par exemple, nous ne mettons pas de cintres dans les tirroirs. Pareil, dans HTML nous n'encadrons pas un titre par un paragraphe.
 - Les éléments du même type peuvent avoir leurs spécificité (par exemple un tirroir magnétique). Nous pouvons aussi leur donner des étiquettes (accrocher un autocollant chaussettes 🧦 sur un tirroir, marqués certains placards "hiver", etc.)
 
 ## Anatomie d'une balise HTML
 
 ```html
 <nomdebalise>contenu de l'élément</nomdebalise>
+```
 
-<!-- éléments html peuvent avoir des attributs  -->
+![](https://wptemplates.pehaa.com/assets/alyra/balises-html1.png)
 
-<nomdebalise attribut1="sa valeur" attribut2="valeur"
+Éléments HTML peuvent aussi avoir des attributs (caractéristiques et ettiquètes).  
+L'ordre dans lequel nous listons des attributs n'a pas d'importance. Les valeurs devrait être encadrées par des quillemets (`""`).
+
+```html
+<nomdebalise attribut1="sa valeur" attribut2="sa valeur"
   >contenu de l'élément</nomdebalise
 >
+```
 
-<!-- Il y a aussi des balises autofermantes (qui ne possèdent pas du contenu mais uniquement des attributs -->
+![](https://wptemplates.pehaa.com/assets/alyra/balises-html2.png)
+
+Il existe aussi des balises qui n'ont pas de contenu. Nous allons les appeler *auto-fermantes* (en anglais *self-closing tags*). Les exemples les plus simples sont :
+- `<br />` - saut à la ligne (`<br>` est aussi correcte),
+- `<hr />` - la ligne horizontale
+
+La balise auto-fermante le plus souvent utilisée est `img` qui permet d'afficher des images. La balise `img` aura toujours deux attributs `src` - la source d'image à afficher et `alt` le texte qui décrit le contenu de l'image (texte alternatif).
+
+```html
 
 <nomdebalise attribut1="sa valeur" attribut2="valeur" />
 

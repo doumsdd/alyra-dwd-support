@@ -47,7 +47,7 @@ L'ordre dans lequel nous listons des attributs n'a pas d'importance. Les valeurs
 
 Il existe aussi des balises qui n'ont pas de contenu. Nous allons les appeler *auto-fermantes* (en anglais *self-closing tags*). Les exemples les plus simples sont :
 - `<br />` - saut à la ligne (`<br>` est aussi correcte),
-- `<hr />` - la ligne horizontale
+- `<hr />` - la ligne horizontale (`<hr>` est aussi correcte),
 
 La balise auto-fermante le plus souvent utilisée est `img` qui permet d'afficher des images. La balise `img` aura toujours deux attributs `src` - la source d'image à afficher et `alt` le texte qui décrit le contenu de l'image (texte alternatif).
 
@@ -198,10 +198,7 @@ Attention: Cette liste n'est pas 100% complète. Dans un objectif de clarté, ce
 <script>
   alert("Hello JavaScript Lovers!")
 </script>
-<noscript
-  >Pour recevoir nos salutations, veillez activer JavaScript dans votre
-  navigateur :)</noscript
->
+<noscript>Pour recevoir nos salutations, veillez activer JavaScript dans votre navigateur :)</noscript>
 ```
 
 Vous pouvez voir le code ci-dessus en action en cliquant [ce lien](https://cdpn.io/alyra/debug/1a70873c7b9713e08a6d00b45ee1b0ab) et ensuite en désactivant JavaScript dans votre navigateur et en rechargeant la page.

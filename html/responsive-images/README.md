@@ -98,9 +98,9 @@ On peut aller plus loin :
 
 ## Exemples
 
-- logo le Parisien
+- logo le Parisien  
 https://codepen.io/alyra/pen/vYNPMvw
-- Origami Fox
+- Origami Fox  
 https://codepen.io/alyra/pen/BaobgZP
 
 ## Lecture supplémentaire :

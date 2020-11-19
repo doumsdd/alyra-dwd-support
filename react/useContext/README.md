@@ -1,4 +1,4 @@
-# React Context API et `useContext` hook
+# React Context API et <code>useContext</code> hook
 
 Nous allons découvrir l’API Context de React en procédant à un refactoring. Notre point de départ est [ce repo GitHub](https://github.com/pehaa/alyra-gradients-context).
 Nous allons retravailler l’application Alyra Gradients avec une approche alternative, en utilisant API Context. La structure de notre projet du départ est comme ceci :

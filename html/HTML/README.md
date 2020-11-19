@@ -184,7 +184,7 @@ Attention: Cette liste n'est pas 100% complète. Dans un objectif de clarté, ce
 `img`  
 `picture`  
 `source`  
-`audio`
+`audio`  
 `video`  
 `track`  
 `iframe`

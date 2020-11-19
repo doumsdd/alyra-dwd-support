@@ -48,7 +48,7 @@ Vous pouvez [en lire davantage ici (MDN).](https://developer.mozilla.org/fr/docs
 
 ![](https://wptemplates.pehaa.com/assets/alyra/fieldset.png)
 
-## Contrôle interactif - <code>input</input>
+## Contrôle interactif - <code>input</code>
 
 L'élément vide `<input>` crée un contrôle interactif. Les saisies possibles et son comportement dépend fortement de la valeur indiquée par son attribut `type`.
 

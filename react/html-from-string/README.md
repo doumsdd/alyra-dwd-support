@@ -1,4 +1,4 @@
-# Rendering _HTML from string_ dans React
+# Rendering HTML from string dans React
 
 Souvent le contenu que nous affichons avec React provient d'une source tierce (api, base de données). Nous les récupérons en tant qu'objet, par exemple :
 

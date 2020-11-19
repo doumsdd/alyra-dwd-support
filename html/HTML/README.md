@@ -54,16 +54,20 @@ Il existe aussi des balises qui n'ont pas de contenu. Nous allons les appeler *a
 La balise auto-fermante le plus souvent utilisée est `img` qui permet d'afficher des images. La balise `img` aura toujours deux attributs `src` - la source d'image à afficher et `alt` le texte qui décrit le contenu de l'image (texte alternatif).
 
 ```html
-
-<nomdebalise attribut1="sa valeur" attribut2="valeur" />
-
-<!-- ceci aussi est correcte -->
-
-<nomdebalise attribut1="sa valeur" attribut2="valeur"></nomdebalise>
+<img src="path/to/myimage.png" alt="Le contenu de mon image" />
 ```
 
+ou 
+
+```html
+<img src="path/to/myimage.png" alt="Le contenu de mon image">
+```
+
+https://codepen.io/alyra/pen/zYBQoWe
 
 ## Structure du document HTML
+
+
 
 ```html
 <!DOCTYPE html>

@@ -28,7 +28,7 @@ J'aime comparer la structure HTML d'un document web à un rangement Ikea. Les ba
 - Les éléments sont emboîtés l'un dans l'autre - mais pas tout à fait librement - par exemple, nous ne mettons pas de cintres dans les tiroirs. Pareil, dans HTML nous n'encadrons pas un titre par un paragraphe.
 - Les éléments du même type peuvent avoir leurs spécificité (par exemple un tiroir magnétique). Nous pouvons aussi leur donner des étiquettes (accrocher un autocollant chaussettes 🧦 sur un tiroir, marqués certains placards "hiver", etc.)
 
-## Anatomie d'une balise HTML
+## Anatomie d'un élément HTML
 
 ```html
 <nomdebalise>contenu de l'élément</nomdebalise>
@@ -45,11 +45,14 @@ L'ordre dans lequel nous listons des attributs n'a pas d'importance. Les valeurs
 
 ![](https://wptemplates.pehaa.com/assets/alyra/balises-html2.png)
 
-Il existe aussi des balises qui n'ont pas de contenu. Nous allons les appeler *auto-fermantes* (en anglais *self-closing tags*). Les exemples les plus simples sont :
+Il existe aussi des éléments qui n'ont pas de contenu, des éléments vides. Dans ce cas-là, nous allons utiliser des balises *auto-fermantes* (en anglais *self-closing tags*).  
+Les exemples les plus simples des éléments vides sont :
 - `<br />` - saut à la ligne (`<br>` est aussi correcte),
 - `<hr />` - la ligne horizontale (`<hr>` est aussi correcte),
 
-La balise auto-fermante le plus souvent utilisée est `img` qui permet d'afficher des images. La balise `img` aura toujours deux attributs `src` - la source d'image à afficher et `alt` le texte qui décrit le contenu de l'image (texte alternatif).
+L'élément vide le plus souvent utilisé est `img`. La balise `img` permet d'afficher des images 🌄. L'élément `<img>` a toujours deux attributs 
+- `src` - la source d'image à afficher
+- `alt` - le texte qui décrit le contenu de l'image (texte alternatif).
 
 ```html
 <img src="path/to/myimage.png" alt="Le contenu de mon image" />
@@ -64,8 +67,6 @@ ou
 https://codepen.io/alyra/pen/zYBQoWe
 
 ## Structure du document HTML
-
-
 
 ```html
 <!DOCTYPE html>

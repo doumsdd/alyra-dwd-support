@@ -1,4 +1,4 @@
-# Side effect & React useEffect() hook
+# Side effect & <code>useEffect()</code> hook
 
 ## Side effects (effets bord)
 

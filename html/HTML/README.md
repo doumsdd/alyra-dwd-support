@@ -180,6 +180,7 @@ Attention: Cette liste n'est pas 100% complète. Dans un objectif de clarté, ce
 ### Images, Multimedia et Embedded Content
 
 **Objectif** : afficher les images et multimedia, intégrer le contenu _externe_
+
 `img`  
 `picture`  
 `source`  
@@ -271,14 +272,14 @@ Vous pouvez voir le code ci-dessus en action en cliquant [ce lien](https://cdpn.
 
 ## Catégories de contenu
 
-Chaque élément HTML est membre d'un certain nombre de catégories de contenu (par exemple _phrasing content_ ou _interactive content_). Il y a plusieurs règles qui sont basés sur ce classement.
+Chaque élément HTML est membre d'un certain nombre de catégories de contenu (par exemple _phrasing content_ ou _interactive content_). Il existe plusieurs règles qui sont basés sur ce classement. En particulier, certain éléments peuvent contenir uniquement des éléments appartenant à la classe *contenu phrasé*. 
 
 ### Phrasing content (contenu phrasé)
 
 `a` (s'il contient lui-même _phrasing content_)  
  `abbr` `audio` `b` `bdo` `br` `button` `canvas` `cite` `code` `command` `data` `datalist` `dfn` `em` `embed` `i` `iframe` `img` `input` `kbd` `keygen` `label` `mark` `math` `meter` `noscript` `object` `output` `picture` `progress` `q` `ruby` `samp` `script` `select` `small` `span` `strong` `sub` `sup` `svg` `textarea` `time` `var` `video` `wbr` et texte.
 
-`p` - contenu autorisé : contenu phrasé
+Une des balise que nous utilisons particulierement souvent est `p` (paragraphe). Il est important de savoir que pour un paragraphe le seul contenu autorisé est contenu phrasé.
 
 ```html
 <!-- ceci est correct (et vrai) -->
@@ -290,19 +291,12 @@ Chaque élément HTML est membre d'un certain nombre de catégories de contenu (
 
 Regardons ensemble, le code dans le pen suivant. Pourquoi le texte n'est pas écrit en rouge tomate ??? 🤔
 
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="alyra" data-slug-hash="QWjJzRB" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Qu'est qui va pas ici ? ">
-  <span>See the Pen <a href="https://codepen.io/alyra/pen/QWjJzRB">
-  Qu'est qui va pas ici ? </a> by Alyra (<a href="https://codepen.io/alyra">@alyra</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<!---
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
--->
+https://codepen.io/alyra/pen/QWjJzRB
 
 **Comment savoir ?**
 
 - Suivre la spécifation - [MDN - Référence des éléments HTML](https://developer.mozilla.org/fr/docs/Web/HTML/Element)
-- Veiller à toujours valider son document HTML
+- [Veiller à toujours valider son document HTML](https://validator.w3.org/)
 
 ### Ressources
 

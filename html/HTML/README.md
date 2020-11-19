@@ -2,7 +2,7 @@
 
 **HTML** _HyperText Markup Language_ est un langage de balises permettant :
 
-- de structurer le contenu
+- de représenter le contenu d'une page web et de le structurer
 - d'avoir de l'hypertexte dans un navigateur web.
 
 Il coexiste avec deux autres technologies Web :
@@ -10,7 +10,46 @@ Il coexiste avec deux autres technologies Web :
 - **CSS** pour décrire la présentation visuelle
 - **JavaScript** pour des fonctionnalités interactives
 
-## Structure
+HTML utilise des **balises** (en anglais *tags*) qui sont insérées au sein d'un texte. Par exemple, chaque paragraphe est encadré par une balise paragraphe (`p`). Le titre principale sera encadré par la balise `h1`. L'ensemble, le titre + les paragraphes autour d'un sujet seront encadré par une balise `article`.
+
+
+![](https://wptemplates.pehaa.com/assets/alyra/text-pandaroux.png)
+
+![](https://wptemplates.pehaa.com/assets/alyra/html-pandaroux.png)
+
+https://codepen.io/alyra/pen/bGeywNy
+
+## Métaphore
+
+![rangement ikea](https://s3-us-west-2.amazonaws.com/s.cdpn.io/4515922/wardrobe.jpg)
+
+J'aime comparer la structure HTML d'un document web à un rangement ikea. Les balises sont des des placards, des étagères, des tirrois, des boîtes, des cintres... 
+- Chaque élément à son usage spécifique (comme une balise a son sens sémantique). Nous n'accrochons pas des chaussettes sur les cintres et nous ne mettons pas des costumes dans les tirroirs.
+- Les éléments sont emboîtés l'une dans l'autre - mais pas tout à fait librément - par exemple nous ne mettons pas de cintres dans les tirroirs. Pareil, dans HTML nous n'encadrons pas un titre par un paragraphe.
+- Les éléments du même type peuvent avoir leurs spécificité (par exemple un tirroir magnétique). Nous pouvons aussi leur donner des étiquettes (accrocher un autocollant chaussettes 🧦 sur un tirroir, marqués certains placards "hiver", etc.)
+
+## Anatomie d'une balise HTML
+
+```html
+<nomdebalise>contenu de l'élément</nomdebalise>
+
+<!-- éléments html peuvent avoir des attributs  -->
+
+<nomdebalise attribut1="sa valeur" attribut2="valeur"
+  >contenu de l'élément</nomdebalise
+>
+
+<!-- Il y a aussi des balises autofermantes (qui ne possèdent pas du contenu mais uniquement des attributs -->
+
+<nomdebalise attribut1="sa valeur" attribut2="valeur" />
+
+<!-- ceci aussi est correcte -->
+
+<nomdebalise attribut1="sa valeur" attribut2="valeur"></nomdebalise>
+```
+
+
+## Structure du document HTML
 
 ```html
 <!DOCTYPE html>
@@ -46,32 +85,12 @@ Il coexiste avec deux autres technologies Web :
 </html>
 ```
 
-![rangement ikea](https://s3-us-west-2.amazonaws.com/s.cdpn.io/4515922/wardrobe.jpg)
+
 
 ###Métaphore
 Un rangement Ikea (html) = la notice qui permet de l'assembler ([head](https://developer.mozilla.org/fr/docs/Web/HTML/Element/head)) + le rangement lui-même ([body](https://developer.mozilla.org/fr/docs/Web/HTML/Element/body))
 
 <a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4515922/removehead.mp4" target="_blank" rel="noreferrer noopener">Voici ce qui se passe quand on enlève la partie head.</a>
-
-## Syntaxe d'une balise HTML
-
-```html
-<nomdebalise>contenu de l'élément</nomdebalise>
-
-<!-- éléments html peuvent avoir des attributs  -->
-
-<nomdebalise attribut1="sa valeur" attribut2="valeur"
-  >contenu de l'élément</nomdebalise
->
-
-<!-- Il y a aussi des balises autofermantes (qui ne possèdent pas du contenu mais uniquement des attributs -->
-
-<nomdebalise attribut1="sa valeur" attribut2="valeur" />
-
-<!-- ceci aussi est correcte -->
-
-<nomdebalise attribut1="sa valeur" attribut2="valeur"></nomdebalise>
-```
 
 A en lire aussi [ici](https://developer.mozilla.org/fr/docs/Apprendre/Commencer_avec_le_web/Les_bases_HTML) - lecture obligatoire !
 

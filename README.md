@@ -1,13 +1,13 @@
 ## HTML
 
-- [HTML intro](./html/HTML)
+- [HTML - Introduction](./html/HTML)
 - [Responsive Images](./html/responsive-images)
 - [Tables](./html/tables)
 - [Forms](./html/forms)
 
 ## CSS
 
-- [Premiers Pas](./css/premiers-pas)
+- [CSS - Introduction](./css/premiers-pas)
 - [Box Model](./css/box-model)
 - [Couleurs](./css/couleurs)
 - [Typographie](./css/typographie)
@@ -16,7 +16,7 @@
 - [Grid](./css/grid)
 - [Position & z-index](./css/position-z-index)
 
-# Sass
+## Sass
 
 - [Refactoring avec Sass dans VSCode](https://github.com/pehaa/cssoffsass)
 - [Exercices CodePen](./sass/exercices)
@@ -59,8 +59,6 @@
   - [Desctructuring assignment](./javascript/objects/destructuring/)
   - [Constructors & Prototypes](./javascript/objects/constructors-prototypes)
 - [Classes](./javascript/classes)
-
-### Tous les quizzes Javascript - [ici](https://javascript-quizzes.netlify.app/)
 
 ## React
 

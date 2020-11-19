@@ -114,13 +114,11 @@ L'élément HTML `<head>` fournit des informations générales (métadonnées) s
 
 <a href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4515922/removehead.mp4" target="_blank" rel="noreferrer noopener">Voici ce qui se passe quand on enlève la partie head.</a>
 
-A en lire aussi [ici](https://developer.mozilla.org/fr/docs/Apprendre/Commencer_avec_le_web/Les_bases_HTML) - lecture obligatoire !
-
-## Balises HTML
+## Classement des balises HTML
 
 Ci-dessous vous trouverez les principales balises HTML **classées par le contexte d'utilisation.**
 
-Attention: Cette liste n'est pas 100% complète. Dans un objectif de clarté, certaines balises rarement utilisées, obsoletes ou "expérimentales" ne sont pas inclues.
+Attention: Cette liste n'est pas 100% complète. Dans un objectif de clarté, certaines balises rarement utilisées, obsoletes ou "expérimentales" ne sont pas inclues. Vous pouvez en lire davantage dans la ["Référence des éléments HTML"](https://developer.mozilla.org/fr/docs/Web/HTML/Element)
 
 ### Racine principale (root)
 
@@ -223,19 +221,22 @@ Vous pouvez voir le code ci-dessus en action en cliquant [ce lien](https://cdpn.
 **Objectif** : Envoyer des données !!!
 
 `form`
-`fieldset` `legend`  
+`fieldset`  
+`legend`  
 `label`  
 `button`  
 `input`  
-`select` `optgroup` `option`
+`select`  
+`optgroup`  
+`option`  
 `progress`  
 `textarea`
 
 ### Éléments interactifs
 
-`details` `summary`
+`details` + `summary`
 
-### Éléments obsoletes
+### Éléments obsoletes ⚠️
 
 **Attention** - évitez à les utiliser
 
@@ -315,6 +316,7 @@ Regardons ensemble, le code dans le pen suivant. Pourquoi le texte n'est pas éc
 
 ## Exercices (2 jours)
 
+- [Lecture obligatoire (MDN)](https://developer.mozilla.org/fr/docs/Apprendre/Commencer_avec_le_web/Les_bases_HTML)
 - [Sac de voyage](https://codepen.io/alyra/pen/yLYxEpJ) | [solution](https://codepen.io/alyra/pen/50e0ae1bd5d18d37e3f239c6d673c1d1)
 - [Trottinette](https://codepen.io/alyra/pen/vYNzrav) | [solution](https://codepen.io/alyra/pen/03cdc8f33f5523d04ba8ac8c9c5a615b)
 - [Personnages Star Wars](https://codepen.io/alyra/pen/QWjPjMz) | [solution](https://codepen.io/alyra/pen/aab636e7598ee96a853e589048316ed0)

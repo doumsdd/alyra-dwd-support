@@ -1,4 +1,4 @@
-# Responsive Images 🌄
+# Responsive Images <span role="img" aria-label="photo">🌄</span>
 
 ## attribut `srcset`
 

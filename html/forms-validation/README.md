@@ -6,5 +6,5 @@ Avec l'arrivée de _HTML5_ nous avons la validation "nativement" disponible dans
 
 Nous avons à notre disposition :
 
-- l'attribut `type` pour les contrôle `input` qui impose le format (par exemple input type="email" impose le format d'addresse mail correcte)
+- l'attribut `type` pour les contrôle `input` qui impose le format (par exemple `<input type="email">` impose le format d'addresse mail correcte)
 -

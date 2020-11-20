@@ -155,7 +155,7 @@ Nous utilisons les éléments `<input type="radio">` pour donner le choix d'une 
 ```
 
 Observez que nos trois `input` de type `radio` partagent le même `name="mode-contact"`.  
-L'attribut `checked` indique la valeur choisiée par défaut. 
+L'attribut `checked` indique la valeur choisie par défaut. 
 
 ![""](https://wptemplates.pehaa.com/assets/alyra/input-type-radio.png)
 

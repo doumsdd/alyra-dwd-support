@@ -1,4 +1,4 @@
-# Formulaires 
+# Formulaires 📩
 
 HTML fournit différents éléments afin de créer des formulaires. Formulaires permettent aux utilisateurs d'intéragir avec un site web ou une application. 
 

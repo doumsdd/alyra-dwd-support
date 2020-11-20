@@ -134,6 +134,31 @@ https://wptemplates.pehaa.com/assets/alyra/input-type-number.mp4
 
 ![""](https://wptemplates.pehaa.com/assets/alyra/input-type-range.png)
 
+### <code>input</code> type radio
+
+Nous utilisons les éléments `<input type="radio">` pour donner le choix d'une valeur parmi plusieurs.
+
+```html
+  <fieldset>
+    <legend>Mode de contacte</legend>
+    <p>Comment préférez-vous être contacté ?</p>
+    <label for="par-tel">Par téléphone</label>
+    <input id="par-tel" name="mode-contact" type="radio" value="tel">
+    
+    <label for="par-mail">Par Mail</label>
+    <input id="par-mail" name="mode-contact" type="radio" value="mail">
+    
+    <label for="par-sms">Par SMS</label>
+    <input id="par-sms" name="mode-contact" type="radio" value="sms" checked>
+    
+  </fieldset>
+```
+
+Observez que nos trois `input` de type `radio` partagent le même `name="mode-contact"`.  
+L'attribut `checked` indique la valeur choisiée par défaut. 
+
+![""](https://wptemplates.pehaa.com/assets/alyra/input-type-radio.png)
+
 mettre ne place - [basé sur ce pen](https://codepen.io/alyra/pen/qBOzGRo)
 
 ## Exercices

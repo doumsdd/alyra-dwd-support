@@ -58,9 +58,13 @@ L'élément vide `<input>` crée un contrôle interactif. Les saisies possibles 
 
 Regardons les attributs souvent utilisé avec `input`
 
-- `type` - par défaut text
+- `type` - par défaut text. Comme vous pouvez l'observer dans la video ci-dessous, le comportement de l'élément `<input>` change grandement en fonction de son attribut `type`, vous trouverez multiples exemples [ici (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
 
 https://wptemplates.pehaa.com/assets/alyra/input-type.mp4
+
+- `name` - la référence de la donnée utilisée pour le traitment quand le formulaire est envoyé
+- `required` - si ajouté le champ devient obligatoire
+- `value` - la valeur par défaut, rarement utilisé avec le `type="text"` ou le `type="email"` par contre très pratique pour les type tels que `"number"`, `"color"` ou `"range"`
 
 ### <code>input</code> type text et email
 

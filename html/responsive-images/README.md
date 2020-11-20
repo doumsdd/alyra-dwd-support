@@ -27,7 +27,17 @@ Première étape est de préparer une autre image, de la taille `600px x 800px` 
 />
 ```
 
-Ici on indique au navigateur quelle image est préparée pour quelle résolution.  
+Nous pouvons aller encore plus loin. Si nous avons la possibilité d'avoir notre image dans la resolution `900px x 1200px`, utilisons aussi cette variante (img-900-1200.jpg) :
+
+```html
+<img
+  src="img-300x400.jpg"
+  srcset="img-300x400.jpg 1x, img-600x800.jpg 2x, img-900x1200.jpg 3x"
+  alt="texte alternatif"
+/>
+```
+
+Ici on indique au navigateur quelle image est préparée pour quelle résolution. 
 Attribut `width` est recommandé mais pas nécessaire.
 
 ### 🤔 Solution 2 : unités `w`
@@ -53,7 +63,7 @@ Il est aussi possible de varier la taille d'affichage d'une image :
   src="img-300x400.jpg"
   srcset="img-300x400.jpg 300w, img-600x800.jpg 600w"
   sizes="(max-width: 600px) 200px, 300px"
-  alt="texte alternarif"
+  alt="texte alternatif"
 />
 ```
 
@@ -64,7 +74,7 @@ Ceci veut dire, si la taille de l'écran ne dépasse pas `600px`, l'image prend 
 `SVG` (Scalable Vector Graphics) est un format vectoriel. Ceci dit, que cette solution ne s'appliquera pas aux photos. Par contre, elle est <b>parfaite 😍</b> pour les logos, pictos, illustrations. Un SVG ne perdra rien de sa qualité peu importe la taille. On est souvent gagnants en ce qui concerne le poids d'images (en B) et regardez, on revient au markup tout simple :
 
 ```html
-<img src="img.svg" width="300" alt="texte alternarif" />
+<img src="img.svg" width="300" alt="texte alternatif" />
 ```
 
 ## `<picture>` - HTML tag

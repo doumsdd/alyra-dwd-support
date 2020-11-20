@@ -66,6 +66,10 @@ https://wptemplates.pehaa.com/assets/alyra/input-type.mp4
 - `required` - si ajouté le champ devient obligatoire
 - `value` - la valeur par défaut, rarement utilisé avec le `type="text"` ou le `type="email"` par contre très pratique pour les type tels que `"number"`, `"color"` ou `"range"`
 
+## input + label 🦜🦜
+
+Chaque contrôle interactif (`input`) devrait être accompagné par un élément [`label`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/label) qui le décrit. Pour que la liason fonctionne l'attribut `for` de `<label>` doit correspondre à l'attribut `id` de `input`.
+
 ### <code>input</code> type text et email
 
 Chaque contrôle interactif (`input`) est accompagné par son élément qui le décrit [`label`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/label). Pour que la liason fonctionne l'attribut `for` de `<label>` doit correspondre à l'attribut `id` de `input`.

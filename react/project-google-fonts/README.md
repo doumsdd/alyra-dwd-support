@@ -12,7 +12,7 @@ Votre applications utilise [**Developer API de Google Fonts**](https://developer
 
 <hr />
  
- **Chaque de polices** est affichée avec des détails :
+**Chaque de polices** est affichée avec des détails :
  
    - son nom 
    - nombre de variants

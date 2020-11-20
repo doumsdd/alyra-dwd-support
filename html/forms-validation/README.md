@@ -26,50 +26,9 @@ Symbole | Signification
 `\D` | caractère autre qu’un chiffre décimal
 `\s` | tout caractère espace blanc</div>
 `\S` | tout caractère autre qu’un espace blanc
-
-
-<table border="0" cellspacing="0" cellpadding="0" >
-  <tbody><tr class="altrow countrow">
-    <td valign="top" >
-      <div style="padding: 3px 8px;">*</div>
-    </td>
-    <td valign="top">
-      <div style="padding: 3px 8px;">0 ou plus</div>
-    </td>
-    <td valign="top">
-      <div style="padding: 3px 8px;">{3}</div>
-    </td>
-    <td valign="top">
-      <div style="padding: 3px 8px;">Exactement 3</div>
-    </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <div style="padding: 3px 8px;">+</div>
-      </td>
-      <td valign="top">
-        <div style="padding: 3px 8px;">1 ou plus</div>
-      </td>
-      <td valign="top">
-        <div style="padding: 3px 8px;">{3,}</div>
-      </td>
-      <td valign="top">
-        <div style="padding: 3px 8px;">3 ou plus</div>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-        <div style="padding: 3px 8px;">?</div>
-      </td>
-      <td valign="top">
-        <div style="padding: 3px 8px;">0 ou 1</div>
-      </td>
-      <td valign="top">
-        <div style="padding: 3px 8px;">{3,5}</div>
-      </td>
-      <td valign="top">
-        <div style="padding: 3px 8px;">3, 4 ou 5</div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+`*` | 0 ou plus
+`{3}` | Exactement 3
+`+` | 1 ou plus
+`{3,}` | 3 ou plus
+`?` |  0 ou 1
+`{3,5}` |  3, 4 ou 5

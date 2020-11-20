@@ -70,31 +70,69 @@ https://wptemplates.pehaa.com/assets/alyra/input-type.mp4
 
 Chaque contrôle interactif (`input`) devrait être accompagné par un élément [`label`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/label) qui le décrit. Pour que la liason fonctionne l'attribut `for` de `<label>` doit correspondre à l'attribut `id` de `input`.
 
+```html
+<label for="user-name">Votre nom</label>
+<input id="user-name" name="user-name" type="text" />
+```
+![](https://wptemplates.pehaa.com/assets/alyra/labelinput.png)
+
 Pourquoi utiliser `label` ?
 - Le texte du `label` est techniquement associé avec le champ. C'est ce qui sera énoncé aux utilisateurs des lecteurs d'écran. 
 - Vous pouvez cliquer sur le libellé pour passer le focus ou activer le champ (meilleure expérience utilisateur !)
 
 https://wptemplates.pehaa.com/assets/alyra/label.mp4
 
-### <code>input</code> type text et email
-
-Chaque contrôle interactif (`input`) est accompagné par son élément qui le décrit [`label`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/label). Pour que la liason fonctionne l'attribut `for` de `<label>` doit correspondre à l'attribut `id` de `input`.
+### <code>input</code> type text
 
 ```html
 <label for="user-name">Votre nom</label>
 <input id="user-name" name="user-name" type="text" />
 ```
 
-et un autre exemple 
+### <code>input</code> type email 
 
 ```html
 <label for="user-email">Votre e-mail</label>
 <input id="user-email" name="user-email" type="email" />
 ```
 
-![](https://wptemplates.pehaa.com/assets/alyra/labelinput.png)
+La valeur saisie est validée afin de vérifier si son format correspond à l'adresse mail.
 
+### <code>input</code> type number
 
+```html
+<label for="age">Votre d'âge</label>
+<input id="age" name="age" type="number" value="20">
+```
+
+Nous pouvons aussi configurer la valeur maximale, minimale et l'incrémentation :
+
+```html
+<label for="age">Votre tranche d'âge</label>
+<input id="age" name="age" type="number" value="20" min="20" max="110" step="10">
+```
+
+https://wptemplates.pehaa.com/assets/alyra/input-type-number.mp4
+
+### <code>input</code> type range
+
+```html
+<fieldset>
+  <legend>Expérience web</legend>
+
+  <label for="html">HTML</label>
+  <input id="html" name="html" type="range" value="50" min="0" max="100">
+
+  <label for="css">CSS</label>
+  <input id="css" name="css" type="range" value="10" min="0" max="100">
+
+  <label for="js">JavaScript</label>
+  <input id="js" name="js" type="range" value="10" min="0" max="100">
+
+</fieldset>
+```
+
+![""](https://wptemplates.pehaa.com/assets/alyra/input-type-range.png)
 
 mettre ne place - [basé sur ce pen](https://codepen.io/alyra/pen/qBOzGRo)
 

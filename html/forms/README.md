@@ -174,10 +174,10 @@ Le élément `<input type=checkbox>" permet de cocher une (ou plusieurs) valeurs
 
 ```html
 <fieldset>
-    <legend>Vos questions à nous</legend>
-    <label for="questions">Vos questions</label>
-    <textarea id="questions" name="questions" cols="50" rows="6"></textarea>
-  </fieldset>
+  <legend>Vos questions à nous</legend>
+  <label for="questions">Vos questions</label>
+  <textarea id="questions" name="questions" cols="50" rows="6"></textarea>
+</fieldset>
 ```
 
 - `textarea` n'est pas un element vide. Pour prévoir un contenu par défaut, il faut l'ajouter entre les balises de l'élément (l'attribut `value` n'est pas pris en charge)

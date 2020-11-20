@@ -10,8 +10,8 @@ Votre applications utilise [**Developer API de Google Fonts**](https://developer
 - 10 polices les plus _trending_
 - 10 polices les plus populaires
 
-<hr />
- 
+---
+
 **Chaque de polices** est affichée avec des détails :
  
    - son nom 
@@ -20,7 +20,7 @@ Votre applications utilise [**Developer API de Google Fonts**](https://developer
    - l'aperçue 
    - le lien vers la police sur [fonts.google.com](https://fonts.google.com)
    
-<hr />
+---
 
 **L'aperçu** contient un texte (initialement un [pangramme](https://fr.wikipedia.org/wiki/Pangramme), par exemple _Portez ce whisky au vieux juge blond qui fume._) ce texte peut être modifié par utilisateur.
 
@@ -28,18 +28,18 @@ Le texte d'apperçu est affiché avec la propriété _font-family_ égale à la 
 
 L'utilisateur peut également modifier la taille d'affichage (entre 8px et 48px).
 
-<hr />
+---
 
 **Le lien vers la page de police sur fonts.google.fonts** - attention aux polices dont le nom est composé des plusieurs mots,
 par exemple le lien pour Kumbh Sans est https://fonts.google.com/specimen/Kumbh+Sans (il contient le symbole `+` entre chaque mot)
 
-<hr />
+---
 
 Afin d'afficher des aperçus, vous devez charger les polices google en question.
 
-Il existe quelques solution pour charger des polices google dynamiquement, par exemple [react-google-font-loader](https://github.com/jakewtaylor/react-google-font-loader)
+Il existe quelques solution pour charger des polices google dynamiquement, par exemple [react-google-font-loader.](https://github.com/jakewtaylor/react-google-font-loader)
 
-<hr />
+---
 
 La mise en page peut être modifiée, elle n'est pas imposée. Tâchez à avoir votre HTML valide et réfléchissez sur l'expérience utilisateur.
 

@@ -128,9 +128,9 @@ Attention: Cette liste n'est pas 100% complète. Dans un objectif de clarté, ce
 `head`  
 `base`  
 `link`  
-`style`
-`title`
-`meta`
+`style`  
+`title`  
+`meta`  
 
 ### Racine de sectionnement
 
@@ -173,7 +173,7 @@ Attention: Cette liste n'est pas 100% complète. Dans un objectif de clarté, ce
 `code`  
 `small`  
 `span`  
-`sub` `sup` (par exemple : H<sub>2</sub>O et m<sup>3</sup>)
+`sub` `sup` (par exemple : H<sub>2</sub>O et m<sup>3</sup>)  
 `time`  
 `del` `ins` (par exemple : Cette formation durera <del>5 mois</del> <ins>6 mois</ins>.
 

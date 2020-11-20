@@ -105,7 +105,8 @@ ul > li {
 
 [Specificity calculator](https://specificity.keegan.st/)
 
-<img src="https://assets.codepen.io/4515922/Screenshot+2020-06-09+08.45.00.png" width="300" style="display: block; margin: 1.5rem auto"/>
+![""](https://assets.codepen.io/4515922/Screenshot+2020-06-09+08.45.00.png)
+
 					<blockquote style="background: #bac8a6;
 	color: black;
 	border-left-color: black;

@@ -136,7 +136,7 @@ https://wptemplates.pehaa.com/assets/alyra/input-type-number.mp4
 
 ### <code>input</code> type radio
 
-Nous utilisons les éléments `<input type="radio">` pour donner le choix d'une valeur parmi plusieurs.
+Nous utilisons les éléments `<input type="radio">` pour donner le choix d'une valeur parmi plusieurs. Dans ce cas-là nous pouvons alternativement utiliser l'élément `<select>` dont nous allons aussi parler.
 
 ```html
   <fieldset>
@@ -159,7 +159,32 @@ L'attribut `checked` indique la valeur choisie par défaut.
 
 ![""](https://wptemplates.pehaa.com/assets/alyra/input-type-radio.png)
 
-mettre ne place - [basé sur ce pen](https://codepen.io/alyra/pen/qBOzGRo)
+### <code>input</code> type checkbox
+
+Le élément `<input type=checkbox>" permet de cocher une (ou plusieurs) valeurs.
+
+```html
+<label for="satisfaction">Cochez si ca vous a plus</label>
+<input id="satisfaction" name="satisfaction" type="checkbox">
+```
+
+### <code>textarea</code>
+
+`textarea` est un contrôle qui permet d'éditer du texte sur plusieurs lignes. Nous l'utilsons pour le corps de message, un commentaire, etc.
+
+```html
+<fieldset>
+    <legend>Vos questions à nous</legend>
+    <label for="questions">Vos questions</label>
+    <textarea id="questions" name="questions" cols="50" rows="6"></textarea>
+  </fieldset>
+```
+
+- `textarea` n'est pas un element vide. Pour prévoir un contenu par défaut, il faut l'ajouter entre les balises de l'élément (l'attribut `value` n'est pas pris en charge)
+- Les attributs `rows` et `cols` permettent de définir la taille de l'élément
+
+
+https://codepen.io/alyra/pen/qBOzGRo
 
 ## Exercices
 

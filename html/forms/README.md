@@ -1,4 +1,4 @@
-# Formulaires
+# Formulaires 
 
 HTML fournit différents éléments afin de créer des formulaires. Formulaires permettent aux utilisateurs d'intéragir avec un site web ou une application. 
 
@@ -69,6 +69,12 @@ https://wptemplates.pehaa.com/assets/alyra/input-type.mp4
 ## input + label 🦜🦜
 
 Chaque contrôle interactif (`input`) devrait être accompagné par un élément [`label`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/label) qui le décrit. Pour que la liason fonctionne l'attribut `for` de `<label>` doit correspondre à l'attribut `id` de `input`.
+
+Pourquoi utiliser `label` ?
+- Le texte du `label` est techniquement associé avec le champ. C'est ce qui sera énoncé aux utilisateurs des lecteurs d'écran. 
+- Vous pouvez cliquer sur le libellé pour passer le focus ou activer le champ (meilleure expérience utilisateur !)
+
+https://wptemplates.pehaa.com/assets/alyra/label.mp4
 
 ### <code>input</code> type text et email
 

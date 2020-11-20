@@ -180,8 +180,8 @@ Le élément `<input type=checkbox>" permet de cocher une (ou plusieurs) valeurs
 </fieldset>
 ```
 
-- `textarea` n'est pas un element vide. Pour prévoir un contenu par défaut, il faut l'ajouter entre les balises de l'élément (l'attribut `value` n'est pas pris en charge)
-- Les attributs `rows` et `cols` permettent de définir la taille de l'élément
+- `textarea` n'est pas un element vide. Pour prévoir un contenu par défaut, il faut l'ajouter entre les balises de l'élément (l'attribut `value` n'est pas pris en charge).
+- Les attributs `rows` et `cols` permettent de définir la taille de l'élément.
 
 ### <code>select</code>
 
@@ -202,7 +202,8 @@ Comme `<input type="radio">`, l'élément `<select>` permet de choisir parmi plu
 </fieldset>
 ```
 
-Chaque élément `<option>` doit avoir un attribut `value` (si `value` n'est pas spécifiée explicitment, le texte contenu dans `<option>..</option>` sera utilisé). L'attribut `selected` sur un élément <option> indique 'option soit sélectionnée par défaut au chargement de la page.
+- Chaque élément `<option>` doit avoir un attribut `value` (si `value` n'est pas spécifiée explicitment, le texte contenu dans `<option>..</option>` sera utilisé)
+- L'attribut `selected` sur un élément <option> indique 'option soit sélectionnée par défaut au chargement de la page.
 
 
 https://codepen.io/alyra/pen/qBOzGRo

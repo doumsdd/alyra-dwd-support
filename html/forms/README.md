@@ -60,7 +60,7 @@ Regardons les attributs souvent utilisé avec `input`
 
 - `type` - par défaut text
 
-
+https://wptemplates.pehaa.com/assets/alyra/input-type.mp4
 
 ### <code>input</code> type text et email
 

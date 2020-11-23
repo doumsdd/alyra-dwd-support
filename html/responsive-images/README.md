@@ -3,7 +3,7 @@
 ## attribut `srcset`
 
 Avez-vous un apareil avec l'écran "haute définition" ? Votre smartphone par exemple ?
-Si oui, vous avex peut-être déjà remarqué que parfois, certaines images (souvent des logos) s'affichent de la façon un peu "floue"...
+Si oui, vous avex peut-être déjà remarqué que parfois, certaines images [(souvent des logos) s'affichent de la façon un peu "floue"...](https://cdpn.io/alyra/debug/vYNPMvw)
 
 Regardons le code, ci-dessous,
 

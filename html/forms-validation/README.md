@@ -48,7 +48,7 @@ Ici nous voulons récupérer un e-mail alyra. Il est toujours en format `prenom@
 
 ```html
 <label for="slug">Choisissez votre identifiant (entre 3 et 8 lettres en miniscule)</label>
-<input id="slug" name="slug" type="text" placeholder="ex. alyra" pattern="[a-x]{3,8}">
+<input id="slug" name="slug" type="text" placeholder="ex. alyra" pattern="[a-z]{3,8}">
 ```
 
 ```html

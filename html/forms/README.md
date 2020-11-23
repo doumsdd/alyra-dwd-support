@@ -25,7 +25,7 @@ Vous pouvez [en lire davantage ici (MDN).](https://developer.mozilla.org/fr/docs
 
 ### <code>fieldset + legend</code>
 
-`<fieldset>`permet de sectionner le formulaire en  regroupant plusieurs contrôles interactifs. Il est particulièrement utile dans le cas de formulaire complexes ou nous devons récupérer plusieurs type de données (personnelles, experience, mode de contact, etc.)
+`<fieldset>`permet de sectionner le formulaire en  regroupant plusieurs contrôles interactifs. Il est particulièrement utile dans le cas de formulaires complexes ou nous devons récupérer plusieurs type de données (par exemple : personnelles, expérience, mode de contact, etc.)
 
 ```html
 <form>

@@ -160,7 +160,7 @@ L'attribut `checked` indique la valeur choisie par défaut.
 
 ### <code>input</code> type checkbox
 
-Le élément `<input type=checkbox>" permet de cocher une (ou plusieurs) valeurs.
+Le élément `<input type=checkbox>` permet de cocher une (ou plusieurs) valeurs.
 
 ```html
 <label for="satisfaction">Cochez si ca vous a plus</label>

@@ -57,7 +57,7 @@ ou
 <input id="zip-code-pl" name="zip-code-pl" type="text" placeholder="50-306" pattern="/d{2}-/d{3}">
 ```
 
-## Les symboles utilisés dans l'attribut `pattern`
+## Les symboles souvent utilisés dans l'attribut `pattern`
 
 <table><tbody><tr><td><code>.</code></td><td>Caractère générique : correspond à tout caractère à l'exception de la nouvelle ligne (\n)</td></tr><tr><td><code>(a|b)</code></td><td>a ou b</td></tr><tr><td><code>[abc]</code></td><td>Un de (a ou b ou c)</td></tr><tr><td><code>[^abc]</code></td><td>Aucun de (a ou b ou c)</td></tr><tr><td><code>[a-q]</code></td><td>caractère dans la plage de a à q (minuscules)</td></tr><tr><td><code>[A-Q]</code></td><td>caractère dans la plage de A à Q (majuscules)</td></tr><tr><td><code>[0-7]</code></td><td>Chiffre entre 0 et 7</td></tr><tr><td><code>\d</code></td><td >chiffre décimal</td></tr><tr><td><code>\D</code></td><td>aractère autre qu’un chiffre décimal</td></tr><tr><td><code>\s</code></td><td>tout caractère espace blanc</td></tr><tr><td><code>\S</code></td><td>tout caractère autre qu’un espace blanc</td></tr></tbody></table>
 

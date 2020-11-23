@@ -21,7 +21,7 @@ Notre aventure commence avec l'élément `<form>`. `<form>` représente une sect
 Je mentionne ici très brievement les attributs `action` et `method` :
 
 - `action` - L'URL vers le script qui traitera les données envoyées par le formulaire. Nous serons redirigé vers cette adresse. Si `action` n'est pas spécifié, les données sont envoyées à l'URL de la page contenant le formulaire.
-- `method` - comment les données sont envoyées, dans la majorité des cas les formulaires utilisent la méthode `GET` (méthode par défaut) ou `POST`. Avec la méthode GET les données sont envoyées via l'URL.  Avec la méthode POST les données sont envoyées dans le body de la requête.
+- `method` - comment les données sont envoyées. Dans la majorité des cas les formulaires utilisent la méthode `GET` (méthode par défaut) ou `POST`. Avec la méthode GET les données sont envoyées via l'URL.  Avec la méthode POST les données sont envoyées dans le body de la requête.
 
 Vous pouvez [en lire davantage ici (MDN).](https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Envoyer_et_extraire_les_donn%C3%A9es_des_formulaires)
 

@@ -12,23 +12,7 @@ Nous avons à notre disposition :
 
 ## Pattern
 
-Symbole | Signification
---- | ---
-`.` | Caractère générique : correspond à tout caractère à l'exception de la nouvelle ligne (\n)
-`(a\|b)` | a ou b
-`[abc]` | un de a, b, c
-`[^abc]` | aucun de a - c
-`[^abc]` | aucun de a - c
-`[a-q]` | caractère dans la plage de a à q (minuscules)
-`[A-Q]` | caractère dans la plage de   A à Q (majuscules)
-`[0-7]` | Chiffre entre 0 et 7
-`\d` | chiffre décimal
-`\D` | caractère autre qu’un chiffre décimal
-`\s` | tout caractère espace blanc</div>
-`\S` | tout caractère autre qu’un espace blanc
-`*` | 0 ou plus
-`{3}` | Exactement 3
-`+` | 1 ou plus
-`{3,}` | 3 ou plus
-`?` |  0 ou 1
-`{3,5}` |  3, 4 ou 5
+<table><tbody><tr><td><code>.</code></td><td>Caractère générique : correspond à tout caractère à l'exception de la nouvelle ligne (\n)</td></tr><tr><td><code>(a|b)</code></td><td>a ou b</td></tr><tr><td><code>[abc]</code></td><td>Un de (a ou b ou c)</td></tr><tr><td><code>[^abc]</code></td><td>Aucun de (a ou b ou c)</td></tr><tr><td><code>[a-q]</code></td><td>caractère dans la plage de a à q (minuscules)</td></tr><tr><td><code>[A-Q]</code></td><td>caractère dans la plage de A à Q (majuscules)</td></tr><tr><td><code>[0-7]</code></td><td>Chiffre entre 0 et 7</td></tr><tr><td><code>\d</code></td><td >chiffre décimal</td></tr><tr><td><code>\D</code></td><td>aractère autre qu’un chiffre décimal</td></tr><tr><td><code>\s</code></td><td>tout caractère espace blanc</td></tr><tr><td><code>\S</code></td><td>tout caractère autre qu’un espace blanc</td></tr></tbody></table>
+
+<table><tbody><tr><td><code>*</code></td><td>0 ou plus</td></tr><tr><td><code>{3}</code></td><td>Exactement 3</td></tr><tr><td><code>+</code></td><td>1 ou plus</td></tr><tr><td><code>{3,}</code></td><td>3 ou plus</td></tr><tr><td><code>?</code></td><td>0 ou 1</td></tr><tr><td><code>{3,5}</code></td><td>3, 4 ou 5</td></tr></tbody>
+</table>

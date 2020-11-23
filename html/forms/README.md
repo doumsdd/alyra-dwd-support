@@ -1,13 +1,11 @@
 # Formulaires <span role="img" aria-label="">📩<span>
 
-Formulaires permettent aux utilisateurs d'interagir avec un site web ou une application. Et HTML fournit différents éléments permettant de créer des formulaires. 
-
-Les formulaires que nous utilisons le plus souvent sont :
+Formulaires permettent aux utilisateurs d'interagir avec un site web ou une application. Les formulaires que nous utilisons le plus souvent sont :
 - un champs de recherche au sein d'un site web 🔎
 - formulaire de contact sur un site web 📩
 - formulaire que nous remplissons afin d'effectuer un achat en-ligne 🛒
 
-Nous allons apprendre comment mettre en place  des contrôles interactifs permettant à un utilisateur d'envoyer des données. (Ce qui se passe ensuite avec ces données, ne nous concerne pas pour l'instant).
+HTML fournit différents éléments permettant de créer des formulaires. Nous allons apprendre comment mettre en place des contrôles interactifs (les champs qui permettent aux utilisateurs d'envoyer des données). Ce qui se passe ensuite avec ces données, ne nous concerne pas pour l'instant.
 
 ## <code>form</code>
 

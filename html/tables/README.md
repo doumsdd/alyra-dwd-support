@@ -2,8 +2,8 @@
 
 ## Structure et HTML tags
 
-Un élément `table` permet de structurer les données tabulaires. Les tableaux sont utile pour afficher les données de rapport, des plannings des comparatifs etc. 
-Voici la liste des élements que nous allons utiliser :
+Un élément `table` permet de structurer les données tabulaires. Les tableaux sont utiles pour afficher les données de rapport, des plannings, des comparatifs etc. 
+Voici la liste des élements HTML que nous allons utiliser :
 
 - `table`  
 - `thead` - contient ensemble de lignes de la partie en-tête

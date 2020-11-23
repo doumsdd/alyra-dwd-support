@@ -45,6 +45,12 @@ Ici nous voulons récupérer un e-mail alyra. Il est toujours en format `prenom@
 <input id="mail" name="mail" type="email" placeholder="ex. mr@alyra.fr" pattern="[a-z]{2,}@alyra.fr">
 ```
 
+
+```html
+<label for="slug">Choisissez votre identifiant (entre 3 et 8 lettres en miniscule)</label>
+<input id="slug" name="slug" type="text" placeholder="ex. alyra" pattern="[a-x]{3,8}">
+```
+
 ```html
 <label for="zip-code-pl">Votre code postal en Pologne (format xx-xxx)</label>
 <input id="zip-code-pl" name="zip-code-pl" type="text" placeholder="50-306" pattern="[0-9]{2}-[0-9]{3}">

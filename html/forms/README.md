@@ -1,6 +1,6 @@
 # Formulaires <span role="img" aria-label="">📩<span>
 
-Formulaires permettent aux utilisateurs d'intéragir avec un site web ou une application. HTML fournit différents éléments permettant de les créer. 
+Formulaires permettent aux utilisateurs d'interagir avec un site web ou une application. HTML fournit différents éléments permettant de les créer. 
 
 Les formulaires que nous utilisons le plus souvent sont :
 - un champs de recherche au sein d'un site web 🔎
@@ -18,7 +18,7 @@ Notre aventure commence avec l'élément `<form>`. `<form>` représente une sect
 </form>
 ```
 
-Je mentionne ici très brievement les attributs `action` et `method` :
+Je mentionne ici très brièvement les attributs `action` et `method` :
 
 - `action` - L'URL vers le script qui traitera les données envoyées par le formulaire. Nous serons redirigé vers cette adresse. Si `action` n'est pas spécifié, les données sont envoyées à l'URL de la page contenant le formulaire.
 - `method` - comment les données sont envoyées. Dans la majorité des cas les formulaires utilisent la méthode `GET` (méthode par défaut) ou `POST`. Avec la méthode GET les données sont envoyées via l'URL.  Avec la méthode POST les données sont envoyées dans le body de la requête.
@@ -27,7 +27,7 @@ Vous pouvez [en lire davantage ici (MDN).](https://developer.mozilla.org/fr/docs
 
 ### <code>fieldset + legend</code>
 
-`<fieldset>`permet de sectionner le formulaire en  regroupant plusieurs contrôles interactifs. Il est particulierement utile dans le cas de formulaire complèxes ou nous devons recuperer plusieurs type de donneés (personnelles, experience, mode de contact, etc.)
+`<fieldset>`permet de sectionner le formulaire en  regroupant plusieurs contrôles interactifs. Il est particulièrement utile dans le cas de formulaire complexes ou nous devons récupérer plusieurs type de données (personnelles, experience, mode de contact, etc.)
 
 ```html
 <form>
@@ -62,13 +62,13 @@ Regardons les attributs souvent utilisé avec `input`
 
 https://wptemplates.pehaa.com/assets/alyra/input-type.mp4
 
-- `name` - la référence de la donnée utilisée pour le traitment quand le formulaire est envoyé
+- `name` - la référence de la donnée utilisée pour le traitement quand le formulaire est envoyé
 - `required` - si ajouté le champ devient obligatoire
 - `value` - la valeur par défaut, rarement utilisé avec le `type="text"` ou le `type="email"` par contre très pratique pour les type tels que `"number"`, `"color"` ou `"range"`
 
 ## input + label 🦜🦜
 
-Chaque contrôle interactif (`input`) devrait être accompagné par un élément [`label`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/label) qui le décrit. Pour que la liason fonctionne l'attribut `for` de `<label>` doit correspondre à l'attribut `id` de `input`.
+Chaque contrôle interactif (`input`) devrait être accompagné par un élément [`label`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/label) qui le décrit. Pour que la liaison fonctionne l'attribut `for` de `<label>` doit correspondre à l'attribut `id` de `input`.
 
 ```html
 <label for="user-name">Votre nom</label>
@@ -170,7 +170,7 @@ Le élément `<input type=checkbox>" permet de cocher une (ou plusieurs) valeurs
 
 ### <code>textarea</code>
 
-`textarea` est un contrôle qui permet d'éditer du texte sur plusieurs lignes. Nous l'utilsons pour le corps de message, un commentaire, etc.
+`textarea` est un contrôle qui permet d'éditer du texte sur plusieurs lignes. Nous l'utilisons pour le corps de message, un commentaire, etc.
 
 ```html
 <fieldset>
@@ -202,7 +202,7 @@ Comme `<input type="radio">`, l'élément `<select>` permet de choisir parmi plu
 </fieldset>
 ```
 
-- Chaque élément `<option>` doit avoir un attribut `value` (si `value` n'est pas spécifiée explicitment, le texte contenu dans `<option>..</option>` sera utilisé)
+- Chaque élément `<option>` doit avoir un attribut `value` (si `value` n'est pas spécifiée explicitement, le texte contenu dans `<option>..</option>` sera utilisé)
 - L'attribut `selected` sur un élément <option> indique 'option soit sélectionnée par défaut au chargement de la page.
 
 

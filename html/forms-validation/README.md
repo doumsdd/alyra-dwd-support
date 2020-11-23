@@ -1,4 +1,4 @@
-# Validation de Formulaires ✅
+# Validation des Formulaires ✅
 
 C'est le rôle de développeur front-end d'assurer que les données soumises par un utilisateur via un formulaire sont dans un format correct. Nous parlons ici de la validation côté-client (_client-side validation_). La validation _client-side_ s'ajoute à la validation côté serveur (_server-side validation_). Elle n'est pas pourtant moins importante et ne devrait pas être négligée. Un des avantages est le feedback instantané envoyé à l'utilisateur sur ses saisies. C'est absolument nécessaire pour dans le contexte de bonne expérience utilisateur.
 

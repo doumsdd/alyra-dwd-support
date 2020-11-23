@@ -56,7 +56,8 @@ L'élément vide `<input>` crée un contrôle interactif. Les saisies possibles 
 
 Regardons les attributs souvent utilisé avec `input`
 
-- `type` - par défaut text. Comme vous pouvez l'observer dans la video ci-dessous, le comportement de l'élément `<input>` change grandement en fonction de son attribut `type`, vous trouverez multiples exemples [ici (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
+- `type` - par défaut text. Comme vous pouvez l'observer dans la video ci-dessous, le comportement de l'élément `<input>` change grandement en fonction de son attribut `type`.   
+Vous trouverez la liste des types disponibles avec des exemples [ici (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
 
 https://wptemplates.pehaa.com/assets/alyra/input-type.mp4
 
